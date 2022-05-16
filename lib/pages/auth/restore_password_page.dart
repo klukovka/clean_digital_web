@@ -25,8 +25,9 @@ class _RestorePasswordPageState extends State<RestorePasswordPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.primary,
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+      ),
       body: Center(
         child: RoundedContainer(
           child: FormBuilder(
