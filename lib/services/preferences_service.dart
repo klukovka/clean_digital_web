@@ -5,6 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import '../l10n/clean_digital_localizations.dart';
 import '../models/auth_meta.dart';
+import '../models/role.dart';
 import '../utils/extensions/theme_mode_ext.dart';
 
 @injectable
@@ -14,6 +15,7 @@ class PreferencesService {
   static const _userIdKey = '_userIdKey';
   static const _emailKey = '_emailKey';
   static const _idKey = '_idKey';
+  static const _roleKey = '_roleKey';
   static const _localeKey = '_localeKey';
   static const _themeKey = '_themeKey';
 
@@ -98,11 +100,28 @@ class PreferencesService {
     await _preferences.setString(_idKey, id);
   }
 
+  Role getRole() {
+    final role = _preferences.getString(_roleKey) ?? '';
+    if (role == Role.admin.name) return Role.admin;
+    if (role == Role.laundry.name) return Role.laundry;
+    if (role == Role.employee.name) return Role.employee;
+    if (role == Role.client.name) return Role.client;
+    if (role == Role.iot.name) return Role.iot;
+    if (role == Role.repairCompany.name) return Role.repairCompany;
+
+    return Role.iot;
+  }
+
+  Future<void> setRole(Role role) async {
+    await _preferences.setString(_roleKey, role.name);
+  }
+
   Future<void> setAuthDetails(AuthMeta details) async {
     await setAccessToken(details.token);
     await setUserId(details.userId);
     await setEmail(details.email);
     await setId(details.id);
+    await setRole(details.role);
   }
 
   Future<void> logout() async {
@@ -110,5 +129,6 @@ class PreferencesService {
     await _preferences.remove(_userIdKey);
     await _preferences.remove(_emailKey);
     await _preferences.remove(_idKey);
+    await _preferences.remove(_roleKey);
   }
 }
