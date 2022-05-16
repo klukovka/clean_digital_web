@@ -15,6 +15,12 @@ class LoginRequest extends Equatable {
     required this.password,
   });
 
+  factory LoginRequest.fromJson(Map<String, dynamic> json) {
+    return _$LoginRequestFromJson(json);
+  }
+
+  Map<String, dynamic> toJson() => _$LoginRequestToJson(this);
+
   @override
   List<Object> get props => [email, password];
 }

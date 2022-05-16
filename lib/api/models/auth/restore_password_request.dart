@@ -13,6 +13,12 @@ class RestorePasswordRequest extends Equatable {
     required this.email,
   });
 
+  factory RestorePasswordRequest.fromJson(Map<String, dynamic> json) {
+    return _$RestorePasswordRequestFromJson(json);
+  }
+
+  Map<String, dynamic> toJson() => _$RestorePasswordRequestToJson(this);
+
   @override
   List<Object> get props => [email];
 }

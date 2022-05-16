@@ -20,7 +20,8 @@ class _CleanDigitalApiClient implements CleanDigitalApiClient {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = body;
+    final _data = <String, dynamic>{};
+    _data.addAll(body.toJson());
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<AuthMeta>(
             Options(method: 'POST', headers: _headers, extra: _extra)
@@ -36,7 +37,8 @@ class _CleanDigitalApiClient implements CleanDigitalApiClient {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = body;
+    final _data = <String, dynamic>{};
+    _data.addAll(body.toJson());
     await _dio.fetch<void>(_setStreamType<void>(
         Options(method: 'POST', headers: _headers, extra: _extra)
             .compose(_dio.options, '/auth/forget',
