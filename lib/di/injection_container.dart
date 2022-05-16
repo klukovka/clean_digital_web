@@ -14,5 +14,5 @@ final locator = GetIt.instance;
 )
 Future<void> configureDependencies() async {
   locator.registerSingleton<AppAutoRouter>(AppAutoRouter());
-  $configureDependencies(locator);
+  await $configureDependencies(locator);
 }
