@@ -18,6 +18,22 @@ class CleanDigitalRouter extends BaseRouter {
     await pushAndClearStack(const SplashRoute());
   }
 
+  Future<void> resetToRepairCompanyMainPage() async {
+    await pushAndClearStack(const RepairCompanyMainRoute());
+  }
+
+  Future<void> resetToEmployeeMainPage() async {
+    await pushAndClearStack(const EmployeeMainRoute());
+  }
+
+  Future<void> resetToLaundryMainPage() async {
+    await pushAndClearStack(const LaundryMainRoute());
+  }
+
+  Future<void> resetToAdminMainPage() async {
+    await pushAndClearStack(const AdminMainRoute());
+  }
+
   Future<void> pushRestorePasswordPage() async {
     await push(const RestorePasswordRoute());
   }

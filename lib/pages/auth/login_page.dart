@@ -50,7 +50,18 @@ class _LoginPageState extends State<LoginPage> {
           message: state.errorMessage,
         );
         break;
-      //TODO: Navigate after success
+      case LoginPageStatus.successAdmin:
+        router.resetToAdminMainPage();
+        break;
+      case LoginPageStatus.successEmployee:
+        router.resetToEmployeeMainPage();
+        break;
+      case LoginPageStatus.successLaundry:
+        router.resetToLaundryMainPage();
+        break;
+      case LoginPageStatus.successRepairCompany:
+        router.resetToRepairCompanyMainPage();
+        break;
       default:
         break;
     }
