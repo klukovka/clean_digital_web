@@ -9,4 +9,13 @@ class CleanDigitalLocalizationsUk extends CleanDigitalLocalizations {
 
   @override
   String get appName => 'CleanDigital';
+
+  @override
+  String get generalAppErrorMessage => 'Сталася помилка веб-клієнта';
+
+  @override
+  String get noInternetConnection => 'Немає інтернет звʼязку';
+
+  @override
+  String get serverErrorMessage => 'Сталася серверна помилка';
 }

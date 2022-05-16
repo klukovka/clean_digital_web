@@ -9,4 +9,13 @@ class CleanDigitalLocalizationsEn extends CleanDigitalLocalizations {
 
   @override
   String get appName => 'CleanDigital';
+
+  @override
+  String get generalAppErrorMessage => 'Client error has occured!';
+
+  @override
+  String get noInternetConnection => 'No internet connection';
+
+  @override
+  String get serverErrorMessage => 'Server error has occured!';
 }

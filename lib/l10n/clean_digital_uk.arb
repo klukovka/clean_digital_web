@@ -1,4 +1,7 @@
 {
   "@@locale": "uk",
-  "appName": "CleanDigital"
+  "appName": "CleanDigital",
+  "generalAppErrorMessage": "Сталася помилка веб-клієнта",
+  "noInternetConnection": "Немає інтернет звʼязку",
+  "serverErrorMessage": "Сталася серверна помилка"
 }

@@ -99,6 +99,24 @@ abstract class CleanDigitalLocalizations {
   /// In uk, this message translates to:
   /// **'CleanDigital'**
   String get appName;
+
+  /// No description provided for @generalAppErrorMessage.
+  ///
+  /// In uk, this message translates to:
+  /// **'Сталася помилка веб-клієнта'**
+  String get generalAppErrorMessage;
+
+  /// No description provided for @noInternetConnection.
+  ///
+  /// In uk, this message translates to:
+  /// **'Немає інтернет звʼязку'**
+  String get noInternetConnection;
+
+  /// No description provided for @serverErrorMessage.
+  ///
+  /// In uk, this message translates to:
+  /// **'Сталася серверна помилка'**
+  String get serverErrorMessage;
 }
 
 class _CleanDigitalLocalizationsDelegate extends LocalizationsDelegate<CleanDigitalLocalizations> {
