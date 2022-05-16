@@ -18,4 +18,13 @@ class CleanDigitalLocalizationsUk extends CleanDigitalLocalizations {
 
   @override
   String get serverErrorMessage => 'Сталася серверна помилка';
+
+  @override
+  String get dark => 'Темна';
+
+  @override
+  String get light => 'Світла';
+
+  @override
+  String get system => 'Системна';
 }

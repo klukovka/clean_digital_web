@@ -2,5 +2,8 @@
     "@@locale": "en",
     "generalAppErrorMessage": "Client error has occured!",
     "noInternetConnection": "No internet connection",
-    "serverErrorMessage": "Server error has occured!"
+    "serverErrorMessage": "Server error has occured!",
+    "dark": "Dark",
+    "light": "Light",
+    "system": "System"
 }

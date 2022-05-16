@@ -22,11 +22,9 @@ class AppAutoRouter extends _i2.RootStackRouter {
   @override
   final Map<String, _i2.PageFactory> pagesMap = {
     SplashRoute.name: (routeData) {
-      final args = routeData.argsAs<SplashRouteArgs>(
-          orElse: () => const SplashRouteArgs());
       return _i2.CustomPage<dynamic>(
           routeData: routeData,
-          child: _i1.SplashPage(key: args.key),
+          child: const _i1.SplashPage(),
           transitionsBuilder: _i2.TransitionsBuilders.fadeIn,
           durationInMilliseconds: 250,
           opaque: true,
@@ -44,20 +42,8 @@ class AppAutoRouter extends _i2.RootStackRouter {
 
 /// generated route for
 /// [_i1.SplashPage]
-class SplashRoute extends _i2.PageRouteInfo<SplashRouteArgs> {
-  SplashRoute({_i3.Key? key})
-      : super(SplashRoute.name, path: '/init', args: SplashRouteArgs(key: key));
+class SplashRoute extends _i2.PageRouteInfo<void> {
+  const SplashRoute() : super(SplashRoute.name, path: '/init');
 
   static const String name = 'SplashRoute';
-}
-
-class SplashRouteArgs {
-  const SplashRouteArgs({this.key});
-
-  final _i3.Key? key;
-
-  @override
-  String toString() {
-    return 'SplashRouteArgs{key: $key}';
-  }
 }

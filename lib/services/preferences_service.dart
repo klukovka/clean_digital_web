@@ -4,12 +4,14 @@ import 'package:jwt_decode/jwt_decode.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../l10n/clean_digital_localizations.dart';
+import '../utils/extensions/theme_mode_ext.dart';
 
 @injectable
 @preResolve
 class PreferencesService {
   static const _accessTokenKey = '_accessTokenKey';
   static const _localeKey = '_localeKey';
+  static const _themeKey = '_localeKey';
 
   final SharedPreferences _preferences;
 
@@ -45,14 +47,14 @@ class PreferencesService {
 
   /// Theme
 
-  // AppTheme getAppTheme() {
-  //   final theme = _preferences.getString(_themeKey) ?? AppTheme.light.name;
-  //   return AppThemeExt.getTheme(theme);
-  // }
+  ThemeMode getAppTheme() {
+    final theme = _preferences.getString(_themeKey) ?? ThemeMode.system.name;
+    return ThemeModeExt.getTheme(theme);
+  }
 
-  // Future<void> setAppTheme(AppTheme theme) async {
-  //   await _preferences.setString(_themeKey, theme.name);
-  // }
+  Future<void> setAppTheme(ThemeMode theme) async {
+    await _preferences.setString(_themeKey, theme.name);
+  }
 
   /// Auth
 

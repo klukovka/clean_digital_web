@@ -117,6 +117,24 @@ abstract class CleanDigitalLocalizations {
   /// In uk, this message translates to:
   /// **'Сталася серверна помилка'**
   String get serverErrorMessage;
+
+  /// No description provided for @dark.
+  ///
+  /// In uk, this message translates to:
+  /// **'Темна'**
+  String get dark;
+
+  /// No description provided for @light.
+  ///
+  /// In uk, this message translates to:
+  /// **'Світла'**
+  String get light;
+
+  /// No description provided for @system.
+  ///
+  /// In uk, this message translates to:
+  /// **'Системна'**
+  String get system;
 }
 
 class _CleanDigitalLocalizationsDelegate extends LocalizationsDelegate<CleanDigitalLocalizations> {

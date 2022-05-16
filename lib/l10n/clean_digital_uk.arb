@@ -3,5 +3,8 @@
   "appName": "CleanDigital",
   "generalAppErrorMessage": "Сталася помилка веб-клієнта",
   "noInternetConnection": "Немає інтернет звʼязку",
-  "serverErrorMessage": "Сталася серверна помилка"
+  "serverErrorMessage": "Сталася серверна помилка",
+  "dark": "Темна",
+  "light": "Світла",
+  "system": "Системна"
 }
