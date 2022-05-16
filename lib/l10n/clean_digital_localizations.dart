@@ -225,6 +225,12 @@ abstract class CleanDigitalLocalizations {
   /// In uk, this message translates to:
   /// **'Ремонтна компанія'**
   String get repairCompany;
+
+  /// No description provided for @youHaveNotAccess.
+  ///
+  /// In uk, this message translates to:
+  /// **'Ви не маєте доступу'**
+  String get youHaveNotAccess;
 }
 
 class _CleanDigitalLocalizationsDelegate extends LocalizationsDelegate<CleanDigitalLocalizations> {

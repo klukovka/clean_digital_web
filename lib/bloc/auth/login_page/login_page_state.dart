@@ -3,7 +3,10 @@ part of 'login_page_cubit.dart';
 enum LoginPageStatus {
   initial,
   error,
-  success,
+  successAdmin,
+  successLaundry,
+  successRepairCompany,
+  successEmployee,
   loading,
 }
 

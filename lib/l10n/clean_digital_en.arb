@@ -19,5 +19,6 @@
     "laundry": "Laundry",
     "employee": "Employee",
     "client": "Client",
-    "repairCompany": "Repair company"
+    "repairCompany": "Repair company",
+    "youHaveNotAccess": "You have not got an access"
 }

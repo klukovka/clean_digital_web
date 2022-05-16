@@ -21,5 +21,6 @@
   "employee": "Робітник",
   "client": "Клієнт",
   "iot": "IOT",
-  "repairCompany": "Ремонтна компанія"
+  "repairCompany": "Ремонтна компанія",
+  "youHaveNotAccess": "Ви не маєте доступу"
 }

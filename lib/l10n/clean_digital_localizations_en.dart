@@ -72,4 +72,7 @@ class CleanDigitalLocalizationsEn extends CleanDigitalLocalizations {
 
   @override
   String get repairCompany => 'Repair company';
+
+  @override
+  String get youHaveNotAccess => 'You have not got an access';
 }

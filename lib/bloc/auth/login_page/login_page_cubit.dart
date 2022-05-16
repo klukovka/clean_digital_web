@@ -1,6 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:injectable/injectable.dart';
 
+import '../../../models/role.dart';
 import '../../../services/auth_service.dart';
 import '../../../services/preferences_service.dart';
 import '../../base_cubit.dart';
@@ -38,7 +39,31 @@ class LoginPageCubit extends BaseCubit<LoginPageState> {
     await makeErrorHandledCall(() async {
       final details = await _authService.login(email, password);
       await _preferencesService.setAuthDetails(details);
-      emit(state.copyWith(status: LoginPageStatus.success));
+      await emitRole(details.role);
     });
+  }
+
+  Future<void> emitRole(Role role) async {
+    switch (role) {
+      case Role.admin:
+        emit(state.copyWith(status: LoginPageStatus.successAdmin));
+        break;
+      case Role.laundry:
+        emit(state.copyWith(status: LoginPageStatus.successLaundry));
+        break;
+      case Role.employee:
+        emit(state.copyWith(status: LoginPageStatus.successEmployee));
+        break;
+      case Role.repairCompany:
+        emit(state.copyWith(status: LoginPageStatus.successRepairCompany));
+        break;
+      default:
+        final loc = await _preferencesService.getLocalizations();
+        emit(state.copyWith(
+          errorMessage: loc.youHaveNotAccess,
+          status: LoginPageStatus.error,
+        ));
+        break;
+    }
   }
 }

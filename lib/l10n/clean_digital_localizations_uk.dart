@@ -72,4 +72,7 @@ class CleanDigitalLocalizationsUk extends CleanDigitalLocalizations {
 
   @override
   String get repairCompany => 'Ремонтна компанія';
+
+  @override
+  String get youHaveNotAccess => 'Ви не маєте доступу';
 }
