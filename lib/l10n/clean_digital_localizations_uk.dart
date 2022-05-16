@@ -54,4 +54,22 @@ class CleanDigitalLocalizationsUk extends CleanDigitalLocalizations {
 
   @override
   String get passwordIsNotValid => 'Довжина пароля повинна бути більше 8 символів, містити одну велику літеру та цифру';
+
+  @override
+  String get admin => 'Адміністратор';
+
+  @override
+  String get laundry => 'Пральня';
+
+  @override
+  String get employee => 'Робітник';
+
+  @override
+  String get client => 'Клієнт';
+
+  @override
+  String get iot => 'IOT';
+
+  @override
+  String get repairCompany => 'Ремонтна компанія';
 }

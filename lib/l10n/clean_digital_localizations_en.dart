@@ -54,4 +54,22 @@ class CleanDigitalLocalizationsEn extends CleanDigitalLocalizations {
 
   @override
   String get passwordIsNotValid => 'Password length should be longer than 8 characters, contains one uppercase letter and number';
+
+  @override
+  String get admin => 'Admin';
+
+  @override
+  String get laundry => 'Laundry';
+
+  @override
+  String get employee => 'Employee';
+
+  @override
+  String get client => 'Client';
+
+  @override
+  String get iot => 'IOT';
+
+  @override
+  String get repairCompany => 'Repair company';
 }

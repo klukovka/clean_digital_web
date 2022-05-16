@@ -14,5 +14,10 @@
     "restorePassword": "Respore password",
     "checkYourEmail": "Check your email",
     "emailIsNotValid": "Email is not valid",
-    "passwordIsNotValid":  "Password length should be longer than 8 characters, contains one uppercase letter and number"
+    "passwordIsNotValid":  "Password length should be longer than 8 characters, contains one uppercase letter and number",
+    "admin": "Admin",
+    "laundry": "Laundry",
+    "employee": "Employee",
+    "client": "Client",
+    "repairCompany": "Repair company"
 }

@@ -4,14 +4,18 @@ import 'package:jwt_decode/jwt_decode.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../l10n/clean_digital_localizations.dart';
+import '../models/auth_meta.dart';
 import '../utils/extensions/theme_mode_ext.dart';
 
 @injectable
 @preResolve
 class PreferencesService {
   static const _accessTokenKey = '_accessTokenKey';
+  static const _userIdKey = '_userIdKey';
+  static const _emailKey = '_emailKey';
+  static const _idKey = '_idKey';
   static const _localeKey = '_localeKey';
-  static const _themeKey = '_localeKey';
+  static const _themeKey = '_themeKey';
 
   final SharedPreferences _preferences;
 
@@ -76,15 +80,35 @@ class PreferencesService {
     await _preferences.setString(_accessTokenKey, accessToken);
   }
 
-  // Future<void> setAuthDetails(AuthMeta details) async {
-  //   await setAccessToken(details.jwtToken);
-  //   await setRefreshToken(details.refreshToken);
-  //   await setUserId(details.userId);
-  // }
+  String getUserId() => _preferences.getString(_userIdKey) ?? '';
 
-  // Future<void> logout() async {
-  //   await _preferences.remove(_accessTokenKey);
-  //   await _preferences.remove(_refreshTokenKey);
-  //   await _preferences.remove(_userIdKey);
-  // }
+  Future<void> setUserId(String userId) async {
+    await _preferences.setString(_userIdKey, userId);
+  }
+
+  String getEmail() => _preferences.getString(_emailKey) ?? '';
+
+  Future<void> setEmail(String email) async {
+    await _preferences.setString(_emailKey, email);
+  }
+
+  String getId() => _preferences.getString(_idKey) ?? '';
+
+  Future<void> setId(String id) async {
+    await _preferences.setString(_idKey, id);
+  }
+
+  Future<void> setAuthDetails(AuthMeta details) async {
+    await setAccessToken(details.token);
+    await setUserId(details.userId);
+    await setEmail(details.email);
+    await setId(details.id);
+  }
+
+  Future<void> logout() async {
+    await _preferences.remove(_accessTokenKey);
+    await _preferences.remove(_userIdKey);
+    await _preferences.remove(_emailKey);
+    await _preferences.remove(_idKey);
+  }
 }

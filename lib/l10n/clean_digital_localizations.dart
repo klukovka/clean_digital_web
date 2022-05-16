@@ -189,6 +189,42 @@ abstract class CleanDigitalLocalizations {
   /// In uk, this message translates to:
   /// **'Довжина пароля повинна бути більше 8 символів, містити одну велику літеру та цифру'**
   String get passwordIsNotValid;
+
+  /// No description provided for @admin.
+  ///
+  /// In uk, this message translates to:
+  /// **'Адміністратор'**
+  String get admin;
+
+  /// No description provided for @laundry.
+  ///
+  /// In uk, this message translates to:
+  /// **'Пральня'**
+  String get laundry;
+
+  /// No description provided for @employee.
+  ///
+  /// In uk, this message translates to:
+  /// **'Робітник'**
+  String get employee;
+
+  /// No description provided for @client.
+  ///
+  /// In uk, this message translates to:
+  /// **'Клієнт'**
+  String get client;
+
+  /// No description provided for @iot.
+  ///
+  /// In uk, this message translates to:
+  /// **'IOT'**
+  String get iot;
+
+  /// No description provided for @repairCompany.
+  ///
+  /// In uk, this message translates to:
+  /// **'Ремонтна компанія'**
+  String get repairCompany;
 }
 
 class _CleanDigitalLocalizationsDelegate extends LocalizationsDelegate<CleanDigitalLocalizations> {
