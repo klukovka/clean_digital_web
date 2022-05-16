@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
+import 'package:sizer/sizer.dart';
 
 import 'bloc/app_control/app_control_cubit.dart';
 import 'di/injection_container.dart';
@@ -39,6 +40,7 @@ class _CleanDigitalAppState extends State<CleanDigitalApp> {
       subThemesData: const FlexSubThemesData(
         blendOnLevel: 20,
         blendOnColors: false,
+        inputDecoratorRadius: 12.0,
       ),
       visualDensity: FlexColorScheme.comfortablePlatformDensity,
       useMaterial3: true,
@@ -55,6 +57,7 @@ class _CleanDigitalAppState extends State<CleanDigitalApp> {
       appBarOpacity: 0.90,
       subThemesData: const FlexSubThemesData(
         blendOnLevel: 30,
+        inputDecoratorRadius: 12.0,
       ),
       visualDensity: FlexColorScheme.comfortablePlatformDensity,
       useMaterial3: true,
@@ -66,40 +69,42 @@ class _CleanDigitalAppState extends State<CleanDigitalApp> {
   Widget build(BuildContext context) {
     return BlocBuilder<AppControlCubit, AppControlState>(
         builder: (context, state) {
-      return MaterialApp.router(
-        debugShowCheckedModeBanner: false,
-        builder: _buildWrapper,
-        theme: _lightTheme,
-        darkTheme: _darkTheme,
-        themeMode: state.theme,
-        locale: state.locale,
-        localizationsDelegates:
-            CleanDigitalLocalizations.localizationsDelegates,
-        supportedLocales: CleanDigitalLocalizations.supportedLocales,
-        routeInformationParser: locator<AppAutoRouter>().defaultRouteParser(),
-        routeInformationProvider: locator<AppAutoRouter>().routeInfoProvider(),
-        routerDelegate: locator<AppAutoRouter>().delegate(
-          navigatorObservers: () {
-            return [CleanDigitalObserver()];
-          },
-        ),
-      );
+      return Sizer(builder: (context, orientation, deviceType) {
+        return MaterialApp.router(
+          debugShowCheckedModeBanner: false,
+          theme: _lightTheme,
+          darkTheme: _darkTheme,
+          themeMode: state.theme,
+          locale: state.locale,
+          localizationsDelegates:
+              CleanDigitalLocalizations.localizationsDelegates,
+          supportedLocales: CleanDigitalLocalizations.supportedLocales,
+          routeInformationParser: locator<AppAutoRouter>().defaultRouteParser(),
+          routeInformationProvider:
+              locator<AppAutoRouter>().routeInfoProvider(),
+          routerDelegate: locator<AppAutoRouter>().delegate(
+            navigatorObservers: () {
+              return [CleanDigitalObserver()];
+            },
+          ),
+        );
+      });
     });
   }
 
-  Widget _buildWrapper(BuildContext context, Widget? widget) {
-    return ResponsiveWrapper.builder(
-      BouncingScrollWrapper.builder(context, widget!),
-      maxWidth: 1200,
-      minWidth: 450,
-      defaultScale: true,
-      breakpoints: [
-        const ResponsiveBreakpoint.resize(480, name: MOBILE),
-        const ResponsiveBreakpoint.autoScale(800, name: TABLET),
-        const ResponsiveBreakpoint.autoScale(1000, name: TABLET),
-        const ResponsiveBreakpoint.resize(1200, name: DESKTOP),
-        const ResponsiveBreakpoint.autoScale(2460, name: '4K'),
-      ],
-    );
-  }
+  // Widget _buildWrapper(BuildContext context, Widget? widget) {
+  //   return ResponsiveWrapper.builder(
+  //     BouncingScrollWrapper.builder(context, widget!),
+  //     maxWidth: 1200,
+  //     minWidth: 450,
+  //     defaultScale: true,
+  //     breakpoints: [
+  //       const ResponsiveBreakpoint.resize(480, name: MOBILE),
+  //       const ResponsiveBreakpoint.autoScale(800, name: TABLET),
+  //       const ResponsiveBreakpoint.autoScale(1000, name: TABLET),
+  //       const ResponsiveBreakpoint.resize(1200, name: DESKTOP),
+  //       const ResponsiveBreakpoint.autoScale(2460, name: '4K'),
+  //     ],
+  //   );
+  // }
 }

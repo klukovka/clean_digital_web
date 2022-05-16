@@ -1,7 +1,8 @@
-import 'package:clean_digital_web/clean_digital_app.dart';
-import 'package:clean_digital_web/di/injection_container.dart';
-import 'package:clean_digital_web/services/preferences_service.dart';
 import 'package:flutter/material.dart';
+
+import 'clean_digital_app.dart';
+import 'di/injection_container.dart';
+import 'services/preferences_service.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

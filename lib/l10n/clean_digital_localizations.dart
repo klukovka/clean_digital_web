@@ -135,6 +135,60 @@ abstract class CleanDigitalLocalizations {
   /// In uk, this message translates to:
   /// **'Системна'**
   String get system;
+
+  /// No description provided for @email.
+  ///
+  /// In uk, this message translates to:
+  /// **'Електронна пошта'**
+  String get email;
+
+  /// No description provided for @password.
+  ///
+  /// In uk, this message translates to:
+  /// **'Пароль'**
+  String get password;
+
+  /// No description provided for @login.
+  ///
+  /// In uk, this message translates to:
+  /// **'Увійти'**
+  String get login;
+
+  /// No description provided for @forgetPassword.
+  ///
+  /// In uk, this message translates to:
+  /// **'Забул пароль?'**
+  String get forgetPassword;
+
+  /// No description provided for @enterYourEmail.
+  ///
+  /// In uk, this message translates to:
+  /// **'Введіть вашу електронну пошту'**
+  String get enterYourEmail;
+
+  /// No description provided for @restorePassword.
+  ///
+  /// In uk, this message translates to:
+  /// **'Відновити пароль'**
+  String get restorePassword;
+
+  /// No description provided for @checkYourEmail.
+  ///
+  /// In uk, this message translates to:
+  /// **'Перевірте вашу пошту'**
+  String get checkYourEmail;
+
+  /// No description provided for @emailIsNotValid.
+  ///
+  /// In uk, this message translates to:
+  /// **'Введіть коректну пошту'**
+  String get emailIsNotValid;
+
+  /// No description provided for @passwordIsNotValid.
+  ///
+  /// In uk, this message translates to:
+  /// **'Довжина пароля повинна бути більше 8 символів, містити одну велику літеру та цифру'**
+  String get passwordIsNotValid;
 }
 
 class _CleanDigitalLocalizationsDelegate extends LocalizationsDelegate<CleanDigitalLocalizations> {

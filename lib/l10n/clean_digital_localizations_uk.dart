@@ -27,4 +27,31 @@ class CleanDigitalLocalizationsUk extends CleanDigitalLocalizations {
 
   @override
   String get system => 'Системна';
+
+  @override
+  String get email => 'Електронна пошта';
+
+  @override
+  String get password => 'Пароль';
+
+  @override
+  String get login => 'Увійти';
+
+  @override
+  String get forgetPassword => 'Забул пароль?';
+
+  @override
+  String get enterYourEmail => 'Введіть вашу електронну пошту';
+
+  @override
+  String get restorePassword => 'Відновити пароль';
+
+  @override
+  String get checkYourEmail => 'Перевірте вашу пошту';
+
+  @override
+  String get emailIsNotValid => 'Введіть коректну пошту';
+
+  @override
+  String get passwordIsNotValid => 'Довжина пароля повинна бути більше 8 символів, містити одну велику літеру та цифру';
 }

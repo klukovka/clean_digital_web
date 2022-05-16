@@ -1,10 +1,10 @@
 import 'dart:async';
 
-import 'package:clean_digital_web/l10n/clean_digital_localizations.dart';
-import 'package:clean_digital_web/views/loading_indicator.dart';
 import 'package:flutter/material.dart';
 
+import '../../l10n/clean_digital_localizations.dart';
 import '../../router/clean_digital_router.dart';
+import '../../views/loading_indicator.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({Key? key}) : super(key: key);

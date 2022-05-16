@@ -5,5 +5,14 @@
     "serverErrorMessage": "Server error has occured!",
     "dark": "Dark",
     "light": "Light",
-    "system": "System"
+    "system": "System",
+    "email": "Email",
+    "password": "Password",
+    "login": "Login",
+    "forgetPassword": "Forget password?",
+    "enterYourEmail": "Enter new email",
+    "restorePassword": "Respore password",
+    "checkYourEmail": "Check your email",
+    "emailIsNotValid": "Email is not valid",
+    "passwordIsNotValid":  "Password length should be longer than 8 characters, contains one uppercase letter and number"
 }
