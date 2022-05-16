@@ -1,15 +1,29 @@
 import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
+import 'bloc/app_control/app_control_cubit.dart';
 import 'di/injection_container.dart';
 import 'l10n/clean_digital_localizations.dart';
 import 'router/app_auto_router.gr.dart';
 import 'router/clean_digital_observer.dart';
 
 class CleanDigitalApp extends StatefulWidget {
-  const CleanDigitalApp({Key? key}) : super(key: key);
+  static Widget create(Locale locale, ThemeMode theme) {
+    return BlocProvider(
+      create: (_) => locator<AppControlCubit>(
+        param1: AppControlState(
+          locale: locale,
+          theme: theme,
+        ),
+      ),
+      child: const CleanDigitalApp._(),
+    );
+  }
+
+  const CleanDigitalApp._({Key? key}) : super(key: key);
 
   @override
   State<CleanDigitalApp> createState() => _CleanDigitalAppState();
@@ -50,22 +64,27 @@ class _CleanDigitalAppState extends State<CleanDigitalApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      debugShowCheckedModeBanner: false,
-      builder: _buildWrapper,
-      theme: _lightTheme,
-      darkTheme: _darkTheme,
-      themeMode: ThemeMode.system,
-      localizationsDelegates: CleanDigitalLocalizations.localizationsDelegates,
-      supportedLocales: CleanDigitalLocalizations.supportedLocales,
-      routeInformationParser: locator<AppAutoRouter>().defaultRouteParser(),
-      routeInformationProvider: locator<AppAutoRouter>().routeInfoProvider(),
-      routerDelegate: locator<AppAutoRouter>().delegate(
-        navigatorObservers: () {
-          return [CleanDigitalObserver()];
-        },
-      ),
-    );
+    return BlocBuilder<AppControlCubit, AppControlState>(
+        builder: (context, state) {
+      return MaterialApp.router(
+        debugShowCheckedModeBanner: false,
+        builder: _buildWrapper,
+        theme: _lightTheme,
+        darkTheme: _darkTheme,
+        themeMode: state.theme,
+        locale: state.locale,
+        localizationsDelegates:
+            CleanDigitalLocalizations.localizationsDelegates,
+        supportedLocales: CleanDigitalLocalizations.supportedLocales,
+        routeInformationParser: locator<AppAutoRouter>().defaultRouteParser(),
+        routeInformationProvider: locator<AppAutoRouter>().routeInfoProvider(),
+        routerDelegate: locator<AppAutoRouter>().delegate(
+          navigatorObservers: () {
+            return [CleanDigitalObserver()];
+          },
+        ),
+      );
+    });
   }
 
   Widget _buildWrapper(BuildContext context, Widget? widget) {
