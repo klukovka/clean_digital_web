@@ -1,6 +1,10 @@
+import 'dart:async';
+
 import 'package:clean_digital_web/l10n/clean_digital_localizations.dart';
 import 'package:clean_digital_web/views/loading_indicator.dart';
 import 'package:flutter/material.dart';
+
+import '../../router/clean_digital_router.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({Key? key}) : super(key: key);
@@ -10,6 +14,23 @@ class SplashPage extends StatefulWidget {
 }
 
 class _SplashPageState extends State<SplashPage> {
+  late final Timer _exitTimer;
+
+  @override
+  void initState() {
+    super.initState();
+    _exitTimer = Timer(
+      const Duration(seconds: 1),
+      router.resetToLoginPage,
+    );
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _exitTimer.cancel();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
