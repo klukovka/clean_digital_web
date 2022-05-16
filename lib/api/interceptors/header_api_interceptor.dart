@@ -3,23 +3,24 @@ import 'dart:convert';
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 
+import '../../services/logout_service.dart';
 import '../../services/preferences_service.dart';
 import '../api_constants.dart';
 
 @injectable
 class HeaderApiInterceptor implements Interceptor {
   final PreferencesService _preferencesService;
-  // final LogoutService _logoutService;
+  final LogoutService _logoutService;
 
   HeaderApiInterceptor(
     this._preferencesService,
-    // this._logoutService,
+    this._logoutService,
   );
 
   @override
   void onError(DioError err, ErrorInterceptorHandler handler) {
     if (_shouldLogOut(err.response?.statusCode)) {
-      // _logoutService.logout();
+      _logoutService.logout();
     } else {
       handler.next(err);
     }
@@ -38,7 +39,7 @@ class HeaderApiInterceptor implements Interceptor {
         -1;
 
     if (!isInWhiteList && (accessToken.isEmpty)) {
-      // _logoutService.logout();
+      _logoutService.logout();
       return;
     }
 
