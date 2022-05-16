@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
 
+import '../router/app_auto_router.gr.dart';
 import 'injection_container.config.dart';
 
 final locator = GetIt.instance;
@@ -10,8 +10,9 @@ final locator = GetIt.instance;
   initializerName: r'$configureDependencies',
   preferRelativeImports: true,
   asExtension: false,
+  ignoreUnregisteredTypes: [AppAutoRouter],
 )
-Future<void> configureDependencies() {
-  locator.registerSingleton<RouteObserver<Route>>(RouteObserver<Route>());
-  return $configureDependencies(locator);
+Future<void> configureDependencies() async {
+  locator.registerSingleton<AppAutoRouter>(AppAutoRouter());
+  $configureDependencies(locator);
 }
