@@ -15,6 +15,36 @@ class _CleanDigitalApiClient implements CleanDigitalApiClient {
 
   String? baseUrl;
 
+  @override
+  Future<AuthMeta> login(body) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = body;
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<AuthMeta>(
+            Options(method: 'POST', headers: _headers, extra: _extra)
+                .compose(_dio.options, '/auth/login',
+                    queryParameters: queryParameters, data: _data)
+                .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = AuthMeta.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<void> restorePassword(body) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = body;
+    await _dio.fetch<void>(_setStreamType<void>(
+        Options(method: 'POST', headers: _headers, extra: _extra)
+            .compose(_dio.options, '/auth/forget',
+                queryParameters: queryParameters, data: _data)
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    return null;
+  }
+
   RequestOptions _setStreamType<T>(RequestOptions requestOptions) {
     if (T != dynamic &&
         !(requestOptions.responseType == ResponseType.bytes ||

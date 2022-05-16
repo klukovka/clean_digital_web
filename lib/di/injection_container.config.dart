@@ -13,9 +13,10 @@ import '../api/interceptors/header_api_interceptor.dart' as _i8;
 import '../bloc/app_control/app_control_cubit.dart' as _i7;
 import '../router/app_auto_router.gr.dart' as _i4;
 import '../router/clean_digital_router.dart' as _i3;
+import '../services/auth_service.dart' as _i11;
 import '../services/logout_service.dart' as _i6;
 import '../services/preferences_service.dart' as _i5;
-import 'module/api_module.dart' as _i11; // ignore_for_file: unnecessary_lambdas
+import 'module/api_module.dart' as _i12; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars
 /// initializes the registration of provided dependencies inside of [GetIt]
@@ -39,7 +40,9 @@ Future<_i1.GetIt> $configureDependencies(_i1.GetIt get,
       () => apiModule.dio(get<_i8.HeaderApiInterceptor>()));
   gh.lazySingleton<_i10.CleanDigitalApiClient>(
       () => apiModule.apiClient(get<_i9.Dio>()));
+  gh.factory<_i11.AuthService>(
+      () => _i11.AuthService(get<_i10.CleanDigitalApiClient>()));
   return get;
 }
 
-class _$ApiModule extends _i11.ApiModule {}
+class _$ApiModule extends _i12.ApiModule {}
