@@ -1,25 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
-import 'package:fluttericon/font_awesome5_icons.dart';
 import 'package:fluttericon/typicons_icons.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
 
 import '../../l10n/clean_digital_localizations.dart';
-import '../../router/clean_digital_router.dart';
-import '../../utils/validators.dart';
 import '../../views/buttons/primary_button.dart';
 import '../../views/rounded_container.dart';
 
-enum _LoginFields { email, password }
+enum _RestorePasswordFields { email }
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+class RestorePasswordPage extends StatefulWidget {
+  const RestorePasswordPage({Key? key}) : super(key: key);
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<RestorePasswordPage> createState() => _RestorePasswordPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RestorePasswordPageState extends State<RestorePasswordPage> {
   final _fbKey = GlobalKey<FormBuilderState>();
 
   FormBuilderState? get _fbState => _fbKey.currentState;
@@ -40,7 +37,7 @@ class _LoginPageState extends State<LoginPage> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 FormBuilderTextField(
-                  name: _LoginFields.email.name,
+                  name: _RestorePasswordFields.email.name,
                   decoration: InputDecoration(
                     prefixIcon: const Icon(Typicons.mail),
                     labelText: CleanDigitalLocalizations.of(context).email,
@@ -51,34 +48,10 @@ class _LoginPageState extends State<LoginPage> {
                         CleanDigitalLocalizations.of(context).emailIsNotValid,
                   ),
                 ),
-                const SizedBox(height: 16),
-                FormBuilderTextField(
-                  name: _LoginFields.password.name,
-                  obscureText: true,
-                  validator: passwordValidator(context),
-                  decoration: InputDecoration(
-                    prefixIcon: const Icon(Typicons.key_outline),
-                    labelText: CleanDigitalLocalizations.of(context).password,
-                    suffixIcon: IconButton(
-                      icon: const Icon(FontAwesome5.eye_slash),
-                      onPressed: () {},
-                    ),
-                  ),
-                ),
                 const SizedBox(height: 64),
                 PrimaryButton(
-                  title: CleanDigitalLocalizations.of(context).login,
+                  title: CleanDigitalLocalizations.of(context).restorePassword,
                   onPressed: () {},
-                ),
-                const SizedBox(height: 16),
-                SizedBox(
-                  width: double.infinity,
-                  child: TextButton(
-                    onPressed: router.pushRestorePasswordPage,
-                    child: Text(
-                      CleanDigitalLocalizations.of(context).forgetPassword,
-                    ),
-                  ),
                 ),
               ],
             ),

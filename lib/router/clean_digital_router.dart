@@ -17,4 +17,8 @@ class CleanDigitalRouter extends BaseRouter {
   Future<void> resetToSplashPage() async {
     await pushAndClearStack(const SplashRoute());
   }
+
+  Future<void> pushRestorePasswordPage() async {
+    await push(const RestorePasswordRoute());
+  }
 }
