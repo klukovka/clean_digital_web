@@ -53,7 +53,7 @@ class _SplashPageState extends State<SplashPage> {
     switch (state.status) {
       case SplashPageStatus.unauthorized:
       case SplashPageStatus.error:
-        router.resetToLoginPage();
+        router.replaceLoginPage();
         break;
 
       case SplashPageStatus.authorized:
@@ -67,19 +67,19 @@ class _SplashPageState extends State<SplashPage> {
   void navigateAuthorized(Role? role) {
     switch (role) {
       case Role.admin:
-        router.resetToAdminMainPage();
+        router.replaceAdminMainPage();
         break;
       case Role.laundry:
-        router.resetToLaundryMainPage();
+        router.replaceLaundryMainPage();
         break;
       case Role.repairCompany:
-        router.resetToRepairCompanyMainPage();
+        router.replaceRepairCompanyMainPage();
         break;
       case Role.employee:
-        router.resetToEmployeeMainPage();
+        router.replaceEmployeeMainPage();
         break;
       default:
-        router.resetToLoginPage();
+        router.replaceLoginPage();
         break;
     }
   }

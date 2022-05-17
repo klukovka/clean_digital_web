@@ -51,16 +51,16 @@ class _LoginPageState extends State<LoginPage> {
         );
         break;
       case LoginPageStatus.successAdmin:
-        router.resetToAdminMainPage();
+        router.replaceAdminMainPage();
         break;
       case LoginPageStatus.successEmployee:
-        router.resetToEmployeeMainPage();
+        router.replaceEmployeeMainPage();
         break;
       case LoginPageStatus.successLaundry:
-        router.resetToLaundryMainPage();
+        router.replaceLaundryMainPage();
         break;
       case LoginPageStatus.successRepairCompany:
-        router.resetToRepairCompanyMainPage();
+        router.replaceRepairCompanyMainPage();
         break;
       default:
         break;

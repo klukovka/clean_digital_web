@@ -10,28 +10,28 @@ final router = locator<CleanDigitalRouter>();
 class CleanDigitalRouter extends BaseRouter {
   CleanDigitalRouter(AppAutoRouter router) : super(router);
 
-  Future<void> resetToLoginPage() async {
+  Future<void> replaceLoginPage() async {
     await pushAndClearStack(const LoginRoute());
   }
 
-  Future<void> resetToSplashPage() async {
+  Future<void> replaceSplashPage() async {
     await pushAndClearStack(const SplashRoute());
   }
 
-  Future<void> resetToRepairCompanyMainPage() async {
+  Future<void> replaceRepairCompanyMainPage() async {
     await pushAndClearStack(const RepairCompanyMainRoute());
   }
 
-  Future<void> resetToEmployeeMainPage() async {
+  Future<void> replaceEmployeeMainPage() async {
     await pushAndClearStack(const EmployeeMainRoute());
   }
 
-  Future<void> resetToLaundryMainPage() async {
-    await pushAndClearStack(const LaundryMainRoute());
+  Future<void> replaceLaundryMainPage() async {
+    await replace(const LaundryMainRoute());
   }
 
-  Future<void> resetToAdminMainPage() async {
-    await pushAndClearStack(const AdminMainRoute());
+  Future<void> replaceAdminMainPage() async {
+    await replace(const AdminMainRoute());
   }
 
   Future<void> pushRestorePasswordPage() async {

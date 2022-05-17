@@ -15,6 +15,6 @@ class LogoutService {
 
   Future<void> logout() async {
     await _preferencesService.logout();
-    _router.resetToSplashPage();
+    _router.replaceSplashPage();
   }
 }

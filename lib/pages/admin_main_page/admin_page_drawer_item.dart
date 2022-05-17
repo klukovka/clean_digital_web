@@ -52,6 +52,7 @@ enum AdminPageDrawerItem implements DrawerMenuItem {
     }
   }
 
+  @override
   PageRouteInfo get route {
     switch (this) {
       case AdminPageDrawerItem.laundries:
