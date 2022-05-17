@@ -20,5 +20,11 @@
     "employee": "Employee",
     "client": "Client",
     "repairCompany": "Repair company",
-    "youHaveNotAccess": "You have not got an access"
+    "youHaveNotAccess": "You have not got an access",
+    "laundries": "Laundries",
+    "repairCompanies": "Repair companies",
+    "clients": "Clients",
+    "backups": "Backups",
+    "statistic": "Statistic",
+    "settings": "Settings"
 }

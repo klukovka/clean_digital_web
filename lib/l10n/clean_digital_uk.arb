@@ -22,5 +22,11 @@
   "client": "Клієнт",
   "iot": "IOT",
   "repairCompany": "Ремонтна компанія",
-  "youHaveNotAccess": "Ви не маєте доступу"
+  "youHaveNotAccess": "Ви не маєте доступу",
+  "laundries": "Пральні",
+  "repairCompanies": "Ремонтні компанії",
+  "clients": "Клієнти",
+  "backups": "Бекапи",
+  "statistic": "Статистика",
+  "settings": "Налаштування"
 }

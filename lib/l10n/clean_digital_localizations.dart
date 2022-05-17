@@ -231,6 +231,42 @@ abstract class CleanDigitalLocalizations {
   /// In uk, this message translates to:
   /// **'Ви не маєте доступу'**
   String get youHaveNotAccess;
+
+  /// No description provided for @laundries.
+  ///
+  /// In uk, this message translates to:
+  /// **'Пральні'**
+  String get laundries;
+
+  /// No description provided for @repairCompanies.
+  ///
+  /// In uk, this message translates to:
+  /// **'Ремонтні компанії'**
+  String get repairCompanies;
+
+  /// No description provided for @clients.
+  ///
+  /// In uk, this message translates to:
+  /// **'Клієнти'**
+  String get clients;
+
+  /// No description provided for @backups.
+  ///
+  /// In uk, this message translates to:
+  /// **'Бекапи'**
+  String get backups;
+
+  /// No description provided for @statistic.
+  ///
+  /// In uk, this message translates to:
+  /// **'Статистика'**
+  String get statistic;
+
+  /// No description provided for @settings.
+  ///
+  /// In uk, this message translates to:
+  /// **'Налаштування'**
+  String get settings;
 }
 
 class _CleanDigitalLocalizationsDelegate extends LocalizationsDelegate<CleanDigitalLocalizations> {
