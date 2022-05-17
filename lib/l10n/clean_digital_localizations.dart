@@ -357,6 +357,18 @@ abstract class CleanDigitalLocalizations {
   /// In uk, this message translates to:
   /// **'Зберегти'**
   String get save;
+
+  /// No description provided for @registerAdmin.
+  ///
+  /// In uk, this message translates to:
+  /// **'Зареєструвати адміністратора'**
+  String get registerAdmin;
+
+  /// No description provided for @registerIOT.
+  ///
+  /// In uk, this message translates to:
+  /// **'Зареєструвати  IOT'**
+  String get registerIOT;
 }
 
 class _CleanDigitalLocalizationsDelegate extends LocalizationsDelegate<CleanDigitalLocalizations> {

@@ -4,6 +4,7 @@ import 'package:sizer/sizer.dart';
 import '../l10n/clean_digital_localizations.dart';
 import '../views/dialogs/base_dialog.dart';
 import '../views/dialogs/confirm_dialog.dart';
+import '../views/dialogs/email_password_dialog.dart';
 import '../views/dialogs/update_password_dialog.dart';
 
 class CleanDigitalDialogs {
@@ -56,6 +57,14 @@ class CleanDigitalDialogs {
       height: 40.h,
       body: UpdatePasswordDialog(onSave: onSave),
       title: CleanDigitalLocalizations.of(context).updatePassword,
+    );
+  }
+
+  void showRegisterAdminDialog(void Function(String, String) onSave) {
+    _showBlurDialog(
+      height: 40.h,
+      body: EmailPasswordDialog(onSave: onSave),
+      title: CleanDigitalLocalizations.of(context).registerAdmin,
     );
   }
 }

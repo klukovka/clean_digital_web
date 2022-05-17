@@ -43,5 +43,7 @@
   "updatePassword": "Оновити пароль",
   "newPassword": "Новий пароль",
   "doYouWantToDeleteAccount": "Ви дійсно хочете видалити акаунт?",
-  "save": "Зберегти"
+  "save": "Зберегти",
+  "registerAdmin": "Зареєструвати адміністратора",
+  "registerIOT": "Зареєструвати  IOT" 
 }

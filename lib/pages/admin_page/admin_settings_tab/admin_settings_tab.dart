@@ -200,7 +200,10 @@ class _AdminSettingsTabState extends State<AdminSettingsTab> {
         _buildTitle(localizations.aboutAdmin),
         PrimaryButton.custom(
           fullWidth: false,
-          // onPressed: HippodromeDialogs.of(context).showCreateAdminDialog,
+          onPressed: () =>
+              CleanDigitalDialogs.of(context).showRegisterAdminDialog(
+            cubit.registerAdmin,
+          ),
           titleWidget: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

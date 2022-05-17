@@ -41,5 +41,7 @@
     "updatePassword": "Update password",
     "newPassword": "New password",
     "doYouWantToDeleteAccount": "Do you want to delete an account?",
-    "save": "Save"
+    "save": "Save",
+    "registerAdmin": "Reqister admin",
+    "registerIOT": "Reqister  IOT" 
 }

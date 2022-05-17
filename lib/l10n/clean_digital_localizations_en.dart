@@ -138,4 +138,10 @@ class CleanDigitalLocalizationsEn extends CleanDigitalLocalizations {
 
   @override
   String get save => 'Save';
+
+  @override
+  String get registerAdmin => 'Reqister admin';
+
+  @override
+  String get registerIOT => 'Reqister  IOT';
 }

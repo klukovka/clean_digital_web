@@ -51,4 +51,13 @@ class AdminSettingsTabCubit extends BaseCubit<AdminSettingsTabState> {
       await init();
     });
   }
+
+  Future<void> registerAdmin(String email, String password) async {
+    emit(state.copyWith(status: AdminSettingsTabStatus.loading));
+
+    await makeErrorHandledCall(() async {
+      await _authService.createAdmin(email, password);
+      await init();
+    });
+  }
 }
