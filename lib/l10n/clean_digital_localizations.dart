@@ -351,6 +351,12 @@ abstract class CleanDigitalLocalizations {
   /// In uk, this message translates to:
   /// **'Ви дійсно хочете видалити акаунт?'**
   String get doYouWantToDeleteAccount;
+
+  /// No description provided for @save.
+  ///
+  /// In uk, this message translates to:
+  /// **'Зберегти'**
+  String get save;
 }
 
 class _CleanDigitalLocalizationsDelegate extends LocalizationsDelegate<CleanDigitalLocalizations> {

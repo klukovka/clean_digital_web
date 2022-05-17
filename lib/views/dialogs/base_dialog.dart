@@ -48,7 +48,10 @@ class BaseDialog extends StatelessWidget {
                   maxLines: 2,
                 ),
               ),
-              SliverFillRemaining(child: body),
+              SliverFillRemaining(
+                hasScrollBody: false,
+                child: body,
+              ),
             ],
           ),
         ),

@@ -44,7 +44,7 @@ abstract class CleanDigitalApiClient {
     @Body() LoginRequest body,
   );
 
-  @POST('/auth/update-password')
+  @PATCH('/auth/update-password')
   Future<void> updatePassword(
     @Body() UpdatePasswordRequest body,
   );

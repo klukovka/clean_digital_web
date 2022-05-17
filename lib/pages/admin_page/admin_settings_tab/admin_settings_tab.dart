@@ -13,7 +13,6 @@ import '../../../utils/extensions/locale_ext.dart';
 import '../../../utils/extensions/theme_mode_ext.dart';
 import '../../../views/buttons/primary_button.dart';
 import '../../../views/loading_indicator.dart';
-import '../../../views/rounded_container.dart';
 
 enum _AdminSettingsTabField { language, theme }
 
@@ -120,14 +119,11 @@ class _AdminSettingsTabState extends State<AdminSettingsTab> {
         ),
         const Spacer(),
         PrimaryButton(
-          title: CleanDigitalLocalizations.of(context).edit,
-          fullWidth: false,
-        ),
-        const SizedBox(width: 8),
-        PrimaryButton(
           title: CleanDigitalLocalizations.of(context).updatePassword,
           fullWidth: false,
           isOutlined: true,
+          onPressed: () => CleanDigitalDialogs.of(context)
+              .showUpdatePasswordDialog(cubit.updatePassword),
         ),
       ],
     );

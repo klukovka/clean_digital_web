@@ -40,5 +40,6 @@
     "edit": "Edit",
     "updatePassword": "Update password",
     "newPassword": "New password",
-    "doYouWantToDeleteAccount": "Do you want to delete an account?"
+    "doYouWantToDeleteAccount": "Do you want to delete an account?",
+    "save": "Save"
 }

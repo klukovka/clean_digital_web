@@ -100,7 +100,7 @@ class _CleanDigitalApiClient implements CleanDigitalApiClient {
     final _data = <String, dynamic>{};
     _data.addAll(body.toJson());
     await _dio.fetch<void>(_setStreamType<void>(
-        Options(method: 'POST', headers: _headers, extra: _extra)
+        Options(method: 'PATCH', headers: _headers, extra: _extra)
             .compose(_dio.options, '/auth/update-password',
                 queryParameters: queryParameters, data: _data)
             .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));

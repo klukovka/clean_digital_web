@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
+import '../l10n/clean_digital_localizations.dart';
 import '../views/dialogs/base_dialog.dart';
 import '../views/dialogs/confirm_dialog.dart';
+import '../views/dialogs/update_password_dialog.dart';
 
 class CleanDigitalDialogs {
   final BuildContext context;
@@ -46,6 +48,14 @@ class CleanDigitalDialogs {
       height: 20.h,
       title: title,
       body: ConfirmDialog(onPressed: onPressed),
+    );
+  }
+
+  void showUpdatePasswordDialog(void Function(String, String) onSave) {
+    _showBlurDialog(
+      height: 40.h,
+      body: UpdatePasswordDialog(onSave: onSave),
+      title: CleanDigitalLocalizations.of(context).updatePassword,
     );
   }
 }

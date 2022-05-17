@@ -135,4 +135,7 @@ class CleanDigitalLocalizationsEn extends CleanDigitalLocalizations {
 
   @override
   String get doYouWantToDeleteAccount => 'Do you want to delete an account?';
+
+  @override
+  String get save => 'Save';
 }

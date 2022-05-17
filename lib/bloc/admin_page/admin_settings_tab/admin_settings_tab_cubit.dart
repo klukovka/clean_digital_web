@@ -42,4 +42,13 @@ class AdminSettingsTabCubit extends BaseCubit<AdminSettingsTabState> {
       emit(state.copyWith(status: AdminSettingsTabStatus.deleted));
     });
   }
+
+  Future<void> updatePassword(String password, String newPassword) async {
+    emit(state.copyWith(status: AdminSettingsTabStatus.loading));
+
+    await makeErrorHandledCall(() async {
+      await _authService.updatePassword(newPassword, password);
+      await init();
+    });
+  }
 }
