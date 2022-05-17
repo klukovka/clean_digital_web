@@ -7,6 +7,7 @@ import '../../../bloc/admin_page/admin_settings_tab/admin_settings_tab_cubit.dar
 import '../../../bloc/app_control/app_control_cubit.dart';
 import '../../../di/injection_container.dart';
 import '../../../l10n/clean_digital_localizations.dart';
+import '../../../utils/clean_digital_dialogs.dart';
 import '../../../utils/clean_digital_toasts.dart';
 import '../../../utils/extensions/locale_ext.dart';
 import '../../../utils/extensions/theme_mode_ext.dart';
@@ -33,6 +34,7 @@ class AdminSettingsTab extends StatefulWidget implements AutoRouteWrapper {
 
 class _AdminSettingsTabState extends State<AdminSettingsTab> {
   AppControlCubit get appControlCubit => context.read();
+  AdminSettingsTabCubit get cubit => context.read();
 
   final _fbKey = GlobalKey<FormBuilderState>();
 
@@ -93,7 +95,11 @@ class _AdminSettingsTabState extends State<AdminSettingsTab> {
         PrimaryButton(
           title: CleanDigitalLocalizations.of(context).deleteAccount,
           isOutlined: true,
-          // onPressed: ,
+          onPressed: () => CleanDigitalDialogs.of(context).showConfirmNoDialog(
+            title:
+                CleanDigitalLocalizations.of(context).doYouWantToDeleteAccount,
+            onPressed: cubit.delete,
+          ),
         ),
         const SizedBox(height: 16),
       ],

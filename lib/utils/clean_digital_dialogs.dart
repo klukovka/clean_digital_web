@@ -30,7 +30,7 @@ class CleanDigitalDialogs {
   }) {
     _showBlurDialog(
       title: title,
-      height: 30.h,
+      height: 20.h,
       body: ConfirmDialog(
         onPressed: onPressed,
         type: ConfirmDialogType.preferYes,
@@ -43,7 +43,7 @@ class CleanDigitalDialogs {
     required VoidCallback onPressed,
   }) {
     _showBlurDialog(
-      height: 30.h,
+      height: 20.h,
       title: title,
       body: ConfirmDialog(onPressed: onPressed),
     );

@@ -39,5 +39,6 @@
     "no": "No",
     "edit": "Edit",
     "updatePassword": "Update password",
-    "newPassword": "New password"
+    "newPassword": "New password",
+    "doYouWantToDeleteAccount": "Do you want to delete an account?"
 }

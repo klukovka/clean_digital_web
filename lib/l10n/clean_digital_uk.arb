@@ -41,5 +41,6 @@
   "no": "Ні",
   "edit": "Редагувати",
   "updatePassword": "Оновити пароль",
-  "newPassword": "Новий пароль"
+  "newPassword": "Новий пароль",
+  "doYouWantToDeleteAccount": "Ви дійсно хочете видалити акаунт?"
 }

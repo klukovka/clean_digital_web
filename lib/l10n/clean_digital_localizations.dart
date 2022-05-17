@@ -345,6 +345,12 @@ abstract class CleanDigitalLocalizations {
   /// In uk, this message translates to:
   /// **'Новий пароль'**
   String get newPassword;
+
+  /// No description provided for @doYouWantToDeleteAccount.
+  ///
+  /// In uk, this message translates to:
+  /// **'Ви дійсно хочете видалити акаунт?'**
+  String get doYouWantToDeleteAccount;
 }
 
 class _CleanDigitalLocalizationsDelegate extends LocalizationsDelegate<CleanDigitalLocalizations> {

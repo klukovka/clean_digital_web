@@ -39,7 +39,7 @@ class BaseDialog extends StatelessWidget {
               SliverAppBar(
                 automaticallyImplyLeading: false,
                 pinned: true,
-                backgroundColor: Theme.of(context).primaryColorLight,
+                backgroundColor: Theme.of(context).primaryColorDark,
                 centerTitle: true,
                 title: Text(
                   title,
@@ -48,7 +48,7 @@ class BaseDialog extends StatelessWidget {
                   maxLines: 2,
                 ),
               ),
-              SliverToBoxAdapter(child: body),
+              SliverFillRemaining(child: body),
             ],
           ),
         ),
