@@ -14,26 +14,30 @@ class AdminMainPage extends StatefulWidget {
 class _AdminMainPageState extends State<AdminMainPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: AutoTabsRouter(
-        routes: AdminPageDrawerItem.values.map((item) => item.route).toList(),
-        builder: (context, child, animation) {
-          final tabsRouter = AutoTabsRouter.of(context);
-          return Row(
-            children: [
-              CleanDigitalDrawer(
-                items: AdminPageDrawerItem.values,
-                currentIndex: tabsRouter.activeIndex,
-                onMenuItemTap: tabsRouter.setActiveIndex,
+    return AutoTabsRouter(
+      routes: AdminPageDrawerItem.values.map((item) => item.route).toList(),
+      builder: (context, child, animation) {
+        final tabsRouter = AutoTabsRouter.of(context);
+        return Scaffold(
+          appBar: AppBar(
+            title: Text(
+              AdminPageDrawerItem.values[tabsRouter.activeIndex].title(
+                context,
               ),
-              FadeTransition(
-                opacity: animation,
-                child: child,
-              ),
-            ],
-          );
-        },
-      ),
+            ),
+            centerTitle: false,
+          ),
+          drawer: CleanDigitalDrawer(
+            items: AdminPageDrawerItem.values,
+            currentIndex: tabsRouter.activeIndex,
+            onMenuItemTap: tabsRouter.setActiveIndex,
+          ),
+          body: FadeTransition(
+            opacity: animation,
+            child: child,
+          ),
+        );
+      },
     );
   }
 }
