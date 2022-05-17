@@ -1,8 +1,10 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttericon/font_awesome5_icons.dart';
 import 'package:fluttericon/font_awesome_icons.dart';
 
 import '../../l10n/clean_digital_localizations.dart';
+import '../../router/app_auto_router.gr.dart';
 import '../../views/drawer/drawer_menu_item.dart';
 
 enum AdminPageDrawerItem implements DrawerMenuItem {
@@ -47,6 +49,23 @@ enum AdminPageDrawerItem implements DrawerMenuItem {
         return FontAwesome5.chart_pie;
       case AdminPageDrawerItem.settings:
         return FontAwesome.cog_alt;
+    }
+  }
+
+  PageRouteInfo get route {
+    switch (this) {
+      case AdminPageDrawerItem.laundries:
+        return const AdminLaundriesRoute();
+      case AdminPageDrawerItem.repairCompanies:
+        return const AdminRepairCompaniesRoute();
+      case AdminPageDrawerItem.clients:
+        return const AdminClientsRoute();
+      case AdminPageDrawerItem.backups:
+        return const AdminBackupsRoute();
+      case AdminPageDrawerItem.statistic:
+        return const AdminStatisticRoute();
+      case AdminPageDrawerItem.settings:
+        return const AdminSettingsRoute();
     }
   }
 }

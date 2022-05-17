@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
 import '../../views/drawer/clean_digital_drawer.dart';
@@ -14,10 +15,24 @@ class _AdminMainPageState extends State<AdminMainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: CleanDigitalDrawer(
-        items: AdminPageDrawerItem.values,
-        currentIndex: 0,
-        onMenuItemTap: (int value) {},
+      body: AutoTabsRouter(
+        routes: AdminPageDrawerItem.values.map((item) => item.route).toList(),
+        builder: (context, child, animation) {
+          final tabsRouter = AutoTabsRouter.of(context);
+          return Row(
+            children: [
+              CleanDigitalDrawer(
+                items: AdminPageDrawerItem.values,
+                currentIndex: tabsRouter.activeIndex,
+                onMenuItemTap: tabsRouter.setActiveIndex,
+              ),
+              FadeTransition(
+                opacity: animation,
+                child: child,
+              ),
+            ],
+          );
+        },
       ),
     );
   }

@@ -27,10 +27,12 @@ class CleanDigitalDrawer extends StatelessWidget {
             child: _buildLogo(context),
           ),
           ...items.map((item) {
+            final index = items.indexOf(item);
             return DrawerItem(
               iconData: item.iconData,
               title: item.title(context),
-              isActive: currentIndex == items.indexOf(item),
+              isActive: currentIndex == index,
+              onPressed: () => onMenuItemTap(index),
             );
           })
         ],
