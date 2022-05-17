@@ -123,4 +123,13 @@ class CleanDigitalLocalizationsUk extends CleanDigitalLocalizations {
 
   @override
   String get no => 'Ні';
+
+  @override
+  String get edit => 'Редагувати';
+
+  @override
+  String get updatePassword => 'Оновити пароль';
+
+  @override
+  String get newPassword => 'Новий пароль';
 }

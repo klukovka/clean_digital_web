@@ -327,6 +327,24 @@ abstract class CleanDigitalLocalizations {
   /// In uk, this message translates to:
   /// **'Ні'**
   String get no;
+
+  /// No description provided for @edit.
+  ///
+  /// In uk, this message translates to:
+  /// **'Редагувати'**
+  String get edit;
+
+  /// No description provided for @updatePassword.
+  ///
+  /// In uk, this message translates to:
+  /// **'Оновити пароль'**
+  String get updatePassword;
+
+  /// No description provided for @newPassword.
+  ///
+  /// In uk, this message translates to:
+  /// **'Новий пароль'**
+  String get newPassword;
 }
 
 class _CleanDigitalLocalizationsDelegate extends LocalizationsDelegate<CleanDigitalLocalizations> {

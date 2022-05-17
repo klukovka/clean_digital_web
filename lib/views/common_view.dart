@@ -39,11 +39,9 @@ class _CommonViewState extends State<CommonView> {
           ),
           body: FadeTransition(
             opacity: animation,
-            child: SingleChildScrollView(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
-                child: child,
-              ),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: child,
             ),
           ),
         );

@@ -31,7 +31,7 @@ class CleanDigitalRouter extends BaseRouter {
   }
 
   Future<void> replaceAdminMainPage() async {
-    await replace(const AdminMainRoute());
+    await replace(const AdminRoute());
   }
 
   Future<void> pushRestorePasswordPage() async {

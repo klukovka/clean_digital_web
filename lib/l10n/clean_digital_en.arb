@@ -36,5 +36,8 @@
     "aboutAdmin": "About admin",
     "deleteAccount": "Delete account",
     "yes": "Yes",
-    "no": "No"
+    "no": "No",
+    "edit": "Edit",
+    "updatePassword": "Update password",
+    "newPassword": "New password"
 }

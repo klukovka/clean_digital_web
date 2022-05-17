@@ -1,21 +1,34 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 
+import '../../../bloc/admin_page/admin_settings_tab/admin_settings_tab_cubit.dart';
 import '../../../bloc/app_control/app_control_cubit.dart';
 import '../../../di/injection_container.dart';
 import '../../../l10n/clean_digital_localizations.dart';
+import '../../../utils/clean_digital_toasts.dart';
 import '../../../utils/extensions/locale_ext.dart';
 import '../../../utils/extensions/theme_mode_ext.dart';
 import '../../../views/buttons/primary_button.dart';
+import '../../../views/loading_indicator.dart';
+import '../../../views/rounded_container.dart';
 
 enum _AdminSettingsTabField { language, theme }
 
-class AdminSettingsTab extends StatefulWidget {
+class AdminSettingsTab extends StatefulWidget implements AutoRouteWrapper {
   const AdminSettingsTab({Key? key}) : super(key: key);
 
   @override
   State<AdminSettingsTab> createState() => _AdminSettingsTabState();
+
+  @override
+  Widget wrappedRoute(BuildContext context) {
+    return BlocProvider(
+      create: (_) => locator<AdminSettingsTabCubit>()..init(),
+      child: this,
+    );
+  }
 }
 
 class _AdminSettingsTabState extends State<AdminSettingsTab> {
@@ -23,42 +36,93 @@ class _AdminSettingsTabState extends State<AdminSettingsTab> {
 
   final _fbKey = GlobalKey<FormBuilderState>();
 
-  FormBuilderState? get _fbState => _fbKey.currentState;
-  Map<String, dynamic> get _fbValue => _fbState?.value ?? {};
+  void _onStateChanged(
+    BuildContext context,
+    AdminSettingsTabState state,
+  ) {
+    switch (state.status) {
+      case AdminSettingsTabStatus.error:
+        CleanDigitalToasts.of(context).showError(
+          message: state.errorMessage,
+        );
+        break;
+      case AdminSettingsTabStatus.deleted:
+        appControlCubit.logout();
+        break;
+      default:
+        break;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
-    return _buildContent();
+    return BlocConsumer<AdminSettingsTabCubit, AdminSettingsTabState>(
+      listener: _onStateChanged,
+      builder: (context, state) {
+        if (state.status == AdminSettingsTabStatus.loading) {
+          return const Center(child: LoadingIndicator());
+        }
+        return CustomScrollView(
+          slivers: [
+            SliverFillRemaining(
+              child: _buildContent(state),
+            )
+          ],
+        );
+      },
+    );
   }
 
-  Widget _buildContent() {
+  Widget _buildContent(AdminSettingsTabState state) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const SizedBox(height: 16),
         _buildAdminTitle(),
         const SizedBox(height: 16),
-        // Row(
-        //   crossAxisAlignment: CrossAxisAlignment.start,
-        //   children: [
-        //     Expanded(
-        //       flex: 5,
-        //       child: _buildUserInfo(state),
-        //     ),
-        //     const SizedBox(width: 4),
-        //     Expanded(
-        //       child: _buildButtons(state),
-        //     )
-        //   ],
-        // ),
+        _adminInfo(state),
         const SizedBox(height: 16),
         _buildForm(),
         const SizedBox(height: 16),
+        const Spacer(),
         PrimaryButton(
           title: CleanDigitalLocalizations.of(context).logout,
           onPressed: appControlCubit.logout,
         ),
         const SizedBox(height: 16),
+        PrimaryButton(
+          title: CleanDigitalLocalizations.of(context).deleteAccount,
+          isOutlined: true,
+          // onPressed: ,
+        ),
+        const SizedBox(height: 16),
+      ],
+    );
+  }
+
+  Widget _adminInfo(AdminSettingsTabState state) {
+    return Row(
+      children: [
+        Text(
+          CleanDigitalLocalizations.of(context).email,
+          style: Theme.of(context).textTheme.headline6,
+        ),
+        const SizedBox(width: 8),
+        Text(
+          state.user.email,
+          style: Theme.of(context).textTheme.headline5,
+        ),
+        const Spacer(),
+        PrimaryButton(
+          title: CleanDigitalLocalizations.of(context).edit,
+          fullWidth: false,
+        ),
+        const SizedBox(width: 8),
+        PrimaryButton(
+          title: CleanDigitalLocalizations.of(context).updatePassword,
+          fullWidth: false,
+          isOutlined: true,
+        ),
       ],
     );
   }

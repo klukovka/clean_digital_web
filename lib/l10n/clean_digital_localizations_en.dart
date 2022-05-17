@@ -123,4 +123,13 @@ class CleanDigitalLocalizationsEn extends CleanDigitalLocalizations {
 
   @override
   String get no => 'No';
+
+  @override
+  String get edit => 'Edit';
+
+  @override
+  String get updatePassword => 'Update password';
+
+  @override
+  String get newPassword => 'New password';
 }
