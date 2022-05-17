@@ -24,7 +24,7 @@ extension ThemeModeExt on ThemeMode {
     }
   }
 
-  String getTitle(BuildContext context) {
+  String getLabel(BuildContext context) {
     final loc = CleanDigitalLocalizations.of(context);
     switch (this) {
       case ThemeMode.dark:

@@ -93,4 +93,28 @@ class CleanDigitalLocalizationsUk extends CleanDigitalLocalizations {
 
   @override
   String get settings => 'Налаштування';
+
+  @override
+  String get logout => 'Вийти';
+
+  @override
+  String get launguage => 'Мова';
+
+  @override
+  String get theme => 'Тема';
+
+  @override
+  String get addNew => 'Додати нового';
+
+  @override
+  String get english => 'Англійська';
+
+  @override
+  String get ukrainian => 'Українська';
+
+  @override
+  String get aboutAdmin => 'Про адміністратора';
+
+  @override
+  String get deleteAccount => 'Видалити акаунт';
 }

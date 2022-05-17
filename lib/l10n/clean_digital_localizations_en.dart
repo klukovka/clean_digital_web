@@ -93,4 +93,28 @@ class CleanDigitalLocalizationsEn extends CleanDigitalLocalizations {
 
   @override
   String get settings => 'Settings';
+
+  @override
+  String get logout => 'Logout';
+
+  @override
+  String get launguage => 'Language';
+
+  @override
+  String get theme => 'Theme';
+
+  @override
+  String get addNew => 'Add new';
+
+  @override
+  String get english => 'English';
+
+  @override
+  String get ukrainian => 'Ukrainian';
+
+  @override
+  String get aboutAdmin => 'About admin';
+
+  @override
+  String get deleteAccount => 'Delete account';
 }

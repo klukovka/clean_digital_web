@@ -267,6 +267,54 @@ abstract class CleanDigitalLocalizations {
   /// In uk, this message translates to:
   /// **'Налаштування'**
   String get settings;
+
+  /// No description provided for @logout.
+  ///
+  /// In uk, this message translates to:
+  /// **'Вийти'**
+  String get logout;
+
+  /// No description provided for @launguage.
+  ///
+  /// In uk, this message translates to:
+  /// **'Мова'**
+  String get launguage;
+
+  /// No description provided for @theme.
+  ///
+  /// In uk, this message translates to:
+  /// **'Тема'**
+  String get theme;
+
+  /// No description provided for @addNew.
+  ///
+  /// In uk, this message translates to:
+  /// **'Додати нового'**
+  String get addNew;
+
+  /// No description provided for @english.
+  ///
+  /// In uk, this message translates to:
+  /// **'Англійська'**
+  String get english;
+
+  /// No description provided for @ukrainian.
+  ///
+  /// In uk, this message translates to:
+  /// **'Українська'**
+  String get ukrainian;
+
+  /// No description provided for @aboutAdmin.
+  ///
+  /// In uk, this message translates to:
+  /// **'Про адміністратора'**
+  String get aboutAdmin;
+
+  /// No description provided for @deleteAccount.
+  ///
+  /// In uk, this message translates to:
+  /// **'Видалити акаунт'**
+  String get deleteAccount;
 }
 
 class _CleanDigitalLocalizationsDelegate extends LocalizationsDelegate<CleanDigitalLocalizations> {

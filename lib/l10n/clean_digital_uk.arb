@@ -28,5 +28,13 @@
   "clients": "Клієнти",
   "backups": "Бекапи",
   "statistic": "Статистика",
-  "settings": "Налаштування"
+  "settings": "Налаштування",
+  "logout": "Вийти",
+  "launguage": "Мова",
+  "theme": "Тема",
+  "addNew": "Додати нового",
+  "english": "Англійська",
+  "ukrainian": "Українська",
+  "aboutAdmin": "Про адміністратора",
+  "deleteAccount": "Видалити акаунт"
 }

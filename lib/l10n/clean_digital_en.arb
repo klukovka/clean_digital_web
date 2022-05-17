@@ -26,5 +26,13 @@
     "clients": "Clients",
     "backups": "Backups",
     "statistic": "Statistic",
-    "settings": "Settings"
+    "settings": "Settings",
+    "logout": "Logout",
+    "launguage": "Language",
+    "theme": "Theme",
+    "addNew": "Add new",
+    "english": "English",
+    "ukrainian": "Ukrainian",
+    "aboutAdmin": "About admin",
+    "deleteAccount": "Delete account"
 }
