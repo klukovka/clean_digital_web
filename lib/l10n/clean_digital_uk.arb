@@ -36,5 +36,7 @@
   "english": "Англійська",
   "ukrainian": "Українська",
   "aboutAdmin": "Про адміністратора",
-  "deleteAccount": "Видалити акаунт"
+  "deleteAccount": "Видалити акаунт",
+  "yes": "Так",
+  "no": "Ні"
 }

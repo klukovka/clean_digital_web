@@ -315,6 +315,18 @@ abstract class CleanDigitalLocalizations {
   /// In uk, this message translates to:
   /// **'Видалити акаунт'**
   String get deleteAccount;
+
+  /// No description provided for @yes.
+  ///
+  /// In uk, this message translates to:
+  /// **'Так'**
+  String get yes;
+
+  /// No description provided for @no.
+  ///
+  /// In uk, this message translates to:
+  /// **'Ні'**
+  String get no;
 }
 
 class _CleanDigitalLocalizationsDelegate extends LocalizationsDelegate<CleanDigitalLocalizations> {

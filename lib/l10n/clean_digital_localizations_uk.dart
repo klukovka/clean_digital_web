@@ -117,4 +117,10 @@ class CleanDigitalLocalizationsUk extends CleanDigitalLocalizations {
 
   @override
   String get deleteAccount => 'Видалити акаунт';
+
+  @override
+  String get yes => 'Так';
+
+  @override
+  String get no => 'Ні';
 }

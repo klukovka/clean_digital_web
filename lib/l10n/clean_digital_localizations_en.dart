@@ -117,4 +117,10 @@ class CleanDigitalLocalizationsEn extends CleanDigitalLocalizations {
 
   @override
   String get deleteAccount => 'Delete account';
+
+  @override
+  String get yes => 'Yes';
+
+  @override
+  String get no => 'No';
 }

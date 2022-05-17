@@ -3,10 +3,12 @@ import 'package:sizer/sizer.dart';
 
 class RoundedContainer extends StatefulWidget {
   final Widget child;
+  final double? height;
 
   const RoundedContainer({
     Key? key,
     required this.child,
+    this.height,
   }) : super(key: key);
 
   @override
@@ -30,6 +32,7 @@ class _RoundedContainerState extends State<RoundedContainer> {
       ),
       margin: const EdgeInsets.all(16),
       width: _width,
+      height: widget.height,
       decoration: BoxDecoration(
         color: Theme.of(context).primaryColorDark,
         borderRadius: BorderRadius.circular(8),

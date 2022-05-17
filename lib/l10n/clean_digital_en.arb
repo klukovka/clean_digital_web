@@ -34,5 +34,7 @@
     "english": "English",
     "ukrainian": "Ukrainian",
     "aboutAdmin": "About admin",
-    "deleteAccount": "Delete account"
+    "deleteAccount": "Delete account",
+    "yes": "Yes",
+    "no": "No"
 }
