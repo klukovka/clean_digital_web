@@ -387,6 +387,18 @@ abstract class CleanDigitalLocalizations {
   /// In uk, this message translates to:
   /// **'Повторити'**
   String get retry;
+
+  /// No description provided for @totalAmount.
+  ///
+  /// In uk, this message translates to:
+  /// **'Загальна кількість'**
+  String get totalAmount;
+
+  /// No description provided for @noMoreItems.
+  ///
+  /// In uk, this message translates to:
+  /// **'Більше елементів немає...'**
+  String get noMoreItems;
 }
 
 class _CleanDigitalLocalizationsDelegate extends LocalizationsDelegate<CleanDigitalLocalizations> {

@@ -29,12 +29,14 @@ class AdminLaundriesTabCubit extends BaseCubit<AdminLaundriesTabState> {
       status: AdminLaundriesTabStatus.loading,
     ));
     await makeErrorHandledCall(() async {
-      final trending = await _laundriesService.getAllLaundries(
+      final laundries = await _laundriesService.getAllLaundries(
         page: page,
       );
       emit(state.copyWith(
         status: AdminLaundriesTabStatus.success,
-        totalPages: trending.totalPages,
+        totalPages: laundries.totalPages,
+        laundries: laundries.laundries,
+        totalElements: laundries.totalElements,
       ));
     });
   }

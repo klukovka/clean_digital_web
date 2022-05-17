@@ -11,6 +11,7 @@ class AdminLaundriesTabState extends Equatable {
   final String errorMessage;
   final int page;
   final int totalPages;
+  final int totalElements;
   final List<Laundry> laundries;
 
   const AdminLaundriesTabState({
@@ -18,6 +19,7 @@ class AdminLaundriesTabState extends Equatable {
     this.errorMessage = '',
     this.page = 0,
     this.totalPages = 0,
+    this.totalElements = 0,
     this.laundries = const [],
   });
 
@@ -26,6 +28,7 @@ class AdminLaundriesTabState extends Equatable {
     String? errorMessage,
     int? page,
     int? totalPages,
+    int? totalElements,
     List<Laundry>? laundries,
   }) {
     return AdminLaundriesTabState(
@@ -33,6 +36,7 @@ class AdminLaundriesTabState extends Equatable {
       errorMessage: errorMessage ?? this.errorMessage,
       page: page ?? this.page,
       totalPages: totalPages ?? this.totalPages,
+      totalElements: totalElements ?? this.totalElements,
       laundries: laundries ?? this.laundries,
     );
   }
@@ -44,6 +48,7 @@ class AdminLaundriesTabState extends Equatable {
       errorMessage,
       page,
       totalPages,
+      totalElements,
       laundries,
     ];
   }

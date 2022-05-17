@@ -153,4 +153,10 @@ class CleanDigitalLocalizationsEn extends CleanDigitalLocalizations {
 
   @override
   String get retry => 'Retry';
+
+  @override
+  String get totalAmount => 'Total amount';
+
+  @override
+  String get noMoreItems => 'No more items...';
 }

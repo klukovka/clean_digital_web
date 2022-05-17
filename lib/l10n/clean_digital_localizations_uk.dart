@@ -153,4 +153,10 @@ class CleanDigitalLocalizationsUk extends CleanDigitalLocalizations {
 
   @override
   String get retry => 'Повторити';
+
+  @override
+  String get totalAmount => 'Загальна кількість';
+
+  @override
+  String get noMoreItems => 'Більше елементів немає...';
 }
