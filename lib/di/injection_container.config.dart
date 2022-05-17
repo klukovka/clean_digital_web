@@ -10,6 +10,8 @@ import 'package:injectable/injectable.dart' as _i2;
 
 import '../api/clean_digital_api_client.dart' as _i11;
 import '../api/interceptors/header_api_interceptor.dart' as _i9;
+import '../bloc/admin_page/admin_settings_tab/admin_settings_tab_cubit.dart'
+    as _i15;
 import '../bloc/app_control/app_control_cubit.dart' as _i8;
 import '../bloc/auth/login_page/login_page_cubit.dart' as _i13;
 import '../bloc/auth/restore_password_page/restore_password_page_cubit.dart'
@@ -20,7 +22,7 @@ import '../router/clean_digital_router.dart' as _i3;
 import '../services/auth_service.dart' as _i12;
 import '../services/logout_service.dart' as _i7;
 import '../services/preferences_service.dart' as _i5;
-import 'module/api_module.dart' as _i15; // ignore_for_file: unnecessary_lambdas
+import 'module/api_module.dart' as _i16; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars
 /// initializes the registration of provided dependencies inside of [GetIt]
@@ -52,7 +54,9 @@ Future<_i1.GetIt> $configureDependencies(_i1.GetIt get,
       get<_i12.AuthService>(), get<_i5.PreferencesService>()));
   gh.factory<_i14.RestorePasswordPageCubit>(
       () => _i14.RestorePasswordPageCubit(get<_i12.AuthService>()));
+  gh.factory<_i15.AdminSettingsTabCubit>(
+      () => _i15.AdminSettingsTabCubit(get<_i12.AuthService>()));
   return get;
 }
 
-class _$ApiModule extends _i15.ApiModule {}
+class _$ApiModule extends _i16.ApiModule {}

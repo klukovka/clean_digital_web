@@ -13,18 +13,15 @@
 import 'package:auto_route/auto_route.dart' as _i14;
 import 'package:flutter/material.dart' as _i15;
 
-import '../pages/admin_main_page/admin_backups_tab/admin_backups_tab.dart'
-    as _i9;
-import '../pages/admin_main_page/admin_clients_tab/admin_clients_tab.dart'
-    as _i10;
-import '../pages/admin_main_page/admin_laundries_tab/admin_laundries_tab.dart'
+import '../pages/admin_page/admin_backups_tab/admin_backups_tab.dart' as _i9;
+import '../pages/admin_page/admin_clients_tab/admin_clients_tab.dart' as _i10;
+import '../pages/admin_page/admin_laundries_tab/admin_laundries_tab.dart'
     as _i8;
-import '../pages/admin_main_page/admin_main_page.dart' as _i4;
-import '../pages/admin_main_page/admin_repair_companies_tab/admin_repair_companies_tab.dart'
+import '../pages/admin_page/admin_page.dart' as _i4;
+import '../pages/admin_page/admin_repair_companies_tab/admin_repair_companies_tab.dart'
     as _i13;
-import '../pages/admin_main_page/admin_settings_tab/admin_settings_tab.dart'
-    as _i12;
-import '../pages/admin_main_page/admin_statistic_tab/admin_statistic_tab.dart'
+import '../pages/admin_page/admin_settings_tab/admin_settings_tab.dart' as _i12;
+import '../pages/admin_page/admin_statistic_tab/admin_statistic_tab.dart'
     as _i11;
 import '../pages/auth/login_page.dart' as _i2;
 import '../pages/auth/restore_password_page.dart' as _i3;
@@ -67,10 +64,10 @@ class AppAutoRouter extends _i14.RootStackRouter {
           opaque: true,
           barrierDismissible: false);
     },
-    AdminMainRoute.name: (routeData) {
+    AdminRoute.name: (routeData) {
       return _i14.CustomPage<dynamic>(
           routeData: routeData,
-          child: const _i4.AdminMainPage(),
+          child: const _i4.AdminPage(),
           transitionsBuilder: _i14.TransitionsBuilders.fadeIn,
           durationInMilliseconds: 250,
           opaque: true,
@@ -166,24 +163,24 @@ class AppAutoRouter extends _i14.RootStackRouter {
         _i14.RouteConfig(SplashRoute.name, path: '/init'),
         _i14.RouteConfig(LoginRoute.name, path: '/auth/login'),
         _i14.RouteConfig(RestorePasswordRoute.name, path: '/auth/restore'),
-        _i14.RouteConfig(AdminMainRoute.name, path: '/admin/', children: [
+        _i14.RouteConfig(AdminRoute.name, path: '/admin/', children: [
           _i14.RouteConfig('#redirect',
               path: '',
-              parent: AdminMainRoute.name,
+              parent: AdminRoute.name,
               redirectTo: 'laundries/',
               fullMatch: true),
           _i14.RouteConfig(AdminLaundriesRoute.name,
-              path: 'laundries/', parent: AdminMainRoute.name),
+              path: 'laundries/', parent: AdminRoute.name),
           _i14.RouteConfig(AdminBackupsRoute.name,
-              path: 'backups/', parent: AdminMainRoute.name),
+              path: 'backups/', parent: AdminRoute.name),
           _i14.RouteConfig(AdminClientsRoute.name,
-              path: 'clients/', parent: AdminMainRoute.name),
+              path: 'clients/', parent: AdminRoute.name),
           _i14.RouteConfig(AdminStatisticRoute.name,
-              path: 'statistic/', parent: AdminMainRoute.name),
+              path: 'statistic/', parent: AdminRoute.name),
           _i14.RouteConfig(AdminSettingsRoute.name,
-              path: 'settings/', parent: AdminMainRoute.name),
+              path: 'settings/', parent: AdminRoute.name),
           _i14.RouteConfig(AdminRepairCompaniesRoute.name,
-              path: 'repairCompanies/', parent: AdminMainRoute.name)
+              path: 'repairCompanies/', parent: AdminRoute.name)
         ]),
         _i14.RouteConfig(LaundryMainRoute.name, path: '/laundry/'),
         _i14.RouteConfig(EmployeeMainRoute.name, path: '/employee/'),
@@ -217,12 +214,12 @@ class RestorePasswordRoute extends _i14.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i4.AdminMainPage]
-class AdminMainRoute extends _i14.PageRouteInfo<void> {
-  const AdminMainRoute({List<_i14.PageRouteInfo>? children})
-      : super(AdminMainRoute.name, path: '/admin/', initialChildren: children);
+/// [_i4.AdminPage]
+class AdminRoute extends _i14.PageRouteInfo<void> {
+  const AdminRoute({List<_i14.PageRouteInfo>? children})
+      : super(AdminRoute.name, path: '/admin/', initialChildren: children);
 
-  static const String name = 'AdminMainRoute';
+  static const String name = 'AdminRoute';
 }
 
 /// generated route for

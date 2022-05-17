@@ -1,12 +1,12 @@
 import 'package:auto_route/auto_route.dart';
 
-import '../pages/admin_main_page/admin_backups_tab/admin_backups_tab.dart';
-import '../pages/admin_main_page/admin_clients_tab/admin_clients_tab.dart';
-import '../pages/admin_main_page/admin_laundries_tab/admin_laundries_tab.dart';
-import '../pages/admin_main_page/admin_main_page.dart';
-import '../pages/admin_main_page/admin_repair_companies_tab/admin_repair_companies_tab.dart';
-import '../pages/admin_main_page/admin_settings_tab/admin_settings_tab.dart';
-import '../pages/admin_main_page/admin_statistic_tab/admin_statistic_tab.dart';
+import '../pages/admin_page/admin_backups_tab/admin_backups_tab.dart';
+import '../pages/admin_page/admin_clients_tab/admin_clients_tab.dart';
+import '../pages/admin_page/admin_laundries_tab/admin_laundries_tab.dart';
+import '../pages/admin_page/admin_page.dart';
+import '../pages/admin_page/admin_repair_companies_tab/admin_repair_companies_tab.dart';
+import '../pages/admin_page/admin_settings_tab/admin_settings_tab.dart';
+import '../pages/admin_page/admin_statistic_tab/admin_statistic_tab.dart';
 import '../pages/auth/login_page.dart';
 import '../pages/auth/restore_password_page.dart';
 import '../pages/employee_main_page/employee_main_page.dart';
@@ -41,7 +41,7 @@ const _fadeIn = TransitionsBuilders.fadeIn;
       durationInMilliseconds: _durationInMilliseconds,
     ),
     CustomRoute(
-      page: AdminMainPage,
+      page: AdminPage,
       path: '/admin/',
       transitionsBuilder: _fadeIn,
       durationInMilliseconds: _durationInMilliseconds,
