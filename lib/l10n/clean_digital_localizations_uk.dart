@@ -144,4 +144,13 @@ class CleanDigitalLocalizationsUk extends CleanDigitalLocalizations {
 
   @override
   String get registerIOT => 'Зареєструвати  IOT';
+
+  @override
+  String get pageLoadError => 'Відбувалася помилка при завантаженні. Повторити?';
+
+  @override
+  String get error => 'Помилка';
+
+  @override
+  String get retry => 'Повторити';
 }

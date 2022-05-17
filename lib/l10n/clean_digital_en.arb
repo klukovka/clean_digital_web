@@ -43,5 +43,8 @@
     "doYouWantToDeleteAccount": "Do you want to delete an account?",
     "save": "Save",
     "registerAdmin": "Reqister admin",
-    "registerIOT": "Reqister  IOT" 
+    "registerIOT": "Reqister  IOT",
+    "pageLoadError": "A page load error was occurred. Retry?",
+    "error": "Error",
+    "retry": "Retry"
 }

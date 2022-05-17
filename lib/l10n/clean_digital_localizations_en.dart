@@ -144,4 +144,13 @@ class CleanDigitalLocalizationsEn extends CleanDigitalLocalizations {
 
   @override
   String get registerIOT => 'Reqister  IOT';
+
+  @override
+  String get pageLoadError => 'A page load error was occurred. Retry?';
+
+  @override
+  String get error => 'Error';
+
+  @override
+  String get retry => 'Retry';
 }

@@ -32,6 +32,7 @@ class BaseDialog extends StatelessWidget {
     return BackdropFilter(
       filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
       child: Dialog(
+        backgroundColor: Colors.transparent,
         child: RoundedContainer(
           height: height,
           child: CustomScrollView(
@@ -43,7 +44,9 @@ class BaseDialog extends StatelessWidget {
                 centerTitle: true,
                 title: Text(
                   title,
-                  style: Theme.of(context).textTheme.headline5,
+                  style: Theme.of(context).textTheme.headline5?.copyWith(
+                        color: Theme.of(context).colorScheme.onPrimary,
+                      ),
                   textAlign: TextAlign.center,
                   maxLines: 2,
                 ),

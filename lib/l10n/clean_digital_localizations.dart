@@ -369,6 +369,24 @@ abstract class CleanDigitalLocalizations {
   /// In uk, this message translates to:
   /// **'Зареєструвати  IOT'**
   String get registerIOT;
+
+  /// No description provided for @pageLoadError.
+  ///
+  /// In uk, this message translates to:
+  /// **'Відбувалася помилка при завантаженні. Повторити?'**
+  String get pageLoadError;
+
+  /// No description provided for @error.
+  ///
+  /// In uk, this message translates to:
+  /// **'Помилка'**
+  String get error;
+
+  /// No description provided for @retry.
+  ///
+  /// In uk, this message translates to:
+  /// **'Повторити'**
+  String get retry;
 }
 
 class _CleanDigitalLocalizationsDelegate extends LocalizationsDelegate<CleanDigitalLocalizations> {
