@@ -9,6 +9,8 @@ import '../../../l10n/clean_digital_localizations.dart';
 import '../../../models/laundry.dart';
 import '../../../utils/pagination/pagination_utils.dart';
 import '../../../views/clean_digital_paged_grid_view.dart';
+import '../../../views/laundry_tile.dart';
+import '../../../views/title_with_button.dart';
 
 class AdminLaundriesTab extends StatefulWidget implements AutoRouteWrapper {
   const AdminLaundriesTab({Key? key}) : super(key: key);
@@ -75,10 +77,10 @@ class _AdminLaundriesTabState extends State<AdminLaundriesTab> {
               children: [
                 const SizedBox(height: 32),
                 if (state.laundries.isNotEmpty)
-                  Text(
-                    '${CleanDigitalLocalizations.of(context).totalAmount}: '
-                    '${state.totalElements}',
-                    style: Theme.of(context).textTheme.headline4,
+                  TitleWithButton(
+                    title:
+                        '${CleanDigitalLocalizations.of(context).totalAmount}: '
+                        '${state.totalElements}',
                   ),
                 const SizedBox(height: 32),
                 Expanded(
@@ -105,7 +107,7 @@ class _AdminLaundriesTabState extends State<AdminLaundriesTab> {
         fetchPage: _fetchPage,
         shrinkWrap: true,
         itemBuilder: (laundry) {
-          return Text(laundry.name);
+          return LaundryTile(laundry: laundry);
         },
         builder: (pagedView, controller) {
           return BlocListener<AdminLaundriesTabCubit, AdminLaundriesTabState>(

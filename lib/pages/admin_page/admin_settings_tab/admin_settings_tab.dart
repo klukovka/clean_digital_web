@@ -13,6 +13,7 @@ import '../../../utils/extensions/locale_ext.dart';
 import '../../../utils/extensions/theme_mode_ext.dart';
 import '../../../views/buttons/primary_button.dart';
 import '../../../views/loading_indicator.dart';
+import '../../../views/title_with_button.dart';
 
 enum _AdminSettingsTabField { language, theme }
 
@@ -194,26 +195,11 @@ class _AdminSettingsTabState extends State<AdminSettingsTab> {
   Widget _buildAdminTitle() {
     final localizations = CleanDigitalLocalizations.of(context);
 
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        _buildTitle(localizations.aboutAdmin),
-        PrimaryButton.custom(
-          fullWidth: false,
-          onPressed: () =>
-              CleanDigitalDialogs.of(context).showRegisterAdminDialog(
-            cubit.registerAdmin,
-          ),
-          titleWidget: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Icon(Icons.add),
-              const SizedBox(width: 8),
-              Text(localizations.addNew),
-            ],
-          ),
-        )
-      ],
+    return TitleWithButton(
+      title: localizations.aboutAdmin,
+      onPressed: () => CleanDigitalDialogs.of(context).showRegisterAdminDialog(
+        cubit.registerAdmin,
+      ),
     );
   }
 

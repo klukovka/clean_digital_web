@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
+import 'package:sizer/sizer.dart';
 
 import '../utils/pagination/clean_digital_paged_builder_delegate.dart';
 
@@ -41,6 +42,13 @@ class _CleanDigitalPagedGridViewState<T>
       PagingController<int, T>(firstPageKey: 0);
   bool onFirstPage = true;
 
+  int get _crossAxisCount {
+    final width = 100.w;
+    if (width < 800) return 1;
+    if (width < 1400) return 2;
+    return 3;
+  }
+
   @override
   void initState() {
     super.initState();
@@ -69,8 +77,11 @@ class _CleanDigitalPagedGridViewState<T>
   Widget _buildBody() {
     return PagedGridView<int, T>(
       shrinkWrap: widget.shrinkWrap,
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: _crossAxisCount,
+        mainAxisSpacing: 16,
+        crossAxisSpacing: 16,
+        childAspectRatio: 2,
       ),
       padding: EdgeInsets.zero,
       scrollController: widget.scrollController,
