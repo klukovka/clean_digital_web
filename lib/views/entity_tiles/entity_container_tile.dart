@@ -41,6 +41,7 @@ class EntityContainerTile extends StatelessWidget {
               Expanded(child: child),
             ],
           ),
+          const SizedBox(height: 16),
           _buildButtons(context),
         ],
       ),

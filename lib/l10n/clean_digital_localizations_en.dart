@@ -206,5 +206,5 @@ class CleanDigitalLocalizationsEn extends CleanDigitalLocalizations {
   String get doYouWantToDeleteLaundry => 'Do you want to delete a laundry?';
 
   @override
-  String get doYouWantToDeleteRepairCompany => 'Do you want to delete a laundry?';
+  String get doYouWantToDeleteRepairCompany => 'Do you want to delete a repair company?';
 }
