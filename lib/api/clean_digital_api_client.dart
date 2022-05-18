@@ -80,6 +80,8 @@ abstract class CleanDigitalApiClient {
   @GET('/dataFlow/backup')
   Future<void> backup();
 
-  @POST('/dataFlow/restore')
-  Future<void> restore();
+  @POST('/dataFlow/restore/{backupId}')
+  Future<void> restore(
+    @Path() String backupId,
+  );
 }

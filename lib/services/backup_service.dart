@@ -21,9 +21,9 @@ class BackupService extends BaseService {
     });
   }
 
-  Future<void> restore() async {
+  Future<void> restore(String backupId) async {
     return await makeErrorHandledCall(() async {
-      return await _apiClient.restore();
+      return await _apiClient.restore(backupId);
     });
   }
 }

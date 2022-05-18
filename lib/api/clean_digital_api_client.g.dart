@@ -183,14 +183,14 @@ class _CleanDigitalApiClient implements CleanDigitalApiClient {
   }
 
   @override
-  Future<void> restore() async {
+  Future<void> restore(backupId) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     await _dio.fetch<void>(_setStreamType<void>(
         Options(method: 'POST', headers: _headers, extra: _extra)
-            .compose(_dio.options, '/dataFlow/restore',
+            .compose(_dio.options, '/dataFlow/restore/$backupId',
                 queryParameters: queryParameters, data: _data)
             .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     return null;
