@@ -1,10 +1,10 @@
 import 'package:equatable/equatable.dart';
 import 'package:injectable/injectable.dart';
 
-import '../../../models/client.dart';
-import '../../../services/auth_service.dart';
-import '../../../services/clients_service.dart';
-import '../../base_cubit.dart';
+import '../../../../models/client.dart';
+import '../../../../services/auth_service.dart';
+import '../../../../services/clients_service.dart';
+import '../../../base_cubit.dart';
 
 part 'admin_clients_tab_state.dart';
 

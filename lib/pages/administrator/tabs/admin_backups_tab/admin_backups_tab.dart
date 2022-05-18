@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fluttericon/font_awesome5_icons.dart';
 
-import '../../../../bloc/administrator/admin_backups_tab/admin_backups_tab_cubit.dart';
+import '../../../../bloc/administrator/tabs/admin_backups_tab/admin_backups_tab_cubit.dart';
 import '../../../../di/injection_container.dart';
 import '../../../../l10n/clean_digital_localizations.dart';
 import '../../../../utils/clean_digital_toasts.dart';

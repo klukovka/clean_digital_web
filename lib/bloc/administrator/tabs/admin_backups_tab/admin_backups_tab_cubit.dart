@@ -1,8 +1,8 @@
 import 'package:equatable/equatable.dart';
 import 'package:injectable/injectable.dart';
 
-import '../../../services/backup_service.dart';
-import '../../base_cubit.dart';
+import '../../../../services/backup_service.dart';
+import '../../../base_cubit.dart';
 
 part 'admin_backups_tab_state.dart';
 

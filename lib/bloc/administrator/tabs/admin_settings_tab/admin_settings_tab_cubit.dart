@@ -1,9 +1,9 @@
 import 'package:equatable/equatable.dart';
 import 'package:injectable/injectable.dart';
 
-import '../../../models/user.dart';
-import '../../../services/auth_service.dart';
-import '../../base_cubit.dart';
+import '../../../../models/user.dart';
+import '../../../../services/auth_service.dart';
+import '../../../base_cubit.dart';
 
 part 'admin_settings_tab_state.dart';
 

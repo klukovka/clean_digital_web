@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 
-import '../../../../bloc/administrator/admin_clients_tab/admin_clients_tab_cubit.dart';
+import '../../../../bloc/administrator/tabs/admin_clients_tab/admin_clients_tab_cubit.dart';
 import '../../../../di/injection_container.dart';
 import '../../../../l10n/clean_digital_localizations.dart';
 import '../../../../models/client.dart';

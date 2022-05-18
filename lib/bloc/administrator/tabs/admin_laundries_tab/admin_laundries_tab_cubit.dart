@@ -1,11 +1,11 @@
 import 'package:equatable/equatable.dart';
 import 'package:injectable/injectable.dart';
 
-import '../../../api/models/create_update_requests/create_update_laundry.dart';
-import '../../../models/laundry.dart';
-import '../../../services/auth_service.dart';
-import '../../../services/laundries_service.dart';
-import '../../base_cubit.dart';
+import '../../../../api/models/create_update_requests/create_update_laundry.dart';
+import '../../../../models/laundry.dart';
+import '../../../../services/auth_service.dart';
+import '../../../../services/laundries_service.dart';
+import '../../../base_cubit.dart';
 
 part 'admin_laundries_tab_state.dart';
 

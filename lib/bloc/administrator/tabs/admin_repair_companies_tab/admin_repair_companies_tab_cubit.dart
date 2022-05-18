@@ -1,11 +1,11 @@
 import 'package:equatable/equatable.dart';
 import 'package:injectable/injectable.dart';
 
-import '../../../api/models/create_update_requests/create_update_repair_company.dart';
-import '../../../models/repair_company.dart';
-import '../../../services/auth_service.dart';
-import '../../../services/repair_companies_service.dart';
-import '../../base_cubit.dart';
+import '../../../../../api/models/create_update_requests/create_update_repair_company.dart';
+import '../../../../models/repair_company.dart';
+import '../../../../services/auth_service.dart';
+import '../../../../services/repair_companies_service.dart';
+import '../../../base_cubit.dart';
 
 part 'admin_repair_companies_tab_state.dart';
 
