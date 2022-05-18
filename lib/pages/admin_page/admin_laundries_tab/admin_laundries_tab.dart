@@ -7,6 +7,7 @@ import '../../../bloc/admin_page/admin_laundres_tab/admin_laundres_tab_cubit.dar
 import '../../../di/injection_container.dart';
 import '../../../l10n/clean_digital_localizations.dart';
 import '../../../models/laundry.dart';
+import '../../../router/clean_digital_router.dart';
 import '../../../utils/clean_digital_dialogs.dart';
 import '../../../utils/pagination/pagination_utils.dart';
 import '../../../views/clean_digital_paged_grid_view.dart';
@@ -28,10 +29,33 @@ class AdminLaundriesTab extends StatefulWidget implements AutoRouteWrapper {
   }
 }
 
-class _AdminLaundriesTabState extends State<AdminLaundriesTab> {
+class _AdminLaundriesTabState extends State<AdminLaundriesTab>
+    with AutoRouteAware {
+  AutoRouteObserver? _observer;
   late UniqueKey _paginatedListKey;
 
   AdminLaundriesTabCubit get cubit => context.read();
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    _observer = router.getObserver<AutoRouteObserver>(context);
+    if (_observer != null) {
+      _observer?.subscribe(this, context.routeData);
+    }
+  }
+
+  @override
+  void dispose() {
+    _observer?.unsubscribe(this);
+    super.dispose();
+  }
+
+  @override
+  void didChangeTabRoute(TabPageRoute tabPageRoute) {
+    cubit.getLaundries();
+    _paginatedListKey = UniqueKey();
+  }
 
   @override
   void initState() {

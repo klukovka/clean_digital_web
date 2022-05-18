@@ -81,7 +81,7 @@ class _CleanDigitalPagedGridViewState<T>
         crossAxisCount: _crossAxisCount,
         mainAxisSpacing: 16,
         crossAxisSpacing: 16,
-        childAspectRatio: 2,
+        childAspectRatio: 1.5,
       ),
       padding: EdgeInsets.zero,
       scrollController: widget.scrollController,

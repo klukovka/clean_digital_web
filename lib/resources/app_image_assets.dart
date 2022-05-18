@@ -3,4 +3,5 @@ abstract class AppImageAssets {
   static const washMachineImage = 'assets/images/wash_machine.png';
   static const employeeImage = 'assets/images/employee.png';
   static const clientImage = 'assets/images/client.png';
+  static const wranchImage = 'assets/images/wranch.png';
 }
