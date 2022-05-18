@@ -13,17 +13,18 @@
 import 'package:auto_route/auto_route.dart' as _i14;
 import 'package:flutter/material.dart' as _i15;
 
-import '../pages/administrator/admin_backups_tab/admin_backups_tab.dart' as _i9;
-import '../pages/administrator/admin_clients_tab/admin_clients_tab.dart'
+import '../pages/administrator/admin_page.dart' as _i4;
+import '../pages/administrator/tabs/admin_backups_tab/admin_backups_tab.dart'
+    as _i9;
+import '../pages/administrator/tabs/admin_clients_tab/admin_clients_tab.dart'
     as _i10;
-import '../pages/administrator/admin_laundries_tab/admin_laundries_tab.dart'
+import '../pages/administrator/tabs/admin_laundries_tab/admin_laundries_tab.dart'
     as _i8;
-import '../pages/administrator/administrator.dart' as _i4;
-import '../pages/administrator/admin_repair_companies_tab/admin_repair_companies_tab.dart'
+import '../pages/administrator/tabs/admin_repair_companies_tab/admin_repair_companies_tab.dart'
     as _i13;
-import '../pages/administrator/admin_settings_tab/admin_settings_tab.dart'
+import '../pages/administrator/tabs/admin_settings_tab/admin_settings_tab.dart'
     as _i12;
-import '../pages/administrator/admin_statistic_tab/admin_statistic_tab.dart'
+import '../pages/administrator/tabs/admin_statistic_tab/admin_statistic_tab.dart'
     as _i11;
 import '../pages/auth/login_page.dart' as _i2;
 import '../pages/auth/restore_password_page.dart' as _i3;

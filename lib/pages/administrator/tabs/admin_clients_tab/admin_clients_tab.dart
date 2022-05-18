@@ -3,38 +3,35 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 
-import '../../../bloc/administrator/admin_laundries_tab/admin_laundries_tab_cubit.dart';
-import '../../../di/injection_container.dart';
-import '../../../l10n/clean_digital_localizations.dart';
-import '../../../models/laundry.dart';
-import '../../../router/clean_digital_router.dart';
-import '../../../utils/clean_digital_dialogs.dart';
-import '../../../utils/pagination/pagination_utils.dart';
-import '../../../views/clean_digital_paged_grid_view.dart';
-import '../../../views/entity_tiles/laundry_tile.dart';
-import '../../../views/title_with_button.dart';
+import '../../../../bloc/administrator/admin_clients_tab/admin_clients_tab_cubit.dart';
+import '../../../../di/injection_container.dart';
+import '../../../../l10n/clean_digital_localizations.dart';
+import '../../../../models/client.dart';
+import '../../../../router/clean_digital_router.dart';
+import '../../../../utils/pagination/pagination_utils.dart';
+import '../../../../views/clean_digital_paged_grid_view.dart';
+import '../../../../views/entity_tiles/client_tile.dart';
 
-class AdminLaundriesTab extends StatefulWidget implements AutoRouteWrapper {
-  const AdminLaundriesTab({Key? key}) : super(key: key);
+class AdminClientsTab extends StatefulWidget implements AutoRouteWrapper {
+  const AdminClientsTab({Key? key}) : super(key: key);
 
   @override
-  State<AdminLaundriesTab> createState() => _AdminLaundriesTabState();
+  State<AdminClientsTab> createState() => _AdminClientsTabState();
 
   @override
   Widget wrappedRoute(BuildContext context) {
     return BlocProvider(
-      create: (_) => locator<AdminLaundriesTabCubit>(),
+      create: (_) => locator<AdminClientsTabCubit>(),
       child: this,
     );
   }
 }
 
-class _AdminLaundriesTabState extends State<AdminLaundriesTab>
-    with AutoRouteAware {
+class _AdminClientsTabState extends State<AdminClientsTab> with AutoRouteAware {
   AutoRouteObserver? _observer;
   late UniqueKey _paginatedListKey;
 
-  AdminLaundriesTabCubit get cubit => context.read();
+  AdminClientsTabCubit get cubit => context.read();
 
   @override
   void didChangeDependencies() {
@@ -64,28 +61,28 @@ class _AdminLaundriesTabState extends State<AdminLaundriesTab>
   }
 
   Future<void> _fetchPage(int pageKey) async {
-    await context.read<AdminLaundriesTabCubit>().getLaundries(page: pageKey);
+    await context.read<AdminClientsTabCubit>().getClients(page: pageKey);
   }
 
   void _onStateChanged(
-    AdminLaundriesTabState state,
-    PagingController<int, Laundry> controller,
+    AdminClientsTabState state,
+    PagingController<int, Client> controller,
   ) {
     switch (state.status) {
-      case AdminLaundriesTabStatus.success:
+      case AdminClientsTabStatus.success:
         controller.error = null;
-        proccessNextPage<Laundry>(
+        proccessNextPage<Client>(
           controller: controller,
           page: state.page,
           totalPages: state.totalPages,
-          items: state.laundries,
+          items: state.clients,
         );
         break;
-      case AdminLaundriesTabStatus.error:
+      case AdminClientsTabStatus.error:
         controller.error = state.errorMessage;
 
         break;
-      case AdminLaundriesTabStatus.loading:
+      case AdminClientsTabStatus.loading:
         controller.error = null;
         break;
     }
@@ -95,19 +92,20 @@ class _AdminLaundriesTabState extends State<AdminLaundriesTab>
   Widget build(BuildContext context) {
     return Container(
       color: Theme.of(context).scaffoldBackgroundColor,
-      child: BlocBuilder<AdminLaundriesTabCubit, AdminLaundriesTabState>(
+      child: BlocBuilder<AdminClientsTabCubit, AdminClientsTabState>(
         builder: (context, state) {
           return Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(height: 32),
-              if (state.laundries.isNotEmpty) _buildTitle(state),
+              if (state.clients.isNotEmpty) _buildTitle(state),
               const SizedBox(height: 32),
               Expanded(
                 child: Align(
-                  alignment: state.laundries.isEmpty
+                  alignment: state.clients.isEmpty
                       ? Alignment.center
                       : Alignment.topCenter,
-                  child: _buildLaundriesGrid(),
+                  child: _buildClientsGrid(),
                 ),
               ),
             ],
@@ -117,39 +115,34 @@ class _AdminLaundriesTabState extends State<AdminLaundriesTab>
     );
   }
 
-  Widget _buildTitle(AdminLaundriesTabState state) {
-    return TitleWithButton(
-      title: '${CleanDigitalLocalizations.of(context).totalAmount}: '
-          '${state.totalElements}',
-      onPressed: () {
-        CleanDigitalDialogs.of(context).showRegisterLaundryDialog(
-          (request) async {
-            await cubit.createLaundry(request);
-            _paginatedListKey = UniqueKey();
-          },
-        );
-      },
+  Widget _buildTitle(AdminClientsTabState state) {
+    return Text(
+      '${CleanDigitalLocalizations.of(context).totalAmount}: '
+      '${state.totalElements}',
+      style: Theme.of(context).textTheme.headline5?.copyWith(
+            color: Theme.of(context).colorScheme.onBackground,
+          ),
     );
   }
 
-  Widget _buildLaundriesGrid() {
+  Widget _buildClientsGrid() {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: CleanDigitalPagedGridView<Laundry>(
+      child: CleanDigitalPagedGridView<Client>(
         key: _paginatedListKey,
         fetchPage: _fetchPage,
         shrinkWrap: true,
-        itemBuilder: (laundry) {
-          return LaundryTile(
-            laundry: laundry,
+        itemBuilder: (client) {
+          return ClientTile(
+            client: client,
             onDeletePressed: () async {
-              await cubit.deteleLaundry(laundry.user.userId);
+              await cubit.deteleClient(client.user.userId);
               _paginatedListKey = UniqueKey();
             },
           );
         },
         builder: (pagedView, controller) {
-          return BlocListener<AdminLaundriesTabCubit, AdminLaundriesTabState>(
+          return BlocListener<AdminClientsTabCubit, AdminClientsTabState>(
             listener: (context, state) {
               _onStateChanged(state, controller);
             },

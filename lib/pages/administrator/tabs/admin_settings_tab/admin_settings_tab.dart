@@ -3,17 +3,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 
-import '../../../bloc/administrator/admin_settings_tab/admin_settings_tab_cubit.dart';
-import '../../../bloc/app_control/app_control_cubit.dart';
-import '../../../di/injection_container.dart';
-import '../../../l10n/clean_digital_localizations.dart';
-import '../../../utils/clean_digital_dialogs.dart';
-import '../../../utils/clean_digital_toasts.dart';
-import '../../../utils/extensions/locale_ext.dart';
-import '../../../utils/extensions/theme_mode_ext.dart';
-import '../../../views/buttons/primary_button.dart';
-import '../../../views/loading_indicator.dart';
-import '../../../views/title_with_button.dart';
+import '../../../../bloc/administrator/admin_settings_tab/admin_settings_tab_cubit.dart';
+import '../../../../bloc/app_control/app_control_cubit.dart';
+import '../../../../di/injection_container.dart';
+import '../../../../l10n/clean_digital_localizations.dart';
+import '../../../../utils/clean_digital_dialogs.dart';
+import '../../../../utils/clean_digital_toasts.dart';
+import '../../../../utils/extensions/locale_ext.dart';
+import '../../../../utils/extensions/theme_mode_ext.dart';
+import '../../../../views/buttons/primary_button.dart';
+import '../../../../views/loading_indicator.dart';
+import '../../../../views/title_with_button.dart';
 
 enum _AdminSettingsTabField { language, theme }
 

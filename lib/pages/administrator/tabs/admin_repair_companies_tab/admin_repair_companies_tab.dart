@@ -3,16 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 
-import '../../../bloc/administrator/admin_repair_companies_tab/admin_repair_companies_tab_cubit.dart';
-import '../../../di/injection_container.dart';
-import '../../../l10n/clean_digital_localizations.dart';
-import '../../../models/repair_company.dart';
-import '../../../router/clean_digital_router.dart';
-import '../../../utils/clean_digital_dialogs.dart';
-import '../../../utils/pagination/pagination_utils.dart';
-import '../../../views/clean_digital_paged_grid_view.dart';
-import '../../../views/entity_tiles/repair_company_tile.dart';
-import '../../../views/title_with_button.dart';
+import '../../../../bloc/administrator/admin_repair_companies_tab/admin_repair_companies_tab_cubit.dart';
+import '../../../../di/injection_container.dart';
+import '../../../../l10n/clean_digital_localizations.dart';
+import '../../../../models/repair_company.dart';
+import '../../../../router/clean_digital_router.dart';
+import '../../../../utils/clean_digital_dialogs.dart';
+import '../../../../utils/pagination/pagination_utils.dart';
+import '../../../../views/clean_digital_paged_grid_view.dart';
+import '../../../../views/entity_tiles/repair_company_tile.dart';
+import '../../../../views/title_with_button.dart';
 
 class AdminRepairCompaniesTab extends StatefulWidget
     implements AutoRouteWrapper {
