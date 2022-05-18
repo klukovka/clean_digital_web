@@ -69,4 +69,17 @@ abstract class CleanDigitalApiClient {
     @Query('page') int page,
     @Query('size') int size,
   );
+
+  ///
+  /// Backup
+  ///
+
+  @GET('/dataFlow/all')
+  Future<List<String>> getAllBackups();
+
+  @GET('/dataFlow/backup')
+  Future<void> backup();
+
+  @POST('/dataFlow/restore')
+  Future<void> restore();
 }
