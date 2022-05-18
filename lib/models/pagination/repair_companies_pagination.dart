@@ -29,6 +29,5 @@ class RepairCompaniesPagination extends Pagination {
     return _$RepairCompaniesPaginationFromJson(json);
   }
 
-  @override
   Map<String, dynamic> toJson() => _$RepairCompaniesPaginationToJson(this);
 }

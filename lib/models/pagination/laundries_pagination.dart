@@ -29,6 +29,5 @@ class LaundriesPagination extends Pagination {
     return _$LaundriesPaginationFromJson(json);
   }
 
-  @override
   Map<String, dynamic> toJson() => _$LaundriesPaginationToJson(this);
 }

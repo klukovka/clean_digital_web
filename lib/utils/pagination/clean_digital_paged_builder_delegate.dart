@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 
 import '../../l10n/clean_digital_localizations.dart';
-import '../../views/buttons/primary_button.dart';
 import '../../views/error_view.dart';
 import '../../views/loading_indicator.dart';
 

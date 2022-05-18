@@ -2,6 +2,7 @@ import 'package:equatable/equatable.dart';
 import 'package:injectable/injectable.dart';
 
 import '../../../models/repair_company.dart';
+import '../../../services/auth_service.dart';
 import '../../../services/repair_companies_service.dart';
 import '../../base_cubit.dart';
 
@@ -11,9 +12,11 @@ part 'admin_repair_companies_tab_state.dart';
 class AdminRepairCompaniesTabCubit
     extends BaseCubit<AdminRepairCompaniesTabState> {
   final RepairCompaniesService _repairCompaniesService;
+  final AuthService _authService;
 
   AdminRepairCompaniesTabCubit(
     this._repairCompaniesService,
+    this._authService,
   ) : super(const AdminRepairCompaniesTabState());
 
   @override
@@ -24,21 +27,24 @@ class AdminRepairCompaniesTabCubit
     ));
   }
 
+  void reset() {
+    emit(const AdminRepairCompaniesTabState());
+  }
+
   Future<void> getRepairCompanies({int page = 0}) async {
     emit(state.copyWith(
       page: page,
       status: AdminRepairCompaniesTabStatus.loading,
     ));
     await makeErrorHandledCall(() async {
-      final repairCompanies =
-          await _repairCompaniesService.getAllRepairCompanies(
+      final companies = await _repairCompaniesService.getAllRepairCompanies(
         page: page,
       );
       emit(state.copyWith(
         status: AdminRepairCompaniesTabStatus.success,
-        totalPages: repairCompanies.totalPages,
-        repairCompanies: repairCompanies.companies,
-        totalElements: repairCompanies.totalElements,
+        totalPages: companies.totalPages,
+        repairCompanies: companies.companies,
+        totalElements: companies.totalElements,
       ));
     });
   }
@@ -47,8 +53,16 @@ class AdminRepairCompaniesTabCubit
   //     CreateUpdateRepairCompanyRequest request) async {
   //   emit(state.copyWith(status: AdminRepairCompaniesTabStatus.loading));
   //   await makeErrorHandledCall(() async {
-  //     await _laundriesService.createRepairCompany(request);
+  //     await _repairCompaniesService.createRepairCompany(request);
   //   });
-  //   await getRepairCompanies();
+  //   reset();
   // }
+
+  Future<void> deteleRepairCompany(String userId) async {
+    emit(state.copyWith(status: AdminRepairCompaniesTabStatus.loading));
+    await makeErrorHandledCall(() async {
+      await _authService.deleteUser(userId);
+    });
+    reset();
+  }
 }
