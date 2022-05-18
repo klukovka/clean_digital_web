@@ -153,18 +153,18 @@ class _CleanDigitalApiClient implements CleanDigitalApiClient {
   }
 
   @override
-  Future<List<String>> getAllBackups() async {
+  Future<Backup> getAllBackups() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
-    final _result = await _dio.fetch<List<dynamic>>(
-        _setStreamType<List<String>>(
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<Backup>(
             Options(method: 'GET', headers: _headers, extra: _extra)
                 .compose(_dio.options, '/dataFlow/all',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = _result.data!.cast<String>();
+    final value = Backup.fromJson(_result.data!);
     return value;
   }
 

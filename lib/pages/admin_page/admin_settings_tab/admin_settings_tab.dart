@@ -58,20 +58,23 @@ class _AdminSettingsTabState extends State<AdminSettingsTab> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<AdminSettingsTabCubit, AdminSettingsTabState>(
-      listener: _onStateChanged,
-      builder: (context, state) {
-        if (state.status == AdminSettingsTabStatus.loading) {
-          return const Center(child: LoadingIndicator());
-        }
-        return CustomScrollView(
-          slivers: [
-            SliverFillRemaining(
-              child: _buildContent(state),
-            )
-          ],
-        );
-      },
+    return Container(
+      color: Theme.of(context).scaffoldBackgroundColor,
+      child: BlocConsumer<AdminSettingsTabCubit, AdminSettingsTabState>(
+        listener: _onStateChanged,
+        builder: (context, state) {
+          if (state.status == AdminSettingsTabStatus.loading) {
+            return const Center(child: LoadingIndicator());
+          }
+          return CustomScrollView(
+            slivers: [
+              SliverFillRemaining(
+                child: _buildContent(state),
+              )
+            ],
+          );
+        },
+      ),
     );
   }
 

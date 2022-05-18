@@ -459,6 +459,24 @@ abstract class CleanDigitalLocalizations {
   /// In uk, this message translates to:
   /// **'Максимальна довжина'**
   String get maxLenght;
+
+  /// No description provided for @backupCreated.
+  ///
+  /// In uk, this message translates to:
+  /// **'Бекап створено'**
+  String get backupCreated;
+
+  /// No description provided for @backupRestored.
+  ///
+  /// In uk, this message translates to:
+  /// **'Бекап відновлено'**
+  String get backupRestored;
+
+  /// No description provided for @restore.
+  ///
+  /// In uk, this message translates to:
+  /// **'Відновити'**
+  String get restore;
 }
 
 class _CleanDigitalLocalizationsDelegate extends LocalizationsDelegate<CleanDigitalLocalizations> {

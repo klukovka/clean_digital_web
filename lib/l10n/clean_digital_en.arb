@@ -58,5 +58,8 @@
     "registerLaundry": "Register laundry",
     "updateLaundry": "Update lundry",
     "mustBeFromNumbers": "Field must be a number",
-    "maxLenght": "Max lenght"
+    "maxLenght": "Max lenght",
+    "backupCreated": "Backup is created",
+    "backupRestored": "Backup is restored",
+    "restore": "Restore"
 }

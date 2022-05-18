@@ -189,4 +189,13 @@ class CleanDigitalLocalizationsUk extends CleanDigitalLocalizations {
 
   @override
   String get maxLenght => 'Максимальна довжина';
+
+  @override
+  String get backupCreated => 'Бекап створено';
+
+  @override
+  String get backupRestored => 'Бекап відновлено';
+
+  @override
+  String get restore => 'Відновити';
 }

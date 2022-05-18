@@ -6,10 +6,12 @@ import 'buttons/primary_button.dart';
 class TitleWithButton extends StatelessWidget {
   final String title;
   final VoidCallback? onPressed;
+  final bool isLoading;
 
   const TitleWithButton({
     Key? key,
-    required this.title,
+    this.title = '',
+    this.isLoading = false,
     this.onPressed,
   }) : super(key: key);
 
@@ -29,6 +31,7 @@ class TitleWithButton extends StatelessWidget {
         PrimaryButton.custom(
           fullWidth: false,
           onPressed: onPressed,
+          isLoading: isLoading,
           titleWidget: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

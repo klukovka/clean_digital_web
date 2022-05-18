@@ -9,6 +9,7 @@ import 'api_constants.dart';
 import 'models/auth/login_request.dart';
 import 'models/auth/restore_password_request.dart';
 import 'models/auth/update_password_request.dart';
+import 'models/backup.dart';
 import 'models/create_update_requests/create_update_laundry.dart';
 
 part 'clean_digital_api_client.g.dart';
@@ -75,7 +76,7 @@ abstract class CleanDigitalApiClient {
   ///
 
   @GET('/dataFlow/all')
-  Future<List<String>> getAllBackups();
+  Future<Backup> getAllBackups();
 
   @GET('/dataFlow/backup')
   Future<void> backup();

@@ -60,5 +60,8 @@
   "registerLaundry": "Зареєструвати пральню",
   "updateLaundry": "Оновити пральню",
   "mustBeFromNumbers": "Поле повинно бути із цифр",
-  "maxLenght": "Максимальна довжина"
+  "maxLenght": "Максимальна довжина",
+  "backupCreated": "Бекап створено",
+  "backupRestored": "Бекап відновлено",
+  "restore": "Відновити"
 }

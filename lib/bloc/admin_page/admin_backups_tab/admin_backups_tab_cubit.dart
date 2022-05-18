@@ -33,7 +33,7 @@ class AdminBackupsTabCubit extends BaseCubit<AdminBackupsTabState> {
   }
 
   Future<void> backup() async {
-    emit(state.copyWith(status: AdminBackupsTabStatus.loading));
+    emit(state.copyWith(status: AdminBackupsTabStatus.loadingButton));
 
     await makeErrorHandledCall(() async {
       await _backupService.backup();
@@ -45,8 +45,6 @@ class AdminBackupsTabCubit extends BaseCubit<AdminBackupsTabState> {
   }
 
   Future<void> restore(String backupId) async {
-    emit(state.copyWith(status: AdminBackupsTabStatus.loadingButton));
-
     await makeErrorHandledCall(() async {
       await _backupService.restore(backupId);
       emit(state.copyWith(status: AdminBackupsTabStatus.restored));

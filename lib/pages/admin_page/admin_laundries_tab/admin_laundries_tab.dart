@@ -69,29 +69,27 @@ class _AdminLaundriesTabState extends State<AdminLaundriesTab> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<AdminLaundriesTabCubit, AdminLaundriesTabState>(
-      builder: (context, state) {
-        return Stack(
-          alignment: AlignmentDirectional.bottomCenter,
-          children: [
-            Column(
-              children: [
-                const SizedBox(height: 32),
-                if (state.laundries.isNotEmpty) _buildTitle(context, state),
-                const SizedBox(height: 32),
-                Expanded(
-                  child: Align(
-                    alignment: state.laundries.isEmpty
-                        ? Alignment.center
-                        : Alignment.topCenter,
-                    child: _buildLaundriesGrid(),
-                  ),
+    return Container(
+      color: Theme.of(context).scaffoldBackgroundColor,
+      child: BlocBuilder<AdminLaundriesTabCubit, AdminLaundriesTabState>(
+        builder: (context, state) {
+          return Column(
+            children: [
+              const SizedBox(height: 32),
+              if (state.laundries.isNotEmpty) _buildTitle(context, state),
+              const SizedBox(height: 32),
+              Expanded(
+                child: Align(
+                  alignment: state.laundries.isEmpty
+                      ? Alignment.center
+                      : Alignment.topCenter,
+                  child: _buildLaundriesGrid(),
                 ),
-              ],
-            ),
-          ],
-        );
-      },
+              ),
+            ],
+          );
+        },
+      ),
     );
   }
 

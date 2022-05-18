@@ -189,4 +189,13 @@ class CleanDigitalLocalizationsEn extends CleanDigitalLocalizations {
 
   @override
   String get maxLenght => 'Max lenght';
+
+  @override
+  String get backupCreated => 'Backup is created';
+
+  @override
+  String get backupRestored => 'Backup is restored';
+
+  @override
+  String get restore => 'Restore';
 }

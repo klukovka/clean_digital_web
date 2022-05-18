@@ -11,7 +11,7 @@ class BackupService extends BaseService {
 
   Future<List<String>> getAllBackups() async {
     return await makeErrorHandledCall(() async {
-      return await _apiClient.getAllBackups();
+      return (await _apiClient.getAllBackups()).backups;
     });
   }
 
