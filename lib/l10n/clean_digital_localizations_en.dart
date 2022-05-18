@@ -174,4 +174,19 @@ class CleanDigitalLocalizationsEn extends CleanDigitalLocalizations {
 
   @override
   String get more => 'More...';
+
+  @override
+  String get requiredField => 'Required field';
+
+  @override
+  String get registerLaundry => 'Register laundry';
+
+  @override
+  String get updateLaundry => 'Update lundry';
+
+  @override
+  String get mustBeFromNumbers => 'Field must be a number';
+
+  @override
+  String get maxLenght => 'Max lenght';
 }

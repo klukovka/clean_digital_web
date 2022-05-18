@@ -9,6 +9,7 @@ import 'api_constants.dart';
 import 'models/auth/login_request.dart';
 import 'models/auth/restore_password_request.dart';
 import 'models/auth/update_password_request.dart';
+import 'models/create_update_requests/create_update_laundry.dart';
 
 part 'clean_digital_api_client.g.dart';
 
@@ -39,6 +40,11 @@ abstract class CleanDigitalApiClient {
   @POST('/auth/signup-admin')
   Future<void> createAdmin(
     @Body() LoginRequest body,
+  );
+
+  @POST('/auth/signup-laundry')
+  Future<void> createLaundry(
+    @Body() CreateUpdateLaundryRequest body,
   );
 
   @POST('/auth/signup-iot')

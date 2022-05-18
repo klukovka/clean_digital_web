@@ -429,6 +429,36 @@ abstract class CleanDigitalLocalizations {
   /// In uk, this message translates to:
   /// **'Детальніше...'**
   String get more;
+
+  /// No description provided for @requiredField.
+  ///
+  /// In uk, this message translates to:
+  /// **'Обовʼязове поле'**
+  String get requiredField;
+
+  /// No description provided for @registerLaundry.
+  ///
+  /// In uk, this message translates to:
+  /// **'Зареєструвати пральню'**
+  String get registerLaundry;
+
+  /// No description provided for @updateLaundry.
+  ///
+  /// In uk, this message translates to:
+  /// **'Оновити пральню'**
+  String get updateLaundry;
+
+  /// No description provided for @mustBeFromNumbers.
+  ///
+  /// In uk, this message translates to:
+  /// **'Поле повинно бути із цифр'**
+  String get mustBeFromNumbers;
+
+  /// No description provided for @maxLenght.
+  ///
+  /// In uk, this message translates to:
+  /// **'Максимальна довжина'**
+  String get maxLenght;
 }
 
 class _CleanDigitalLocalizationsDelegate extends LocalizationsDelegate<CleanDigitalLocalizations> {

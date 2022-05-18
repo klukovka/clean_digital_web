@@ -4,6 +4,7 @@ import '../api/clean_digital_api_client.dart';
 import '../api/models/auth/login_request.dart';
 import '../api/models/auth/restore_password_request.dart';
 import '../api/models/auth/update_password_request.dart';
+import '../api/models/create_update_requests/create_update_laundry.dart';
 import '../models/auth_meta.dart';
 import '../models/user.dart';
 import 'base_service.dart';

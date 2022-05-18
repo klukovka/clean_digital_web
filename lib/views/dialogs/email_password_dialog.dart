@@ -71,9 +71,17 @@ class _EmailPasswordDialogState extends State<EmailPasswordDialog> {
         prefixIcon: const Icon(Typicons.mail),
         labelText: CleanDigitalLocalizations.of(context).email,
       ),
-      validator: FormBuilderValidators.email(
-        context,
-        errorText: CleanDigitalLocalizations.of(context).emailIsNotValid,
+      validator: FormBuilderValidators.compose(
+        [
+          FormBuilderValidators.required(
+            context,
+            errorText: CleanDigitalLocalizations.of(context).requiredField,
+          ),
+          FormBuilderValidators.email(
+            context,
+            errorText: CleanDigitalLocalizations.of(context).emailIsNotValid,
+          ),
+        ],
       ),
     );
   }

@@ -7,6 +7,7 @@ import '../../../bloc/admin_page/admin_laundres_tab/admin_laundres_tab_cubit.dar
 import '../../../di/injection_container.dart';
 import '../../../l10n/clean_digital_localizations.dart';
 import '../../../models/laundry.dart';
+import '../../../utils/clean_digital_dialogs.dart';
 import '../../../utils/pagination/pagination_utils.dart';
 import '../../../views/clean_digital_paged_grid_view.dart';
 import '../../../views/laundry_tile.dart';
@@ -39,7 +40,7 @@ class _AdminLaundriesTabState extends State<AdminLaundriesTab> {
   }
 
   Future<void> _fetchPage(int pageKey) async {
-    await context.read<AdminLaundriesTabCubit>().getSitters(page: pageKey);
+    await context.read<AdminLaundriesTabCubit>().getLaundries(page: pageKey);
   }
 
   void _onStateChanged(
@@ -76,12 +77,7 @@ class _AdminLaundriesTabState extends State<AdminLaundriesTab> {
             Column(
               children: [
                 const SizedBox(height: 32),
-                if (state.laundries.isNotEmpty)
-                  TitleWithButton(
-                    title:
-                        '${CleanDigitalLocalizations.of(context).totalAmount}: '
-                        '${state.totalElements}',
-                  ),
+                if (state.laundries.isNotEmpty) _buildTitle(context, state),
                 const SizedBox(height: 32),
                 Expanded(
                   child: Align(
@@ -94,6 +90,21 @@ class _AdminLaundriesTabState extends State<AdminLaundriesTab> {
               ],
             ),
           ],
+        );
+      },
+    );
+  }
+
+  Widget _buildTitle(BuildContext context, AdminLaundriesTabState state) {
+    return TitleWithButton(
+      title: '${CleanDigitalLocalizations.of(context).totalAmount}: '
+          '${state.totalElements}',
+      onPressed: () {
+        CleanDigitalDialogs.of(context).showRegisterLaundryDialog(
+          (request) async {
+            await cubit.createLaundry(request);
+            _paginatedListKey = UniqueKey();
+          },
         );
       },
     );

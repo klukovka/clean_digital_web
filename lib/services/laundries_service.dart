@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
 
 import '../api/clean_digital_api_client.dart';
+import '../api/models/create_update_requests/create_update_laundry.dart';
 import '../models/pagination/laundries_pagination.dart';
 import 'base_service.dart';
 
@@ -18,6 +19,14 @@ class LaundriesService extends BaseService {
   }) async {
     return await makeErrorHandledCall(() async {
       return await _apiClient.getLaundries(page, size);
+    });
+  }
+
+  Future<void> createLaundry(
+    CreateUpdateLaundryRequest request,
+  ) async {
+    return await makeErrorHandledCall(() async {
+      return await _apiClient.createLaundry(request);
     });
   }
 }

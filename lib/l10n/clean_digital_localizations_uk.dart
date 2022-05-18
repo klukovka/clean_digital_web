@@ -174,4 +174,19 @@ class CleanDigitalLocalizationsUk extends CleanDigitalLocalizations {
 
   @override
   String get more => 'Детальніше...';
+
+  @override
+  String get requiredField => 'Обовʼязове поле';
+
+  @override
+  String get registerLaundry => 'Зареєструвати пральню';
+
+  @override
+  String get updateLaundry => 'Оновити пральню';
+
+  @override
+  String get mustBeFromNumbers => 'Поле повинно бути із цифр';
+
+  @override
+  String get maxLenght => 'Максимальна довжина';
 }

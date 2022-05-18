@@ -53,5 +53,10 @@
     "phone": "Phone",
     "address": "Address",
     "maxWashMachines": "Maximum washing machines",
-    "more": "More..."
+    "more": "More...",
+    "requiredField": "Required field",
+    "registerLaundry": "Register laundry",
+    "updateLaundry": "Update lundry",
+    "mustBeFromNumbers": "Field must be a number",
+    "maxLenght": "Max lenght"
 }

@@ -55,5 +55,10 @@
   "phone": "Телефон",
   "address": "Адреса",
   "maxWashMachines": "Максимальна кількість машинок",
-  "more": "Детальніше..."
+  "more": "Детальніше...",
+  "requiredField": "Обовʼязове поле",
+  "registerLaundry": "Зареєструвати пральню",
+  "updateLaundry": "Оновити пральню",
+  "mustBeFromNumbers": "Поле повинно бути із цифр",
+  "maxLenght": "Максимальна довжина"
 }
