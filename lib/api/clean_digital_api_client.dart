@@ -11,6 +11,7 @@ import 'models/auth/restore_password_request.dart';
 import 'models/auth/update_password_request.dart';
 import 'models/backup.dart';
 import 'models/create_update_requests/create_update_laundry.dart';
+import 'models/create_update_requests/create_update_repair_company.dart';
 
 part 'clean_digital_api_client.g.dart';
 
@@ -46,6 +47,11 @@ abstract class CleanDigitalApiClient {
   @POST('/auth/signup-laundry')
   Future<void> createLaundry(
     @Body() CreateUpdateLaundryRequest body,
+  );
+
+  @POST('/auth/signup-repair-company')
+  Future<void> createRepairCompany(
+    @Body() CreateUpdateRepairCompanyRequest body,
   );
 
   @POST('/auth/signup-iot')

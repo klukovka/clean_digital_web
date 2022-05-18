@@ -207,4 +207,10 @@ class CleanDigitalLocalizationsEn extends CleanDigitalLocalizations {
 
   @override
   String get doYouWantToDeleteRepairCompany => 'Do you want to delete a repair company?';
+
+  @override
+  String get registerRepairCompany => 'Register repair company';
+
+  @override
+  String get updateRepairCompany => 'Update repair company';
 }

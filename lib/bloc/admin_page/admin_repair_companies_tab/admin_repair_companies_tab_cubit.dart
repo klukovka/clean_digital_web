@@ -1,6 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:injectable/injectable.dart';
 
+import '../../../api/models/create_update_requests/create_update_repair_company.dart';
 import '../../../models/repair_company.dart';
 import '../../../services/auth_service.dart';
 import '../../../services/repair_companies_service.dart';
@@ -49,14 +50,15 @@ class AdminRepairCompaniesTabCubit
     });
   }
 
-  // Future<void> createRepairCompany(
-  //     CreateUpdateRepairCompanyRequest request) async {
-  //   emit(state.copyWith(status: AdminRepairCompaniesTabStatus.loading));
-  //   await makeErrorHandledCall(() async {
-  //     await _repairCompaniesService.createRepairCompany(request);
-  //   });
-  //   reset();
-  // }
+  Future<void> createRepairCompany(
+    CreateUpdateRepairCompanyRequest request,
+  ) async {
+    emit(state.copyWith(status: AdminRepairCompaniesTabStatus.loading));
+    await makeErrorHandledCall(() async {
+      await _repairCompaniesService.createRepairCompany(request);
+    });
+    reset();
+  }
 
   Future<void> deteleRepairCompany(String userId) async {
     emit(state.copyWith(status: AdminRepairCompaniesTabStatus.loading));

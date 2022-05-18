@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
 import '../api/models/create_update_requests/create_update_laundry.dart';
+import '../api/models/create_update_requests/create_update_repair_company.dart';
 import '../l10n/clean_digital_localizations.dart';
 import '../views/dialogs/base_dialog.dart';
 import '../views/dialogs/confirm_dialog.dart';
 import '../views/dialogs/create_update_laundry_dialog.dart';
+import '../views/dialogs/create_update_repair_company_dialog.dart';
 import '../views/dialogs/email_password_dialog.dart';
 import '../views/dialogs/update_password_dialog.dart';
 
@@ -77,6 +79,16 @@ class CleanDigitalDialogs {
       height: 65.h,
       body: CreateUpdateLaundryDialog(onSave: onSave),
       title: CleanDigitalLocalizations.of(context).registerLaundry,
+    );
+  }
+
+  void showRegisterRepairCompanyDialog(
+    ValueSetter<CreateUpdateRepairCompanyRequest> onSave,
+  ) {
+    _showBlurDialog(
+      height: 60.h,
+      body: CreateUpdateRepairCompanyDialog(onSave: onSave),
+      title: CleanDigitalLocalizations.of(context).registerRepairCompany,
     );
   }
 }

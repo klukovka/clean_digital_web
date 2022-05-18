@@ -64,5 +64,7 @@
     "restore": "Restore",
     "delete": "Delete",
     "doYouWantToDeleteLaundry": "Do you want to delete a laundry?",
-    "doYouWantToDeleteRepairCompany": "Do you want to delete a repair company?"
+    "doYouWantToDeleteRepairCompany": "Do you want to delete a repair company?",
+    "registerRepairCompany": "Register repair company",
+    "updateRepairCompany": "Update repair company"
 }

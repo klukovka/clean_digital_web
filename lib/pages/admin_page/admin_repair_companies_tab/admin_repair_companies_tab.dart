@@ -127,12 +127,12 @@ class _AdminRepairCompaniesTabState extends State<AdminRepairCompaniesTab>
       title: '${CleanDigitalLocalizations.of(context).totalAmount}: '
           '${state.totalElements}',
       onPressed: () {
-        // CleanDigitalDialogs.of(context).showRegisterRepairCompanyDialog(
-        //   (request) async {
-        //     await cubit.createRepairCompany(request);
-        //     _paginatedListKey = UniqueKey();
-        //   },
-        // );
+        CleanDigitalDialogs.of(context).showRegisterRepairCompanyDialog(
+          (request) async {
+            await cubit.createRepairCompany(request);
+            _paginatedListKey = UniqueKey();
+          },
+        );
       },
     );
   }

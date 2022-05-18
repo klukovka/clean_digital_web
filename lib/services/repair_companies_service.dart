@@ -1,6 +1,7 @@
 import 'package:injectable/injectable.dart';
 
 import '../api/clean_digital_api_client.dart';
+import '../api/models/create_update_requests/create_update_repair_company.dart';
 import '../models/pagination/repair_companies_pagination.dart';
 import 'base_service.dart';
 
@@ -19,11 +20,11 @@ class RepairCompaniesService extends BaseService {
     });
   }
 
-  // Future<void> createRepairCompany(
-  //   CreateUpdateRepairCompanyRequest request,
-  // ) async {
-  //   return await makeErrorHandledCall(() async {
-  //     return await _apiClient.createRepairCompany(request);
-  //   });
-  // }
+  Future<void> createRepairCompany(
+    CreateUpdateRepairCompanyRequest request,
+  ) async {
+    return await makeErrorHandledCall(() async {
+      return await _apiClient.createRepairCompany(request);
+    });
+  }
 }

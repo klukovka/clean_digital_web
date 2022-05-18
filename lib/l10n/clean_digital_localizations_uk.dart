@@ -207,4 +207,10 @@ class CleanDigitalLocalizationsUk extends CleanDigitalLocalizations {
 
   @override
   String get doYouWantToDeleteRepairCompany => 'Ви дійсно хочете видалити ремонтну компанію?';
+
+  @override
+  String get registerRepairCompany => 'Зареєструвати ремонтну компанію';
+
+  @override
+  String get updateRepairCompany => 'Оновити ремонтну компанію';
 }
