@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 
 import '../models/auth_meta.dart';
+import '../models/pagination/clients_pagination.dart';
 import '../models/pagination/laundries_pagination.dart';
 import '../models/pagination/repair_companies_pagination.dart';
 import '../models/user.dart';
@@ -103,6 +104,16 @@ abstract class CleanDigitalApiClient {
 
   @GET('/repairCompany/all-companies')
   Future<RepairCompaniesPagination> getRepairCompanies(
+    @Query('page') int page,
+    @Query('size') int size,
+  );
+
+  ///
+  ///
+  ///
+
+  @GET('/client/all')
+  Future<ClientsPagination> getClients(
     @Query('page') int page,
     @Query('size') int size,
   );
