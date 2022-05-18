@@ -105,7 +105,7 @@ class _AdminRepairCompaniesTabState extends State<AdminRepairCompaniesTab>
           return Column(
             children: [
               const SizedBox(height: 32),
-              if (state.repairCompanies.isNotEmpty) _buildTitle(context, state),
+              if (state.repairCompanies.isNotEmpty) _buildTitle(state),
               const SizedBox(height: 32),
               Expanded(
                 child: Align(
@@ -122,7 +122,7 @@ class _AdminRepairCompaniesTabState extends State<AdminRepairCompaniesTab>
     );
   }
 
-  Widget _buildTitle(BuildContext context, AdminRepairCompaniesTabState state) {
+  Widget _buildTitle(AdminRepairCompaniesTabState state) {
     return TitleWithButton(
       title: '${CleanDigitalLocalizations.of(context).totalAmount}: '
           '${state.totalElements}',

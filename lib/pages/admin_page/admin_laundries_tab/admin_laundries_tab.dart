@@ -100,7 +100,7 @@ class _AdminLaundriesTabState extends State<AdminLaundriesTab>
           return Column(
             children: [
               const SizedBox(height: 32),
-              if (state.laundries.isNotEmpty) _buildTitle(context, state),
+              if (state.laundries.isNotEmpty) _buildTitle(state),
               const SizedBox(height: 32),
               Expanded(
                 child: Align(
@@ -117,7 +117,7 @@ class _AdminLaundriesTabState extends State<AdminLaundriesTab>
     );
   }
 
-  Widget _buildTitle(BuildContext context, AdminLaundriesTabState state) {
+  Widget _buildTitle(AdminLaundriesTabState state) {
     return TitleWithButton(
       title: '${CleanDigitalLocalizations.of(context).totalAmount}: '
           '${state.totalElements}',
