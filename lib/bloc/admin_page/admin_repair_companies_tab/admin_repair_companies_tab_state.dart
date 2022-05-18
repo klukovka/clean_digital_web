@@ -1,43 +1,43 @@
-part of 'admin_laundres_tab_cubit.dart';
+part of 'admin_repair_companies_tab_cubit.dart';
 
-enum AdminLaundriesTabStatus {
+enum AdminRepairCompaniesTabStatus {
   loading,
   error,
   success,
 }
 
-class AdminLaundriesTabState extends Equatable {
-  final AdminLaundriesTabStatus status;
+class AdminRepairCompaniesTabState extends Equatable {
+  final AdminRepairCompaniesTabStatus status;
   final String errorMessage;
   final int page;
   final int totalPages;
   final int totalElements;
-  final List<Laundry> laundries;
+  final List<RepairCompany> repairCompanies;
 
-  const AdminLaundriesTabState({
-    this.status = AdminLaundriesTabStatus.loading,
+  const AdminRepairCompaniesTabState({
+    this.status = AdminRepairCompaniesTabStatus.loading,
     this.errorMessage = '',
     this.page = 0,
     this.totalPages = 0,
     this.totalElements = 0,
-    this.laundries = const [],
+    this.repairCompanies = const [],
   });
 
-  AdminLaundriesTabState copyWith({
-    AdminLaundriesTabStatus? status,
+  AdminRepairCompaniesTabState copyWith({
+    AdminRepairCompaniesTabStatus? status,
     String? errorMessage,
     int? page,
     int? totalPages,
     int? totalElements,
-    List<Laundry>? laundries,
+    List<RepairCompany>? repairCompanies,
   }) {
-    return AdminLaundriesTabState(
+    return AdminRepairCompaniesTabState(
       status: status ?? this.status,
       errorMessage: errorMessage ?? this.errorMessage,
       page: page ?? this.page,
       totalPages: totalPages ?? this.totalPages,
       totalElements: totalElements ?? this.totalElements,
-      laundries: laundries ?? this.laundries,
+      repairCompanies: repairCompanies ?? this.repairCompanies,
     );
   }
 
@@ -49,7 +49,7 @@ class AdminLaundriesTabState extends Equatable {
       page,
       totalPages,
       totalElements,
-      laundries,
+      repairCompanies,
     ];
   }
 }
