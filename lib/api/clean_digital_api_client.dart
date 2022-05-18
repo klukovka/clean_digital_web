@@ -2,8 +2,8 @@ import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 
 import '../models/auth_meta.dart';
-import '../models/laundry.dart';
 import '../models/pagination/laundries_pagination.dart';
+import '../models/pagination/repair_companies_pagination.dart';
 import '../models/user.dart';
 import 'api_constants.dart';
 import 'models/auth/login_request.dart';
@@ -84,5 +84,15 @@ abstract class CleanDigitalApiClient {
   @POST('/dataFlow/restore/{backupId}')
   Future<void> restore(
     @Path() String backupId,
+  );
+
+  ///
+  /// Repair Companies
+  ///
+
+  @GET('/repairCompany/all-companies')
+  Future<RepairCompaniesPagination> getRepairCompanies(
+    @Query('page') int page,
+    @Query('size') int size,
   );
 }
