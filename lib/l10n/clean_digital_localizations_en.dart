@@ -159,4 +159,19 @@ class CleanDigitalLocalizationsEn extends CleanDigitalLocalizations {
 
   @override
   String get noMoreItems => 'No more items...';
+
+  @override
+  String get name => 'Name';
+
+  @override
+  String get phone => 'Phone';
+
+  @override
+  String get address => 'Address';
+
+  @override
+  String get maxWashMachines => 'Maximum washing machines';
+
+  @override
+  String get more => 'More...';
 }

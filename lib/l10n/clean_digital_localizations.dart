@@ -399,6 +399,36 @@ abstract class CleanDigitalLocalizations {
   /// In uk, this message translates to:
   /// **'Більше елементів немає...'**
   String get noMoreItems;
+
+  /// No description provided for @name.
+  ///
+  /// In uk, this message translates to:
+  /// **'Імʼя/назва'**
+  String get name;
+
+  /// No description provided for @phone.
+  ///
+  /// In uk, this message translates to:
+  /// **'Телефон'**
+  String get phone;
+
+  /// No description provided for @address.
+  ///
+  /// In uk, this message translates to:
+  /// **'Адреса'**
+  String get address;
+
+  /// No description provided for @maxWashMachines.
+  ///
+  /// In uk, this message translates to:
+  /// **'Максимальна кількість машинок'**
+  String get maxWashMachines;
+
+  /// No description provided for @more.
+  ///
+  /// In uk, this message translates to:
+  /// **'Детальніше...'**
+  String get more;
 }
 
 class _CleanDigitalLocalizationsDelegate extends LocalizationsDelegate<CleanDigitalLocalizations> {

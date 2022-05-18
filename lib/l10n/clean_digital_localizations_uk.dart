@@ -159,4 +159,19 @@ class CleanDigitalLocalizationsUk extends CleanDigitalLocalizations {
 
   @override
   String get noMoreItems => 'Більше елементів немає...';
+
+  @override
+  String get name => 'Імʼя/назва';
+
+  @override
+  String get phone => 'Телефон';
+
+  @override
+  String get address => 'Адреса';
+
+  @override
+  String get maxWashMachines => 'Максимальна кількість машинок';
+
+  @override
+  String get more => 'Детальніше...';
 }

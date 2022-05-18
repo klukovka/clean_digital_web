@@ -48,5 +48,10 @@
     "error": "Error",
     "retry": "Retry",
     "totalAmount": "Total amount",
-    "noMoreItems": "No more items..."
+    "noMoreItems": "No more items...",
+    "name": "Name",
+    "phone": "Phone",
+    "address": "Address",
+    "maxWashMachines": "Maximum washing machines",
+    "more": "More..."
 }
