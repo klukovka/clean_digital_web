@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../views/common_view.dart';
+import '../../views/auto_tab_views/auto_tabs_drawer_view.dart';
 import 'admin_page_drawer_item.dart';
 
 class AdminPage extends StatelessWidget {
@@ -8,7 +8,7 @@ class AdminPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const CommonView(
+    return const AutoTabsDrawerView(
       items: AdminPageDrawerItem.values,
     );
   }

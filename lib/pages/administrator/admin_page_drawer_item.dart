@@ -5,9 +5,9 @@ import 'package:fluttericon/font_awesome_icons.dart';
 
 import '../../l10n/clean_digital_localizations.dart';
 import '../../router/app_auto_router.gr.dart';
-import '../../views/drawer/drawer_menu_item.dart';
+import '../../views/auto_tab_views/auto_tab_menu_item.dart';
 
-enum AdminPageDrawerItem implements DrawerMenuItem {
+enum AdminPageDrawerItem implements AutoTabMenuItem {
   laundries,
   repairCompanies,
   clients,
