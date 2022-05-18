@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../l10n/clean_digital_localizations.dart';
+import '../../router/clean_digital_router.dart';
 import '../buttons/primary_button.dart';
 
 enum ConfirmDialogType {
@@ -9,7 +10,7 @@ enum ConfirmDialogType {
 }
 
 class ConfirmDialog extends StatelessWidget {
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
   final ConfirmDialogType type;
 
   const ConfirmDialog({
@@ -48,8 +49,8 @@ class ConfirmDialog extends StatelessWidget {
     return PrimaryButton(
       title: CleanDigitalLocalizations.of(context).yes,
       onPressed: () {
-        onPressed();
-        Navigator.of(context).pop();
+        onPressed?.call();
+        router.pop();
       },
       isOutlined: type != ConfirmDialogType.preferYes,
     );

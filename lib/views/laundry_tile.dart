@@ -5,14 +5,19 @@ import 'package:sizer/sizer.dart';
 import '../l10n/clean_digital_localizations.dart';
 import '../models/laundry.dart';
 import '../resources/app_image_assets.dart';
+import '../utils/clean_digital_dialogs.dart';
 import 'buttons/primary_button.dart';
 
 class LaundryTile extends StatefulWidget {
   final Laundry laundry;
+  final VoidCallback? onDeletePressed;
+  final VoidCallback? onMorePressed;
 
   const LaundryTile({
     Key? key,
     required this.laundry,
+    this.onDeletePressed,
+    this.onMorePressed,
   }) : super(key: key);
 
   @override
@@ -40,9 +45,7 @@ class _LaundryTileState extends State<LaundryTile> {
               Expanded(child: _buildInfo()),
             ],
           ),
-          PrimaryButton(
-            title: CleanDigitalLocalizations.of(context).more,
-          ),
+          _buildButtons(),
         ],
       ),
     );
@@ -88,6 +91,33 @@ class _LaundryTileState extends State<LaundryTile> {
           ),
         ],
       ),
+    );
+  }
+
+  Widget _buildButtons() {
+    return Row(
+      children: [
+        Expanded(
+          child: PrimaryButton(
+            title: CleanDigitalLocalizations.of(context).more,
+            onPressed: widget.onMorePressed,
+          ),
+        ),
+        const SizedBox(width: 16),
+        Expanded(
+          child: PrimaryButton(
+            title: CleanDigitalLocalizations.of(context).delete,
+            isOutlined: true,
+            onPressed: () {
+              CleanDigitalDialogs.of(context).showConfirmNoDialog(
+                title: CleanDigitalLocalizations.of(context)
+                    .doYouWantToDeleteLaundry,
+                onPressed: widget.onDeletePressed,
+              );
+            },
+          ),
+        ),
+      ],
     );
   }
 }

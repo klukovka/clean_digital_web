@@ -198,4 +198,13 @@ class CleanDigitalLocalizationsEn extends CleanDigitalLocalizations {
 
   @override
   String get restore => 'Restore';
+
+  @override
+  String get delete => 'Delete';
+
+  @override
+  String get doYouWantToDeleteLaundry => 'Do you want to delete a laundry?';
+
+  @override
+  String get doYouWantToDeleteRepairCompany => 'Do you want to delete a laundry?';
 }

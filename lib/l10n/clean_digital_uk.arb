@@ -63,5 +63,8 @@
   "maxLenght": "Максимальна довжина",
   "backupCreated": "Бекап створено",
   "backupRestored": "Бекап відновлено",
-  "restore": "Відновити"
+  "restore": "Відновити",
+  "delete": "Видалити",
+  "doYouWantToDeleteLaundry": "Ви дійсно хочете видалити пральню?",
+  "doYouWantToDeleteRepairCompany": "Ви дійсно хочете видалити ремонтну компанію?"
 }

@@ -53,7 +53,7 @@ class _AdminLaundriesTabState extends State<AdminLaundriesTab>
 
   @override
   void didChangeTabRoute(TabPageRoute tabPageRoute) {
-    cubit.getLaundries();
+    cubit.reset();
     _paginatedListKey = UniqueKey();
   }
 
@@ -140,7 +140,13 @@ class _AdminLaundriesTabState extends State<AdminLaundriesTab>
         fetchPage: _fetchPage,
         shrinkWrap: true,
         itemBuilder: (laundry) {
-          return LaundryTile(laundry: laundry);
+          return LaundryTile(
+            laundry: laundry,
+            onDeletePressed: () async {
+              await cubit.deteleLaundry(laundry.user.userId);
+              _paginatedListKey = UniqueKey();
+            },
+          );
         },
         builder: (pagedView, controller) {
           return BlocListener<AdminLaundriesTabCubit, AdminLaundriesTabState>(

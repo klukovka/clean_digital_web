@@ -31,7 +31,7 @@ class CleanDigitalDialogs {
 
   void showConfirmYesDialog({
     required String title,
-    required VoidCallback onPressed,
+    VoidCallback? onPressed,
   }) {
     _showBlurDialog(
       title: title,
@@ -45,7 +45,7 @@ class CleanDigitalDialogs {
 
   void showConfirmNoDialog({
     required String title,
-    required VoidCallback onPressed,
+    VoidCallback? onPressed,
   }) {
     _showBlurDialog(
       height: 20.h,

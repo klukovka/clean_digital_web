@@ -61,5 +61,8 @@
     "maxLenght": "Max lenght",
     "backupCreated": "Backup is created",
     "backupRestored": "Backup is restored",
-    "restore": "Restore"
+    "restore": "Restore",
+    "delete": "Delete",
+    "doYouWantToDeleteLaundry": "Do you want to delete a laundry?",
+    "doYouWantToDeleteRepairCompany": "Do you want to delete a laundry?"
 }

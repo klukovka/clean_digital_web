@@ -12,10 +12,12 @@ import '../api/clean_digital_api_client.dart' as _i11;
 import '../api/interceptors/header_api_interceptor.dart' as _i9;
 import '../bloc/admin_page/admin_backups_tab/admin_backups_tab_cubit.dart'
     as _i19;
-import '../bloc/admin_page/admin_laundres_tab/admin_laundres_tab_cubit.dart'
+import '../bloc/admin_page/admin_laundries_tab/admin_laundries_tab_cubit.dart'
+    as _i20;
+import '../bloc/admin_page/admin_repair_companies_tab/admin_repair_companies_tab_cubit.dart'
     as _i14;
 import '../bloc/admin_page/admin_settings_tab/admin_settings_tab_cubit.dart'
-    as _i20;
+    as _i21;
 import '../bloc/app_control/app_control_cubit.dart' as _i8;
 import '../bloc/auth/login_page/login_page_cubit.dart' as _i17;
 import '../bloc/auth/restore_password_page/restore_password_page_cubit.dart'
@@ -29,7 +31,7 @@ import '../services/laundries_service.dart' as _i12;
 import '../services/logout_service.dart' as _i7;
 import '../services/preferences_service.dart' as _i5;
 import '../services/repair_companies_service.dart' as _i13;
-import 'module/api_module.dart' as _i21; // ignore_for_file: unnecessary_lambdas
+import 'module/api_module.dart' as _i22; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars
 /// initializes the registration of provided dependencies inside of [GetIt]
@@ -59,8 +61,8 @@ Future<_i1.GetIt> $configureDependencies(_i1.GetIt get,
       () => _i12.LaundriesService(get<_i11.CleanDigitalApiClient>()));
   gh.factory<_i13.RepairCompaniesService>(
       () => _i13.RepairCompaniesService(get<_i11.CleanDigitalApiClient>()));
-  gh.factory<_i14.AdminLaundriesTabCubit>(
-      () => _i14.AdminLaundriesTabCubit(get<_i12.LaundriesService>()));
+  gh.factory<_i14.AdminRepairCompaniesTabCubit>(() =>
+      _i14.AdminRepairCompaniesTabCubit(get<_i13.RepairCompaniesService>()));
   gh.factory<_i15.AuthService>(
       () => _i15.AuthService(get<_i11.CleanDigitalApiClient>()));
   gh.factory<_i16.BackupService>(
@@ -71,9 +73,11 @@ Future<_i1.GetIt> $configureDependencies(_i1.GetIt get,
       () => _i18.RestorePasswordPageCubit(get<_i15.AuthService>()));
   gh.factory<_i19.AdminBackupsTabCubit>(
       () => _i19.AdminBackupsTabCubit(get<_i16.BackupService>()));
-  gh.factory<_i20.AdminSettingsTabCubit>(
-      () => _i20.AdminSettingsTabCubit(get<_i15.AuthService>()));
+  gh.factory<_i20.AdminLaundriesTabCubit>(() => _i20.AdminLaundriesTabCubit(
+      get<_i12.LaundriesService>(), get<_i15.AuthService>()));
+  gh.factory<_i21.AdminSettingsTabCubit>(
+      () => _i21.AdminSettingsTabCubit(get<_i15.AuthService>()));
   return get;
 }
 
-class _$ApiModule extends _i21.ApiModule {}
+class _$ApiModule extends _i22.ApiModule {}

@@ -61,6 +61,11 @@ abstract class CleanDigitalApiClient {
   @DELETE('/auth/delete-account')
   Future<void> deleteAccount();
 
+  @DELETE('/auth/admin-delete/{userId}')
+  Future<void> deleteUser(
+    @Path() String userId,
+  );
+
   ///
   /// Laundries
   ///
