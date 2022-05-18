@@ -507,6 +507,24 @@ abstract class CleanDigitalLocalizations {
   /// In uk, this message translates to:
   /// **'Оновити ремонтну компанію'**
   String get updateRepairCompany;
+
+  /// No description provided for @doYouWantToDeleteClient.
+  ///
+  /// In uk, this message translates to:
+  /// **'Ви дійсно хочете клієнта?'**
+  String get doYouWantToDeleteClient;
+
+  /// No description provided for @sale.
+  ///
+  /// In uk, this message translates to:
+  /// **'Знижка'**
+  String get sale;
+
+  /// No description provided for @bonuses.
+  ///
+  /// In uk, this message translates to:
+  /// **'Бонуси'**
+  String get bonuses;
 }
 
 class _CleanDigitalLocalizationsDelegate extends LocalizationsDelegate<CleanDigitalLocalizations> {

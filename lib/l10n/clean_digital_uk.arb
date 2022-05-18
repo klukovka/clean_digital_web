@@ -68,5 +68,8 @@
   "doYouWantToDeleteLaundry": "Ви дійсно хочете видалити пральню?",
   "doYouWantToDeleteRepairCompany": "Ви дійсно хочете видалити ремонтну компанію?",
   "registerRepairCompany": "Зареєструвати ремонтну компанію",
-  "updateRepairCompany": "Оновити ремонтну компанію"
+  "updateRepairCompany": "Оновити ремонтну компанію",
+  "doYouWantToDeleteClient": "Ви дійсно хочете клієнта?",
+  "sale": "Знижка",
+  "bonuses": "Бонуси"
 }

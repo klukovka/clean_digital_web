@@ -66,5 +66,8 @@
     "doYouWantToDeleteLaundry": "Do you want to delete a laundry?",
     "doYouWantToDeleteRepairCompany": "Do you want to delete a repair company?",
     "registerRepairCompany": "Register repair company",
-    "updateRepairCompany": "Update repair company"
+    "updateRepairCompany": "Update repair company",
+    "doYouWantToDeleteClient": "Do you want to delete a client?",
+    "sale": "Sale",
+    "bonuses": "Bonuses"
 }

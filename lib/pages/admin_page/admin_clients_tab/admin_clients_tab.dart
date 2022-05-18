@@ -10,6 +10,7 @@ import '../../../models/client.dart';
 import '../../../router/clean_digital_router.dart';
 import '../../../utils/pagination/pagination_utils.dart';
 import '../../../views/clean_digital_paged_grid_view.dart';
+import '../../../views/entity_tiles/client_tile.dart';
 
 class AdminClientsTab extends StatefulWidget implements AutoRouteWrapper {
   const AdminClientsTab({Key? key}) : super(key: key);
@@ -94,6 +95,7 @@ class _AdminClientsTabState extends State<AdminClientsTab> with AutoRouteAware {
       child: BlocBuilder<AdminClientsTabCubit, AdminClientsTabState>(
         builder: (context, state) {
           return Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(height: 32),
               if (state.clients.isNotEmpty) _buildTitle(state),
@@ -131,14 +133,13 @@ class _AdminClientsTabState extends State<AdminClientsTab> with AutoRouteAware {
         fetchPage: _fetchPage,
         shrinkWrap: true,
         itemBuilder: (client) {
-          return SizedBox();
-          // return ClientTile(
-          //   client: client,
-          //   onDeletePressed: () async {
-          //     await cubit.deteleClient(client.user.userId);
-          //     _paginatedListKey = UniqueKey();
-          //   },
-          // );
+          return ClientTile(
+            client: client,
+            onDeletePressed: () async {
+              await cubit.deteleClient(client.user.userId);
+              _paginatedListKey = UniqueKey();
+            },
+          );
         },
         builder: (pagedView, controller) {
           return BlocListener<AdminClientsTabCubit, AdminClientsTabState>(
