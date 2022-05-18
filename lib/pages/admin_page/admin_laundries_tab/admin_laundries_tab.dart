@@ -11,7 +11,7 @@ import '../../../router/clean_digital_router.dart';
 import '../../../utils/clean_digital_dialogs.dart';
 import '../../../utils/pagination/pagination_utils.dart';
 import '../../../views/clean_digital_paged_grid_view.dart';
-import '../../../views/laundry_tile.dart';
+import '../../../views/entity_tiles/laundry_tile.dart';
 import '../../../views/title_with_button.dart';
 
 class AdminLaundriesTab extends StatefulWidget implements AutoRouteWrapper {
