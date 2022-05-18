@@ -7,6 +7,7 @@ import '../../../bloc/admin_page/admin_backups_tab/admin_backups_tab_cubit.dart'
 import '../../../di/injection_container.dart';
 import '../../../l10n/clean_digital_localizations.dart';
 import '../../../utils/clean_digital_toasts.dart';
+import '../../../utils/extensions/string_ext.dart';
 import '../../../views/buttons/primary_button.dart';
 import '../../../views/error_view.dart';
 import '../../../views/loading_indicator.dart';
@@ -92,7 +93,7 @@ class _AdminBackupsTabState extends State<AdminBackupsTab> {
           child: ListView.separated(
             itemBuilder: (_, index) {
               return ListTile(
-                title: Text(state.backups[index]),
+                title: Text(state.backups[index].backupDate().toString()),
                 leading: const Icon(FontAwesome5.database),
                 trailing: PrimaryButton(
                   title: CleanDigitalLocalizations.of(context).restore,
