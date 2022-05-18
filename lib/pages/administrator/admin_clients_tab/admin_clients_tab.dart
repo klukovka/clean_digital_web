@@ -3,40 +3,35 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 
-import '../../../bloc/admin_page/admin_repair_companies_tab/admin_repair_companies_tab_cubit.dart';
+import '../../../bloc/administrator/admin_clients_tab/admin_clients_tab_cubit.dart';
 import '../../../di/injection_container.dart';
 import '../../../l10n/clean_digital_localizations.dart';
-import '../../../models/repair_company.dart';
+import '../../../models/client.dart';
 import '../../../router/clean_digital_router.dart';
-import '../../../utils/clean_digital_dialogs.dart';
 import '../../../utils/pagination/pagination_utils.dart';
 import '../../../views/clean_digital_paged_grid_view.dart';
-import '../../../views/entity_tiles/repair_company_tile.dart';
-import '../../../views/title_with_button.dart';
+import '../../../views/entity_tiles/client_tile.dart';
 
-class AdminRepairCompaniesTab extends StatefulWidget
-    implements AutoRouteWrapper {
-  const AdminRepairCompaniesTab({Key? key}) : super(key: key);
+class AdminClientsTab extends StatefulWidget implements AutoRouteWrapper {
+  const AdminClientsTab({Key? key}) : super(key: key);
 
   @override
-  State<AdminRepairCompaniesTab> createState() =>
-      _AdminRepairCompaniesTabState();
+  State<AdminClientsTab> createState() => _AdminClientsTabState();
 
   @override
   Widget wrappedRoute(BuildContext context) {
     return BlocProvider(
-      create: (_) => locator<AdminRepairCompaniesTabCubit>(),
+      create: (_) => locator<AdminClientsTabCubit>(),
       child: this,
     );
   }
 }
 
-class _AdminRepairCompaniesTabState extends State<AdminRepairCompaniesTab>
-    with AutoRouteAware {
+class _AdminClientsTabState extends State<AdminClientsTab> with AutoRouteAware {
   AutoRouteObserver? _observer;
   late UniqueKey _paginatedListKey;
 
-  AdminRepairCompaniesTabCubit get cubit => context.read();
+  AdminClientsTabCubit get cubit => context.read();
 
   @override
   void didChangeDependencies() {
@@ -66,30 +61,28 @@ class _AdminRepairCompaniesTabState extends State<AdminRepairCompaniesTab>
   }
 
   Future<void> _fetchPage(int pageKey) async {
-    await context
-        .read<AdminRepairCompaniesTabCubit>()
-        .getRepairCompanies(page: pageKey);
+    await context.read<AdminClientsTabCubit>().getClients(page: pageKey);
   }
 
   void _onStateChanged(
-    AdminRepairCompaniesTabState state,
-    PagingController<int, RepairCompany> controller,
+    AdminClientsTabState state,
+    PagingController<int, Client> controller,
   ) {
     switch (state.status) {
-      case AdminRepairCompaniesTabStatus.success:
+      case AdminClientsTabStatus.success:
         controller.error = null;
-        proccessNextPage<RepairCompany>(
+        proccessNextPage<Client>(
           controller: controller,
           page: state.page,
           totalPages: state.totalPages,
-          items: state.repairCompanies,
+          items: state.clients,
         );
         break;
-      case AdminRepairCompaniesTabStatus.error:
+      case AdminClientsTabStatus.error:
         controller.error = state.errorMessage;
 
         break;
-      case AdminRepairCompaniesTabStatus.loading:
+      case AdminClientsTabStatus.loading:
         controller.error = null;
         break;
     }
@@ -99,20 +92,20 @@ class _AdminRepairCompaniesTabState extends State<AdminRepairCompaniesTab>
   Widget build(BuildContext context) {
     return Container(
       color: Theme.of(context).scaffoldBackgroundColor,
-      child: BlocBuilder<AdminRepairCompaniesTabCubit,
-          AdminRepairCompaniesTabState>(
+      child: BlocBuilder<AdminClientsTabCubit, AdminClientsTabState>(
         builder: (context, state) {
           return Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(height: 32),
-              if (state.repairCompanies.isNotEmpty) _buildTitle(state),
+              if (state.clients.isNotEmpty) _buildTitle(state),
               const SizedBox(height: 32),
               Expanded(
                 child: Align(
-                  alignment: state.repairCompanies.isEmpty
+                  alignment: state.clients.isEmpty
                       ? Alignment.center
                       : Alignment.topCenter,
-                  child: _buildRepairCompaniesGrid(),
+                  child: _buildClientsGrid(),
                 ),
               ),
             ],
@@ -122,40 +115,34 @@ class _AdminRepairCompaniesTabState extends State<AdminRepairCompaniesTab>
     );
   }
 
-  Widget _buildTitle(AdminRepairCompaniesTabState state) {
-    return TitleWithButton(
-      title: '${CleanDigitalLocalizations.of(context).totalAmount}: '
-          '${state.totalElements}',
-      onPressed: () {
-        CleanDigitalDialogs.of(context).showRegisterRepairCompanyDialog(
-          (request) async {
-            await cubit.createRepairCompany(request);
-            _paginatedListKey = UniqueKey();
-          },
-        );
-      },
+  Widget _buildTitle(AdminClientsTabState state) {
+    return Text(
+      '${CleanDigitalLocalizations.of(context).totalAmount}: '
+      '${state.totalElements}',
+      style: Theme.of(context).textTheme.headline5?.copyWith(
+            color: Theme.of(context).colorScheme.onBackground,
+          ),
     );
   }
 
-  Widget _buildRepairCompaniesGrid() {
+  Widget _buildClientsGrid() {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: CleanDigitalPagedGridView<RepairCompany>(
+      child: CleanDigitalPagedGridView<Client>(
         key: _paginatedListKey,
         fetchPage: _fetchPage,
         shrinkWrap: true,
-        itemBuilder: (company) {
-          return RepairCompanyTile(
-            company: company,
+        itemBuilder: (client) {
+          return ClientTile(
+            client: client,
             onDeletePressed: () async {
-              await cubit.deteleRepairCompany(company.user.userId);
+              await cubit.deteleClient(client.user.userId);
               _paginatedListKey = UniqueKey();
             },
           );
         },
         builder: (pagedView, controller) {
-          return BlocListener<AdminRepairCompaniesTabCubit,
-              AdminRepairCompaniesTabState>(
+          return BlocListener<AdminClientsTabCubit, AdminClientsTabState>(
             listener: (context, state) {
               _onStateChanged(state, controller);
             },

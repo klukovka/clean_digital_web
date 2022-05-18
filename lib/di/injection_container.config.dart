@@ -10,15 +10,15 @@ import 'package:injectable/injectable.dart' as _i2;
 
 import '../api/clean_digital_api_client.dart' as _i11;
 import '../api/interceptors/header_api_interceptor.dart' as _i9;
-import '../bloc/admin_page/admin_backups_tab/admin_backups_tab_cubit.dart'
+import '../bloc/administrator/admin_backups_tab/admin_backups_tab_cubit.dart'
     as _i19;
-import '../bloc/admin_page/admin_clients_tab/admin_clients_tab_cubit.dart'
+import '../bloc/administrator/admin_clients_tab/admin_clients_tab_cubit.dart'
     as _i20;
-import '../bloc/admin_page/admin_laundries_tab/admin_laundries_tab_cubit.dart'
+import '../bloc/administrator/admin_laundries_tab/admin_laundries_tab_cubit.dart'
     as _i21;
-import '../bloc/admin_page/admin_repair_companies_tab/admin_repair_companies_tab_cubit.dart'
+import '../bloc/administrator/admin_repair_companies_tab/admin_repair_companies_tab_cubit.dart'
     as _i22;
-import '../bloc/admin_page/admin_settings_tab/admin_settings_tab_cubit.dart'
+import '../bloc/administrator/admin_settings_tab/admin_settings_tab_cubit.dart'
     as _i23;
 import '../bloc/app_control/app_control_cubit.dart' as _i8;
 import '../bloc/auth/login_page/login_page_cubit.dart' as _i17;
