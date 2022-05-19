@@ -4,9 +4,12 @@ import 'package:retrofit/retrofit.dart';
 import '../models/auth_meta.dart';
 import '../models/laundry.dart';
 import '../models/pagination/clients_pagination.dart';
+import '../models/pagination/employees_pagination.dart';
 import '../models/pagination/laundries_pagination.dart';
 import '../models/pagination/repair_companies_pagination.dart';
+import '../models/pagination/wash_machines_pagination.dart';
 import '../models/user.dart';
+import '../models/wash_machine.dart';
 import 'api_constants.dart';
 import 'models/auth/login_request.dart';
 import 'models/auth/restore_password_request.dart';
@@ -115,11 +118,33 @@ abstract class CleanDigitalApiClient {
   );
 
   ///
-  ///
+  /// Clients
   ///
 
   @GET('/client/all')
   Future<ClientsPagination> getClients(
+    @Query('page') int page,
+    @Query('size') int size,
+  );
+
+  ///
+  /// WashMachines
+  ///
+
+  @GET('/laundry/all-washing-machines-users/{laundryId}')
+  Future<WashMachinesPagination> getLaundryWashMachines(
+    @Path() String laundryId,
+    @Query('page') int page,
+    @Query('size') int size,
+  );
+
+  ///
+  /// Employees
+  ///
+
+  @GET('/laundry/{laundryId}/all-employees')
+  Future<EmployeesPagination> getLaundryEmployees(
+    @Path() String laundryId,
     @Query('page') int page,
     @Query('size') int size,
   );
