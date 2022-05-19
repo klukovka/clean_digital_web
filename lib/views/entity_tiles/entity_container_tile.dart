@@ -11,6 +11,7 @@ class EntityContainerTile extends StatelessWidget {
   final String dialogTitle;
   final VoidCallback? onDeletePressed;
   final VoidCallback? onMorePressed;
+  final Color? color;
 
   const EntityContainerTile({
     Key? key,
@@ -19,6 +20,7 @@ class EntityContainerTile extends StatelessWidget {
     required this.onDeletePressed,
     required this.onMorePressed,
     this.dialogTitle = '',
+    this.color,
   }) : super(key: key);
 
   @override
@@ -26,7 +28,7 @@ class EntityContainerTile extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.tertiaryContainer,
+        color: color ?? Theme.of(context).colorScheme.tertiaryContainer,
         borderRadius: BorderRadius.circular(16),
       ),
       child: Column(

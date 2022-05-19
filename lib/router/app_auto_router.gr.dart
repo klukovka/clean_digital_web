@@ -49,7 +49,7 @@ class AppAutoRouter extends _i17.RootStackRouter {
       return _i17.CustomPage<dynamic>(
           routeData: routeData,
           child: const _i1.SplashPage(),
-          transitionsBuilder: _i17.TransitionsBuilders.slideLeftWithFade,
+          transitionsBuilder: _i17.TransitionsBuilders.fadeIn,
           durationInMilliseconds: 250,
           opaque: true,
           barrierDismissible: false);
@@ -58,7 +58,7 @@ class AppAutoRouter extends _i17.RootStackRouter {
       return _i17.CustomPage<dynamic>(
           routeData: routeData,
           child: const _i2.LoginPage(),
-          transitionsBuilder: _i17.TransitionsBuilders.slideLeftWithFade,
+          transitionsBuilder: _i17.TransitionsBuilders.fadeIn,
           durationInMilliseconds: 250,
           opaque: true,
           barrierDismissible: false);
@@ -68,7 +68,7 @@ class AppAutoRouter extends _i17.RootStackRouter {
           routeData: routeData,
           child: const _i3.RestorePasswordPage(),
           fullscreenDialog: true,
-          transitionsBuilder: _i17.TransitionsBuilders.slideLeftWithFade,
+          transitionsBuilder: _i17.TransitionsBuilders.fadeIn,
           durationInMilliseconds: 250,
           opaque: true,
           barrierDismissible: false);
@@ -77,7 +77,7 @@ class AppAutoRouter extends _i17.RootStackRouter {
       return _i17.CustomPage<dynamic>(
           routeData: routeData,
           child: const _i4.AdminPage(),
-          transitionsBuilder: _i17.TransitionsBuilders.slideLeftWithFade,
+          transitionsBuilder: _i17.TransitionsBuilders.fadeIn,
           durationInMilliseconds: 250,
           opaque: true,
           barrierDismissible: false);
@@ -90,7 +90,7 @@ class AppAutoRouter extends _i17.RootStackRouter {
       return _i17.CustomPage<dynamic>(
           routeData: routeData,
           child: _i5.AdminLaundryPage(key: args.key, laundryId: args.laundryId),
-          transitionsBuilder: _i17.TransitionsBuilders.slideLeftWithFade,
+          transitionsBuilder: _i17.TransitionsBuilders.fadeIn,
           durationInMilliseconds: 250,
           opaque: true,
           barrierDismissible: false);
@@ -99,7 +99,7 @@ class AppAutoRouter extends _i17.RootStackRouter {
       return _i17.CustomPage<dynamic>(
           routeData: routeData,
           child: const _i6.LaundryMainPage(),
-          transitionsBuilder: _i17.TransitionsBuilders.slideLeftWithFade,
+          transitionsBuilder: _i17.TransitionsBuilders.fadeIn,
           durationInMilliseconds: 250,
           opaque: true,
           barrierDismissible: false);
@@ -108,7 +108,7 @@ class AppAutoRouter extends _i17.RootStackRouter {
       return _i17.CustomPage<dynamic>(
           routeData: routeData,
           child: const _i7.EmployeeMainPage(),
-          transitionsBuilder: _i17.TransitionsBuilders.slideLeftWithFade,
+          transitionsBuilder: _i17.TransitionsBuilders.fadeIn,
           durationInMilliseconds: 250,
           opaque: true,
           barrierDismissible: false);
@@ -117,7 +117,7 @@ class AppAutoRouter extends _i17.RootStackRouter {
       return _i17.CustomPage<dynamic>(
           routeData: routeData,
           child: const _i8.RepairCompanyMainPage(),
-          transitionsBuilder: _i17.TransitionsBuilders.slideLeftWithFade,
+          transitionsBuilder: _i17.TransitionsBuilders.fadeIn,
           durationInMilliseconds: 250,
           opaque: true,
           barrierDismissible: false);
@@ -126,7 +126,7 @@ class AppAutoRouter extends _i17.RootStackRouter {
       return _i17.CustomPage<dynamic>(
           routeData: routeData,
           child: const _i9.AdminLaundriesTab(),
-          transitionsBuilder: _i17.TransitionsBuilders.slideLeftWithFade,
+          transitionsBuilder: _i17.TransitionsBuilders.fadeIn,
           durationInMilliseconds: 250,
           opaque: true,
           barrierDismissible: false);
@@ -135,7 +135,7 @@ class AppAutoRouter extends _i17.RootStackRouter {
       return _i17.CustomPage<dynamic>(
           routeData: routeData,
           child: const _i10.AdminBackupsTab(),
-          transitionsBuilder: _i17.TransitionsBuilders.slideLeftWithFade,
+          transitionsBuilder: _i17.TransitionsBuilders.fadeIn,
           durationInMilliseconds: 250,
           opaque: true,
           barrierDismissible: false);
@@ -144,7 +144,7 @@ class AppAutoRouter extends _i17.RootStackRouter {
       return _i17.CustomPage<dynamic>(
           routeData: routeData,
           child: const _i11.AdminClientsTab(),
-          transitionsBuilder: _i17.TransitionsBuilders.slideLeftWithFade,
+          transitionsBuilder: _i17.TransitionsBuilders.fadeIn,
           durationInMilliseconds: 250,
           opaque: true,
           barrierDismissible: false);
@@ -153,7 +153,7 @@ class AppAutoRouter extends _i17.RootStackRouter {
       return _i17.CustomPage<dynamic>(
           routeData: routeData,
           child: const _i12.AdminStatisticTab(),
-          transitionsBuilder: _i17.TransitionsBuilders.slideLeftWithFade,
+          transitionsBuilder: _i17.TransitionsBuilders.fadeIn,
           durationInMilliseconds: 250,
           opaque: true,
           barrierDismissible: false);
@@ -162,7 +162,7 @@ class AppAutoRouter extends _i17.RootStackRouter {
       return _i17.CustomPage<dynamic>(
           routeData: routeData,
           child: const _i13.AdminSettingsTab(),
-          transitionsBuilder: _i17.TransitionsBuilders.slideLeftWithFade,
+          transitionsBuilder: _i17.TransitionsBuilders.fadeIn,
           durationInMilliseconds: 250,
           opaque: true,
           barrierDismissible: false);
@@ -171,7 +171,7 @@ class AppAutoRouter extends _i17.RootStackRouter {
       return _i17.CustomPage<dynamic>(
           routeData: routeData,
           child: const _i14.AdminRepairCompaniesTab(),
-          transitionsBuilder: _i17.TransitionsBuilders.slideLeftWithFade,
+          transitionsBuilder: _i17.TransitionsBuilders.fadeIn,
           durationInMilliseconds: 250,
           opaque: true,
           barrierDismissible: false);
@@ -180,7 +180,7 @@ class AppAutoRouter extends _i17.RootStackRouter {
       return _i17.CustomPage<dynamic>(
           routeData: routeData,
           child: const _i15.AdminWashMachinesTab(),
-          transitionsBuilder: _i17.TransitionsBuilders.slideLeftWithFade,
+          transitionsBuilder: _i17.TransitionsBuilders.fadeIn,
           durationInMilliseconds: 250,
           opaque: true,
           barrierDismissible: false);
@@ -189,7 +189,7 @@ class AppAutoRouter extends _i17.RootStackRouter {
       return _i17.CustomPage<dynamic>(
           routeData: routeData,
           child: const _i16.AdminEmployeesTab(),
-          transitionsBuilder: _i17.TransitionsBuilders.slideLeftWithFade,
+          transitionsBuilder: _i17.TransitionsBuilders.fadeIn,
           durationInMilliseconds: 250,
           opaque: true,
           barrierDismissible: false);

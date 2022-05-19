@@ -24,17 +24,12 @@ class WashMachineTile extends StatelessWidget {
       imageAsset: AppImageAssets.washMachineImage,
       onDeletePressed: onDeletePressed,
       onMorePressed: onMorePressed,
-      child: Container(
-        decoration: BoxDecoration(
-          color: !washMachine.isWorking
-              ? Theme.of(context).colorScheme.errorContainer
-              : washMachine.isWashing
-                  ? Theme.of(context).scaffoldBackgroundColor
-                  : Colors.transparent,
-          borderRadius: BorderRadius.circular(16),
-        ),
-        child: _buildInfo(context),
-      ),
+      color: !washMachine.isWorking
+          ? Theme.of(context).colorScheme.errorContainer
+          : washMachine.isWashing
+              ? Theme.of(context).scaffoldBackgroundColor
+              : null,
+      child: _buildInfo(context),
     );
   }
 
