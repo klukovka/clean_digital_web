@@ -73,5 +73,13 @@
     "washMachines": "Washing machines",
     "employees": "Employees",
     "doYouWantToDeleteEmployee": "Do you want to delete a employee?",
-    "birthday": "Birthday"
+    "birthday": "Birthday",
+    "model": "Model",
+    "manufacturer": "Manufacturer",
+    "capacity": "Capacity (kg)",
+    "powerUsage": "Power usage",
+    "maxTime": "Max time of work (minutes)",
+    "currentTime": "Current time of work (minutes)",
+    "isWorking":  "Is working",
+    "isWashing": "Is washing"
 }

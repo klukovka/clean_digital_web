@@ -18,7 +18,7 @@ import '../pages/repair_company_main_page/repair_company_main_page.dart';
 import '../pages/splash_page/splash_page.dart';
 
 const _durationInMilliseconds = 250;
-const _fadeIn = TransitionsBuilders.fadeIn;
+const _fadeIn = TransitionsBuilders.slideLeftWithFade;
 
 @MaterialAutoRouter(
   replaceInRouteName: 'Page|Tab,Route',

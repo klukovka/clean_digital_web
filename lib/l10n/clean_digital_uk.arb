@@ -75,5 +75,13 @@
   "washMachines": "Пральні машини",
   "employees": "Робітники",
   "doYouWantToDeleteEmployee": "Ви дійсно хочете видалити робітника?",
-  "birthday": "Дата народження"
+  "birthday": "Дата народження",
+  "model": "Модель",
+  "manufacturer": "Виробник",
+  "capacity": "Вмісткість (кг)",
+  "powerUsage": "Електроенергія (кв/год)",
+  "maxTime": "Максимальний час роботи (хв)",
+  "currentTime": "Поточний час роботи (хв)",
+  "isWorking":  "Чи працює",
+  "isWashing": "Чи пере"
 }

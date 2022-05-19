@@ -234,4 +234,28 @@ class CleanDigitalLocalizationsUk extends CleanDigitalLocalizations {
 
   @override
   String get birthday => 'Дата народження';
+
+  @override
+  String get model => 'Модель';
+
+  @override
+  String get manufacturer => 'Виробник';
+
+  @override
+  String get capacity => 'Вмісткість (кг)';
+
+  @override
+  String get powerUsage => 'Електроенергія (кв/год)';
+
+  @override
+  String get maxTime => 'Максимальний час роботи (хв)';
+
+  @override
+  String get currentTime => 'Поточний час роботи (хв)';
+
+  @override
+  String get isWorking => 'Чи працює';
+
+  @override
+  String get isWashing => 'Чи пере';
 }

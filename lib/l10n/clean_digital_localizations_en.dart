@@ -234,4 +234,28 @@ class CleanDigitalLocalizationsEn extends CleanDigitalLocalizations {
 
   @override
   String get birthday => 'Birthday';
+
+  @override
+  String get model => 'Model';
+
+  @override
+  String get manufacturer => 'Manufacturer';
+
+  @override
+  String get capacity => 'Capacity (kg)';
+
+  @override
+  String get powerUsage => 'Power usage';
+
+  @override
+  String get maxTime => 'Max time of work (minutes)';
+
+  @override
+  String get currentTime => 'Current time of work (minutes)';
+
+  @override
+  String get isWorking => 'Is working';
+
+  @override
+  String get isWashing => 'Is washing';
 }

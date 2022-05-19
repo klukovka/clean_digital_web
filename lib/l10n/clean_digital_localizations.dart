@@ -549,6 +549,54 @@ abstract class CleanDigitalLocalizations {
   /// In uk, this message translates to:
   /// **'Дата народження'**
   String get birthday;
+
+  /// No description provided for @model.
+  ///
+  /// In uk, this message translates to:
+  /// **'Модель'**
+  String get model;
+
+  /// No description provided for @manufacturer.
+  ///
+  /// In uk, this message translates to:
+  /// **'Виробник'**
+  String get manufacturer;
+
+  /// No description provided for @capacity.
+  ///
+  /// In uk, this message translates to:
+  /// **'Вмісткість (кг)'**
+  String get capacity;
+
+  /// No description provided for @powerUsage.
+  ///
+  /// In uk, this message translates to:
+  /// **'Електроенергія (кв/год)'**
+  String get powerUsage;
+
+  /// No description provided for @maxTime.
+  ///
+  /// In uk, this message translates to:
+  /// **'Максимальний час роботи (хв)'**
+  String get maxTime;
+
+  /// No description provided for @currentTime.
+  ///
+  /// In uk, this message translates to:
+  /// **'Поточний час роботи (хв)'**
+  String get currentTime;
+
+  /// No description provided for @isWorking.
+  ///
+  /// In uk, this message translates to:
+  /// **'Чи працює'**
+  String get isWorking;
+
+  /// No description provided for @isWashing.
+  ///
+  /// In uk, this message translates to:
+  /// **'Чи пере'**
+  String get isWashing;
 }
 
 class _CleanDigitalLocalizationsDelegate extends LocalizationsDelegate<CleanDigitalLocalizations> {

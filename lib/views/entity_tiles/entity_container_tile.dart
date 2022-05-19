@@ -15,10 +15,10 @@ class EntityContainerTile extends StatelessWidget {
   const EntityContainerTile({
     Key? key,
     required this.child,
-    required this.dialogTitle,
     required this.imageAsset,
     required this.onDeletePressed,
     required this.onMorePressed,
+    this.dialogTitle = '',
   }) : super(key: key);
 
   @override
