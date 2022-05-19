@@ -12,16 +12,18 @@ import '../api/clean_digital_api_client.dart' as _i11;
 import '../api/interceptors/header_api_interceptor.dart' as _i9;
 import '../bloc/administrator/admin_laundry_page/admin_laundry_page_cubit.dart'
     as _i15;
+import '../bloc/administrator/admin_laundry_page/tabs/admin_employees_tab/admin_employees_tab_cubit.dart'
+    as _i22;
 import '../bloc/administrator/tabs/admin_backups_tab/admin_backups_tab_cubit.dart'
     as _i20;
 import '../bloc/administrator/tabs/admin_clients_tab/admin_clients_tab_cubit.dart'
     as _i21;
 import '../bloc/administrator/tabs/admin_laundries_tab/admin_laundries_tab_cubit.dart'
-    as _i22;
-import '../bloc/administrator/tabs/admin_repair_companies_tab/admin_repair_companies_tab_cubit.dart'
     as _i23;
-import '../bloc/administrator/tabs/admin_settings_tab/admin_settings_tab_cubit.dart'
+import '../bloc/administrator/tabs/admin_repair_companies_tab/admin_repair_companies_tab_cubit.dart'
     as _i24;
+import '../bloc/administrator/tabs/admin_settings_tab/admin_settings_tab_cubit.dart'
+    as _i25;
 import '../bloc/app_control/app_control_cubit.dart' as _i8;
 import '../bloc/auth/login_page/login_page_cubit.dart' as _i18;
 import '../bloc/auth/restore_password_page/restore_password_page_cubit.dart'
@@ -36,7 +38,7 @@ import '../services/laundries_service.dart' as _i13;
 import '../services/logout_service.dart' as _i7;
 import '../services/preferences_service.dart' as _i5;
 import '../services/repair_companies_service.dart' as _i14;
-import 'module/api_module.dart' as _i25; // ignore_for_file: unnecessary_lambdas
+import 'module/api_module.dart' as _i26; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars
 /// initializes the registration of provided dependencies inside of [GetIt]
@@ -83,14 +85,17 @@ Future<_i1.GetIt> $configureDependencies(_i1.GetIt get,
       () => _i20.AdminBackupsTabCubit(get<_i17.BackupService>()));
   gh.factory<_i21.AdminClientsTabCubit>(() => _i21.AdminClientsTabCubit(
       get<_i12.ClientsService>(), get<_i16.AuthService>()));
-  gh.factory<_i22.AdminLaundriesTabCubit>(() => _i22.AdminLaundriesTabCubit(
+  gh.factoryParam<_i22.AdminEmployeesTabCubit, String?, dynamic>(
+      (laundryId, _) => _i22.AdminEmployeesTabCubit(
+          get<_i13.LaundriesService>(), get<_i16.AuthService>(), laundryId));
+  gh.factory<_i23.AdminLaundriesTabCubit>(() => _i23.AdminLaundriesTabCubit(
       get<_i13.LaundriesService>(), get<_i16.AuthService>()));
-  gh.factory<_i23.AdminRepairCompaniesTabCubit>(() =>
-      _i23.AdminRepairCompaniesTabCubit(
+  gh.factory<_i24.AdminRepairCompaniesTabCubit>(() =>
+      _i24.AdminRepairCompaniesTabCubit(
           get<_i14.RepairCompaniesService>(), get<_i16.AuthService>()));
-  gh.factory<_i24.AdminSettingsTabCubit>(
-      () => _i24.AdminSettingsTabCubit(get<_i16.AuthService>()));
+  gh.factory<_i25.AdminSettingsTabCubit>(
+      () => _i25.AdminSettingsTabCubit(get<_i16.AuthService>()));
   return get;
 }
 
-class _$ApiModule extends _i25.ApiModule {}
+class _$ApiModule extends _i26.ApiModule {}
