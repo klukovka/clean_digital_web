@@ -32,12 +32,12 @@ enum AdminLaundryPageTabItem implements AutoTabMenuItem {
   }
 
   @override
-  PageRouteInfo route(String path) {
+  PageRouteInfo get route {
     switch (this) {
       case AdminLaundryPageTabItem.employees:
-        return AdminEmployeesRoute();
+        return const AdminEmployeesRoute();
       case AdminLaundryPageTabItem.washMachines:
-        return AdminWashMachinesRoute();
+        return const AdminWashMachinesRoute();
     }
   }
 }

@@ -20,7 +20,7 @@ class AutoTabsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AutoTabsRouter(
-      routes: items.map((item) => item.route(id)).toList(),
+      routes: items.map((item) => item.route).toList(),
       builder: (context, child, animation) {
         final tabsRouter = AutoTabsRouter.of(context);
         return DefaultTabController(

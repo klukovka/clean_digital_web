@@ -4,10 +4,10 @@ import '../../di/injection_container.dart';
 import '../../l10n/clean_digital_localizations.dart';
 import '../../services/preferences_service.dart';
 import 'drawer_item.dart';
-import '../auto_tab_views/drawer_menu_item.dart';
+import '../auto_tab_views/auto_tab_menu_item.dart';
 
 class CleanDigitalDrawer extends StatelessWidget {
-  final List<DrawerMenuItem> items;
+  final List<AutoTabMenuItem> items;
   final ValueSetter<int> onMenuItemTap;
   final int currentIndex;
 

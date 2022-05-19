@@ -4,5 +4,5 @@ import 'package:flutter/material.dart';
 abstract class AutoTabMenuItem {
   String title(BuildContext context);
   IconData get iconData;
-  PageRouteInfo route(String path);
+  PageRouteInfo get route;
 }
