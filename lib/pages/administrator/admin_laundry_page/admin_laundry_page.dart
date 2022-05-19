@@ -22,7 +22,7 @@ class AdminLaundryPage extends StatelessWidget implements AutoRouteWrapper {
     return BlocProvider(
       create: (_) => locator<AdminLaundryPageCubit>(
         param1: laundryId,
-      ),
+      )..init(),
       child: this,
     );
   }

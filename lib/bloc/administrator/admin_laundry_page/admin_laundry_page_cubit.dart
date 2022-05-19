@@ -14,9 +14,9 @@ class AdminLaundryPageCubit extends BaseCubit<AdminLaundryPageState> {
 
   AdminLaundryPageCubit(
     this._laundriesService,
-    @factoryParam String laundryId,
+    @factoryParam String? laundryId,
   ) : super(const AdminLaundryPageState()) {
-    _laundryId = laundryId;
+    _laundryId = laundryId!;
   }
 
   @override
