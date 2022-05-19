@@ -4,8 +4,7 @@ import 'package:flutter/material.dart';
 import 'auto_tab_menu_item.dart';
 
 class AutoTabsView extends StatelessWidget {
-  final String title;
-  final String id;
+  final Widget title;
   final List<AutoTabMenuItem> items;
   final VoidCallback? onPressed;
 
@@ -13,7 +12,6 @@ class AutoTabsView extends StatelessWidget {
     Key? key,
     required this.items,
     required this.title,
-    required this.id,
     this.onPressed,
   }) : super(key: key);
 
@@ -27,7 +25,7 @@ class AutoTabsView extends StatelessWidget {
           length: items.length,
           child: Scaffold(
             appBar: AppBar(
-              title: Text(title),
+              title: title,
               centerTitle: false,
               bottom: TabBar(
                 onTap: tabsRouter.setActiveIndex,
@@ -42,7 +40,10 @@ class AutoTabsView extends StatelessWidget {
               actions: [
                 IconButton(
                   onPressed: onPressed,
-                  icon: const Icon(Icons.more_horiz),
+                  icon: Icon(
+                    Icons.more_horiz,
+                    color: Theme.of(context).colorScheme.onPrimary,
+                  ),
                 )
               ],
             ),
