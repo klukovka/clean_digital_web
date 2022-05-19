@@ -13,32 +13,34 @@ import '../api/interceptors/header_api_interceptor.dart' as _i9;
 import '../bloc/administrator/admin_laundry_page/admin_laundry_page_cubit.dart'
     as _i15;
 import '../bloc/administrator/admin_laundry_page/tabs/admin_employees_tab/admin_employees_tab_cubit.dart'
-    as _i22;
-import '../bloc/administrator/tabs/admin_backups_tab/admin_backups_tab_cubit.dart'
-    as _i20;
-import '../bloc/administrator/tabs/admin_clients_tab/admin_clients_tab_cubit.dart'
-    as _i21;
-import '../bloc/administrator/tabs/admin_laundries_tab/admin_laundries_tab_cubit.dart'
     as _i23;
-import '../bloc/administrator/tabs/admin_repair_companies_tab/admin_repair_companies_tab_cubit.dart'
+import '../bloc/administrator/admin_laundry_page/tabs/admin_wash_machines_tab/admin_wash_machines_tab_cubit.dart'
+    as _i16;
+import '../bloc/administrator/tabs/admin_backups_tab/admin_backups_tab_cubit.dart'
+    as _i21;
+import '../bloc/administrator/tabs/admin_clients_tab/admin_clients_tab_cubit.dart'
+    as _i22;
+import '../bloc/administrator/tabs/admin_laundries_tab/admin_laundries_tab_cubit.dart'
     as _i24;
-import '../bloc/administrator/tabs/admin_settings_tab/admin_settings_tab_cubit.dart'
+import '../bloc/administrator/tabs/admin_repair_companies_tab/admin_repair_companies_tab_cubit.dart'
     as _i25;
+import '../bloc/administrator/tabs/admin_settings_tab/admin_settings_tab_cubit.dart'
+    as _i26;
 import '../bloc/app_control/app_control_cubit.dart' as _i8;
-import '../bloc/auth/login_page/login_page_cubit.dart' as _i18;
+import '../bloc/auth/login_page/login_page_cubit.dart' as _i19;
 import '../bloc/auth/restore_password_page/restore_password_page_cubit.dart'
-    as _i19;
+    as _i20;
 import '../bloc/splash_page/splash_page_cubit.dart' as _i6;
 import '../router/app_auto_router.gr.dart' as _i4;
 import '../router/clean_digital_router.dart' as _i3;
-import '../services/auth_service.dart' as _i16;
-import '../services/backup_service.dart' as _i17;
+import '../services/auth_service.dart' as _i17;
+import '../services/backup_service.dart' as _i18;
 import '../services/clients_service.dart' as _i12;
 import '../services/laundries_service.dart' as _i13;
 import '../services/logout_service.dart' as _i7;
 import '../services/preferences_service.dart' as _i5;
 import '../services/repair_companies_service.dart' as _i14;
-import 'module/api_module.dart' as _i26; // ignore_for_file: unnecessary_lambdas
+import 'module/api_module.dart' as _i27; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars
 /// initializes the registration of provided dependencies inside of [GetIt]
@@ -73,29 +75,32 @@ Future<_i1.GetIt> $configureDependencies(_i1.GetIt get,
   gh.factoryParam<_i15.AdminLaundryPageCubit, String?, dynamic>(
       (laundryId, _) =>
           _i15.AdminLaundryPageCubit(get<_i13.LaundriesService>(), laundryId));
-  gh.factory<_i16.AuthService>(
-      () => _i16.AuthService(get<_i11.CleanDigitalApiClient>()));
-  gh.factory<_i17.BackupService>(
-      () => _i17.BackupService(get<_i11.CleanDigitalApiClient>()));
-  gh.factory<_i18.LoginPageCubit>(() => _i18.LoginPageCubit(
-      get<_i16.AuthService>(), get<_i5.PreferencesService>()));
-  gh.factory<_i19.RestorePasswordPageCubit>(
-      () => _i19.RestorePasswordPageCubit(get<_i16.AuthService>()));
-  gh.factory<_i20.AdminBackupsTabCubit>(
-      () => _i20.AdminBackupsTabCubit(get<_i17.BackupService>()));
-  gh.factory<_i21.AdminClientsTabCubit>(() => _i21.AdminClientsTabCubit(
-      get<_i12.ClientsService>(), get<_i16.AuthService>()));
-  gh.factoryParam<_i22.AdminEmployeesTabCubit, String?, dynamic>(
-      (laundryId, _) => _i22.AdminEmployeesTabCubit(
-          get<_i13.LaundriesService>(), get<_i16.AuthService>(), laundryId));
-  gh.factory<_i23.AdminLaundriesTabCubit>(() => _i23.AdminLaundriesTabCubit(
-      get<_i13.LaundriesService>(), get<_i16.AuthService>()));
-  gh.factory<_i24.AdminRepairCompaniesTabCubit>(() =>
-      _i24.AdminRepairCompaniesTabCubit(
-          get<_i14.RepairCompaniesService>(), get<_i16.AuthService>()));
-  gh.factory<_i25.AdminSettingsTabCubit>(
-      () => _i25.AdminSettingsTabCubit(get<_i16.AuthService>()));
+  gh.factoryParam<_i16.AdminWashMachinesTabCubit, String?, dynamic>((laundryId,
+          _) =>
+      _i16.AdminWashMachinesTabCubit(get<_i13.LaundriesService>(), laundryId));
+  gh.factory<_i17.AuthService>(
+      () => _i17.AuthService(get<_i11.CleanDigitalApiClient>()));
+  gh.factory<_i18.BackupService>(
+      () => _i18.BackupService(get<_i11.CleanDigitalApiClient>()));
+  gh.factory<_i19.LoginPageCubit>(() => _i19.LoginPageCubit(
+      get<_i17.AuthService>(), get<_i5.PreferencesService>()));
+  gh.factory<_i20.RestorePasswordPageCubit>(
+      () => _i20.RestorePasswordPageCubit(get<_i17.AuthService>()));
+  gh.factory<_i21.AdminBackupsTabCubit>(
+      () => _i21.AdminBackupsTabCubit(get<_i18.BackupService>()));
+  gh.factory<_i22.AdminClientsTabCubit>(() => _i22.AdminClientsTabCubit(
+      get<_i12.ClientsService>(), get<_i17.AuthService>()));
+  gh.factoryParam<_i23.AdminEmployeesTabCubit, String?, dynamic>(
+      (laundryId, _) => _i23.AdminEmployeesTabCubit(
+          get<_i13.LaundriesService>(), get<_i17.AuthService>(), laundryId));
+  gh.factory<_i24.AdminLaundriesTabCubit>(() => _i24.AdminLaundriesTabCubit(
+      get<_i13.LaundriesService>(), get<_i17.AuthService>()));
+  gh.factory<_i25.AdminRepairCompaniesTabCubit>(() =>
+      _i25.AdminRepairCompaniesTabCubit(
+          get<_i14.RepairCompaniesService>(), get<_i17.AuthService>()));
+  gh.factory<_i26.AdminSettingsTabCubit>(
+      () => _i26.AdminSettingsTabCubit(get<_i17.AuthService>()));
   return get;
 }
 
-class _$ApiModule extends _i26.ApiModule {}
+class _$ApiModule extends _i27.ApiModule {}
