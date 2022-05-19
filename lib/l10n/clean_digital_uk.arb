@@ -73,5 +73,6 @@
   "sale": "Знижка",
   "bonuses": "Бонуси",
   "washMachines": "Пральні машини",
-  "employees": "Робітники"
+  "employees": "Робітники",
+  "doYouWantToDeleteEmployee": "Ви дійсно хочете видалити робітника?"
 }

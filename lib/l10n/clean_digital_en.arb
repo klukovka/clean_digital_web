@@ -71,5 +71,6 @@
     "sale": "Sale",
     "bonuses": "Bonuses",
     "washMachines": "Washing machines",
-    "employees": "Employees"
+    "employees": "Employees",
+    "doYouWantToDeleteEmployee": "Do you want to delete a employee?"
 }

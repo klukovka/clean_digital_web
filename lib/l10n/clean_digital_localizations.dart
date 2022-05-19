@@ -537,6 +537,12 @@ abstract class CleanDigitalLocalizations {
   /// In uk, this message translates to:
   /// **'Робітники'**
   String get employees;
+
+  /// No description provided for @doYouWantToDeleteEmployee.
+  ///
+  /// In uk, this message translates to:
+  /// **'Ви дійсно хочете видалити робітника?'**
+  String get doYouWantToDeleteEmployee;
 }
 
 class _CleanDigitalLocalizationsDelegate extends LocalizationsDelegate<CleanDigitalLocalizations> {
