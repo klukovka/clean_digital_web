@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 
 import '../models/auth_meta.dart';
+import '../models/laundry.dart';
 import '../models/pagination/clients_pagination.dart';
 import '../models/pagination/laundries_pagination.dart';
 import '../models/pagination/repair_companies_pagination.dart';
@@ -81,6 +82,11 @@ abstract class CleanDigitalApiClient {
   Future<LaundriesPagination> getLaundries(
     @Query('page') int page,
     @Query('size') int size,
+  );
+
+  @GET('/laundry/{laundryId}')
+  Future<Laundry> getLaundryById(
+    @Path() String laundryId,
   );
 
   ///

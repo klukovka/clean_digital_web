@@ -2,6 +2,7 @@ import 'package:injectable/injectable.dart';
 
 import '../api/clean_digital_api_client.dart';
 import '../api/models/create_update_requests/create_update_laundry.dart';
+import '../models/laundry.dart';
 import '../models/pagination/laundries_pagination.dart';
 import 'base_service.dart';
 
@@ -25,6 +26,12 @@ class LaundriesService extends BaseService {
   ) async {
     return await makeErrorHandledCall(() async {
       return await _apiClient.createLaundry(request);
+    });
+  }
+
+  Future<Laundry> getLaundryById(String laundryId) async {
+    return await makeErrorHandledCall(() async {
+      return await _apiClient.getLaundryById(laundryId);
     });
   }
 }
