@@ -2,10 +2,10 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
 import '../../../views/drawer/clean_digital_drawer.dart';
-import 'auto_tab_menu_item.dart';
+import 'drawer_menu_item.dart';
 
 class AutoTabsDrawerView extends StatelessWidget {
-  final List<AutoTabMenuItem> items;
+  final List<DrawerMenuItem> items;
 
   const AutoTabsDrawerView({
     Key? key,

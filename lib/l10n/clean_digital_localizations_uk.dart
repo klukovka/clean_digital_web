@@ -222,4 +222,10 @@ class CleanDigitalLocalizationsUk extends CleanDigitalLocalizations {
 
   @override
   String get bonuses => 'Бонуси';
+
+  @override
+  String get washMachines => 'Пральні машини';
+
+  @override
+  String get employees => 'Робітники';
 }

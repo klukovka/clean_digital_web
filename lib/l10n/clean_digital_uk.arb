@@ -71,5 +71,7 @@
   "updateRepairCompany": "Оновити ремонтну компанію",
   "doYouWantToDeleteClient": "Ви дійсно хочете клієнта?",
   "sale": "Знижка",
-  "bonuses": "Бонуси"
+  "bonuses": "Бонуси",
+  "washMachines": "Пральні машини",
+  "employees": "Робітники"
 }

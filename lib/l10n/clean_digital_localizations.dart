@@ -525,6 +525,18 @@ abstract class CleanDigitalLocalizations {
   /// In uk, this message translates to:
   /// **'Бонуси'**
   String get bonuses;
+
+  /// No description provided for @washMachines.
+  ///
+  /// In uk, this message translates to:
+  /// **'Пральні машини'**
+  String get washMachines;
+
+  /// No description provided for @employees.
+  ///
+  /// In uk, this message translates to:
+  /// **'Робітники'**
+  String get employees;
 }
 
 class _CleanDigitalLocalizationsDelegate extends LocalizationsDelegate<CleanDigitalLocalizations> {

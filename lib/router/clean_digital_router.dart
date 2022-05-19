@@ -37,4 +37,8 @@ class CleanDigitalRouter extends BaseRouter {
   Future<void> pushRestorePasswordPage() async {
     await push(const RestorePasswordRoute());
   }
+
+  Future<void> pushAdminLaundryPage(String laundryId) async {
+    await push(AdminLaundryRoute(laundryId: laundryId));
+  }
 }

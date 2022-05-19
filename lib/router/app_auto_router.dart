@@ -1,5 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 
+import '../pages/administrator/admin_laundry_page/admin_laundry_page.dart';
+import '../pages/administrator/admin_laundry_page/tabs/admin_employees_tab.dart';
+import '../pages/administrator/admin_laundry_page/tabs/admin_wash_machines_tab.dart';
 import '../pages/administrator/admin_page.dart';
 import '../pages/administrator/tabs/admin_backups_tab/admin_backups_tab.dart';
 import '../pages/administrator/tabs/admin_clients_tab/admin_clients_tab.dart';
@@ -80,6 +83,27 @@ const _fadeIn = TransitionsBuilders.fadeIn;
         CustomRoute(
           page: AdminRepairCompaniesTab,
           path: 'repairCompanies/',
+          transitionsBuilder: _fadeIn,
+          durationInMilliseconds: _durationInMilliseconds,
+        ),
+      ],
+    ),
+    CustomRoute(
+      page: AdminLaundryPage,
+      path: '/admin/laundries/:laundryId/',
+      transitionsBuilder: _fadeIn,
+      durationInMilliseconds: _durationInMilliseconds,
+      children: [
+        CustomRoute(
+          page: AdminWashMachinesTab,
+          path: 'washMachines/',
+          initial: true,
+          transitionsBuilder: _fadeIn,
+          durationInMilliseconds: _durationInMilliseconds,
+        ),
+        CustomRoute(
+          page: AdminEmployeesTab,
+          path: 'employees/',
           transitionsBuilder: _fadeIn,
           durationInMilliseconds: _durationInMilliseconds,
         ),

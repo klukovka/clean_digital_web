@@ -142,6 +142,7 @@ class _AdminLaundriesTabState extends State<AdminLaundriesTab>
         itemBuilder: (laundry) {
           return LaundryTile(
             laundry: laundry,
+            onMorePressed: () => router.pushAdminLaundryPage(laundry.laundryId),
             onDeletePressed: () async {
               await cubit.deteleLaundry(laundry.user.userId);
               _paginatedListKey = UniqueKey();
