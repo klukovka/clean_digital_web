@@ -72,5 +72,6 @@
     "bonuses": "Bonuses",
     "washMachines": "Washing machines",
     "employees": "Employees",
-    "doYouWantToDeleteEmployee": "Do you want to delete a employee?"
+    "doYouWantToDeleteEmployee": "Do you want to delete a employee?",
+    "birthday": "Birthday"
 }

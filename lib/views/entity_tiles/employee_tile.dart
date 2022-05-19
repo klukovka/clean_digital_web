@@ -39,7 +39,10 @@ class EmployeeTile extends StatelessWidget {
         EntityLabel(title: localization.name, value: employee.name),
         EntityLabel(title: localization.phone, value: employee.phone),
         EntityLabel(title: localization.email, value: employee.user.email),
-        EntityLabel(title: localization.sale, value: '${employee.birthday}'),
+        EntityLabel(
+          title: localization.birthday,
+          value: '${employee.birthday}',
+        ),
       ],
     );
   }

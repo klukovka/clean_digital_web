@@ -22,7 +22,7 @@ class AdminEmployeesTab extends StatefulWidget implements AutoRouteWrapper {
     return BlocProvider(
       create: (_) => locator<AdminEmployeesTabCubit>(
         param1: RouteData.of(context).pathParams.getString('laundryId', ''),
-      ),
+      )..getEmployees(),
       child: this,
     );
   }

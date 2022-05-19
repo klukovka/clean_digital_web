@@ -7,12 +7,14 @@ class AutoTabsView extends StatelessWidget {
   final Widget title;
   final List<AutoTabMenuItem> items;
   final VoidCallback? onPressed;
+  final VoidCallback? onBackPressed;
 
   const AutoTabsView({
     Key? key,
     required this.items,
     required this.title,
     this.onPressed,
+    this.onBackPressed,
   }) : super(key: key);
 
   @override
@@ -27,6 +29,10 @@ class AutoTabsView extends StatelessWidget {
             appBar: AppBar(
               title: title,
               centerTitle: false,
+              leading: IconButton(
+                icon: const Icon(Icons.arrow_back_ios),
+                onPressed: onBackPressed,
+              ),
               bottom: TabBar(
                 onTap: tabsRouter.setActiveIndex,
                 padding: EdgeInsets.zero,

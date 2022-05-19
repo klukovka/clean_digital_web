@@ -543,6 +543,12 @@ abstract class CleanDigitalLocalizations {
   /// In uk, this message translates to:
   /// **'Ви дійсно хочете видалити робітника?'**
   String get doYouWantToDeleteEmployee;
+
+  /// No description provided for @birthday.
+  ///
+  /// In uk, this message translates to:
+  /// **'Дата народження'**
+  String get birthday;
 }
 
 class _CleanDigitalLocalizationsDelegate extends LocalizationsDelegate<CleanDigitalLocalizations> {

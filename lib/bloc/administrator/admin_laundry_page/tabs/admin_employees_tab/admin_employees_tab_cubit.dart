@@ -18,7 +18,9 @@ class AdminEmployeesTabCubit extends BaseCubit<AdminEmployeesTabState> {
     this._laundriesService,
     this._authService,
     @factoryParam String? laundryId,
-  ) : super(const AdminEmployeesTabState());
+  ) : super(const AdminEmployeesTabState()) {
+    _laundryId = laundryId!;
+  }
 
   @override
   void handleError(String errorMessage) {

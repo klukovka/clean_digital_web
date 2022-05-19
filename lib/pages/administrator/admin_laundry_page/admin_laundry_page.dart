@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../bloc/administrator/admin_laundry_page/admin_laundry_page_cubit.dart';
 import '../../../di/injection_container.dart';
+import '../../../router/clean_digital_router.dart';
 import '../../../utils/clean_digital_toasts.dart';
 import '../../../views/auto_tab_views/auto_tabs_view.dart';
 import '../../../views/loading_indicator.dart';
@@ -31,6 +32,7 @@ class AdminLaundryPage extends StatelessWidget implements AutoRouteWrapper {
   Widget build(BuildContext context) {
     return AutoTabsView(
       items: AdminLaundryPageTabItem.values,
+      onBackPressed: router.replaceAdminMainPage,
       title: _buildTitle(),
     );
   }

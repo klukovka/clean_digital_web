@@ -51,25 +51,27 @@ class EntityContainerTile extends StatelessWidget {
   Widget _buildButtons(BuildContext context) {
     return Row(
       children: [
-        Expanded(
-          child: PrimaryButton(
-            title: CleanDigitalLocalizations.of(context).more,
-            onPressed: onMorePressed,
+        if (onMorePressed != null)
+          Expanded(
+            child: PrimaryButton(
+              title: CleanDigitalLocalizations.of(context).more,
+              onPressed: onMorePressed,
+            ),
           ),
-        ),
         const SizedBox(width: 16),
-        Expanded(
-          child: PrimaryButton(
-            title: CleanDigitalLocalizations.of(context).delete,
-            isOutlined: true,
-            onPressed: () {
-              CleanDigitalDialogs.of(context).showConfirmNoDialog(
-                title: dialogTitle,
-                onPressed: onDeletePressed,
-              );
-            },
+        if (onDeletePressed != null)
+          Expanded(
+            child: PrimaryButton(
+              title: CleanDigitalLocalizations.of(context).delete,
+              isOutlined: true,
+              onPressed: () {
+                CleanDigitalDialogs.of(context).showConfirmNoDialog(
+                  title: dialogTitle,
+                  onPressed: onDeletePressed,
+                );
+              },
+            ),
           ),
-        ),
       ],
     );
   }

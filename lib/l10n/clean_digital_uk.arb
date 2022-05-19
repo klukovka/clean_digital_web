@@ -74,5 +74,6 @@
   "bonuses": "Бонуси",
   "washMachines": "Пральні машини",
   "employees": "Робітники",
-  "doYouWantToDeleteEmployee": "Ви дійсно хочете видалити робітника?"
+  "doYouWantToDeleteEmployee": "Ви дійсно хочете видалити робітника?",
+  "birthday": "Дата народження"
 }
