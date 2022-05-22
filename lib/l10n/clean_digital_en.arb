@@ -81,5 +81,13 @@
     "maxTime": "Max time of work (minutes)",
     "currentTime": "Current time of work (minutes)",
     "isWorking":  "Is working",
-    "isWashing": "Is washing"
+    "isWashing": "Is washing",
+    "paidBonuses": "Paid bonuses",
+    "paidMoney": "Paid money",
+    "allMoney": "All money",
+    "rating": "Rating",
+    "repairAmount": "Repair amount",
+    "repairMoney": "Repair money",
+    "time": "Time",
+    "nd": "N/D"
 }

@@ -7,8 +7,9 @@ import '../buttons/primary_button.dart';
 
 class EntityContainerTile extends StatelessWidget {
   final Widget child;
-  final String imageAsset;
   final String dialogTitle;
+  final Widget? titleChild;
+  final String? imageAsset;
   final VoidCallback? onDeletePressed;
   final VoidCallback? onMorePressed;
   final Color? color;
@@ -16,11 +17,12 @@ class EntityContainerTile extends StatelessWidget {
   const EntityContainerTile({
     Key? key,
     required this.child,
-    required this.imageAsset,
     required this.onDeletePressed,
     required this.onMorePressed,
     this.dialogTitle = '',
     this.color,
+    this.imageAsset,
+    this.titleChild,
   }) : super(key: key);
 
   @override
@@ -36,10 +38,12 @@ class EntityContainerTile extends StatelessWidget {
         children: [
           Row(
             children: [
-              Image.asset(
-                imageAsset,
-                width: 10.w,
-              ),
+              if (titleChild != null) Expanded(child: titleChild!),
+              if (imageAsset != null)
+                Image.asset(
+                  imageAsset!,
+                  width: 10.w,
+                ),
               Expanded(child: child),
             ],
           ),

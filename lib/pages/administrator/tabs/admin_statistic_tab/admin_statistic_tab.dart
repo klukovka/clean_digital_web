@@ -134,7 +134,9 @@ class _AdminStatisticTabState extends State<AdminStatisticTab>
         fetchPage: _fetchPage,
         shrinkWrap: true,
         itemBuilder: (statistic) {
-          return StatisticTile();
+          return StatisticTile(
+            statistic: statistic,
+          );
         },
         builder: (pagedView, controller) {
           return BlocListener<AdminStatisticTabCubit, AdminStatisticTabState>(

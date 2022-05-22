@@ -258,4 +258,28 @@ class CleanDigitalLocalizationsUk extends CleanDigitalLocalizations {
 
   @override
   String get isWashing => 'Чи пере';
+
+  @override
+  String get paidBonuses => 'Сплачені бонуси';
+
+  @override
+  String get paidMoney => 'Сплачені гроші';
+
+  @override
+  String get allMoney => 'Усі гроші';
+
+  @override
+  String get rating => 'Рейтинг';
+
+  @override
+  String get repairAmount => 'Кількість ремонтів';
+
+  @override
+  String get repairMoney => 'Гроші витрачені на ремонт';
+
+  @override
+  String get time => 'Витрачений час';
+
+  @override
+  String get nd => 'N/D';
 }

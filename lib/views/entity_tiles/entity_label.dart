@@ -1,9 +1,11 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
+import '../../l10n/clean_digital_localizations.dart';
+
 class EntityLabel extends StatelessWidget {
   final String title;
-  final String value;
+  final dynamic value;
 
   const EntityLabel({
     Key? key,
@@ -27,7 +29,9 @@ class EntityLabel extends StatelessWidget {
           const SizedBox(width: 8),
           Expanded(
             child: AutoSizeText(
-              value,
+              value != null
+                  ? '$value'
+                  : CleanDigitalLocalizations.of(context).nd,
               style: Theme.of(context).textTheme.headline5,
               maxLines: 1,
             ),

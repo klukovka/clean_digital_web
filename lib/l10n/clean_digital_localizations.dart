@@ -597,6 +597,54 @@ abstract class CleanDigitalLocalizations {
   /// In uk, this message translates to:
   /// **'Чи пере'**
   String get isWashing;
+
+  /// No description provided for @paidBonuses.
+  ///
+  /// In uk, this message translates to:
+  /// **'Сплачені бонуси'**
+  String get paidBonuses;
+
+  /// No description provided for @paidMoney.
+  ///
+  /// In uk, this message translates to:
+  /// **'Сплачені гроші'**
+  String get paidMoney;
+
+  /// No description provided for @allMoney.
+  ///
+  /// In uk, this message translates to:
+  /// **'Усі гроші'**
+  String get allMoney;
+
+  /// No description provided for @rating.
+  ///
+  /// In uk, this message translates to:
+  /// **'Рейтинг'**
+  String get rating;
+
+  /// No description provided for @repairAmount.
+  ///
+  /// In uk, this message translates to:
+  /// **'Кількість ремонтів'**
+  String get repairAmount;
+
+  /// No description provided for @repairMoney.
+  ///
+  /// In uk, this message translates to:
+  /// **'Гроші витрачені на ремонт'**
+  String get repairMoney;
+
+  /// No description provided for @time.
+  ///
+  /// In uk, this message translates to:
+  /// **'Витрачений час'**
+  String get time;
+
+  /// No description provided for @nd.
+  ///
+  /// In uk, this message translates to:
+  /// **'N/D'**
+  String get nd;
 }
 
 class _CleanDigitalLocalizationsDelegate extends LocalizationsDelegate<CleanDigitalLocalizations> {
