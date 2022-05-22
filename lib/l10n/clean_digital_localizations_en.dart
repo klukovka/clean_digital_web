@@ -309,4 +309,25 @@ class CleanDigitalLocalizationsEn extends CleanDigitalLocalizations {
 
   @override
   String get usageStatistic => 'Usage statistic';
+
+  @override
+  String get repairType => 'Repair type';
+
+  @override
+  String get description => 'Description';
+
+  @override
+  String get costs => 'Costs';
+
+  @override
+  String get repairProducts => 'Repair products';
+
+  @override
+  String get repair => 'Repair';
+
+  @override
+  String get inspection => 'Inspection';
+
+  @override
+  String get software => 'Software';
 }

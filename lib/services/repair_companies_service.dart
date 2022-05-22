@@ -3,6 +3,7 @@ import 'package:injectable/injectable.dart';
 import '../api/clean_digital_api_client.dart';
 import '../api/models/create_update_requests/create_update_repair_company.dart';
 import '../models/pagination/repair_companies_pagination.dart';
+import '../models/repair_product.dart';
 import 'base_service.dart';
 
 @injectable
@@ -25,6 +26,14 @@ class RepairCompaniesService extends BaseService {
   ) async {
     return await makeErrorHandledCall(() async {
       return await _apiClient.createRepairCompany(request);
+    });
+  }
+
+  Future<List<RepairProduct>> getCompanyProducts(
+    String repairCompanyId,
+  ) async {
+    return await makeErrorHandledCall(() async {
+      return (await _apiClient.getCompanyProducts(repairCompanyId)).products;
     });
   }
 }

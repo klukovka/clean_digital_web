@@ -100,5 +100,12 @@
   "washMachineMark": "Оцінка пральних машин",
   "repairStatistic": "Статистика по ремонтах",
   "minutes": "Хвилини",
-  "usageStatistic": "Статистика використання"
+  "usageStatistic": "Статистика використання",
+  "repairType": "Тип ремонту",
+  "description": "Опис",
+  "costs": "Вартість",
+  "repairProducts": "Ремонти",
+  "repair": "Ремонт",
+  "inspection": "Огляд",
+  "software": "Програмне забезпечення"
 }

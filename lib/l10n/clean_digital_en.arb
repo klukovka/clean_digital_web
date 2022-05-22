@@ -98,5 +98,12 @@
     "washMachineMark": "Washing machine mark",
     "repairStatistic": "Repair Statistic",
     "minutes": "Minutes",
-    "usageStatistic": "Usage statistic"
+    "usageStatistic": "Usage statistic",
+    "repairType": "Repair type",
+    "description": "Description",
+    "costs": "Costs",
+    "repairProducts": "Repair products",
+    "repair": "Repair",
+    "inspection": "Inspection",
+    "software": "Software"
 }

@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -13,6 +15,7 @@ import '../../../../utils/pagination/pagination_utils.dart';
 import '../../../../views/clean_digital_paged_grid_view.dart';
 import '../../../../views/entity_tiles/repair_company_tile.dart';
 import '../../../../views/title_with_button.dart';
+import 'views/repair_products_view.dart';
 
 class AdminRepairCompaniesTab extends StatefulWidget
     implements AutoRouteWrapper {
@@ -102,19 +105,32 @@ class _AdminRepairCompaniesTabState extends State<AdminRepairCompaniesTab>
       child: BlocBuilder<AdminRepairCompaniesTabCubit,
           AdminRepairCompaniesTabState>(
         builder: (context, state) {
-          return Column(
+          final selectedCompany = state.selectedCompany;
+          log('${selectedCompany?.repairCompanyId}');
+          return Row(
             children: [
-              const SizedBox(height: 32),
-              if (state.repairCompanies.isNotEmpty) _buildTitle(state),
-              const SizedBox(height: 32),
               Expanded(
-                child: Align(
-                  alignment: state.repairCompanies.isEmpty
-                      ? Alignment.center
-                      : Alignment.topCenter,
-                  child: _buildRepairCompaniesGrid(),
+                child: Column(
+                  children: [
+                    const SizedBox(height: 32),
+                    if (state.repairCompanies.isNotEmpty) _buildTitle(state),
+                    const SizedBox(height: 32),
+                    Expanded(
+                      child: Align(
+                        alignment: state.repairCompanies.isEmpty
+                            ? Alignment.center
+                            : Alignment.topCenter,
+                        child: _buildRepairCompaniesGrid(),
+                      ),
+                    ),
+                  ],
                 ),
               ),
+              if (selectedCompany != null)
+                RepairProductsView.create(
+                  companyId: selectedCompany.repairCompanyId,
+                  onPressed: cubit.closeCompany,
+                ),
             ],
           );
         },
@@ -147,6 +163,7 @@ class _AdminRepairCompaniesTabState extends State<AdminRepairCompaniesTab>
         itemBuilder: (company) {
           return RepairCompanyTile(
             company: company,
+            onMorePressed: () => cubit.selectCompany(company),
             onDeletePressed: () async {
               await cubit.deteleRepairCompany(company.user.userId);
               _paginatedListKey = UniqueKey();

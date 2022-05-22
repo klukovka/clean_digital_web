@@ -30,7 +30,7 @@ Map<String, dynamic> _$RepairProductToJson(RepairProduct instance) =>
     };
 
 const _$RepairTypeEnumMap = {
-  RepairType.repair: 'REPAIR',
+  RepairType.repair: 'FIX',
   RepairType.inspection: 'INSPECTION',
   RepairType.software: 'SOFTWARE',
 };

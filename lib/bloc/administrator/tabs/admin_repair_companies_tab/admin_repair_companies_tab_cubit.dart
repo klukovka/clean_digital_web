@@ -67,4 +67,17 @@ class AdminRepairCompaniesTabCubit
     });
     reset();
   }
+
+  Future<void> selectCompany(RepairCompany company) async {
+    emit(state.closeCompany());
+    await Future.delayed(const Duration(milliseconds: 500));
+    emit(state.copyWith(
+      selectedCompany: company,
+      repairCompanies: <RepairCompany>[],
+    ));
+  }
+
+  void closeCompany() {
+    emit(state.closeCompany());
+  }
 }

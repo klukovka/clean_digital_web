@@ -699,6 +699,48 @@ abstract class CleanDigitalLocalizations {
   /// In uk, this message translates to:
   /// **'Статистика використання'**
   String get usageStatistic;
+
+  /// No description provided for @repairType.
+  ///
+  /// In uk, this message translates to:
+  /// **'Тип ремонту'**
+  String get repairType;
+
+  /// No description provided for @description.
+  ///
+  /// In uk, this message translates to:
+  /// **'Опис'**
+  String get description;
+
+  /// No description provided for @costs.
+  ///
+  /// In uk, this message translates to:
+  /// **'Вартість'**
+  String get costs;
+
+  /// No description provided for @repairProducts.
+  ///
+  /// In uk, this message translates to:
+  /// **'Ремонти'**
+  String get repairProducts;
+
+  /// No description provided for @repair.
+  ///
+  /// In uk, this message translates to:
+  /// **'Ремонт'**
+  String get repair;
+
+  /// No description provided for @inspection.
+  ///
+  /// In uk, this message translates to:
+  /// **'Огляд'**
+  String get inspection;
+
+  /// No description provided for @software.
+  ///
+  /// In uk, this message translates to:
+  /// **'Програмне забезпечення'**
+  String get software;
 }
 
 class _CleanDigitalLocalizationsDelegate extends LocalizationsDelegate<CleanDigitalLocalizations> {

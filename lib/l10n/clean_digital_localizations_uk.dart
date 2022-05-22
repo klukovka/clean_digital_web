@@ -309,4 +309,25 @@ class CleanDigitalLocalizationsUk extends CleanDigitalLocalizations {
 
   @override
   String get usageStatistic => 'Статистика використання';
+
+  @override
+  String get repairType => 'Тип ремонту';
+
+  @override
+  String get description => 'Опис';
+
+  @override
+  String get costs => 'Вартість';
+
+  @override
+  String get repairProducts => 'Ремонти';
+
+  @override
+  String get repair => 'Ремонт';
+
+  @override
+  String get inspection => 'Огляд';
+
+  @override
+  String get software => 'Програмне забезпечення';
 }

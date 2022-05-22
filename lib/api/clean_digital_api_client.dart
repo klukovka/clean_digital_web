@@ -10,8 +10,10 @@ import '../models/pagination/payment_pagination.dart';
 import '../models/pagination/rating_pagination.dart';
 import '../models/pagination/repair_companies_pagination.dart';
 import '../models/pagination/repair_pagination.dart';
+import '../models/pagination/repair_products_pagination.dart';
 import '../models/pagination/time_and_usage_pagination.dart';
 import '../models/pagination/wash_machines_pagination.dart';
+import '../models/repair_product.dart';
 import '../models/statistic/payment_statistic_laundry.dart';
 import '../models/statistic/rating_statistic_laundry.dart';
 import '../models/statistic/repair_statistic_laundry.dart';
@@ -122,6 +124,15 @@ abstract class CleanDigitalApiClient {
   Future<RepairCompaniesPagination> getRepairCompanies(
     @Query('page') int page,
     @Query('size') int size,
+  );
+
+  ///
+  ///
+  ///
+
+  @GET('/repairCompany/company-products/{repairCompanyId}')
+  Future<RepairProductsPagination> getCompanyProducts(
+    @Path('repairCompanyId') String repairCompanyId,
   );
 
   ///
