@@ -19,7 +19,7 @@ class StatisticService extends BaseService {
 
   Future<RatingPagination> getAllRating({
     int page = 0,
-    int size = 10,
+    int size = 5,
   }) async {
     return await makeErrorHandledCall(() async {
       return await _apiClient.getAllRating(page, size);
@@ -28,7 +28,7 @@ class StatisticService extends BaseService {
 
   Future<PaymentPagination> getAllPayment({
     int page = 0,
-    int size = 10,
+    int size = 5,
   }) async {
     return await makeErrorHandledCall(() async {
       return await _apiClient.getAllPayment(page, size);
@@ -37,7 +37,7 @@ class StatisticService extends BaseService {
 
   Future<TimeAndUsagePagination> getAllTimeAndUsage({
     int page = 0,
-    int size = 10,
+    int size = 5,
   }) async {
     return await makeErrorHandledCall(() async {
       return await _apiClient.getAllTimeAndUsage(page, size);
@@ -46,7 +46,7 @@ class StatisticService extends BaseService {
 
   Future<RepairPagination> getAllRepair({
     int page = 0,
-    int size = 10,
+    int size = 5,
   }) async {
     return await makeErrorHandledCall(() async {
       return await _apiClient.getAllRepair(page, size);
