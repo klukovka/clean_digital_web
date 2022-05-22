@@ -11,7 +11,6 @@ import '../../../../models/statistic/all_laundry_statistic.dart';
 import '../../../../router/clean_digital_router.dart';
 import '../../../../utils/pagination/pagination_utils.dart';
 import '../../../../views/clean_digital_paged_grid_view.dart';
-import '../../../../views/expanded_section.dart';
 import 'view/statistic_tile.dart';
 import 'view/statistic_view.dart';
 

@@ -2,22 +2,11 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
-import 'package:sizer/sizer.dart';
 
 import '../../../../bloc/administrator/tabs/admin_settings_tab/admin_settings_tab_cubit.dart';
 import '../../../../bloc/app_control/app_control_cubit.dart';
 import '../../../../di/injection_container.dart';
 import '../../../../l10n/clean_digital_localizations.dart';
-import '../../../../models/laundry.dart';
-import '../../../../models/statistic/all_laundry_statistic.dart';
-import '../../../../models/statistic/payment.dart';
-import '../../../../models/statistic/payment_wash_machine_entry.dart';
-import '../../../../models/statistic/rating_wash_machine_entry.dart';
-import '../../../../models/statistic/repair.dart';
-import '../../../../models/statistic/repair_wash_machine_entry.dart';
-import '../../../../models/statistic/time_and_usage.dart';
-import '../../../../models/statistic/time_and_usage_washing_machine_entry.dart';
-import '../../../../models/wash_machine.dart';
 import '../../../../utils/clean_digital_dialogs.dart';
 import '../../../../utils/clean_digital_toasts.dart';
 import '../../../../utils/extensions/locale_ext.dart';
@@ -25,7 +14,6 @@ import '../../../../utils/extensions/theme_mode_ext.dart';
 import '../../../../views/buttons/primary_button.dart';
 import '../../../../views/loading_indicator.dart';
 import '../../../../views/title_with_button.dart';
-import '../admin_statistic_tab/view/statistic_view.dart';
 
 enum _AdminSettingsTabField { language, theme }
 

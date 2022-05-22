@@ -57,12 +57,14 @@ class _StatisticViewState extends State<StatisticView> {
         children: [
           _buildClose(),
           const SizedBox(height: 32),
-          Text(
-            CleanDigitalLocalizations.of(context).moneyStatistic,
-            style: Theme.of(context).textTheme.headline5,
-          ),
-          const SizedBox(height: 16),
-          if (payment != null) _buildLaundryMoney(payment),
+          if (payment != null) ...[
+            Text(
+              CleanDigitalLocalizations.of(context).moneyStatistic,
+              style: Theme.of(context).textTheme.headline5,
+            ),
+            const SizedBox(height: 16),
+            _buildLaundryMoney(payment),
+          ],
           const SizedBox(height: 32),
           if (payment != null && statistic.washMachinePaymentValue.isNotEmpty)
             _buildWashMachinesMoneyChart(statistic, payment),
@@ -74,32 +76,35 @@ class _StatisticViewState extends State<StatisticView> {
           const SizedBox(height: 16),
           _buildLaundryRatingChart(statistic),
           const SizedBox(height: 32),
-          Text(
-            CleanDigitalLocalizations.of(context).repairStatistic,
-            style: Theme.of(context).textTheme.headline5,
-          ),
-          const SizedBox(height: 16),
-          if (repair != null && statistic.washMachineRepairValue.isNotEmpty)
+          if (repair != null &&
+              statistic.washMachineRepairValue.isNotEmpty) ...[
+            Text(
+              CleanDigitalLocalizations.of(context).repairStatistic,
+              style: Theme.of(context).textTheme.headline5,
+            ),
+            const SizedBox(height: 16),
             Stack(
               children: [
                 _buildRepairMoneyChart(statistic, repair),
                 _buildRepairAmoutChart(statistic, repair),
               ],
             ),
+          ],
           const SizedBox(height: 32),
-          Text(
-            CleanDigitalLocalizations.of(context).usageStatistic,
-            style: Theme.of(context).textTheme.headline5,
-          ),
-          const SizedBox(height: 16),
           if (usage != null &&
-              statistic.washMachineTimeAndUsageValue.isNotEmpty)
+              statistic.washMachineTimeAndUsageValue.isNotEmpty) ...[
+            Text(
+              CleanDigitalLocalizations.of(context).usageStatistic,
+              style: Theme.of(context).textTheme.headline5,
+            ),
+            const SizedBox(height: 16),
             Stack(
               children: [
                 _buildRepairPowerChart(statistic, usage),
                 _buildRepairTimeChart(statistic, usage),
               ],
             ),
+          ],
           const SizedBox(height: 32),
         ],
       ),
@@ -120,8 +125,7 @@ class _StatisticViewState extends State<StatisticView> {
             return PieChartSectionData(
               value: wm.value.time / usage.time,
               color: Theme.of(context).colorScheme.background.withGreen(green),
-              title:
-                  '${wm.washMachine.washMachineId}: ${wm.value.time} ${loc.minutes}',
+              title: '${wm.value.time} ${loc.minutes}',
               titlePositionPercentageOffset: 0.8,
               radius: 5.w,
               titleStyle: Theme.of(context)
@@ -150,7 +154,7 @@ class _StatisticViewState extends State<StatisticView> {
             return PieChartSectionData(
               value: wm.value.powerUsage / usage.powerUsage,
               color: Theme.of(context).colorScheme.background.withGreen(green),
-              title: '${wm.washMachine.washMachineId}: ${wm.value.powerUsage}',
+              title: '${wm.value.powerUsage}',
               titlePositionPercentageOffset: 0.8,
               radius: 10.w,
               titleStyle: Theme.of(context)
@@ -179,7 +183,7 @@ class _StatisticViewState extends State<StatisticView> {
             return PieChartSectionData(
               value: wm.value.money / repair.money,
               color: Theme.of(context).colorScheme.background.withGreen(green),
-              title: '${wm.washMachine.washMachineId}: ${wm.value.money}',
+              title: '${wm.value.money}',
               titlePositionPercentageOffset: 0.8,
               radius: 10.w,
               titleStyle: Theme.of(context)
@@ -208,7 +212,7 @@ class _StatisticViewState extends State<StatisticView> {
             return PieChartSectionData(
               value: wm.value.amount / repair.amount,
               color: Theme.of(context).colorScheme.background.withGreen(green),
-              title: '${wm.washMachine.washMachineId}: ${wm.value.amount}',
+              title: '${wm.value.amount}',
               titlePositionPercentageOffset: 0.8,
               radius: 5.w,
               titleStyle: Theme.of(context)
