@@ -9,7 +9,9 @@ part of 'repair_statistic_laundry.dart';
 RepairStatisticLaundry _$RepairStatisticLaundryFromJson(
         Map<String, dynamic> json) =>
     RepairStatisticLaundry(
-      laundryValue: (json['laundryValue'] as num).toDouble(),
+      laundryValue: json['laundryValue'] == null
+          ? null
+          : Repair.fromJson(json['laundryValue'] as Map<String, dynamic>),
       washMachineValue: (json['washMachineValue'] as List<dynamic>)
           .map(
               (e) => RepairWashMachineEntry.fromJson(e as Map<String, dynamic>))

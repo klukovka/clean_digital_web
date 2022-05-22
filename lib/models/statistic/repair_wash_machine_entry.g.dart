@@ -9,7 +9,7 @@ part of 'repair_wash_machine_entry.dart';
 RepairWashMachineEntry _$RepairWashMachineEntryFromJson(
         Map<String, dynamic> json) =>
     RepairWashMachineEntry(
-      (json['value'] as num).toDouble(),
+      Repair.fromJson(json['value'] as Map<String, dynamic>),
       WashMachine.fromJson(json['washMachine'] as Map<String, dynamic>),
     );
 
