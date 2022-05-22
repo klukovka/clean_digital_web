@@ -307,6 +307,134 @@ class _CleanDigitalApiClient implements CleanDigitalApiClient {
     return value;
   }
 
+  @override
+  Future<RatingPagination> getAllRating(page, size) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{r'page': page, r'size': size};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<RatingPagination>(
+            Options(method: 'GET', headers: _headers, extra: _extra)
+                .compose(_dio.options, '/statistic/rating-all',
+                    queryParameters: queryParameters, data: _data)
+                .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = RatingPagination.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<PaymentPagination> getAllPayment(page, size) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{r'page': page, r'size': size};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<PaymentPagination>(
+            Options(method: 'GET', headers: _headers, extra: _extra)
+                .compose(_dio.options, '/statistic/payment-all',
+                    queryParameters: queryParameters, data: _data)
+                .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = PaymentPagination.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<TimeAndUsagePagination> getAllTimeAndUsage(page, size) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{r'page': page, r'size': size};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<TimeAndUsagePagination>(
+            Options(method: 'GET', headers: _headers, extra: _extra)
+                .compose(_dio.options, '/statistic/time-and-usage-all',
+                    queryParameters: queryParameters, data: _data)
+                .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = TimeAndUsagePagination.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<RepairPagination> getAllRepair(page, size) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{r'page': page, r'size': size};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<RepairPagination>(
+            Options(method: 'GET', headers: _headers, extra: _extra)
+                .compose(_dio.options, '/statistic/repair-all',
+                    queryParameters: queryParameters, data: _data)
+                .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = RepairPagination.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<RatingStatisticLaundry> getLaundryRating() async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<RatingStatisticLaundry>(
+            Options(method: 'GET', headers: _headers, extra: _extra)
+                .compose(_dio.options, '/statistic/rating',
+                    queryParameters: queryParameters, data: _data)
+                .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = RatingStatisticLaundry.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<PaymentStatisticLaundry> getLaundryPayment() async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<PaymentStatisticLaundry>(
+            Options(method: 'GET', headers: _headers, extra: _extra)
+                .compose(_dio.options, '/statistic/payment',
+                    queryParameters: queryParameters, data: _data)
+                .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = PaymentStatisticLaundry.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<TimeAndUsageStatisticLaundry> getLaundryTimeAndUsage() async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<TimeAndUsageStatisticLaundry>(
+            Options(method: 'GET', headers: _headers, extra: _extra)
+                .compose(_dio.options, '/statistic/time-and-usage',
+                    queryParameters: queryParameters, data: _data)
+                .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = TimeAndUsageStatisticLaundry.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<RepairStatisticLaundry> getLaundryRepair() async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<RepairStatisticLaundry>(
+            Options(method: 'GET', headers: _headers, extra: _extra)
+                .compose(_dio.options, '/statistic/repair',
+                    queryParameters: queryParameters, data: _data)
+                .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = RepairStatisticLaundry.fromJson(_result.data!);
+    return value;
+  }
+
   RequestOptions _setStreamType<T>(RequestOptions requestOptions) {
     if (T != dynamic &&
         !(requestOptions.responseType == ResponseType.bytes ||

@@ -6,10 +6,17 @@ import '../models/laundry.dart';
 import '../models/pagination/clients_pagination.dart';
 import '../models/pagination/employees_pagination.dart';
 import '../models/pagination/laundries_pagination.dart';
+import '../models/pagination/payment_pagination.dart';
+import '../models/pagination/rating_pagination.dart';
 import '../models/pagination/repair_companies_pagination.dart';
+import '../models/pagination/repair_pagination.dart';
+import '../models/pagination/time_and_usage_pagination.dart';
 import '../models/pagination/wash_machines_pagination.dart';
+import '../models/statistic/payment_statistic_laundry.dart';
+import '../models/statistic/rating_statistic_laundry.dart';
+import '../models/statistic/repair_statistic_laundry.dart';
+import '../models/statistic/time_and_usage_laundry.dart';
 import '../models/user.dart';
-import '../models/wash_machine.dart';
 import 'api_constants.dart';
 import 'models/auth/login_request.dart';
 import 'models/auth/restore_password_request.dart';
@@ -148,4 +155,44 @@ abstract class CleanDigitalApiClient {
     @Query('page') int page,
     @Query('size') int size,
   );
+
+  ///
+  /// Statistic
+  ///
+
+  @GET('/statistic/rating-all')
+  Future<RatingPagination> getAllRating(
+    @Query('page') int page,
+    @Query('size') int size,
+  );
+
+  @GET('/statistic/payment-all')
+  Future<PaymentPagination> getAllPayment(
+    @Query('page') int page,
+    @Query('size') int size,
+  );
+
+  @GET('/statistic/time-and-usage-all')
+  Future<TimeAndUsagePagination> getAllTimeAndUsage(
+    @Query('page') int page,
+    @Query('size') int size,
+  );
+
+  @GET('/statistic/repair-all')
+  Future<RepairPagination> getAllRepair(
+    @Query('page') int page,
+    @Query('size') int size,
+  );
+
+  @GET('/statistic/rating')
+  Future<RatingStatisticLaundry> getLaundryRating();
+
+  @GET('/statistic/payment')
+  Future<PaymentStatisticLaundry> getLaundryPayment();
+
+  @GET('/statistic/time-and-usage')
+  Future<TimeAndUsageStatisticLaundry> getLaundryTimeAndUsage();
+
+  @GET('/statistic/repair')
+  Future<RepairStatisticLaundry> getLaundryRepair();
 }
