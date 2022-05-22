@@ -92,5 +92,11 @@
     "nd": "N/D",
     "moneyStatistic": "Money statistic",
     "paidMoneyForWashMachine": "Paid money for washing machine",
-    "paidBonusesForWashMachine": "Paid bonuses for washing machine"
+    "paidBonusesForWashMachine": "Paid bonuses for washing machine",
+    "maxMark": "Max mark",
+    "laundryMark": "Laundry mark",
+    "washMachineMark": "Washing machine mark",
+    "repairStatistic": "Repair Statistic",
+    "minutes": "Minutes",
+    "usageStatistic": "Usage statistic"
 }

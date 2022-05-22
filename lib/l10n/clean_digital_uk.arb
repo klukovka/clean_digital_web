@@ -94,5 +94,11 @@
   "nd": "N/D",
   "moneyStatistic": "Грошова статистика",
   "paidMoneyForWashMachine": "Потрачені гроші для пральної машини",
-  "paidBonusesForWashMachine": "Потрачені бонуси для пральної машини"
+  "paidBonusesForWashMachine": "Потрачені бонуси для пральної машини",
+  "maxMark": "Максимальна оцінка",
+  "laundryMark": "Оцінка пральні",
+  "washMachineMark": "Оцінка пральних машин",
+  "repairStatistic": "Статистика по ремонтах",
+  "minutes": "Хвилини",
+  "usageStatistic": "Статистика використання"
 }

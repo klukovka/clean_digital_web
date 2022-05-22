@@ -291,4 +291,22 @@ class CleanDigitalLocalizationsUk extends CleanDigitalLocalizations {
 
   @override
   String get paidBonusesForWashMachine => 'Потрачені бонуси для пральної машини';
+
+  @override
+  String get maxMark => 'Максимальна оцінка';
+
+  @override
+  String get laundryMark => 'Оцінка пральні';
+
+  @override
+  String get washMachineMark => 'Оцінка пральних машин';
+
+  @override
+  String get repairStatistic => 'Статистика по ремонтах';
+
+  @override
+  String get minutes => 'Хвилини';
+
+  @override
+  String get usageStatistic => 'Статистика використання';
 }

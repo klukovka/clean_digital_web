@@ -663,6 +663,42 @@ abstract class CleanDigitalLocalizations {
   /// In uk, this message translates to:
   /// **'Потрачені бонуси для пральної машини'**
   String get paidBonusesForWashMachine;
+
+  /// No description provided for @maxMark.
+  ///
+  /// In uk, this message translates to:
+  /// **'Максимальна оцінка'**
+  String get maxMark;
+
+  /// No description provided for @laundryMark.
+  ///
+  /// In uk, this message translates to:
+  /// **'Оцінка пральні'**
+  String get laundryMark;
+
+  /// No description provided for @washMachineMark.
+  ///
+  /// In uk, this message translates to:
+  /// **'Оцінка пральних машин'**
+  String get washMachineMark;
+
+  /// No description provided for @repairStatistic.
+  ///
+  /// In uk, this message translates to:
+  /// **'Статистика по ремонтах'**
+  String get repairStatistic;
+
+  /// No description provided for @minutes.
+  ///
+  /// In uk, this message translates to:
+  /// **'Хвилини'**
+  String get minutes;
+
+  /// No description provided for @usageStatistic.
+  ///
+  /// In uk, this message translates to:
+  /// **'Статистика використання'**
+  String get usageStatistic;
 }
 
 class _CleanDigitalLocalizationsDelegate extends LocalizationsDelegate<CleanDigitalLocalizations> {
