@@ -282,4 +282,13 @@ class CleanDigitalLocalizationsEn extends CleanDigitalLocalizations {
 
   @override
   String get nd => 'N/D';
+
+  @override
+  String get moneyStatistic => 'Money statistic';
+
+  @override
+  String get paidMoneyForWashMachine => 'Paid money for washing machine';
+
+  @override
+  String get paidBonusesForWashMachine => 'Paid bonuses for washing machine';
 }

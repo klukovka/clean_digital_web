@@ -13,6 +13,7 @@ class AdminStatisticTabState extends Equatable {
   final int totalPages;
   final int totalElements;
   final List<AllLaundryStatistic> statistic;
+  final AllLaundryStatistic? selectedLaundry;
 
   const AdminStatisticTabState({
     this.status = AdminStatisticTabStatus.loading,
@@ -21,10 +22,11 @@ class AdminStatisticTabState extends Equatable {
     this.totalPages = 0,
     this.totalElements = 0,
     this.statistic = const [],
+    this.selectedLaundry,
   });
 
   @override
-  List<Object> get props {
+  List<Object?> get props {
     return [
       status,
       errorMessage,
@@ -32,6 +34,7 @@ class AdminStatisticTabState extends Equatable {
       totalPages,
       totalElements,
       statistic,
+      selectedLaundry,
     ];
   }
 
@@ -42,6 +45,7 @@ class AdminStatisticTabState extends Equatable {
     int? totalPages,
     int? totalElements,
     List<AllLaundryStatistic>? statistic,
+    AllLaundryStatistic? selectedLaundry,
   }) {
     return AdminStatisticTabState(
       status: status ?? this.status,
@@ -50,6 +54,19 @@ class AdminStatisticTabState extends Equatable {
       totalPages: totalPages ?? this.totalPages,
       totalElements: totalElements ?? this.totalElements,
       statistic: statistic ?? this.statistic,
+      selectedLaundry: selectedLaundry ?? this.selectedLaundry,
+    );
+  }
+
+  AdminStatisticTabState removeLaundry() {
+    return AdminStatisticTabState(
+      status: status,
+      errorMessage: errorMessage,
+      page: page,
+      totalPages: totalPages,
+      totalElements: totalElements,
+      statistic: statistic,
+      selectedLaundry: null,
     );
   }
 }

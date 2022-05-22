@@ -17,6 +17,7 @@ class CleanDigitalPagedGridView<T> extends StatefulWidget {
   final Widget? noItemsFoundIndicator;
   final String? noMoreItemsIndicatorText;
   final ValueSetter<PagingController<int, T>>? onPagingControllerInitialized;
+  final double? width;
 
   const CleanDigitalPagedGridView({
     Key? key,
@@ -28,6 +29,7 @@ class CleanDigitalPagedGridView<T> extends StatefulWidget {
     this.noItemsFoundIndicator,
     this.noMoreItemsIndicatorText,
     this.onPagingControllerInitialized,
+    this.width,
     this.shrinkWrap = false,
   }) : super(key: key);
 
@@ -43,7 +45,7 @@ class _CleanDigitalPagedGridViewState<T>
   bool onFirstPage = true;
 
   int get _crossAxisCount {
-    final width = 100.w;
+    final width = widget.width ?? 100.w;
     if (width < 800) return 1;
     if (width < 1400) return 2;
     return 3;

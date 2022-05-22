@@ -7,10 +7,12 @@ import '../../../../../views/entity_tiles/entity_label.dart';
 
 class StatisticTile extends StatelessWidget {
   final AllLaundryStatistic statistic;
+  final ValueSetter<AllLaundryStatistic> onPressed;
 
   const StatisticTile({
     Key? key,
     required this.statistic,
+    required this.onPressed,
   }) : super(key: key);
 
   @override
@@ -18,7 +20,7 @@ class StatisticTile extends StatelessWidget {
     return EntityContainerTile(
       titleChild: _buildLaundryInfo(context),
       onDeletePressed: null,
-      onMorePressed: null,
+      onMorePressed: () => onPressed(statistic),
       child: _buildInfo(context),
     );
   }

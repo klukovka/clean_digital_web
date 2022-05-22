@@ -645,6 +645,24 @@ abstract class CleanDigitalLocalizations {
   /// In uk, this message translates to:
   /// **'N/D'**
   String get nd;
+
+  /// No description provided for @moneyStatistic.
+  ///
+  /// In uk, this message translates to:
+  /// **'Грошова статистика'**
+  String get moneyStatistic;
+
+  /// No description provided for @paidMoneyForWashMachine.
+  ///
+  /// In uk, this message translates to:
+  /// **'Потрачені гроші для пральної машини'**
+  String get paidMoneyForWashMachine;
+
+  /// No description provided for @paidBonusesForWashMachine.
+  ///
+  /// In uk, this message translates to:
+  /// **'Потрачені бонуси для пральної машини'**
+  String get paidBonusesForWashMachine;
 }
 
 class _CleanDigitalLocalizationsDelegate extends LocalizationsDelegate<CleanDigitalLocalizations> {

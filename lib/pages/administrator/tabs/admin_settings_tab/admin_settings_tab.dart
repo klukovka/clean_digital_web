@@ -2,11 +2,22 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
+import 'package:sizer/sizer.dart';
 
 import '../../../../bloc/administrator/tabs/admin_settings_tab/admin_settings_tab_cubit.dart';
 import '../../../../bloc/app_control/app_control_cubit.dart';
 import '../../../../di/injection_container.dart';
 import '../../../../l10n/clean_digital_localizations.dart';
+import '../../../../models/laundry.dart';
+import '../../../../models/statistic/all_laundry_statistic.dart';
+import '../../../../models/statistic/payment.dart';
+import '../../../../models/statistic/payment_wash_machine_entry.dart';
+import '../../../../models/statistic/rating_wash_machine_entry.dart';
+import '../../../../models/statistic/repair.dart';
+import '../../../../models/statistic/repair_wash_machine_entry.dart';
+import '../../../../models/statistic/time_and_usage.dart';
+import '../../../../models/statistic/time_and_usage_washing_machine_entry.dart';
+import '../../../../models/wash_machine.dart';
 import '../../../../utils/clean_digital_dialogs.dart';
 import '../../../../utils/clean_digital_toasts.dart';
 import '../../../../utils/extensions/locale_ext.dart';
@@ -14,6 +25,7 @@ import '../../../../utils/extensions/theme_mode_ext.dart';
 import '../../../../views/buttons/primary_button.dart';
 import '../../../../views/loading_indicator.dart';
 import '../../../../views/title_with_button.dart';
+import '../admin_statistic_tab/view/statistic_view.dart';
 
 enum _AdminSettingsTabField { language, theme }
 
@@ -58,6 +70,7 @@ class _AdminSettingsTabState extends State<AdminSettingsTab> {
 
   @override
   Widget build(BuildContext context) {
+    return _buildTemp();
     return Container(
       color: Theme.of(context).scaffoldBackgroundColor,
       child: BlocConsumer<AdminSettingsTabCubit, AdminSettingsTabState>(
@@ -74,6 +87,72 @@ class _AdminSettingsTabState extends State<AdminSettingsTab> {
             ],
           );
         },
+      ),
+    );
+  }
+
+  Widget _buildTemp() {
+    const wm1 = WashMachine(
+      washMachineId: '1',
+      laundryId: 'laundryId',
+      model: 'model',
+      manufacturer: 'manufacturer',
+      capacity: 4,
+      powerUsage: 45,
+      spinningSpeed: 44,
+      maxTime: 100,
+      currentTime: 34,
+      isWorking: true,
+      isWashing: false,
+    );
+    const wm2 = WashMachine(
+      washMachineId: '2',
+      laundryId: 'laundryId',
+      model: 'model',
+      manufacturer: 'manufacturer',
+      capacity: 4,
+      powerUsage: 45,
+      spinningSpeed: 44,
+      maxTime: 100,
+      currentTime: 34,
+      isWorking: true,
+      isWashing: false,
+    );
+    return StatisticView(
+      onPressed: () {},
+      laundryStatistic: const AllLaundryStatistic(
+        laundry: Laundry.empty(),
+        laundryPaymentValue: Payment(
+          all: 300,
+          paidBonuses: 40,
+          paidMoney: 260,
+        ),
+        laundryRatingValue: 4.5,
+        laundryRepairValue: Repair(amount: 3, money: 45),
+        laundryTimeAndUsageValue: TimeAndUsage(
+          powerUsage: 500,
+          time: 50,
+        ),
+        washMachinePaymentValue: [
+          PaymentWashMachineEntry(
+              Payment(all: 220, paidBonuses: 20, paidMoney: 200), wm1),
+          PaymentWashMachineEntry(
+              Payment(all: 80, paidBonuses: 40, paidMoney: 40), wm2),
+        ],
+        washMachineRatingValue: [
+          RatingWashMachineEntry(4, wm1),
+          RatingWashMachineEntry(3.5, wm2),
+        ],
+        washMachineRepairValue: [
+          RepairWashMachineEntry(Repair(amount: 2, money: 20), wm1),
+          RepairWashMachineEntry(Repair(amount: 1, money: 25), wm1),
+        ],
+        washMachineTimeAndUsageValue: [
+          TimeAndUsageWashMachineEntry(
+              TimeAndUsage(time: 20, powerUsage: 200), wm1),
+          TimeAndUsageWashMachineEntry(
+              TimeAndUsage(time: 30, powerUsage: 300), wm1),
+        ],
       ),
     );
   }

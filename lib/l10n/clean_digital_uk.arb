@@ -91,5 +91,8 @@
   "repairAmount": "Кількість ремонтів",
   "repairMoney": "Гроші витрачені на ремонт",
   "time": "Витрачений час",
-  "nd": "N/D"
+  "nd": "N/D",
+  "moneyStatistic": "Грошова статистика",
+  "paidMoneyForWashMachine": "Потрачені гроші для пральної машини",
+  "paidBonusesForWashMachine": "Потрачені бонуси для пральної машини"
 }

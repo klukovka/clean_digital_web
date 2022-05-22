@@ -43,4 +43,10 @@ class AdminStatisticTabCubit extends BaseCubit<AdminStatisticTabState> {
       ));
     });
   }
+
+  void selectLaundry(AllLaundryStatistic laundryStatistic) {
+    emit(state.copyWith(selectedLaundry: laundryStatistic));
+  }
+
+  void closeLaunry() => emit(state.removeLaundry());
 }

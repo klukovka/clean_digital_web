@@ -27,29 +27,31 @@ class EntityContainerTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: color ?? Theme.of(context).colorScheme.tertiaryContainer,
-        borderRadius: BorderRadius.circular(16),
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Row(
-            children: [
-              if (titleChild != null) Expanded(child: titleChild!),
-              if (imageAsset != null)
-                Image.asset(
-                  imageAsset!,
-                  width: 10.w,
-                ),
-              Expanded(child: child),
-            ],
-          ),
-          const SizedBox(height: 16),
-          _buildButtons(context),
-        ],
+    return SingleChildScrollView(
+      child: Container(
+        padding: const EdgeInsets.all(16),
+        decoration: BoxDecoration(
+          color: color ?? Theme.of(context).colorScheme.tertiaryContainer,
+          borderRadius: BorderRadius.circular(16),
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Row(
+              children: [
+                if (titleChild != null) Expanded(child: titleChild!),
+                if (imageAsset != null)
+                  Image.asset(
+                    imageAsset!,
+                    width: 10.w,
+                  ),
+                Expanded(child: child),
+              ],
+            ),
+            const SizedBox(height: 16),
+            _buildButtons(context),
+          ],
+        ),
       ),
     );
   }

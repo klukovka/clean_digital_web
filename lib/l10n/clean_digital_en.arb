@@ -89,5 +89,8 @@
     "repairAmount": "Repair amount",
     "repairMoney": "Repair money",
     "time": "Time",
-    "nd": "N/D"
+    "nd": "N/D",
+    "moneyStatistic": "Money statistic",
+    "paidMoneyForWashMachine": "Paid money for washing machine",
+    "paidBonusesForWashMachine": "Paid bonuses for washing machine"
 }
