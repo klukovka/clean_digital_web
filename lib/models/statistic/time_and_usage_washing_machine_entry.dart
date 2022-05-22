@@ -21,5 +21,6 @@ class TimeAndUsageWashMachineEntry extends WashMachineEntry {
     return _$TimeAndUsageWashMachineEntryFromJson(json);
   }
 
+  @override
   Map<String, dynamic> toJson() => _$TimeAndUsageWashMachineEntryToJson(this);
 }

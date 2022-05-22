@@ -21,5 +21,6 @@ class RatingWashMachineEntry extends WashMachineEntry {
     return _$RatingWashMachineEntryFromJson(json);
   }
 
+  @override
   Map<String, dynamic> toJson() => _$RatingWashMachineEntryToJson(this);
 }

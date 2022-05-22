@@ -21,5 +21,6 @@ class RepairWashMachineEntry extends WashMachineEntry {
     return _$RepairWashMachineEntryFromJson(json);
   }
 
+  @override
   Map<String, dynamic> toJson() => _$RepairWashMachineEntryToJson(this);
 }

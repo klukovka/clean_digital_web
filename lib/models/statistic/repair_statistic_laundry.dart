@@ -24,5 +24,6 @@ class RepairStatisticLaundry extends StatisticLaundry {
     return _$RepairStatisticLaundryFromJson(json);
   }
 
+  @override
   Map<String, dynamic> toJson() => _$RepairStatisticLaundryToJson(this);
 }

@@ -24,5 +24,6 @@ class PaymentStatisticLaundry extends StatisticLaundry {
     return _$PaymentStatisticLaundryFromJson(json);
   }
 
+  @override
   Map<String, dynamic> toJson() => _$PaymentStatisticLaundryToJson(this);
 }

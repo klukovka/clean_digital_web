@@ -23,5 +23,6 @@ class RatingStatisticLaundry extends StatisticLaundry {
     return _$RatingStatisticLaundryFromJson(json);
   }
 
+  @override
   Map<String, dynamic> toJson() => _$RatingStatisticLaundryToJson(this);
 }
