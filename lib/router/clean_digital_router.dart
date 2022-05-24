@@ -23,11 +23,11 @@ class CleanDigitalRouter extends BaseRouter {
   }
 
   Future<void> replaceEmployeeMainPage() async {
-    await pushAndClearStack(const EmployeeMainRoute());
+    await pushAndClearStack(const EmployeeRoute());
   }
 
   Future<void> replaceLaundryMainPage() async {
-    await replace(const LaundryMainRoute());
+    await replace(const LaundryRoute());
   }
 
   Future<void> replaceAdminMainPage() async {
