@@ -741,6 +741,18 @@ abstract class CleanDigitalLocalizations {
   /// In uk, this message translates to:
   /// **'Програмне забезпечення'**
   String get software;
+
+  /// No description provided for @allModes.
+  ///
+  /// In uk, this message translates to:
+  /// **'Усі режими'**
+  String get allModes;
+
+  /// No description provided for @repairEvents.
+  ///
+  /// In uk, this message translates to:
+  /// **'Ремонтні роботи'**
+  String get repairEvents;
 }
 
 class _CleanDigitalLocalizationsDelegate extends LocalizationsDelegate<CleanDigitalLocalizations> {

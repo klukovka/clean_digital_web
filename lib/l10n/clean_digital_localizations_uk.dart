@@ -330,4 +330,10 @@ class CleanDigitalLocalizationsUk extends CleanDigitalLocalizations {
 
   @override
   String get software => 'Програмне забезпечення';
+
+  @override
+  String get allModes => 'Усі режими';
+
+  @override
+  String get repairEvents => 'Ремонтні роботи';
 }

@@ -330,4 +330,10 @@ class CleanDigitalLocalizationsEn extends CleanDigitalLocalizations {
 
   @override
   String get software => 'Software';
+
+  @override
+  String get allModes => 'All modes';
+
+  @override
+  String get repairEvents => 'Repair events';
 }

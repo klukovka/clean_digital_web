@@ -12,7 +12,8 @@ import '../pages/administrator/tabs/admin_settings_tab/admin_settings_tab.dart';
 import '../pages/administrator/tabs/admin_statistic_tab/admin_statistic_tab.dart';
 import '../pages/auth/login_page.dart';
 import '../pages/auth/restore_password_page.dart';
-import '../pages/laundry_employee/laundry_employee_page.dart';
+import '../pages/laundry_employee/employee_page.dart';
+import '../pages/laundry_employee/laundry_page.dart';
 import '../pages/laundry_employee/tabs/employee_settings.dart';
 import '../pages/laundry_employee/tabs/laundry_employee_modes/laundry_employee_modes_tab.dart';
 import '../pages/laundry_employee/tabs/laundry_employee_repair_events_tab.dart';
@@ -116,7 +117,7 @@ const _fadeIn = TransitionsBuilders.fadeIn;
       ],
     ),
     CustomRoute(
-      page: LaundryEmployeePage,
+      page: LaundryPage,
       path: '/laundry/',
       name: 'LaundryRoute',
       transitionsBuilder: _fadeIn,
@@ -168,7 +169,7 @@ const _fadeIn = TransitionsBuilders.fadeIn;
       ],
     ),
     CustomRoute(
-      page: LaundryEmployeePage,
+      page: EmployeePage,
       path: '/employee/',
       name: 'EmployeeRoute',
       transitionsBuilder: _fadeIn,

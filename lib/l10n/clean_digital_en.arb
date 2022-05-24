@@ -105,5 +105,7 @@
     "repairProducts": "Repair products",
     "repair": "Repair",
     "inspection": "Inspection",
-    "software": "Software"
+    "software": "Software",
+    "allModes": "All modes",
+    "repairEvents": "Repair events"
 }

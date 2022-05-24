@@ -107,5 +107,7 @@
   "repairProducts": "Ремонти",
   "repair": "Ремонт",
   "inspection": "Огляд",
-  "software": "Програмне забезпечення"
+  "software": "Програмне забезпечення",
+  "allModes": "Усі режими",
+  "repairEvents": "Ремонтні роботи"
 }
