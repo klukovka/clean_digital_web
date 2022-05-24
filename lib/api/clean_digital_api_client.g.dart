@@ -8,7 +8,7 @@ part of 'clean_digital_api_client.dart';
 
 class _CleanDigitalApiClient implements CleanDigitalApiClient {
   _CleanDigitalApiClient(this._dio, {this.baseUrl}) {
-    baseUrl ??= 'http://192.168.0.100:8080';
+    baseUrl ??= 'http://192.168.0.107:8080';
   }
 
   final Dio _dio;
