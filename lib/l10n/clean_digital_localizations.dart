@@ -753,6 +753,12 @@ abstract class CleanDigitalLocalizations {
   /// In uk, this message translates to:
   /// **'Ремонтні роботи'**
   String get repairEvents;
+
+  /// No description provided for @createWashMachine.
+  ///
+  /// In uk, this message translates to:
+  /// **'Створити пральну машину'**
+  String get createWashMachine;
 }
 
 class _CleanDigitalLocalizationsDelegate extends LocalizationsDelegate<CleanDigitalLocalizations> {

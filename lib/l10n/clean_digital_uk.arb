@@ -109,5 +109,6 @@
   "inspection": "Огляд",
   "software": "Програмне забезпечення",
   "allModes": "Усі режими",
-  "repairEvents": "Ремонтні роботи"
+  "repairEvents": "Ремонтні роботи",
+  "createWashMachine": "Створити пральну машину"
 }

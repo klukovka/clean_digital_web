@@ -336,4 +336,7 @@ class CleanDigitalLocalizationsEn extends CleanDigitalLocalizations {
 
   @override
   String get repairEvents => 'Repair events';
+
+  @override
+  String get createWashMachine => 'Create Washing Machine';
 }

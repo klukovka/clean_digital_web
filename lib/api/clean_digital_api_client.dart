@@ -25,6 +25,7 @@ import 'models/auth/update_password_request.dart';
 import 'models/backup.dart';
 import 'models/create_update_requests/create_update_laundry.dart';
 import 'models/create_update_requests/create_update_repair_company.dart';
+import 'models/create_update_requests/create_update_wash_machine.dart';
 
 part 'clean_digital_api_client.g.dart';
 
@@ -134,7 +135,7 @@ abstract class CleanDigitalApiClient {
   );
 
   ///
-  ///
+  /// Repair Products
   ///
 
   @GET('/repairCompany/company-products/{repairCompanyId}')
@@ -161,6 +162,28 @@ abstract class CleanDigitalApiClient {
     @Path() String laundryId,
     @Query('page') int page,
     @Query('size') int size,
+  );
+
+  @GET('/laundry/all-washing-machines-laundry')
+  Future<WashMachinesPagination> getLaundryOwnWashMachines(
+    @Query('page') int page,
+    @Query('size') int size,
+  );
+
+  @POST('/laundry/create-wash-machine')
+  Future<void> createWashMachine(
+    @Body() CreateUpdateWashMachineRequest body,
+  );
+
+  @PUT('/laundry/update-wash-machine/{washMachineId}')
+  Future<void> updateWashMachine(
+    @Path('washMachineId') String washMachineId,
+    @Body() CreateUpdateWashMachineRequest body,
+  );
+
+  @DELETE('/laundry/delete-wash-machine/{washMachineId}')
+  Future<void> deleteWashMachine(
+    @Path('washMachineId') String washMachineId,
   );
 
   ///

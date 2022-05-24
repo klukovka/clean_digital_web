@@ -2,6 +2,7 @@ import 'package:injectable/injectable.dart';
 
 import '../api/clean_digital_api_client.dart';
 import '../api/models/create_update_requests/create_update_laundry.dart';
+import '../api/models/create_update_requests/create_update_wash_machine.dart';
 import '../models/laundry.dart';
 import '../models/pagination/employees_pagination.dart';
 import '../models/pagination/laundries_pagination.dart';
@@ -13,6 +14,10 @@ class LaundriesService extends BaseService {
   final CleanDigitalApiClient _apiClient;
 
   LaundriesService(this._apiClient);
+
+  ///
+  /// Laundries
+  ///
 
   Future<LaundriesPagination> getAllLaundries({
     int page = 0,
@@ -37,6 +42,24 @@ class LaundriesService extends BaseService {
     });
   }
 
+  Future<EmployeesPagination> getLaundryEmployees({
+    required String laundryId,
+    int page = 0,
+    int size = 10,
+  }) async {
+    return await makeErrorHandledCall(() async {
+      return await _apiClient.getLaundryEmployees(
+        laundryId,
+        page,
+        size,
+      );
+    });
+  }
+
+  ///
+  /// Washing machines
+  ///
+
   Future<WashMachinesPagination> getLaundryWashMachines({
     required String laundryId,
     int page = 0,
@@ -51,17 +74,40 @@ class LaundriesService extends BaseService {
     });
   }
 
-  Future<EmployeesPagination> getLaundryEmployees({
-    required String laundryId,
+  Future<WashMachinesPagination> getLaundryOwnWashMachines({
     int page = 0,
     int size = 10,
   }) async {
     return await makeErrorHandledCall(() async {
-      return await _apiClient.getLaundryEmployees(
-        laundryId,
+      return await _apiClient.getLaundryOwnWashMachines(
         page,
         size,
       );
+    });
+  }
+
+  Future<void> createWashMachine(
+    CreateUpdateWashMachineRequest body,
+  ) async {
+    return await makeErrorHandledCall(() async {
+      return await _apiClient.createWashMachine(body);
+    });
+  }
+
+  Future<void> updateWashMachine(
+    String washMachineId,
+    CreateUpdateWashMachineRequest body,
+  ) async {
+    return await makeErrorHandledCall(() async {
+      return await _apiClient.updateWashMachine(washMachineId, body);
+    });
+  }
+
+  Future<void> deleteWashMachine(
+    String washMachineId,
+  ) async {
+    return await makeErrorHandledCall(() async {
+      return await _apiClient.deleteWashMachine(washMachineId);
     });
   }
 }

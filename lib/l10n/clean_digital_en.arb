@@ -107,5 +107,6 @@
     "inspection": "Inspection",
     "software": "Software",
     "allModes": "All modes",
-    "repairEvents": "Repair events"
+    "repairEvents": "Repair events",
+    "createWashMachine": "Create Washing Machine"
 }
