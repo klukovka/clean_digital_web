@@ -759,6 +759,24 @@ abstract class CleanDigitalLocalizations {
   /// In uk, this message translates to:
   /// **'Створити пральну машину'**
   String get createWashMachine;
+
+  /// No description provided for @spinningSpeed.
+  ///
+  /// In uk, this message translates to:
+  /// **'Швидкість віджиму'**
+  String get spinningSpeed;
+
+  /// No description provided for @editWashMachine.
+  ///
+  /// In uk, this message translates to:
+  /// **'Редагувати пральну машину'**
+  String get editWashMachine;
+
+  /// No description provided for @doYouWantToDeleteWashMachine.
+  ///
+  /// In uk, this message translates to:
+  /// **'Ви дійсно хочете видалити пральну машину?'**
+  String get doYouWantToDeleteWashMachine;
 }
 
 class _CleanDigitalLocalizationsDelegate extends LocalizationsDelegate<CleanDigitalLocalizations> {

@@ -339,4 +339,13 @@ class CleanDigitalLocalizationsUk extends CleanDigitalLocalizations {
 
   @override
   String get createWashMachine => 'Створити пральну машину';
+
+  @override
+  String get spinningSpeed => 'Швидкість віджиму';
+
+  @override
+  String get editWashMachine => 'Редагувати пральну машину';
+
+  @override
+  String get doYouWantToDeleteWashMachine => 'Ви дійсно хочете видалити пральну машину?';
 }

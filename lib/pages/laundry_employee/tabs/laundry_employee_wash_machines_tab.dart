@@ -147,6 +147,17 @@ class _LaundryEmployeeWashMachinesTabState
         itemBuilder: (washMachine) {
           return WashMachineTile(
             washMachine: washMachine,
+            isEdit: true,
+            onMorePressed: () async {
+              CleanDigitalDialogs.of(context).showEditWashMachineDialog(
+                washMachine,
+                (value) async {
+                  await cubit.updateWashMachine(
+                      washMachine.washMachineId, value);
+                  _paginatedListKey = UniqueKey();
+                },
+              );
+            },
             onDeletePressed: () async {
               await cubit.deleteWashMachine(washMachine.washMachineId);
               _paginatedListKey = UniqueKey();

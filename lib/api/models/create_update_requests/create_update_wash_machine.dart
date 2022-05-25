@@ -24,10 +24,10 @@ class CreateUpdateWashMachineRequest extends Equatable {
   });
 
   factory CreateUpdateWashMachineRequest.fromJson(Map<String, dynamic> json) {
-    return _$CreateUpdateWashMachineFromJson(json);
+    return _$CreateUpdateWashMachineRequestFromJson(json);
   }
 
-  Map<String, dynamic> toJson() => _$CreateUpdateWashMachineToJson(this);
+  Map<String, dynamic> toJson() => _$CreateUpdateWashMachineRequestToJson(this);
 
   @override
   List<Object> get props {

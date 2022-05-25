@@ -54,7 +54,7 @@ class LaundryEmployeeWashMachinesTabCubit
       status: LaundryEmployeeWashMachinesTabStatus.loading,
     ));
     await makeErrorHandledCall(() async {
-      await createWashMachine(washMachine);
+      await _laundriesService.createWashMachine(washMachine);
     });
     reset();
   }
@@ -67,7 +67,7 @@ class LaundryEmployeeWashMachinesTabCubit
       status: LaundryEmployeeWashMachinesTabStatus.loading,
     ));
     await makeErrorHandledCall(() async {
-      await updateWashMachine(washMachineId, washMachine);
+      await _laundriesService.updateWashMachine(washMachineId, washMachine);
     });
     reset();
   }
@@ -79,7 +79,7 @@ class LaundryEmployeeWashMachinesTabCubit
       status: LaundryEmployeeWashMachinesTabStatus.loading,
     ));
     await makeErrorHandledCall(() async {
-      await deleteWashMachine(washMachineId);
+      await _laundriesService.deleteWashMachine(washMachineId);
     });
     reset();
   }

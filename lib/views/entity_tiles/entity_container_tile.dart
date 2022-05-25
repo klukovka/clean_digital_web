@@ -8,6 +8,7 @@ import '../buttons/primary_button.dart';
 class EntityContainerTile extends StatelessWidget {
   final Widget child;
   final String dialogTitle;
+  final bool isEdit;
   final Widget? titleChild;
   final String? imageAsset;
   final VoidCallback? onDeletePressed;
@@ -20,6 +21,7 @@ class EntityContainerTile extends StatelessWidget {
     required this.onDeletePressed,
     required this.onMorePressed,
     this.dialogTitle = '',
+    this.isEdit = false,
     this.color,
     this.imageAsset,
     this.titleChild,
@@ -62,7 +64,9 @@ class EntityContainerTile extends StatelessWidget {
         if (onMorePressed != null)
           Expanded(
             child: PrimaryButton(
-              title: CleanDigitalLocalizations.of(context).more,
+              title: isEdit
+                  ? CleanDigitalLocalizations.of(context).edit
+                  : CleanDigitalLocalizations.of(context).more,
               onPressed: onMorePressed,
             ),
           ),

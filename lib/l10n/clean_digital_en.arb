@@ -72,7 +72,7 @@
     "bonuses": "Bonuses",
     "washMachines": "Washing machines",
     "employees": "Employees",
-    "doYouWantToDeleteEmployee": "Do you want to delete a employee?",
+    "doYouWantToDeleteEmployee": "Do you want to delete an employee?",
     "birthday": "Birthday",
     "model": "Model",
     "manufacturer": "Manufacturer",
@@ -108,5 +108,8 @@
     "software": "Software",
     "allModes": "All modes",
     "repairEvents": "Repair events",
-    "createWashMachine": "Create Washing Machine"
+    "createWashMachine": "Create Washing Machine",
+    "spinningSpeed": "Spinning speed",
+    "editWashMachine": "Edit washing machine",
+    "doYouWantToDeleteWashMachine": "Do you want to delete a washing machine?"
 }

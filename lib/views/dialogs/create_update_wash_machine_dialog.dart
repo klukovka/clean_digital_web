@@ -47,13 +47,14 @@ class _CreateUpdateWashMachineDialogState
           model: _fbValue[_CreateUpdateWashMachineDialogFields.model.name],
           manufacturer:
               _fbValue[_CreateUpdateWashMachineDialogFields.manufacturer.name],
-          capacity:
-              _fbValue[_CreateUpdateWashMachineDialogFields.capacity.name],
-          powerUsage:
-              _fbValue[_CreateUpdateWashMachineDialogFields.powerUsage.name],
-          spinningSpeed:
-              _fbValue[_CreateUpdateWashMachineDialogFields.spinningSpeed.name],
-          maxTime: _fbValue[_CreateUpdateWashMachineDialogFields.maxTime.name],
+          capacity: int.parse(
+              _fbValue[_CreateUpdateWashMachineDialogFields.capacity.name]),
+          powerUsage: int.parse(
+              _fbValue[_CreateUpdateWashMachineDialogFields.powerUsage.name]),
+          spinningSpeed: int.parse(_fbValue[
+              _CreateUpdateWashMachineDialogFields.spinningSpeed.name]),
+          maxTime: int.parse(
+              _fbValue[_CreateUpdateWashMachineDialogFields.maxTime.name]),
         ),
       );
       router.pop();
@@ -109,10 +110,11 @@ class _CreateUpdateWashMachineDialogState
   Widget _buildManufacturerField() {
     return FormBuilderTextField(
       name: _CreateUpdateWashMachineDialogFields.manufacturer.name,
+      initialValue: widget.washMachine?.manufacturer,
       decoration: InputDecoration(
         errorMaxLines: 4,
         prefixIcon: const Icon(Typicons.compass),
-        labelText: CleanDigitalLocalizations.of(context).password,
+        labelText: CleanDigitalLocalizations.of(context).manufacturer,
       ),
       validator: FormBuilderValidators.required(
         context,
@@ -124,11 +126,11 @@ class _CreateUpdateWashMachineDialogState
   Widget _buildCapacityField() {
     return FormBuilderTextField(
       name: _CreateUpdateWashMachineDialogFields.capacity.name,
-      initialValue: '${widget.washMachine?.capacity}',
+      initialValue: widget.washMachine?.capacity.toString(),
       decoration: InputDecoration(
         errorMaxLines: 4,
-        prefixIcon: const Icon(Typicons.user),
-        labelText: CleanDigitalLocalizations.of(context).name,
+        prefixIcon: const Icon(Typicons.waves_outline),
+        labelText: CleanDigitalLocalizations.of(context).capacity,
       ),
       validator: FormBuilderValidators.compose(
         [
@@ -148,11 +150,11 @@ class _CreateUpdateWashMachineDialogState
   Widget _buildPowerUsageField() {
     return FormBuilderTextField(
       name: _CreateUpdateWashMachineDialogFields.powerUsage.name,
-      initialValue: '${widget.washMachine?.powerUsage}',
+      initialValue: widget.washMachine?.powerUsage.toString(),
       decoration: InputDecoration(
         errorMaxLines: 4,
         prefixIcon: const Icon(Typicons.power),
-        labelText: CleanDigitalLocalizations.of(context).address,
+        labelText: CleanDigitalLocalizations.of(context).powerUsage,
       ),
       validator: FormBuilderValidators.compose(
         [
@@ -172,11 +174,11 @@ class _CreateUpdateWashMachineDialogState
   Widget _buildSpinningSpeedField() {
     return FormBuilderTextField(
       name: _CreateUpdateWashMachineDialogFields.spinningSpeed.name,
-      initialValue: '${widget.washMachine?.spinningSpeed}',
+      initialValue: widget.washMachine?.spinningSpeed.toString(),
       decoration: InputDecoration(
         errorMaxLines: 4,
         prefixIcon: const Icon(Typicons.dribbble_circled),
-        labelText: CleanDigitalLocalizations.of(context).phone,
+        labelText: CleanDigitalLocalizations.of(context).spinningSpeed,
       ),
       validator: FormBuilderValidators.compose(
         [
@@ -200,7 +202,7 @@ class _CreateUpdateWashMachineDialogState
       decoration: InputDecoration(
         errorMaxLines: 4,
         prefixIcon: const Icon(Icons.local_laundry_service),
-        labelText: CleanDigitalLocalizations.of(context).maxWashMachines,
+        labelText: CleanDigitalLocalizations.of(context).maxTime,
       ),
       validator: FormBuilderValidators.compose(
         [

@@ -5,6 +5,7 @@ import '../api/models/create_update_requests/create_update_laundry.dart';
 import '../api/models/create_update_requests/create_update_repair_company.dart';
 import '../api/models/create_update_requests/create_update_wash_machine.dart';
 import '../l10n/clean_digital_localizations.dart';
+import '../models/wash_machine.dart';
 import '../views/dialogs/base_dialog.dart';
 import '../views/dialogs/confirm_dialog.dart';
 import '../views/dialogs/create_update_laundry_dialog.dart';
@@ -91,6 +92,20 @@ class CleanDigitalDialogs {
       height: 65.h,
       body: CreateUpdateWashMachineDialog(onSave: onSave),
       title: CleanDigitalLocalizations.of(context).createWashMachine,
+    );
+  }
+
+  void showEditWashMachineDialog(
+    WashMachine washMachine,
+    ValueSetter<CreateUpdateWashMachineRequest> onSave,
+  ) {
+    _showBlurDialog(
+      height: 65.h,
+      body: CreateUpdateWashMachineDialog(
+        onSave: onSave,
+        washMachine: washMachine,
+      ),
+      title: CleanDigitalLocalizations.of(context).editWashMachine,
     );
   }
 

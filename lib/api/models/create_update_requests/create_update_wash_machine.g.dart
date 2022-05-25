@@ -6,9 +6,9 @@ part of 'create_update_wash_machine.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-CreateUpdateWashMachine _$CreateUpdateWashMachineFromJson(
+CreateUpdateWashMachineRequest _$CreateUpdateWashMachineRequestFromJson(
         Map<String, dynamic> json) =>
-    CreateUpdateWashMachine(
+    CreateUpdateWashMachineRequest(
       model: json['model'] as String,
       manufacturer: json['manufacturer'] as String,
       capacity: json['capacity'] as int,
@@ -17,8 +17,8 @@ CreateUpdateWashMachine _$CreateUpdateWashMachineFromJson(
       maxTime: json['maxTime'] as int,
     );
 
-Map<String, dynamic> _$CreateUpdateWashMachineToJson(
-        CreateUpdateWashMachine instance) =>
+Map<String, dynamic> _$CreateUpdateWashMachineRequestToJson(
+        CreateUpdateWashMachineRequest instance) =>
     <String, dynamic>{
       'model': instance.model,
       'manufacturer': instance.manufacturer,

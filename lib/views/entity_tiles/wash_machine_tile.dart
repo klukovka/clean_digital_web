@@ -8,12 +8,14 @@ import 'entity_label.dart';
 
 class WashMachineTile extends StatelessWidget {
   final WashMachine washMachine;
+  final bool isEdit;
   final VoidCallback? onDeletePressed;
   final VoidCallback? onMorePressed;
 
   const WashMachineTile({
     Key? key,
     required this.washMachine,
+    this.isEdit = false,
     this.onDeletePressed,
     this.onMorePressed,
   }) : super(key: key);
@@ -22,6 +24,9 @@ class WashMachineTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return EntityContainerTile(
       imageAsset: AppImageAssets.washMachineImage,
+      isEdit: isEdit,
+      dialogTitle:
+          CleanDigitalLocalizations.of(context).doYouWantToDeleteWashMachine,
       onDeletePressed: onDeletePressed,
       onMorePressed: onMorePressed,
       color: !washMachine.isWorking

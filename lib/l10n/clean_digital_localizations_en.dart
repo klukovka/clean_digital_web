@@ -230,7 +230,7 @@ class CleanDigitalLocalizationsEn extends CleanDigitalLocalizations {
   String get employees => 'Employees';
 
   @override
-  String get doYouWantToDeleteEmployee => 'Do you want to delete a employee?';
+  String get doYouWantToDeleteEmployee => 'Do you want to delete an employee?';
 
   @override
   String get birthday => 'Birthday';
@@ -339,4 +339,13 @@ class CleanDigitalLocalizationsEn extends CleanDigitalLocalizations {
 
   @override
   String get createWashMachine => 'Create Washing Machine';
+
+  @override
+  String get spinningSpeed => 'Spinning speed';
+
+  @override
+  String get editWashMachine => 'Edit washing machine';
+
+  @override
+  String get doYouWantToDeleteWashMachine => 'Do you want to delete a washing machine?';
 }

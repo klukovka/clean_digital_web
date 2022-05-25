@@ -110,5 +110,8 @@
   "software": "Програмне забезпечення",
   "allModes": "Усі режими",
   "repairEvents": "Ремонтні роботи",
-  "createWashMachine": "Створити пральну машину"
+  "createWashMachine": "Створити пральну машину",
+  "spinningSpeed": "Швидкість віджиму",
+  "editWashMachine": "Редагувати пральну машину",
+  "doYouWantToDeleteWashMachine": "Ви дійсно хочете видалити пральну машину?"
 }
