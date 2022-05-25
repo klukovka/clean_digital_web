@@ -3,9 +3,11 @@ import 'package:retrofit/retrofit.dart';
 
 import '../models/auth_meta.dart';
 import '../models/laundry.dart';
+import '../models/pagination/additional_modes_pagination.dart';
 import '../models/pagination/clients_pagination.dart';
 import '../models/pagination/employees_pagination.dart';
 import '../models/pagination/laundries_pagination.dart';
+import '../models/pagination/modes_pagination.dart';
 import '../models/pagination/payment_pagination.dart';
 import '../models/pagination/rating_pagination.dart';
 import '../models/pagination/repair_companies_pagination.dart';
@@ -25,6 +27,7 @@ import 'models/auth/update_password_request.dart';
 import 'models/backup.dart';
 import 'models/create_update_requests/create_update_employee.dart';
 import 'models/create_update_requests/create_update_laundry.dart';
+import 'models/create_update_requests/create_update_mode.dart';
 import 'models/create_update_requests/create_update_repair_company.dart';
 import 'models/create_update_requests/create_update_wash_machine.dart';
 
@@ -111,9 +114,47 @@ abstract class CleanDigitalApiClient {
   /// Additional Modes
   ///
 
+  @POST('/laundry/create-additional-mode')
+  Future<void> createAdditionalMode(
+    @Body() CreateUpdateModeRequest request,
+  );
+
+  @PUT('/laundry/update-additional-mode/{additionalModeId}')
+  Future<void> updateAdditionalMode(
+    @Path('additionalModeId') String additionalModeId,
+    @Body() CreateUpdateModeRequest request,
+  );
+
+  @DELETE('/laundry/delete-additional-mode/{additionalModeId}')
+  Future<void> deleteAdditionalMode(
+    @Path('additionalModeId') String additionalModeId,
+  );
+
+  @GET('/laundry/all-additional-modes')
+  Future<AdditionalModesPagination> getAllAdditionalModes();
+
   ///
   /// Modes
   ///
+
+  @POST('/laundry/create-mode')
+  Future<void> createMode(
+    @Body() CreateUpdateModeRequest request,
+  );
+
+  @PUT('/laundry/update-mode/{modeId}')
+  Future<void> updateMode(
+    @Path('modeId') String modeId,
+    @Body() CreateUpdateModeRequest request,
+  );
+
+  @DELETE('/laundry/delete-mode/{modeId}')
+  Future<void> deleteMode(
+    @Path('modeId') String modeId,
+  );
+
+  @GET('/laundry/all-modes')
+  Future<ModesPagination> getAllModes();
 
   ///
   /// Backup

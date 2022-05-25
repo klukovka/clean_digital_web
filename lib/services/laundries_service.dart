@@ -3,10 +3,13 @@ import 'package:injectable/injectable.dart';
 import '../api/clean_digital_api_client.dart';
 import '../api/models/create_update_requests/create_update_employee.dart';
 import '../api/models/create_update_requests/create_update_laundry.dart';
+import '../api/models/create_update_requests/create_update_mode.dart';
 import '../api/models/create_update_requests/create_update_wash_machine.dart';
 import '../models/laundry.dart';
+import '../models/pagination/additional_modes_pagination.dart';
 import '../models/pagination/employees_pagination.dart';
 import '../models/pagination/laundries_pagination.dart';
+import '../models/pagination/modes_pagination.dart';
 import '../models/pagination/wash_machines_pagination.dart';
 import 'base_service.dart';
 
@@ -136,6 +139,76 @@ class LaundriesService extends BaseService {
   Future<void> deleteEmployee(String userId) async {
     await makeErrorHandledCall(() async {
       await _apiClient.deleteEmployee(userId);
+    });
+  }
+
+  ///
+  /// Additional Modes
+  ///
+
+  Future<void> createAdditionalMode(
+    CreateUpdateModeRequest request,
+  ) async {
+    await makeErrorHandledCall(() async {
+      await _apiClient.createAdditionalMode(request);
+    });
+  }
+
+  Future<void> updateAdditionalMode(
+    String additionalModeId,
+    CreateUpdateModeRequest request,
+  ) async {
+    await makeErrorHandledCall(() async {
+      await _apiClient.updateAdditionalMode(additionalModeId, request);
+    });
+  }
+
+  Future<void> deleteAdditionalMode(
+    String additionalModeId,
+  ) async {
+    await makeErrorHandledCall(() async {
+      await _apiClient.deleteAdditionalMode(additionalModeId);
+    });
+  }
+
+  Future<AdditionalModesPagination> getAllAdditionalModes() async {
+    return await makeErrorHandledCall(() async {
+      return await _apiClient.getAllAdditionalModes();
+    });
+  }
+
+  ///
+  /// Modes
+  ///
+
+  Future<void> createMode(
+    CreateUpdateModeRequest request,
+  ) async {
+    await makeErrorHandledCall(() async {
+      await _apiClient.createMode(request);
+    });
+  }
+
+  Future<void> updateMode(
+    String modeId,
+    CreateUpdateModeRequest request,
+  ) async {
+    await makeErrorHandledCall(() async {
+      await _apiClient.updateMode(modeId, request);
+    });
+  }
+
+  Future<void> deleteMode(
+    String modeId,
+  ) async {
+    await makeErrorHandledCall(() async {
+      await _apiClient.deleteMode(modeId);
+    });
+  }
+
+  Future<ModesPagination> getAllModes() async {
+    return await makeErrorHandledCall(() async {
+      return await _apiClient.getAllModes();
     });
   }
 }
