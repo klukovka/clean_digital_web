@@ -23,6 +23,7 @@ import 'models/auth/login_request.dart';
 import 'models/auth/restore_password_request.dart';
 import 'models/auth/update_password_request.dart';
 import 'models/backup.dart';
+import 'models/create_update_requests/create_update_employee.dart';
 import 'models/create_update_requests/create_update_laundry.dart';
 import 'models/create_update_requests/create_update_repair_company.dart';
 import 'models/create_update_requests/create_update_wash_machine.dart';
@@ -61,6 +62,11 @@ abstract class CleanDigitalApiClient {
   @POST('/auth/signup-laundry')
   Future<void> createLaundry(
     @Body() CreateUpdateLaundryRequest body,
+  );
+
+  @POST('/auth/signup-employee')
+  Future<void> createEmployee(
+    @Body() CreateUpdateEmployeeRequest body,
   );
 
   @POST('/auth/signup-repair-company')
@@ -195,6 +201,17 @@ abstract class CleanDigitalApiClient {
     @Path() String laundryId,
     @Query('page') int page,
     @Query('size') int size,
+  );
+
+  @GET('/laundry/all-employees')
+  Future<EmployeesPagination> getLaundryOwnEmployees(
+    @Query('page') int page,
+    @Query('size') int size,
+  );
+
+  @DELETE('/employee/delete-employee/{userId}')
+  Future<void> deleteEmployee(
+    @Path('userId') String userId,
   );
 
   ///

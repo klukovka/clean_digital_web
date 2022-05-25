@@ -1,6 +1,7 @@
 import 'package:injectable/injectable.dart';
 
 import '../api/clean_digital_api_client.dart';
+import '../api/models/create_update_requests/create_update_employee.dart';
 import '../api/models/create_update_requests/create_update_laundry.dart';
 import '../api/models/create_update_requests/create_update_wash_machine.dart';
 import '../models/laundry.dart';
@@ -39,20 +40,6 @@ class LaundriesService extends BaseService {
   Future<Laundry> getLaundryById(String laundryId) async {
     return await makeErrorHandledCall(() async {
       return await _apiClient.getLaundryById(laundryId);
-    });
-  }
-
-  Future<EmployeesPagination> getLaundryEmployees({
-    required String laundryId,
-    int page = 0,
-    int size = 10,
-  }) async {
-    return await makeErrorHandledCall(() async {
-      return await _apiClient.getLaundryEmployees(
-        laundryId,
-        page,
-        size,
-      );
     });
   }
 
@@ -108,6 +95,47 @@ class LaundriesService extends BaseService {
   ) async {
     return await makeErrorHandledCall(() async {
       return await _apiClient.deleteWashMachine(washMachineId);
+    });
+  }
+
+  ///
+  /// Employees
+  ///
+
+  Future<EmployeesPagination> getLaundryEmployees({
+    required String laundryId,
+    int page = 0,
+    int size = 10,
+  }) async {
+    return await makeErrorHandledCall(() async {
+      return await _apiClient.getLaundryEmployees(
+        laundryId,
+        page,
+        size,
+      );
+    });
+  }
+
+  Future<EmployeesPagination> getLaundryOwnEmployees({
+    int page = 0,
+    int size = 10,
+  }) async {
+    return await makeErrorHandledCall(() async {
+      return await _apiClient.getLaundryOwnEmployees(page, size);
+    });
+  }
+
+  Future<void> createEmployee(
+    CreateUpdateEmployeeRequest body,
+  ) async {
+    return await makeErrorHandledCall(() async {
+      return await _apiClient.createEmployee(body);
+    });
+  }
+
+  Future<void> deleteEmployee(String userId) async {
+    await makeErrorHandledCall(() async {
+      await _apiClient.deleteEmployee(userId);
     });
   }
 }
