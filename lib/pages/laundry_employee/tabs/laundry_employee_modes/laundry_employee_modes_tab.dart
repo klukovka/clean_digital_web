@@ -17,6 +17,7 @@ class _LaundryEmployeeAllModesTabState
   Widget build(BuildContext context) {
     return const AutoTabsView(
       items: ModesTabItem.values,
+      hasAppBar: false,
     );
   }
 }

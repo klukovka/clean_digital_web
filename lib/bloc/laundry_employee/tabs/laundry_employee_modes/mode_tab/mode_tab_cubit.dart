@@ -68,7 +68,7 @@ class ModesTabCubit extends BaseCubit<ModesTabState> {
     reset();
   }
 
-  Future<void> deleteEmployee(String modeId) async {
+  Future<void> deleteMode(String modeId) async {
     emit(state.copyWith(
       status: ModesTabStatus.loading,
     ));

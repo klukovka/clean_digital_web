@@ -3,13 +3,17 @@ import 'package:sizer/sizer.dart';
 
 import '../api/models/create_update_requests/create_update_employee.dart';
 import '../api/models/create_update_requests/create_update_laundry.dart';
+import '../api/models/create_update_requests/create_update_mode.dart';
 import '../api/models/create_update_requests/create_update_repair_company.dart';
 import '../api/models/create_update_requests/create_update_wash_machine.dart';
 import '../l10n/clean_digital_localizations.dart';
+import '../models/additional_mode.dart';
 import '../models/employee.dart';
+import '../models/mode.dart';
 import '../models/wash_machine.dart';
 import '../views/dialogs/base_dialog.dart';
 import '../views/dialogs/confirm_dialog.dart';
+import '../views/dialogs/create_mode_dialog.dart';
 import '../views/dialogs/create_update_employee_dialog.dart';
 import '../views/dialogs/create_update_laundry_dialog.dart';
 import '../views/dialogs/create_update_repair_company_dialog.dart';
@@ -116,7 +120,7 @@ class CleanDigitalDialogs {
     ValueSetter<CreateUpdateEmployeeRequest> onSave,
   ) {
     _showBlurDialog(
-      height: 65.h,
+      height: 55.h,
       body: CreateUpdateEmployeeDialog(onSave: onSave),
       title: CleanDigitalLocalizations.of(context).createEmployee,
     );
@@ -127,12 +131,59 @@ class CleanDigitalDialogs {
     ValueSetter<CreateUpdateEmployeeRequest> onSave,
   ) {
     _showBlurDialog(
-      height: 65.h,
+      height: 55.h,
       body: CreateUpdateEmployeeDialog(
         onSave: onSave,
         employee: employee,
       ),
       title: CleanDigitalLocalizations.of(context).editEmployee,
+    );
+  }
+
+  void showRegisterModeDialog(
+    ValueSetter<CreateUpdateModeRequest> onSave,
+    bool isAdditional,
+  ) {
+    _showBlurDialog(
+      height: 40.h,
+      body: CreateUpdateModeDialog(onSave: onSave),
+      title: isAdditional
+          ? CleanDigitalLocalizations.of(context).createAdditionalMode
+          : CleanDigitalLocalizations.of(context).createMode,
+    );
+  }
+
+  void showEditAdditionalModeDialog(
+    AdditionalMode additionalMode,
+    ValueSetter<CreateUpdateModeRequest> onSave,
+  ) {
+    _showBlurDialog(
+      height: 40.h,
+      body: CreateUpdateModeDialog(
+        onSave: onSave,
+        mode: Mode(
+          modeId: additionalMode.additionalModeId,
+          name: additionalMode.name,
+          time: additionalMode.time,
+          costs: additionalMode.costs,
+          laundryId: additionalMode.laundryId,
+        ),
+      ),
+      title: CleanDigitalLocalizations.of(context).updateAdditionalMode,
+    );
+  }
+
+  void showEditModeDialog(
+    Mode mode,
+    ValueSetter<CreateUpdateModeRequest> onSave,
+  ) {
+    _showBlurDialog(
+      height: 40.h,
+      body: CreateUpdateModeDialog(
+        onSave: onSave,
+        mode: mode,
+      ),
+      title: CleanDigitalLocalizations.of(context).updateMode,
     );
   }
 

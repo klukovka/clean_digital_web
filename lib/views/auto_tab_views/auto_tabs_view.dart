@@ -8,10 +8,12 @@ class AutoTabsView extends StatelessWidget {
   final List<AutoTabMenuItem> items;
   final VoidCallback? onPressed;
   final VoidCallback? onBackPressed;
+  final bool hasAppBar;
 
   const AutoTabsView({
     Key? key,
     required this.items,
+    this.hasAppBar = true,
     this.title,
     this.onPressed,
     this.onBackPressed,
@@ -27,12 +29,18 @@ class AutoTabsView extends StatelessWidget {
           length: items.length,
           child: Scaffold(
             appBar: AppBar(
-              title: title,
+              title: hasAppBar ? title : null,
               centerTitle: false,
-              leading: IconButton(
-                icon: const Icon(Icons.arrow_back_ios),
-                onPressed: onBackPressed,
-              ),
+              automaticallyImplyLeading: !hasAppBar,
+              backgroundColor: hasAppBar
+                  ? Theme.of(context).colorScheme.primary
+                  : Theme.of(context).scaffoldBackgroundColor,
+              leading: hasAppBar
+                  ? IconButton(
+                      icon: const Icon(Icons.arrow_back_ios),
+                      onPressed: onBackPressed,
+                    )
+                  : null,
               bottom: TabBar(
                 onTap: tabsRouter.setActiveIndex,
                 padding: EdgeInsets.zero,
@@ -43,15 +51,6 @@ class AutoTabsView extends StatelessWidget {
                   );
                 }).toList(),
               ),
-              actions: [
-                IconButton(
-                  onPressed: onPressed,
-                  icon: Icon(
-                    Icons.more_horiz,
-                    color: Theme.of(context).colorScheme.onPrimary,
-                  ),
-                )
-              ],
             ),
             body: FadeTransition(
               opacity: animation,

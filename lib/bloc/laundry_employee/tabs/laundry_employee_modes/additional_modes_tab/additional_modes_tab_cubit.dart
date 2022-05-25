@@ -24,10 +24,6 @@ class AdditionalModesTabCubit extends BaseCubit<AdditionalModesTabState> {
     ));
   }
 
-  void reset() {
-    emit(const AdditionalModesTabState());
-  }
-
   Future<void> getAdditionalModes() async {
     emit(state.copyWith(status: AdditionalModesTabStatus.loading));
     await makeErrorHandledCall(() async {
@@ -49,7 +45,7 @@ class AdditionalModesTabCubit extends BaseCubit<AdditionalModesTabState> {
     await makeErrorHandledCall(() async {
       await _laundriesService.createAdditionalMode(request);
     });
-    reset();
+    getAdditionalModes();
   }
 
   Future<void> updateAdditionalMode(
@@ -65,16 +61,16 @@ class AdditionalModesTabCubit extends BaseCubit<AdditionalModesTabState> {
         request,
       );
     });
-    reset();
+    getAdditionalModes();
   }
 
-  Future<void> deleteEmployee(String additionalModeId) async {
+  Future<void> deleteAdditionalMode(String additionalModeId) async {
     emit(state.copyWith(
       status: AdditionalModesTabStatus.loading,
     ));
     await makeErrorHandledCall(() async {
       await _laundriesService.deleteAdditionalMode(additionalModeId);
     });
-    reset();
+    getAdditionalModes();
   }
 }
