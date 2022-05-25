@@ -115,5 +115,13 @@
   "editWashMachine": "Редагувати пральну машину",
   "doYouWantToDeleteWashMachine": "Ви дійсно хочете видалити пральну машину?",
   "createEmployee": "Створити робітника",
-  "editEmployee": "Редагувати робітника"
+  "editEmployee": "Редагувати робітника",
+  "modes": "Режими прання",
+  "additionalModes": "Додаткові режими прання",
+  "doYouWantToDeleteAdditionalMode": "Ви дійсно хочете видалити додатковий режим прання?",
+  "createAdditionalMode": "Створити додатковий режим прання",
+  "updateAdditionalMode": "Редагувати додатковий режим прання",
+  "doYouWantToDeleteMode": "Ви дійсно хочете видалити режим прання?",
+  "createMode": "Створити режим прання",
+  "updateMode": "Редагувати режимпрання"
 }

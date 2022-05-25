@@ -354,4 +354,28 @@ class CleanDigitalLocalizationsUk extends CleanDigitalLocalizations {
 
   @override
   String get editEmployee => 'Редагувати робітника';
+
+  @override
+  String get modes => 'Режими прання';
+
+  @override
+  String get additionalModes => 'Додаткові режими прання';
+
+  @override
+  String get doYouWantToDeleteAdditionalMode => 'Ви дійсно хочете видалити додатковий режим прання?';
+
+  @override
+  String get createAdditionalMode => 'Створити додатковий режим прання';
+
+  @override
+  String get updateAdditionalMode => 'Редагувати додатковий режим прання';
+
+  @override
+  String get doYouWantToDeleteMode => 'Ви дійсно хочете видалити режим прання?';
+
+  @override
+  String get createMode => 'Створити режим прання';
+
+  @override
+  String get updateMode => 'Редагувати режимпрання';
 }

@@ -113,5 +113,13 @@
     "editWashMachine": "Edit washing machine",
     "doYouWantToDeleteWashMachine": "Do you want to delete a washing machine?",
     "createEmployee": "Create employee",
-    "editEmployee": "Edit employee"
+    "editEmployee": "Edit employee",
+    "modes": "Modes",
+    "additionalModes": "Additional modes",
+    "doYouWantToDeleteAdditionalMode": "Do you want to delete an additional mode?",
+    "createAdditionalMode": "Create additional mode",
+    "updateAdditionalMode": "Update additional mode",
+    "doYouWantToDeleteMode": "Do you want to delete a mode?",
+    "createMode": "Create mode",
+    "updateMode": "Update mode"
 }

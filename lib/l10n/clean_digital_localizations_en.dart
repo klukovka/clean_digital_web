@@ -354,4 +354,28 @@ class CleanDigitalLocalizationsEn extends CleanDigitalLocalizations {
 
   @override
   String get editEmployee => 'Edit employee';
+
+  @override
+  String get modes => 'Modes';
+
+  @override
+  String get additionalModes => 'Additional modes';
+
+  @override
+  String get doYouWantToDeleteAdditionalMode => 'Do you want to delete an additional mode?';
+
+  @override
+  String get createAdditionalMode => 'Create additional mode';
+
+  @override
+  String get updateAdditionalMode => 'Update additional mode';
+
+  @override
+  String get doYouWantToDeleteMode => 'Do you want to delete a mode?';
+
+  @override
+  String get createMode => 'Create mode';
+
+  @override
+  String get updateMode => 'Update mode';
 }

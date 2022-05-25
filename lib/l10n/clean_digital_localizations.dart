@@ -789,6 +789,54 @@ abstract class CleanDigitalLocalizations {
   /// In uk, this message translates to:
   /// **'Редагувати робітника'**
   String get editEmployee;
+
+  /// No description provided for @modes.
+  ///
+  /// In uk, this message translates to:
+  /// **'Режими прання'**
+  String get modes;
+
+  /// No description provided for @additionalModes.
+  ///
+  /// In uk, this message translates to:
+  /// **'Додаткові режими прання'**
+  String get additionalModes;
+
+  /// No description provided for @doYouWantToDeleteAdditionalMode.
+  ///
+  /// In uk, this message translates to:
+  /// **'Ви дійсно хочете видалити додатковий режим прання?'**
+  String get doYouWantToDeleteAdditionalMode;
+
+  /// No description provided for @createAdditionalMode.
+  ///
+  /// In uk, this message translates to:
+  /// **'Створити додатковий режим прання'**
+  String get createAdditionalMode;
+
+  /// No description provided for @updateAdditionalMode.
+  ///
+  /// In uk, this message translates to:
+  /// **'Редагувати додатковий режим прання'**
+  String get updateAdditionalMode;
+
+  /// No description provided for @doYouWantToDeleteMode.
+  ///
+  /// In uk, this message translates to:
+  /// **'Ви дійсно хочете видалити режим прання?'**
+  String get doYouWantToDeleteMode;
+
+  /// No description provided for @createMode.
+  ///
+  /// In uk, this message translates to:
+  /// **'Створити режим прання'**
+  String get createMode;
+
+  /// No description provided for @updateMode.
+  ///
+  /// In uk, this message translates to:
+  /// **'Редагувати режимпрання'**
+  String get updateMode;
 }
 
 class _CleanDigitalLocalizationsDelegate extends LocalizationsDelegate<CleanDigitalLocalizations> {
