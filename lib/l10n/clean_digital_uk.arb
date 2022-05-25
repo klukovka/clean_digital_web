@@ -91,7 +91,7 @@
   "repairAmount": "Кількість ремонтів",
   "repairMoney": "Гроші витрачені на ремонт",
   "time": "Витрачений час",
-  "nd": "N/D",
+  "nd": "Н/Д",
   "moneyStatistic": "Грошова статистика",
   "paidMoneyForWashMachine": "Потрачені гроші для пральної машини",
   "paidBonusesForWashMachine": "Потрачені бонуси для пральної машини",
@@ -113,5 +113,7 @@
   "createWashMachine": "Створити пральну машину",
   "spinningSpeed": "Швидкість віджиму",
   "editWashMachine": "Редагувати пральну машину",
-  "doYouWantToDeleteWashMachine": "Ви дійсно хочете видалити пральну машину?"
+  "doYouWantToDeleteWashMachine": "Ви дійсно хочете видалити пральну машину?",
+  "createEmployee": "Створити робітника",
+  "editEmployee": "Редагувати робітника"
 }

@@ -105,7 +105,7 @@ class _LaundryEmployeeWashMachinesTabState
           return Column(
             children: [
               const SizedBox(height: 32),
-              if (state.washMachines.isNotEmpty) _buildTitle(state),
+              _buildTitle(state),
               const SizedBox(height: 32),
               Expanded(
                 child: Align(

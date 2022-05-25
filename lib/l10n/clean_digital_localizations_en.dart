@@ -348,4 +348,10 @@ class CleanDigitalLocalizationsEn extends CleanDigitalLocalizations {
 
   @override
   String get doYouWantToDeleteWashMachine => 'Do you want to delete a washing machine?';
+
+  @override
+  String get createEmployee => 'Create employee';
+
+  @override
+  String get editEmployee => 'Edit employee';
 }

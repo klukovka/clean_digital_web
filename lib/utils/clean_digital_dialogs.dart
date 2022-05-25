@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
+import '../api/models/create_update_requests/create_update_employee.dart';
 import '../api/models/create_update_requests/create_update_laundry.dart';
 import '../api/models/create_update_requests/create_update_repair_company.dart';
 import '../api/models/create_update_requests/create_update_wash_machine.dart';
 import '../l10n/clean_digital_localizations.dart';
+import '../models/employee.dart';
 import '../models/wash_machine.dart';
 import '../views/dialogs/base_dialog.dart';
 import '../views/dialogs/confirm_dialog.dart';
+import '../views/dialogs/create_update_employee_dialog.dart';
 import '../views/dialogs/create_update_laundry_dialog.dart';
 import '../views/dialogs/create_update_repair_company_dialog.dart';
 import '../views/dialogs/create_update_wash_machine_dialog.dart';
@@ -106,6 +109,30 @@ class CleanDigitalDialogs {
         washMachine: washMachine,
       ),
       title: CleanDigitalLocalizations.of(context).editWashMachine,
+    );
+  }
+
+  void showRegisterEmployeeDialog(
+    ValueSetter<CreateUpdateEmployeeRequest> onSave,
+  ) {
+    _showBlurDialog(
+      height: 65.h,
+      body: CreateUpdateEmployeeDialog(onSave: onSave),
+      title: CleanDigitalLocalizations.of(context).createEmployee,
+    );
+  }
+
+  void showEditEmployeeDialog(
+    Employee employee,
+    ValueSetter<CreateUpdateEmployeeRequest> onSave,
+  ) {
+    _showBlurDialog(
+      height: 65.h,
+      body: CreateUpdateEmployeeDialog(
+        onSave: onSave,
+        employee: employee,
+      ),
+      title: CleanDigitalLocalizations.of(context).editEmployee,
     );
   }
 

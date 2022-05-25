@@ -281,7 +281,7 @@ class CleanDigitalLocalizationsUk extends CleanDigitalLocalizations {
   String get time => 'Витрачений час';
 
   @override
-  String get nd => 'N/D';
+  String get nd => 'Н/Д';
 
   @override
   String get moneyStatistic => 'Грошова статистика';
@@ -348,4 +348,10 @@ class CleanDigitalLocalizationsUk extends CleanDigitalLocalizations {
 
   @override
   String get doYouWantToDeleteWashMachine => 'Ви дійсно хочете видалити пральну машину?';
+
+  @override
+  String get createEmployee => 'Створити робітника';
+
+  @override
+  String get editEmployee => 'Редагувати робітника';
 }

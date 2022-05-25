@@ -643,7 +643,7 @@ abstract class CleanDigitalLocalizations {
   /// No description provided for @nd.
   ///
   /// In uk, this message translates to:
-  /// **'N/D'**
+  /// **'Н/Д'**
   String get nd;
 
   /// No description provided for @moneyStatistic.
@@ -777,6 +777,18 @@ abstract class CleanDigitalLocalizations {
   /// In uk, this message translates to:
   /// **'Ви дійсно хочете видалити пральну машину?'**
   String get doYouWantToDeleteWashMachine;
+
+  /// No description provided for @createEmployee.
+  ///
+  /// In uk, this message translates to:
+  /// **'Створити робітника'**
+  String get createEmployee;
+
+  /// No description provided for @editEmployee.
+  ///
+  /// In uk, this message translates to:
+  /// **'Редагувати робітника'**
+  String get editEmployee;
 }
 
 class _CleanDigitalLocalizationsDelegate extends LocalizationsDelegate<CleanDigitalLocalizations> {

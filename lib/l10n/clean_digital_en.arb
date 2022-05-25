@@ -111,5 +111,7 @@
     "createWashMachine": "Create Washing Machine",
     "spinningSpeed": "Spinning speed",
     "editWashMachine": "Edit washing machine",
-    "doYouWantToDeleteWashMachine": "Do you want to delete a washing machine?"
+    "doYouWantToDeleteWashMachine": "Do you want to delete a washing machine?",
+    "createEmployee": "Create employee",
+    "editEmployee": "Edit employee"
 }
