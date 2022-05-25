@@ -7,6 +7,7 @@ import '../../../../bloc/laundry_employee/tabs/laundry_employee_modes/additional
 import '../../../../di/injection_container.dart';
 import '../../../../l10n/clean_digital_localizations.dart';
 import '../../../../utils/clean_digital_dialogs.dart';
+import '../../../../utils/clean_digital_toasts.dart';
 import '../../../../views/buttons/primary_button.dart';
 import '../../../../views/entity_tiles/entity_label.dart';
 import '../../../../views/error_view.dart';
@@ -34,7 +35,14 @@ class _AdditionalModesTabState extends State<AdditionalModesTab> {
   void _onStateChanged(
     BuildContext context,
     AdditionalModesTabState state,
-  ) {}
+  ) {
+    if (state.status == AdditionalModesTabStatus.error) {
+      CleanDigitalToasts.of(context).showError(
+        message: state.errorMessage,
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
