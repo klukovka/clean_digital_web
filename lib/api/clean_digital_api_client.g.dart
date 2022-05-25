@@ -101,7 +101,7 @@ class _CleanDigitalApiClient implements CleanDigitalApiClient {
     _data.addAll(body.toJson());
     await _dio.fetch<void>(_setStreamType<void>(
         Options(method: 'POST', headers: _headers, extra: _extra)
-            .compose(_dio.options, '/auth/signup-laundry',
+            .compose(_dio.options, '/auth/signup-employee',
                 queryParameters: queryParameters, data: _data)
             .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     return null;
