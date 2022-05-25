@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'auto_tab_menu_item.dart';
 
 class AutoTabsView extends StatelessWidget {
-  final Widget title;
+  final Widget? title;
   final List<AutoTabMenuItem> items;
   final VoidCallback? onPressed;
   final VoidCallback? onBackPressed;
@@ -12,7 +12,7 @@ class AutoTabsView extends StatelessWidget {
   const AutoTabsView({
     Key? key,
     required this.items,
-    required this.title,
+    this.title,
     this.onPressed,
     this.onBackPressed,
   }) : super(key: key);

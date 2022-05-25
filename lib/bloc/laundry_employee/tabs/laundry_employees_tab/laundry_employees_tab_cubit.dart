@@ -46,14 +46,6 @@ class LaundryEmployeesTabCubit extends BaseCubit<LaundryEmployeesTabState> {
     });
   }
 
-  Future<void> deteleEmployee(String userId) async {
-    emit(state.copyWith(status: LaundryEmployeesTabStatus.loading));
-    await makeErrorHandledCall(() async {
-      await _laundriesService.deleteEmployee(userId);
-    });
-    reset();
-  }
-
   Future<void> createEmployee(
     CreateUpdateEmployeeRequest employee,
   ) async {

@@ -15,7 +15,9 @@ import '../pages/auth/restore_password_page.dart';
 import '../pages/laundry_employee/employee_page.dart';
 import '../pages/laundry_employee/laundry_page.dart';
 import '../pages/laundry_employee/tabs/employee_settings.dart';
+import '../pages/laundry_employee/tabs/laundry_employee_modes/additional_mode_tab.dart';
 import '../pages/laundry_employee/tabs/laundry_employee_modes/laundry_employee_modes_tab.dart';
+import '../pages/laundry_employee/tabs/laundry_employee_modes/modes_tab.dart';
 import '../pages/laundry_employee/tabs/laundry_employee_repair_events_tab.dart';
 import '../pages/laundry_employee/tabs/laundry_employee_statistic.dart';
 import '../pages/laundry_employee/tabs/laundry_employee_wash_machines_tab.dart';
@@ -144,6 +146,21 @@ const _fadeIn = TransitionsBuilders.fadeIn;
           path: 'allModes/',
           transitionsBuilder: _fadeIn,
           durationInMilliseconds: _durationInMilliseconds,
+          children: [
+            CustomRoute(
+              page: ModesTab,
+              initial: true,
+              path: 'modes/',
+              transitionsBuilder: _fadeIn,
+              durationInMilliseconds: _durationInMilliseconds,
+            ),
+            CustomRoute(
+              page: AdditionalModesTab,
+              path: 'additionalModes/',
+              transitionsBuilder: _fadeIn,
+              durationInMilliseconds: _durationInMilliseconds,
+            ),
+          ],
         ),
         CustomRoute(
           page: LaundryEmployeeRepairEventsTab,

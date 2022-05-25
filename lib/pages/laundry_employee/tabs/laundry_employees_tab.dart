@@ -119,7 +119,7 @@ class _LaundryEmployeesTabState extends State<LaundryEmployeesTab> {
           return EmployeeTile(
             employee: employee,
             onDeletePressed: () async {
-              await cubit.deteleEmployee(employee.user.userId);
+              await cubit.deleteEmployee(employee.user.userId);
               _paginatedListKey = UniqueKey();
             },
           );
