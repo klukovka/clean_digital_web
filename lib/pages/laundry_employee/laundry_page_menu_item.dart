@@ -11,6 +11,7 @@ enum LaundryPageMenuItem implements AutoTabMenuItem {
   washingMachines,
   employees,
   allModes,
+  events,
   repairEvents,
   statistic,
   settings;
@@ -32,6 +33,8 @@ enum LaundryPageMenuItem implements AutoTabMenuItem {
         return loc.statistic;
       case LaundryPageMenuItem.settings:
         return loc.settings;
+      case LaundryPageMenuItem.events:
+        return loc.events;
     }
   }
 
@@ -50,6 +53,8 @@ enum LaundryPageMenuItem implements AutoTabMenuItem {
         return FontAwesome5.chart_pie;
       case LaundryPageMenuItem.settings:
         return FontAwesome.cog_alt;
+      case LaundryPageMenuItem.events:
+        return Icons.event;
     }
   }
 
@@ -68,6 +73,8 @@ enum LaundryPageMenuItem implements AutoTabMenuItem {
         return const LaundryStatisticRoute();
       case LaundryPageMenuItem.settings:
         return const LaundrySettingsRoute();
+      case LaundryPageMenuItem.events:
+        return const LaundryEventsRoute();
     }
   }
 }

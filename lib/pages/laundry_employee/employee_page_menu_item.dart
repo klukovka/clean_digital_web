@@ -10,6 +10,7 @@ import '../../views/auto_tab_views/auto_tab_menu_item.dart';
 enum EmployeePageMenuItem implements AutoTabMenuItem {
   washingMachines,
   allModes,
+  events,
   repairEvents,
   statistic,
   settings;
@@ -29,6 +30,8 @@ enum EmployeePageMenuItem implements AutoTabMenuItem {
         return loc.statistic;
       case EmployeePageMenuItem.settings:
         return loc.settings;
+      case EmployeePageMenuItem.events:
+        return loc.events;
     }
   }
 
@@ -45,6 +48,8 @@ enum EmployeePageMenuItem implements AutoTabMenuItem {
         return FontAwesome5.chart_pie;
       case EmployeePageMenuItem.settings:
         return FontAwesome.cog_alt;
+      case EmployeePageMenuItem.events:
+        return Icons.event;
     }
   }
 
@@ -61,6 +66,8 @@ enum EmployeePageMenuItem implements AutoTabMenuItem {
         return const EmployeeStatisticRoute();
       case EmployeePageMenuItem.settings:
         return const EmployeeSettingsRoute();
+      case EmployeePageMenuItem.events:
+        return const EmployeeEventsRoute();
     }
   }
 }

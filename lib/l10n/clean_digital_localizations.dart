@@ -855,6 +855,54 @@ abstract class CleanDigitalLocalizations {
   /// In uk, this message translates to:
   /// **'Про робітника'**
   String get aboutEmployee;
+
+  /// No description provided for @temperature.
+  ///
+  /// In uk, this message translates to:
+  /// **'Температура'**
+  String get temperature;
+
+  /// No description provided for @mode.
+  ///
+  /// In uk, this message translates to:
+  /// **'Режим прання'**
+  String get mode;
+
+  /// No description provided for @additionalMode.
+  ///
+  /// In uk, this message translates to:
+  /// **'Додатковий режим прання'**
+  String get additionalMode;
+
+  /// No description provided for @timeBegin.
+  ///
+  /// In uk, this message translates to:
+  /// **'Час початку'**
+  String get timeBegin;
+
+  /// No description provided for @timeEnd.
+  ///
+  /// In uk, this message translates to:
+  /// **'Час кінця'**
+  String get timeEnd;
+
+  /// No description provided for @paidStatus.
+  ///
+  /// In uk, this message translates to:
+  /// **'Чи сплачено'**
+  String get paidStatus;
+
+  /// No description provided for @taken.
+  ///
+  /// In uk, this message translates to:
+  /// **'Чи забрано'**
+  String get taken;
+
+  /// No description provided for @events.
+  ///
+  /// In uk, this message translates to:
+  /// **'Процеси'**
+  String get events;
 }
 
 class _CleanDigitalLocalizationsDelegate extends LocalizationsDelegate<CleanDigitalLocalizations> {

@@ -387,4 +387,28 @@ class CleanDigitalLocalizationsUk extends CleanDigitalLocalizations {
 
   @override
   String get aboutEmployee => 'Про робітника';
+
+  @override
+  String get temperature => 'Температура';
+
+  @override
+  String get mode => 'Режим прання';
+
+  @override
+  String get additionalMode => 'Додатковий режим прання';
+
+  @override
+  String get timeBegin => 'Час початку';
+
+  @override
+  String get timeEnd => 'Час кінця';
+
+  @override
+  String get paidStatus => 'Чи сплачено';
+
+  @override
+  String get taken => 'Чи забрано';
+
+  @override
+  String get events => 'Процеси';
 }

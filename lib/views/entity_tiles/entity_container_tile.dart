@@ -18,8 +18,8 @@ class EntityContainerTile extends StatelessWidget {
   const EntityContainerTile({
     Key? key,
     required this.child,
-    required this.onDeletePressed,
-    required this.onMorePressed,
+    this.onDeletePressed,
+    this.onMorePressed,
     this.dialogTitle = '',
     this.isEdit = false,
     this.color,

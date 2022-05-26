@@ -443,6 +443,39 @@ class _CleanDigitalApiClient implements CleanDigitalApiClient {
   }
 
   @override
+  Future<RepairEventsPagination> getLaundryRepairEvents() async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<RepairEventsPagination>(
+            Options(method: 'GET', headers: _headers, extra: _extra)
+                .compose(
+                    _dio.options, '/repairCompany/laundry-own-repair-events',
+                    queryParameters: queryParameters, data: _data)
+                .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = RepairEventsPagination.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<EventsPagination> getLaundryEvents(page, size) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{r'page': page, r'size': size};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<EventsPagination>(
+            Options(method: 'GET', headers: _headers, extra: _extra)
+                .compose(_dio.options, '/event/laundry-events',
+                    queryParameters: queryParameters, data: _data)
+                .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = EventsPagination.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
   Future<ClientsPagination> getClients(page, size) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{r'page': page, r'size': size};

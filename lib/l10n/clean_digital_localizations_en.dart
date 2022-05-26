@@ -387,4 +387,28 @@ class CleanDigitalLocalizationsEn extends CleanDigitalLocalizations {
 
   @override
   String get aboutEmployee => 'About employee';
+
+  @override
+  String get temperature => 'Temperature';
+
+  @override
+  String get mode => 'Mode';
+
+  @override
+  String get additionalMode => 'Additional mode';
+
+  @override
+  String get timeBegin => 'Time begin';
+
+  @override
+  String get timeEnd => 'Time end';
+
+  @override
+  String get paidStatus => 'Paid status';
+
+  @override
+  String get taken => 'Taken';
+
+  @override
+  String get events => 'Events';
 }

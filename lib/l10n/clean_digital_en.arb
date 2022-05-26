@@ -124,5 +124,13 @@
     "updateMode": "Update mode",
     "editLaundry": "Edit laundry",
     "aboutLaundry": "About laundry",
-    "aboutEmployee": "About employee"
+    "aboutEmployee": "About employee",
+    "temperature": "Temperature",
+    "mode": "Mode",
+    "additionalMode": "Additional mode",
+    "timeBegin": "Time begin",
+    "timeEnd": "Time end",
+    "paidStatus": "Paid status",
+    "taken": "Taken",
+    "events": "Events"
 }

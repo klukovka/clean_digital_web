@@ -15,6 +15,7 @@ import '../pages/auth/restore_password_page.dart';
 import '../pages/laundry_employee/employee_page.dart';
 import '../pages/laundry_employee/laundry_page.dart';
 import '../pages/laundry_employee/tabs/employee_settings_tab.dart';
+import '../pages/laundry_employee/tabs/laundry_employee_events_tab.dart';
 import '../pages/laundry_employee/tabs/laundry_employee_modes/additional_mode_tab.dart';
 import '../pages/laundry_employee/tabs/laundry_employee_modes/laundry_employee_modes_tab.dart';
 import '../pages/laundry_employee/tabs/laundry_employee_modes/modes_tab.dart';
@@ -141,6 +142,13 @@ const _fadeIn = TransitionsBuilders.fadeIn;
           durationInMilliseconds: _durationInMilliseconds,
         ),
         CustomRoute(
+          page: LaundryEmployeeEventsTab,
+          path: 'events/',
+          name: 'LaundryEventsRoute',
+          transitionsBuilder: _fadeIn,
+          durationInMilliseconds: _durationInMilliseconds,
+        ),
+        CustomRoute(
           page: LaundryEmployeeAllModesTab,
           name: 'LaundryAllModesRoute',
           path: 'allModes/',
@@ -197,6 +205,13 @@ const _fadeIn = TransitionsBuilders.fadeIn;
           initial: true,
           path: 'washingMachines/',
           name: 'EmployeeWashMachinesRoute',
+          transitionsBuilder: _fadeIn,
+          durationInMilliseconds: _durationInMilliseconds,
+        ),
+        CustomRoute(
+          page: LaundryEmployeeEventsTab,
+          path: 'events/',
+          name: 'EmployeeEventsRoute',
           transitionsBuilder: _fadeIn,
           durationInMilliseconds: _durationInMilliseconds,
         ),

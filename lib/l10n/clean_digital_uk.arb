@@ -126,5 +126,13 @@
   "updateMode": "Редагувати режимпрання",
   "editLaundry": "Редагувати пральню",
   "aboutLaundry": "Про пральню",
-  "aboutEmployee": "Про робітника"
+  "aboutEmployee": "Про робітника",
+  "temperature": "Температура",
+  "mode": "Режим прання",
+  "additionalMode": "Додатковий режим прання",
+  "timeBegin": "Час початку",
+  "timeEnd": "Час кінця",
+  "paidStatus": "Чи сплачено",
+  "taken": "Чи забрано",
+  "events": "Процеси"
 }

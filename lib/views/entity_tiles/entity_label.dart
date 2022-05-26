@@ -29,9 +29,13 @@ class EntityLabel extends StatelessWidget {
           const SizedBox(width: 8),
           Expanded(
             child: AutoSizeText(
-              value != null
-                  ? '$value'
-                  : CleanDigitalLocalizations.of(context).nd,
+              value is bool
+                  ? value
+                      ? CleanDigitalLocalizations.of(context).yes
+                      : CleanDigitalLocalizations.of(context).no
+                  : value != null
+                      ? '$value'
+                      : CleanDigitalLocalizations.of(context).nd,
               style: Theme.of(context).textTheme.headline5,
               maxLines: 1,
             ),

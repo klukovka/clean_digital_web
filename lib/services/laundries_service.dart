@@ -9,6 +9,7 @@ import '../models/employee.dart';
 import '../models/laundry.dart';
 import '../models/pagination/additional_modes_pagination.dart';
 import '../models/pagination/employees_pagination.dart';
+import '../models/pagination/event_pagination.dart';
 import '../models/pagination/laundries_pagination.dart';
 import '../models/pagination/modes_pagination.dart';
 import '../models/pagination/wash_machines_pagination.dart';
@@ -236,6 +237,19 @@ class LaundriesService extends BaseService {
   Future<ModesPagination> getAllModes() async {
     return await makeErrorHandledCall(() async {
       return await _apiClient.getAllModes();
+    });
+  }
+
+  ///
+  /// Events
+  ///
+
+  Future<EventsPagination> getLaundryEvents({
+    int page = 0,
+    int size = 10,
+  }) async {
+    return await makeErrorHandledCall(() async {
+      return await _apiClient.getLaundryEvents(page, size);
     });
   }
 }

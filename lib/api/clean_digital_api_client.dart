@@ -7,11 +7,13 @@ import '../models/laundry.dart';
 import '../models/pagination/additional_modes_pagination.dart';
 import '../models/pagination/clients_pagination.dart';
 import '../models/pagination/employees_pagination.dart';
+import '../models/pagination/event_pagination.dart';
 import '../models/pagination/laundries_pagination.dart';
 import '../models/pagination/modes_pagination.dart';
 import '../models/pagination/payment_pagination.dart';
 import '../models/pagination/rating_pagination.dart';
 import '../models/pagination/repair_companies_pagination.dart';
+import '../models/pagination/repair_events_pagination.dart';
 import '../models/pagination/repair_pagination.dart';
 import '../models/pagination/repair_products_pagination.dart';
 import '../models/pagination/time_and_usage_pagination.dart';
@@ -197,6 +199,23 @@ abstract class CleanDigitalApiClient {
   @GET('/repairCompany/company-products/{repairCompanyId}')
   Future<RepairProductsPagination> getCompanyProducts(
     @Path('repairCompanyId') String repairCompanyId,
+  );
+
+  ///
+  /// Repair Events
+  ///
+
+  @GET('/repairCompany/laundry-own-repair-events')
+  Future<RepairEventsPagination> getLaundryRepairEvents();
+
+  ///
+  /// Events
+  ///
+
+  @GET('/event/laundry-events')
+  Future<EventsPagination> getLaundryEvents(
+    @Query('page') int page,
+    @Query('size') int size,
   );
 
   ///
