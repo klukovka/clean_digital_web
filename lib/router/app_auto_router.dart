@@ -206,6 +206,21 @@ const _fadeIn = TransitionsBuilders.fadeIn;
           name: 'EmployeeAllModesRoute',
           transitionsBuilder: _fadeIn,
           durationInMilliseconds: _durationInMilliseconds,
+          children: [
+            CustomRoute(
+              page: ModesTab,
+              initial: true,
+              path: 'modes/',
+              transitionsBuilder: _fadeIn,
+              durationInMilliseconds: _durationInMilliseconds,
+            ),
+            CustomRoute(
+              page: AdditionalModesTab,
+              path: 'additionalModes/',
+              transitionsBuilder: _fadeIn,
+              durationInMilliseconds: _durationInMilliseconds,
+            ),
+          ],
         ),
         CustomRoute(
           page: LaundryEmployeeRepairEventsTab,

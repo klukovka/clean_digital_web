@@ -406,7 +406,20 @@ class AppAutoRouter extends _i26.RootStackRouter {
           _i26.RouteConfig(EmployeeWashMachinesRoute.name,
               path: 'washingMachines/', parent: EmployeeRoute.name),
           _i26.RouteConfig(EmployeeAllModesRoute.name,
-              path: 'allModes/', parent: EmployeeRoute.name),
+              path: 'allModes/',
+              parent: EmployeeRoute.name,
+              children: [
+                _i26.RouteConfig('#redirect',
+                    path: '',
+                    parent: EmployeeAllModesRoute.name,
+                    redirectTo: 'modes/',
+                    fullMatch: true),
+                _i26.RouteConfig(ModesRoute.name,
+                    path: 'modes/', parent: EmployeeAllModesRoute.name),
+                _i26.RouteConfig(AdditionalModesRoute.name,
+                    path: 'additionalModes/',
+                    parent: EmployeeAllModesRoute.name)
+              ]),
           _i26.RouteConfig(EmployeeRepairEventsRoute.name,
               path: 'repairEvents/', parent: EmployeeRoute.name),
           _i26.RouteConfig(EmployeeStatisticRoute.name,
@@ -663,8 +676,9 @@ class EmployeeWashMachinesRoute extends _i26.PageRouteInfo<void> {
 /// generated route for
 /// [_i19.LaundryEmployeeAllModesTab]
 class EmployeeAllModesRoute extends _i26.PageRouteInfo<void> {
-  const EmployeeAllModesRoute()
-      : super(EmployeeAllModesRoute.name, path: 'allModes/');
+  const EmployeeAllModesRoute({List<_i26.PageRouteInfo>? children})
+      : super(EmployeeAllModesRoute.name,
+            path: 'allModes/', initialChildren: children);
 
   static const String name = 'EmployeeAllModesRoute';
 }

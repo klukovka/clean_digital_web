@@ -1,6 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:injectable/injectable.dart';
 
+import '../../../../api/models/create_update_requests/create_update_employee.dart';
 import '../../../../models/employee.dart';
 import '../../../../services/auth_service.dart';
 import '../../../../services/laundries_service.dart';
@@ -46,6 +47,15 @@ class EmployeeSettingsTabCubit extends BaseCubit<EmployeeSettingsTabState> {
     await makeErrorHandledCall(() async {
       await _authService.deleteAccount();
       emit(state.copyWith(status: EmployeeSettingsTabStatus.deleted));
+    });
+  }
+
+  Future<void> updateEmployee(CreateUpdateEmployeeRequest request) async {
+    emit(state.copyWith(status: EmployeeSettingsTabStatus.loading));
+
+    await makeErrorHandledCall(() async {
+      await _laundriesService.updateEmployee(request);
+      await init();
     });
   }
 
