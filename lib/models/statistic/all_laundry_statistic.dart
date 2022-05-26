@@ -32,6 +32,17 @@ class AllLaundryStatistic extends Equatable {
     required this.washMachineTimeAndUsageValue,
   });
 
+  const AllLaundryStatistic.empty()
+      : laundry = const Laundry.empty(),
+        laundryPaymentValue = null,
+        washMachinePaymentValue = const [],
+        laundryRatingValue = 0,
+        washMachineRatingValue = const [],
+        laundryRepairValue = null,
+        washMachineRepairValue = const [],
+        laundryTimeAndUsageValue = null,
+        washMachineTimeAndUsageValue = const [];
+
   @override
   List<Object?> get props {
     return [
