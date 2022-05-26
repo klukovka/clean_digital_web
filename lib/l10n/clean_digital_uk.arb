@@ -123,5 +123,8 @@
   "updateAdditionalMode": "Редагувати додатковий режим прання",
   "doYouWantToDeleteMode": "Ви дійсно хочете видалити режим прання?",
   "createMode": "Створити режим прання",
-  "updateMode": "Редагувати режимпрання"
+  "updateMode": "Редагувати режимпрання",
+  "editLaundry": "Редагувати пральню",
+  "aboutLaundry": "Про пральню",
+  "aboutEmployee": "Про робітника"
 }

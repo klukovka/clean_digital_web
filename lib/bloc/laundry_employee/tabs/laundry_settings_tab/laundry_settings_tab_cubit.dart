@@ -1,6 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:injectable/injectable.dart';
 
+import '../../../../api/models/create_update_requests/create_update_laundry.dart';
 import '../../../../models/laundry.dart';
 import '../../../../services/auth_service.dart';
 import '../../../../services/laundries_service.dart';
@@ -35,6 +36,14 @@ class LaundrySettingsTabCubit extends BaseCubit<LaundrySettingsTabState> {
         status: LaundrySettingsTabStatus.success,
         laundry: laundry,
       ));
+    });
+  }
+
+  Future<void> updateLaundry(CreateUpdateLaundryRequest request) async {
+    emit(state.copyWith(status: LaundrySettingsTabStatus.loading));
+    await makeErrorHandledCall(() async {
+      await _laundriesService.updateLaundry(request);
+      await init();
     });
   }
 

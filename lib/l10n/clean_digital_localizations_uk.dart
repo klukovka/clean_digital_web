@@ -378,4 +378,13 @@ class CleanDigitalLocalizationsUk extends CleanDigitalLocalizations {
 
   @override
   String get updateMode => 'Редагувати режимпрання';
+
+  @override
+  String get editLaundry => 'Редагувати пральню';
+
+  @override
+  String get aboutLaundry => 'Про пральню';
+
+  @override
+  String get aboutEmployee => 'Про робітника';
 }

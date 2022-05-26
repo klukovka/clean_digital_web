@@ -9,6 +9,7 @@ import '../api/models/create_update_requests/create_update_wash_machine.dart';
 import '../l10n/clean_digital_localizations.dart';
 import '../models/additional_mode.dart';
 import '../models/employee.dart';
+import '../models/laundry.dart';
 import '../models/mode.dart';
 import '../models/wash_machine.dart';
 import '../views/dialogs/base_dialog.dart';
@@ -89,6 +90,20 @@ class CleanDigitalDialogs {
       height: 65.h,
       body: CreateUpdateLaundryDialog(onSave: onSave),
       title: CleanDigitalLocalizations.of(context).registerLaundry,
+    );
+  }
+
+  void showEditLaundryDialog(
+    Laundry laundry,
+    ValueSetter<CreateUpdateLaundryRequest> onSave,
+  ) {
+    _showBlurDialog(
+      height: 55.h,
+      body: CreateUpdateLaundryDialog(
+        onSave: onSave,
+        laundry: laundry,
+      ),
+      title: CleanDigitalLocalizations.of(context).editLaundry,
     );
   }
 

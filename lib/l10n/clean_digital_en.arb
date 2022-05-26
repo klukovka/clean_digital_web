@@ -121,5 +121,8 @@
     "updateAdditionalMode": "Update additional mode",
     "doYouWantToDeleteMode": "Do you want to delete a mode?",
     "createMode": "Create mode",
-    "updateMode": "Update mode"
+    "updateMode": "Update mode",
+    "editLaundry": "Edit laundry",
+    "aboutLaundry": "About laundry",
+    "aboutEmployee": "About employee"
 }

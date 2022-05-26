@@ -378,4 +378,13 @@ class CleanDigitalLocalizationsEn extends CleanDigitalLocalizations {
 
   @override
   String get updateMode => 'Update mode';
+
+  @override
+  String get editLaundry => 'Edit laundry';
+
+  @override
+  String get aboutLaundry => 'About laundry';
+
+  @override
+  String get aboutEmployee => 'About employee';
 }

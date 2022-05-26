@@ -85,7 +85,7 @@ class _AdminSettingsTabState extends State<AdminSettingsTab> {
         const SizedBox(height: 16),
         _buildAdminTitle(),
         const SizedBox(height: 16),
-        _adminInfo(state),
+        _buildAdminInfo(state),
         const SizedBox(height: 16),
         _buildForm(),
         const SizedBox(height: 16),
@@ -109,7 +109,7 @@ class _AdminSettingsTabState extends State<AdminSettingsTab> {
     );
   }
 
-  Widget _adminInfo(AdminSettingsTabState state) {
+  Widget _buildAdminInfo(AdminSettingsTabState state) {
     return Row(
       children: [
         Text(

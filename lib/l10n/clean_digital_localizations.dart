@@ -837,6 +837,24 @@ abstract class CleanDigitalLocalizations {
   /// In uk, this message translates to:
   /// **'Редагувати режимпрання'**
   String get updateMode;
+
+  /// No description provided for @editLaundry.
+  ///
+  /// In uk, this message translates to:
+  /// **'Редагувати пральню'**
+  String get editLaundry;
+
+  /// No description provided for @aboutLaundry.
+  ///
+  /// In uk, this message translates to:
+  /// **'Про пральню'**
+  String get aboutLaundry;
+
+  /// No description provided for @aboutEmployee.
+  ///
+  /// In uk, this message translates to:
+  /// **'Про робітника'**
+  String get aboutEmployee;
 }
 
 class _CleanDigitalLocalizationsDelegate extends LocalizationsDelegate<CleanDigitalLocalizations> {
