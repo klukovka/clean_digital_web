@@ -36,7 +36,7 @@ import '../pages/auth/login_page.dart' as _i2;
 import '../pages/auth/restore_password_page.dart' as _i3;
 import '../pages/laundry_employee/employee_page.dart' as _i7;
 import '../pages/laundry_employee/laundry_page.dart' as _i6;
-import '../pages/laundry_employee/tabs/employee_settings.dart' as _i25;
+import '../pages/laundry_employee/tabs/employee_settings_tab.dart' as _i25;
 import '../pages/laundry_employee/tabs/laundry_employee_modes/additional_mode_tab.dart'
     as _i24;
 import '../pages/laundry_employee/tabs/laundry_employee_modes/laundry_employee_modes_tab.dart'

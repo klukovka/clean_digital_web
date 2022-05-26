@@ -14,7 +14,7 @@ import '../pages/auth/login_page.dart';
 import '../pages/auth/restore_password_page.dart';
 import '../pages/laundry_employee/employee_page.dart';
 import '../pages/laundry_employee/laundry_page.dart';
-import '../pages/laundry_employee/tabs/employee_settings.dart';
+import '../pages/laundry_employee/tabs/employee_settings_tab.dart';
 import '../pages/laundry_employee/tabs/laundry_employee_modes/additional_mode_tab.dart';
 import '../pages/laundry_employee/tabs/laundry_employee_modes/laundry_employee_modes_tab.dart';
 import '../pages/laundry_employee/tabs/laundry_employee_modes/modes_tab.dart';

@@ -229,6 +229,21 @@ class _CleanDigitalApiClient implements CleanDigitalApiClient {
   }
 
   @override
+  Future<void> updateLaundry(request) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(request.toJson());
+    await _dio.fetch<void>(_setStreamType<void>(
+        Options(method: 'PUT', headers: _headers, extra: _extra)
+            .compose(_dio.options, '/laundry/update-laundry',
+                queryParameters: queryParameters, data: _data)
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    return null;
+  }
+
+  @override
   Future<void> createAdditionalMode(request) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
@@ -570,14 +585,31 @@ class _CleanDigitalApiClient implements CleanDigitalApiClient {
   }
 
   @override
-  Future<void> getEmployeePersonalInfo() async {
+  Future<Employee> getEmployeePersonalInfo() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<Employee>(
+            Options(method: 'GET', headers: _headers, extra: _extra)
+                .compose(_dio.options, '/employee/personal-info',
+                    queryParameters: queryParameters, data: _data)
+                .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = Employee.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<void> updateEmployee(request) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(request.toJson());
     await _dio.fetch<void>(_setStreamType<void>(
-        Options(method: 'GET', headers: _headers, extra: _extra)
-            .compose(_dio.options, '/employee/personal-info',
+        Options(method: 'PUT', headers: _headers, extra: _extra)
+            .compose(_dio.options, '/employee/update-employee',
                 queryParameters: queryParameters, data: _data)
             .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     return null;
