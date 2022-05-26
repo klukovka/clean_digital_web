@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 
 import '../models/auth_meta.dart';
+import '../models/employee.dart';
 import '../models/laundry.dart';
 import '../models/pagination/additional_modes_pagination.dart';
 import '../models/pagination/clients_pagination.dart';
@@ -108,6 +109,14 @@ abstract class CleanDigitalApiClient {
   @GET('/laundry/{laundryId}')
   Future<Laundry> getLaundryById(
     @Path() String laundryId,
+  );
+
+  @GET('/laundry/personal-info')
+  Future<Laundry> getLaundryPersonalInfo();
+
+  @PUT('/laundry/update-laundry')
+  Future<void> updateLaundry(
+    @Body() CreateUpdateLaundryRequest request,
   );
 
   ///
@@ -253,6 +262,14 @@ abstract class CleanDigitalApiClient {
   @DELETE('/employee/delete-employee/{userId}')
   Future<void> deleteEmployee(
     @Path('userId') String userId,
+  );
+
+  @GET('/employee/personal-info')
+  Future<Employee> getEmployeePersonalInfo();
+
+  @PUT('/employee/update-employee')
+  Future<void> updateEmployee(
+    @Body() CreateUpdateEmployeeRequest request,
   );
 
   ///

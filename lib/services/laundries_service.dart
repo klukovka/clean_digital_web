@@ -5,6 +5,7 @@ import '../api/models/create_update_requests/create_update_employee.dart';
 import '../api/models/create_update_requests/create_update_laundry.dart';
 import '../api/models/create_update_requests/create_update_mode.dart';
 import '../api/models/create_update_requests/create_update_wash_machine.dart';
+import '../models/employee.dart';
 import '../models/laundry.dart';
 import '../models/pagination/additional_modes_pagination.dart';
 import '../models/pagination/employees_pagination.dart';
@@ -43,6 +44,18 @@ class LaundriesService extends BaseService {
   Future<Laundry> getLaundryById(String laundryId) async {
     return await makeErrorHandledCall(() async {
       return await _apiClient.getLaundryById(laundryId);
+    });
+  }
+
+  Future<Laundry> getLaundryPersonalInfo() async {
+    return await makeErrorHandledCall(() async {
+      return await _apiClient.getLaundryPersonalInfo();
+    });
+  }
+
+  Future<void> updateLaundry(CreateUpdateLaundryRequest request) async {
+    return await makeErrorHandledCall(() async {
+      return _apiClient.updateLaundry(request);
     });
   }
 
@@ -139,6 +152,20 @@ class LaundriesService extends BaseService {
   Future<void> deleteEmployee(String userId) async {
     await makeErrorHandledCall(() async {
       await _apiClient.deleteEmployee(userId);
+    });
+  }
+
+  Future<Employee> getEmployeePersonalInfo() async {
+    return await makeErrorHandledCall(() async {
+      return await _apiClient.getEmployeePersonalInfo();
+    });
+  }
+
+  Future<void> updateEmployee(
+    CreateUpdateEmployeeRequest request,
+  ) async {
+    return await makeErrorHandledCall(() async {
+      return await _apiClient.updateEmployee(request);
     });
   }
 
