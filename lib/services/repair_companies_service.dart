@@ -48,6 +48,12 @@ class RepairCompaniesService extends BaseService {
     });
   }
 
+  Future<List<RepairEvent>> getCompanyRepairEvents() async {
+    return await makeErrorHandledCall(() async {
+      return (await _apiClient.getCompanyRepairEvents()).repairEvents;
+    });
+  }
+
   Future<RepairProductsPagination> getAllProducts({
     int page = 0,
     int size = 10,

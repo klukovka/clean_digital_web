@@ -569,6 +569,22 @@ class _CleanDigitalApiClient implements CleanDigitalApiClient {
   }
 
   @override
+  Future<RepairEventsPagination> getCompanyRepairEvents() async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<RepairEventsPagination>(
+            Options(method: 'GET', headers: _headers, extra: _extra)
+                .compose(_dio.options, '/repairCompany/company-repair-events',
+                    queryParameters: queryParameters, data: _data)
+                .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = RepairEventsPagination.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
   Future<void> createRepairEvent(request) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};

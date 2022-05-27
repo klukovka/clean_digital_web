@@ -244,6 +244,9 @@ abstract class CleanDigitalApiClient {
   @GET('/repairCompany/laundry-own-repair-events')
   Future<RepairEventsPagination> getLaundryRepairEvents();
 
+  @GET('/repairCompany/company-repair-events')
+  Future<RepairEventsPagination> getCompanyRepairEvents();
+
   @POST('/repairCompany/create-repair-event')
   Future<void> createRepairEvent(
     @Body() CreateRepairEventRequest request,
