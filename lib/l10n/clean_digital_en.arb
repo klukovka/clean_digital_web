@@ -146,5 +146,7 @@
     "select": "Select",
     "createRepairEvent": "Create repair event",
     "editRepairCompany": "Edit repair company",
-    "aboutRepairCompany": "About repair company"
+    "aboutRepairCompany": "About repair company",
+    "createRepairProduct": "Create repair product",
+    "editRepairProduct": "Edit repair product"
 }

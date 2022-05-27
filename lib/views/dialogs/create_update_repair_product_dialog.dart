@@ -1,35 +1,39 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
+import 'package:fluttericon/font_awesome_icons.dart';
 import 'package:fluttericon/typicons_icons.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
 
-import '../../api/models/create_update_requests/create_update_mode.dart';
+import '../../api/models/create_update_requests/create_update_repair_product.dart';
 import '../../l10n/clean_digital_localizations.dart';
-import '../../models/mode.dart';
+import '../../models/repair_product.dart';
+import '../../models/repair_type.dart';
 import '../../router/clean_digital_router.dart';
 import '../buttons/primary_button.dart';
 
-enum _CreateUpdateModeDialogFields {
-  name,
+enum _CreateUpdateRepairProductDialogFields {
+  description,
   costs,
-  time,
+  type,
 }
 
-class CreateUpdateModeDialog extends StatefulWidget {
-  final ValueSetter<CreateUpdateModeRequest> onSave;
-  final Mode? mode;
+class CreateUpdateRepairProductDialog extends StatefulWidget {
+  final ValueSetter<CreateUpdateRepairProductRequest> onSave;
+  final RepairProduct? repairProduct;
 
-  const CreateUpdateModeDialog({
+  const CreateUpdateRepairProductDialog({
     Key? key,
     required this.onSave,
-    this.mode,
+    this.repairProduct,
   }) : super(key: key);
 
   @override
-  State<CreateUpdateModeDialog> createState() => _CreateUpdateModeDialogState();
+  State<CreateUpdateRepairProductDialog> createState() =>
+      _CreateUpdateRepairProductDialogState();
 }
 
-class _CreateUpdateModeDialogState extends State<CreateUpdateModeDialog> {
+class _CreateUpdateRepairProductDialogState
+    extends State<CreateUpdateRepairProductDialog> {
   final _fbKey = GlobalKey<FormBuilderState>();
 
   FormBuilderState? get _fbState => _fbKey.currentState;
@@ -38,12 +42,12 @@ class _CreateUpdateModeDialogState extends State<CreateUpdateModeDialog> {
   void _onSave() {
     if (_fbState?.saveAndValidate() ?? false) {
       widget.onSave(
-        CreateUpdateModeRequest(
-          name: _fbValue[_CreateUpdateModeDialogFields.name.name],
-          costs: int.parse(_fbValue[_CreateUpdateModeDialogFields.costs.name]),
-          time: int.parse(
-            _fbValue[_CreateUpdateModeDialogFields.time.name],
-          ),
+        CreateUpdateRepairProductRequest(
+          description:
+              _fbValue[_CreateUpdateRepairProductDialogFields.description.name],
+          costs: int.parse(
+              _fbValue[_CreateUpdateRepairProductDialogFields.costs.name]),
+          type: _fbValue[_CreateUpdateRepairProductDialogFields.type.name],
         ),
       );
       router.pop();
@@ -76,8 +80,8 @@ class _CreateUpdateModeDialogState extends State<CreateUpdateModeDialog> {
 
   Widget _buildNameField() {
     return FormBuilderTextField(
-      name: _CreateUpdateModeDialogFields.name.name,
-      initialValue: widget.mode?.name,
+      name: _CreateUpdateRepairProductDialogFields.description.name,
+      initialValue: widget.repairProduct?.description,
       decoration: InputDecoration(
         errorMaxLines: 4,
         prefixIcon: const Icon(Typicons.user),
@@ -92,8 +96,8 @@ class _CreateUpdateModeDialogState extends State<CreateUpdateModeDialog> {
 
   Widget _buildCostsField() {
     return FormBuilderTextField(
-      name: _CreateUpdateModeDialogFields.costs.name,
-      initialValue: widget.mode?.costs.toString(),
+      name: _CreateUpdateRepairProductDialogFields.costs.name,
+      initialValue: widget.repairProduct?.costs.toString(),
       decoration: InputDecoration(
         errorMaxLines: 4,
         prefixIcon: const Icon(Icons.monetization_on),
@@ -120,25 +124,22 @@ class _CreateUpdateModeDialogState extends State<CreateUpdateModeDialog> {
   }
 
   Widget _buildTimeField() {
-    return FormBuilderTextField(
-      name: _CreateUpdateModeDialogFields.time.name,
-      initialValue: widget.mode?.time.toString(),
+    return FormBuilderDropdown<RepairType>(
+      name: _CreateUpdateRepairProductDialogFields.type.name,
+      items: RepairType.values.map((e) {
+        return DropdownMenuItem<RepairType>(
+          value: e,
+          child: Text(e.getTitle(context)),
+        );
+      }).toList(),
       decoration: InputDecoration(
         errorMaxLines: 4,
-        prefixIcon: const Icon(Icons.access_alarm_sharp),
+        prefixIcon: const Icon(FontAwesome.wrench),
         labelText: CleanDigitalLocalizations.of(context).time,
       ),
-      validator: FormBuilderValidators.compose(
-        [
-          FormBuilderValidators.required(
-            context,
-            errorText: CleanDigitalLocalizations.of(context).requiredField,
-          ),
-          FormBuilderValidators.numeric(
-            context,
-            errorText: CleanDigitalLocalizations.of(context).mustBeFromNumbers,
-          ),
-        ],
+      validator: FormBuilderValidators.required(
+        context,
+        errorText: CleanDigitalLocalizations.of(context).requiredField,
       ),
     );
   }

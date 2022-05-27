@@ -148,5 +148,7 @@
   "select": "Обрати",
   "createRepairEvent": "Віддати на ремонт",
   "editRepairCompany": "Редагувати ремонтну компанію",
-  "aboutRepairCompany": "Про ремонтну компанію"
+  "aboutRepairCompany": "Про ремонтну компанію",
+  "createRepairProduct": "Створити тип ремонту",
+  "editRepairProduct": "Редагувати тип ремонту"
 }

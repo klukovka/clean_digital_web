@@ -453,4 +453,10 @@ class CleanDigitalLocalizationsUk extends CleanDigitalLocalizations {
 
   @override
   String get aboutRepairCompany => 'Про ремонтну компанію';
+
+  @override
+  String get createRepairProduct => 'Створити тип ремонту';
+
+  @override
+  String get editRepairProduct => 'Редагувати тип ремонту';
 }

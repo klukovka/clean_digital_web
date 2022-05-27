@@ -6,6 +6,7 @@ import '../api/models/create_update_requests/create_update_employee.dart';
 import '../api/models/create_update_requests/create_update_laundry.dart';
 import '../api/models/create_update_requests/create_update_mode.dart';
 import '../api/models/create_update_requests/create_update_repair_company.dart';
+import '../api/models/create_update_requests/create_update_repair_product.dart';
 import '../api/models/create_update_requests/create_update_wash_machine.dart';
 import '../l10n/clean_digital_localizations.dart';
 import '../models/additional_mode.dart';
@@ -13,6 +14,8 @@ import '../models/employee.dart';
 import '../models/laundry.dart';
 import '../models/mode.dart';
 import '../models/repair_company.dart';
+import '../models/repair_event.dart';
+import '../models/repair_product.dart';
 import '../models/wash_machine.dart';
 import '../views/dialogs/base_dialog.dart';
 import '../views/dialogs/confirm_dialog.dart';
@@ -21,6 +24,7 @@ import '../views/dialogs/create_repair_event_dialog.dart';
 import '../views/dialogs/create_update_employee_dialog.dart';
 import '../views/dialogs/create_update_laundry_dialog.dart';
 import '../views/dialogs/create_update_repair_company_dialog.dart';
+import '../views/dialogs/create_update_repair_product_dialog.dart';
 import '../views/dialogs/create_update_wash_machine_dialog.dart';
 import '../views/dialogs/email_password_dialog.dart';
 import '../views/dialogs/update_password_dialog.dart';
@@ -236,6 +240,30 @@ class CleanDigitalDialogs {
         repairCompany: repairCompany,
       ),
       title: CleanDigitalLocalizations.of(context).editRepairCompany,
+    );
+  }
+
+  void showCreateRepairProductDialog(
+    ValueSetter<CreateUpdateRepairProductRequest> onSave,
+  ) {
+    _showBlurDialog(
+      height: 60.h,
+      body: CreateUpdateRepairProductDialog(onSave: onSave),
+      title: CleanDigitalLocalizations.of(context).createRepairProduct,
+    );
+  }
+
+  void showEditRepairProductDialog(
+    RepairProduct repairProduct,
+    ValueSetter<CreateUpdateRepairProductRequest> onSave,
+  ) {
+    _showBlurDialog(
+      height: 60.h,
+      body: CreateUpdateRepairProductDialog(
+        onSave: onSave,
+        repairProduct: repairProduct,
+      ),
+      title: CleanDigitalLocalizations.of(context).editRepairProduct,
     );
   }
 }
