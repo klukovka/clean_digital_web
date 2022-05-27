@@ -136,5 +136,9 @@
     "allRepairProducts": "All repair producs",
     "chooseOne": "Choose one",
     "allWashingMachines":  "All washing machines",
-    "choose": "Choose"
+    "choose": "Choose",
+    "done": "Done",
+    "date": "Date",
+    "washMachineId": "Washing machine Id",
+    "repairProductId": "Repair product Id"
 }

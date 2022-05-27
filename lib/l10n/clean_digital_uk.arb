@@ -138,5 +138,9 @@
   "allRepairProducts": "Усі типи ремонту",
   "chooseOne": "Оберіть один варіант",
   "allWashingMachines":  "Усі пральні машини",
-  "choose": "Обрати"
+  "choose": "Обрати",
+  "done": "Готово",
+  "date": "Дата",
+  "washMachineId": "Id пральної машини",
+  "repairProductId": "Id типу ремонту"
 }

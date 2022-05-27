@@ -927,6 +927,30 @@ abstract class CleanDigitalLocalizations {
   /// In uk, this message translates to:
   /// **'Обрати'**
   String get choose;
+
+  /// No description provided for @done.
+  ///
+  /// In uk, this message translates to:
+  /// **'Готово'**
+  String get done;
+
+  /// No description provided for @date.
+  ///
+  /// In uk, this message translates to:
+  /// **'Дата'**
+  String get date;
+
+  /// No description provided for @washMachineId.
+  ///
+  /// In uk, this message translates to:
+  /// **'Id пральної машини'**
+  String get washMachineId;
+
+  /// No description provided for @repairProductId.
+  ///
+  /// In uk, this message translates to:
+  /// **'Id типу ремонту'**
+  String get repairProductId;
 }
 
 class _CleanDigitalLocalizationsDelegate extends LocalizationsDelegate<CleanDigitalLocalizations> {

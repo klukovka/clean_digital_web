@@ -1,31 +1,31 @@
 part of 'laundry_employee_repair_events_tab_cubit.dart';
 
-enum RepairEventsTabStatus {
+enum LaundryEmployeeRepairEventsTabStatus {
   loading,
   error,
   success,
 }
 
-class RepairEventsTabState extends Equatable {
-  final RepairEventsTabStatus status;
+class LaundryEmployeeRepairEventsTabState extends Equatable {
+  final LaundryEmployeeRepairEventsTabStatus status;
   final String errorMessage;
   final int totalElements;
   final List<RepairEvent> repairEvents;
 
-  const RepairEventsTabState({
-    this.status = RepairEventsTabStatus.loading,
+  const LaundryEmployeeRepairEventsTabState({
+    this.status = LaundryEmployeeRepairEventsTabStatus.loading,
     this.errorMessage = '',
     this.totalElements = 0,
     this.repairEvents = const [],
   });
 
-  RepairEventsTabState copyWith({
-    RepairEventsTabStatus? status,
+  LaundryEmployeeRepairEventsTabState copyWith({
+    LaundryEmployeeRepairEventsTabStatus? status,
     String? errorMessage,
     int? totalElements,
     List<RepairEvent>? repairEvents,
   }) {
-    return RepairEventsTabState(
+    return LaundryEmployeeRepairEventsTabState(
       status: status ?? this.status,
       errorMessage: errorMessage ?? this.errorMessage,
       totalElements: totalElements ?? this.totalElements,

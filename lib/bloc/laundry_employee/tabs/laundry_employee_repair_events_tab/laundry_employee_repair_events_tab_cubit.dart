@@ -9,32 +9,35 @@ import '../../../base_cubit.dart';
 part 'laundry_employee_repair_events_tab_state.dart';
 
 @injectable
-class RepairEventsTabCubit extends BaseCubit<RepairEventsTabState> {
+class LaundryEmployeeRepairEventsTabCubit
+    extends BaseCubit<LaundryEmployeeRepairEventsTabState> {
   final RepairCompaniesService _repairCompaniesService;
 
-  RepairEventsTabCubit(
+  LaundryEmployeeRepairEventsTabCubit(
     this._repairCompaniesService,
-  ) : super(const RepairEventsTabState());
+  ) : super(const LaundryEmployeeRepairEventsTabState());
+
+  get getAdditionalModes => null;
 
   @override
   void handleError(String errorMessage) {
     emit(state.copyWith(
       errorMessage: errorMessage,
-      status: RepairEventsTabStatus.error,
+      status: LaundryEmployeeRepairEventsTabStatus.error,
     ));
   }
 
   void reset() {
-    emit(const RepairEventsTabState());
+    emit(const LaundryEmployeeRepairEventsTabState());
   }
 
   Future<void> getRepairEvents() async {
-    emit(state.copyWith(status: RepairEventsTabStatus.loading));
+    emit(state.copyWith(status: LaundryEmployeeRepairEventsTabStatus.loading));
     await makeErrorHandledCall(() async {
       final repairEvents =
           await _repairCompaniesService.getLaundryRepairEvents();
       emit(state.copyWith(
-        status: RepairEventsTabStatus.success,
+        status: LaundryEmployeeRepairEventsTabStatus.success,
         repairEvents: repairEvents,
         totalElements: repairEvents.length,
       ));
@@ -45,7 +48,7 @@ class RepairEventsTabCubit extends BaseCubit<RepairEventsTabState> {
     CreateRepairEventRequest request,
   ) async {
     emit(state.copyWith(
-      status: RepairEventsTabStatus.loading,
+      status: LaundryEmployeeRepairEventsTabStatus.loading,
     ));
     await makeErrorHandledCall(() async {
       await _repairCompaniesService.createRepairEvent(request);
