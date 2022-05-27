@@ -13,7 +13,7 @@ import '../pages/administrator/tabs/admin_statistic_tab/admin_statistic_tab.dart
 import '../pages/auth/login_page.dart';
 import '../pages/auth/restore_password_page.dart';
 import '../pages/laundry_employee/choose_wash_machines_page.dart';
-import '../views/dialogs/create_repair_event_dialog.dart';
+import '../pages/repair_company/repair_company_page.dart';
 import '../pages/laundry_employee/employee_page.dart';
 import '../pages/laundry_employee/laundry_employee_repair_products_page.dart';
 import '../pages/laundry_employee/laundry_page.dart';
@@ -27,7 +27,9 @@ import '../pages/laundry_employee/tabs/laundry_employee_statistic.dart';
 import '../pages/laundry_employee/tabs/laundry_employee_wash_machines_tab.dart';
 import '../pages/laundry_employee/tabs/laundry_employees_tab.dart';
 import '../pages/laundry_employee/tabs/laundry_settings_tab.dart';
-import '../pages/repair_company_main_page/repair_company_main_page.dart';
+import '../pages/repair_company/tabs/repair_company_settings.dart';
+import '../pages/repair_company/tabs/repair_events_tab.dart';
+import '../pages/repair_company/tabs/repair_products_tab.dart';
 import '../pages/splash_page/splash_page.dart';
 
 const _durationInMilliseconds = 250;
@@ -278,10 +280,31 @@ const _fadeIn = TransitionsBuilders.fadeIn;
       durationInMilliseconds: _durationInMilliseconds,
     ),
     CustomRoute(
-      page: RepairCompanyMainPage,
+      page: RepairCompanyPage,
       path: '/repairCompany/',
       transitionsBuilder: _fadeIn,
       durationInMilliseconds: _durationInMilliseconds,
+      children: [
+        CustomRoute(
+          page: RepairProductsTab,
+          path: 'products/',
+          initial: true,
+          transitionsBuilder: _fadeIn,
+          durationInMilliseconds: _durationInMilliseconds,
+        ),
+        CustomRoute(
+          page: RepairEventsTab,
+          path: 'events/',
+          transitionsBuilder: _fadeIn,
+          durationInMilliseconds: _durationInMilliseconds,
+        ),
+        CustomRoute(
+          page: RepairCompanySettingsTab,
+          path: 'settings/',
+          transitionsBuilder: _fadeIn,
+          durationInMilliseconds: _durationInMilliseconds,
+        ),
+      ],
     ),
   ],
 )

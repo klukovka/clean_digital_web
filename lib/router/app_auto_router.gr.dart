@@ -10,11 +10,11 @@
 //
 // ignore_for_file: type=lint
 
-import 'package:auto_route/auto_route.dart' as _i29;
-import 'package:flutter/material.dart' as _i30;
+import 'package:auto_route/auto_route.dart' as _i32;
+import 'package:flutter/material.dart' as _i33;
 
-import '../models/repair_product.dart' as _i31;
-import '../models/wash_machine.dart' as _i32;
+import '../models/repair_product.dart' as _i34;
+import '../models/wash_machine.dart' as _i35;
 import '../pages/administrator/admin_laundry_page/admin_laundry_page.dart'
     as _i5;
 import '../pages/administrator/admin_laundry_page/tabs/admin_employees_tab.dart'
@@ -57,49 +57,51 @@ import '../pages/laundry_employee/tabs/laundry_employee_wash_machines_tab.dart'
     as _i19;
 import '../pages/laundry_employee/tabs/laundry_employees_tab.dart' as _i20;
 import '../pages/laundry_employee/tabs/laundry_settings_tab.dart' as _i25;
-import '../pages/repair_company_main_page/repair_company_main_page.dart'
-    as _i10;
+import '../pages/repair_company/repair_company_page.dart' as _i10;
+import '../pages/repair_company/tabs/repair_company_settings.dart' as _i31;
+import '../pages/repair_company/tabs/repair_events_tab.dart' as _i30;
+import '../pages/repair_company/tabs/repair_products_tab.dart' as _i29;
 import '../pages/splash_page/splash_page.dart' as _i1;
 
-class AppAutoRouter extends _i29.RootStackRouter {
-  AppAutoRouter([_i30.GlobalKey<_i30.NavigatorState>? navigatorKey])
+class AppAutoRouter extends _i32.RootStackRouter {
+  AppAutoRouter([_i33.GlobalKey<_i33.NavigatorState>? navigatorKey])
       : super(navigatorKey);
 
   @override
-  final Map<String, _i29.PageFactory> pagesMap = {
+  final Map<String, _i32.PageFactory> pagesMap = {
     SplashRoute.name: (routeData) {
-      return _i29.CustomPage<dynamic>(
+      return _i32.CustomPage<dynamic>(
           routeData: routeData,
           child: const _i1.SplashPage(),
-          transitionsBuilder: _i29.TransitionsBuilders.fadeIn,
+          transitionsBuilder: _i32.TransitionsBuilders.fadeIn,
           durationInMilliseconds: 250,
           opaque: true,
           barrierDismissible: false);
     },
     LoginRoute.name: (routeData) {
-      return _i29.CustomPage<dynamic>(
+      return _i32.CustomPage<dynamic>(
           routeData: routeData,
           child: const _i2.LoginPage(),
-          transitionsBuilder: _i29.TransitionsBuilders.fadeIn,
+          transitionsBuilder: _i32.TransitionsBuilders.fadeIn,
           durationInMilliseconds: 250,
           opaque: true,
           barrierDismissible: false);
     },
     RestorePasswordRoute.name: (routeData) {
-      return _i29.CustomPage<dynamic>(
+      return _i32.CustomPage<dynamic>(
           routeData: routeData,
           child: const _i3.RestorePasswordPage(),
           fullscreenDialog: true,
-          transitionsBuilder: _i29.TransitionsBuilders.fadeIn,
+          transitionsBuilder: _i32.TransitionsBuilders.fadeIn,
           durationInMilliseconds: 250,
           opaque: true,
           barrierDismissible: false);
     },
     AdminRoute.name: (routeData) {
-      return _i29.CustomPage<dynamic>(
+      return _i32.CustomPage<dynamic>(
           routeData: routeData,
           child: const _i4.AdminPage(),
-          transitionsBuilder: _i29.TransitionsBuilders.fadeIn,
+          transitionsBuilder: _i32.TransitionsBuilders.fadeIn,
           durationInMilliseconds: 250,
           opaque: true,
           barrierDismissible: false);
@@ -109,268 +111,295 @@ class AppAutoRouter extends _i29.RootStackRouter {
       final args = routeData.argsAs<AdminLaundryRouteArgs>(
           orElse: () => AdminLaundryRouteArgs(
               laundryId: pathParams.getString('laundryId')));
-      return _i29.CustomPage<dynamic>(
+      return _i32.CustomPage<dynamic>(
           routeData: routeData,
           child: _i5.AdminLaundryPage(key: args.key, laundryId: args.laundryId),
-          transitionsBuilder: _i29.TransitionsBuilders.fadeIn,
+          transitionsBuilder: _i32.TransitionsBuilders.fadeIn,
           durationInMilliseconds: 250,
           opaque: true,
           barrierDismissible: false);
     },
     LaundryRoute.name: (routeData) {
-      return _i29.CustomPage<dynamic>(
+      return _i32.CustomPage<dynamic>(
           routeData: routeData,
           child: const _i6.LaundryPage(),
-          transitionsBuilder: _i29.TransitionsBuilders.fadeIn,
+          transitionsBuilder: _i32.TransitionsBuilders.fadeIn,
           durationInMilliseconds: 250,
           opaque: true,
           barrierDismissible: false);
     },
     EmployeeRoute.name: (routeData) {
-      return _i29.CustomPage<dynamic>(
+      return _i32.CustomPage<dynamic>(
           routeData: routeData,
           child: const _i7.EmployeePage(),
-          transitionsBuilder: _i29.TransitionsBuilders.fadeIn,
+          transitionsBuilder: _i32.TransitionsBuilders.fadeIn,
           durationInMilliseconds: 250,
           opaque: true,
           barrierDismissible: false);
     },
     LaundryEmployeeRepairProductsRoute.name: (routeData) {
       final args = routeData.argsAs<LaundryEmployeeRepairProductsRouteArgs>();
-      return _i29.CustomPage<dynamic>(
+      return _i32.CustomPage<dynamic>(
           routeData: routeData,
           child: _i8.LaundryEmployeeRepairProductsPage(
               key: args.key, onChosen: args.onChosen),
           fullscreenDialog: true,
-          transitionsBuilder: _i29.TransitionsBuilders.fadeIn,
+          transitionsBuilder: _i32.TransitionsBuilders.fadeIn,
           durationInMilliseconds: 250,
           opaque: true,
           barrierDismissible: false);
     },
     ChooseWashMachinesRoute.name: (routeData) {
       final args = routeData.argsAs<ChooseWashMachinesRouteArgs>();
-      return _i29.CustomPage<dynamic>(
+      return _i32.CustomPage<dynamic>(
           routeData: routeData,
           child: _i9.ChooseWashMachinesPage(
               key: args.key, onChosen: args.onChosen),
           fullscreenDialog: true,
-          transitionsBuilder: _i29.TransitionsBuilders.fadeIn,
+          transitionsBuilder: _i32.TransitionsBuilders.fadeIn,
           durationInMilliseconds: 250,
           opaque: true,
           barrierDismissible: false);
     },
-    RepairCompanyMainRoute.name: (routeData) {
-      return _i29.CustomPage<dynamic>(
+    RepairCompanyRoute.name: (routeData) {
+      return _i32.CustomPage<dynamic>(
           routeData: routeData,
-          child: const _i10.RepairCompanyMainPage(),
-          transitionsBuilder: _i29.TransitionsBuilders.fadeIn,
+          child: const _i10.RepairCompanyPage(),
+          transitionsBuilder: _i32.TransitionsBuilders.fadeIn,
           durationInMilliseconds: 250,
           opaque: true,
           barrierDismissible: false);
     },
     AdminLaundriesRoute.name: (routeData) {
-      return _i29.CustomPage<dynamic>(
+      return _i32.CustomPage<dynamic>(
           routeData: routeData,
           child: const _i11.AdminLaundriesTab(),
-          transitionsBuilder: _i29.TransitionsBuilders.fadeIn,
+          transitionsBuilder: _i32.TransitionsBuilders.fadeIn,
           durationInMilliseconds: 250,
           opaque: true,
           barrierDismissible: false);
     },
     AdminBackupsRoute.name: (routeData) {
-      return _i29.CustomPage<dynamic>(
+      return _i32.CustomPage<dynamic>(
           routeData: routeData,
           child: const _i12.AdminBackupsTab(),
-          transitionsBuilder: _i29.TransitionsBuilders.fadeIn,
+          transitionsBuilder: _i32.TransitionsBuilders.fadeIn,
           durationInMilliseconds: 250,
           opaque: true,
           barrierDismissible: false);
     },
     AdminClientsRoute.name: (routeData) {
-      return _i29.CustomPage<dynamic>(
+      return _i32.CustomPage<dynamic>(
           routeData: routeData,
           child: const _i13.AdminClientsTab(),
-          transitionsBuilder: _i29.TransitionsBuilders.fadeIn,
+          transitionsBuilder: _i32.TransitionsBuilders.fadeIn,
           durationInMilliseconds: 250,
           opaque: true,
           barrierDismissible: false);
     },
     AdminStatisticRoute.name: (routeData) {
-      return _i29.CustomPage<dynamic>(
+      return _i32.CustomPage<dynamic>(
           routeData: routeData,
           child: const _i14.AdminStatisticTab(),
-          transitionsBuilder: _i29.TransitionsBuilders.fadeIn,
+          transitionsBuilder: _i32.TransitionsBuilders.fadeIn,
           durationInMilliseconds: 250,
           opaque: true,
           barrierDismissible: false);
     },
     AdminSettingsRoute.name: (routeData) {
-      return _i29.CustomPage<dynamic>(
+      return _i32.CustomPage<dynamic>(
           routeData: routeData,
           child: const _i15.AdminSettingsTab(),
-          transitionsBuilder: _i29.TransitionsBuilders.fadeIn,
+          transitionsBuilder: _i32.TransitionsBuilders.fadeIn,
           durationInMilliseconds: 250,
           opaque: true,
           barrierDismissible: false);
     },
     AdminRepairCompaniesRoute.name: (routeData) {
-      return _i29.CustomPage<dynamic>(
+      return _i32.CustomPage<dynamic>(
           routeData: routeData,
           child: const _i16.AdminRepairCompaniesTab(),
-          transitionsBuilder: _i29.TransitionsBuilders.fadeIn,
+          transitionsBuilder: _i32.TransitionsBuilders.fadeIn,
           durationInMilliseconds: 250,
           opaque: true,
           barrierDismissible: false);
     },
     AdminWashMachinesRoute.name: (routeData) {
-      return _i29.CustomPage<dynamic>(
+      return _i32.CustomPage<dynamic>(
           routeData: routeData,
           child: const _i17.AdminWashMachinesTab(),
-          transitionsBuilder: _i29.TransitionsBuilders.fadeIn,
+          transitionsBuilder: _i32.TransitionsBuilders.fadeIn,
           durationInMilliseconds: 250,
           opaque: true,
           barrierDismissible: false);
     },
     AdminEmployeesRoute.name: (routeData) {
-      return _i29.CustomPage<dynamic>(
+      return _i32.CustomPage<dynamic>(
           routeData: routeData,
           child: const _i18.AdminEmployeesTab(),
-          transitionsBuilder: _i29.TransitionsBuilders.fadeIn,
+          transitionsBuilder: _i32.TransitionsBuilders.fadeIn,
           durationInMilliseconds: 250,
           opaque: true,
           barrierDismissible: false);
     },
     LaundryWashMachinesRoute.name: (routeData) {
-      return _i29.CustomPage<dynamic>(
+      return _i32.CustomPage<dynamic>(
           routeData: routeData,
           child: const _i19.LaundryEmployeeWashMachinesTab(),
-          transitionsBuilder: _i29.TransitionsBuilders.fadeIn,
+          transitionsBuilder: _i32.TransitionsBuilders.fadeIn,
           durationInMilliseconds: 250,
           opaque: true,
           barrierDismissible: false);
     },
     LaundryEmployeesRoute.name: (routeData) {
-      return _i29.CustomPage<dynamic>(
+      return _i32.CustomPage<dynamic>(
           routeData: routeData,
           child: const _i20.LaundryEmployeesTab(),
-          transitionsBuilder: _i29.TransitionsBuilders.fadeIn,
+          transitionsBuilder: _i32.TransitionsBuilders.fadeIn,
           durationInMilliseconds: 250,
           opaque: true,
           barrierDismissible: false);
     },
     LaundryEventsRoute.name: (routeData) {
-      return _i29.CustomPage<dynamic>(
+      return _i32.CustomPage<dynamic>(
           routeData: routeData,
           child: const _i21.LaundryEmployeeEventsTab(),
-          transitionsBuilder: _i29.TransitionsBuilders.fadeIn,
+          transitionsBuilder: _i32.TransitionsBuilders.fadeIn,
           durationInMilliseconds: 250,
           opaque: true,
           barrierDismissible: false);
     },
     LaundryAllModesRoute.name: (routeData) {
-      return _i29.CustomPage<dynamic>(
+      return _i32.CustomPage<dynamic>(
           routeData: routeData,
           child: const _i22.LaundryEmployeeAllModesTab(),
-          transitionsBuilder: _i29.TransitionsBuilders.fadeIn,
+          transitionsBuilder: _i32.TransitionsBuilders.fadeIn,
           durationInMilliseconds: 250,
           opaque: true,
           barrierDismissible: false);
     },
     LaundryRepairEventsRoute.name: (routeData) {
-      return _i29.CustomPage<dynamic>(
+      return _i32.CustomPage<dynamic>(
           routeData: routeData,
           child: const _i23.LaundryEmployeeRepairEventsTab(),
-          transitionsBuilder: _i29.TransitionsBuilders.fadeIn,
+          transitionsBuilder: _i32.TransitionsBuilders.fadeIn,
           durationInMilliseconds: 250,
           opaque: true,
           barrierDismissible: false);
     },
     LaundryStatisticRoute.name: (routeData) {
-      return _i29.CustomPage<dynamic>(
+      return _i32.CustomPage<dynamic>(
           routeData: routeData,
           child: const _i24.LaundryEmployeeStatisticTab(),
-          transitionsBuilder: _i29.TransitionsBuilders.fadeIn,
+          transitionsBuilder: _i32.TransitionsBuilders.fadeIn,
           durationInMilliseconds: 250,
           opaque: true,
           barrierDismissible: false);
     },
     LaundrySettingsRoute.name: (routeData) {
-      return _i29.CustomPage<dynamic>(
+      return _i32.CustomPage<dynamic>(
           routeData: routeData,
           child: const _i25.LaundrySettingsTab(),
-          transitionsBuilder: _i29.TransitionsBuilders.fadeIn,
+          transitionsBuilder: _i32.TransitionsBuilders.fadeIn,
           durationInMilliseconds: 250,
           opaque: true,
           barrierDismissible: false);
     },
     ModesRoute.name: (routeData) {
-      return _i29.CustomPage<dynamic>(
+      return _i32.CustomPage<dynamic>(
           routeData: routeData,
           child: const _i26.ModesTab(),
-          transitionsBuilder: _i29.TransitionsBuilders.fadeIn,
+          transitionsBuilder: _i32.TransitionsBuilders.fadeIn,
           durationInMilliseconds: 250,
           opaque: true,
           barrierDismissible: false);
     },
     AdditionalModesRoute.name: (routeData) {
-      return _i29.CustomPage<dynamic>(
+      return _i32.CustomPage<dynamic>(
           routeData: routeData,
           child: const _i27.AdditionalModesTab(),
-          transitionsBuilder: _i29.TransitionsBuilders.fadeIn,
+          transitionsBuilder: _i32.TransitionsBuilders.fadeIn,
           durationInMilliseconds: 250,
           opaque: true,
           barrierDismissible: false);
     },
     EmployeeWashMachinesRoute.name: (routeData) {
-      return _i29.CustomPage<dynamic>(
+      return _i32.CustomPage<dynamic>(
           routeData: routeData,
           child: const _i19.LaundryEmployeeWashMachinesTab(),
-          transitionsBuilder: _i29.TransitionsBuilders.fadeIn,
+          transitionsBuilder: _i32.TransitionsBuilders.fadeIn,
           durationInMilliseconds: 250,
           opaque: true,
           barrierDismissible: false);
     },
     EmployeeEventsRoute.name: (routeData) {
-      return _i29.CustomPage<dynamic>(
+      return _i32.CustomPage<dynamic>(
           routeData: routeData,
           child: const _i21.LaundryEmployeeEventsTab(),
-          transitionsBuilder: _i29.TransitionsBuilders.fadeIn,
+          transitionsBuilder: _i32.TransitionsBuilders.fadeIn,
           durationInMilliseconds: 250,
           opaque: true,
           barrierDismissible: false);
     },
     EmployeeAllModesRoute.name: (routeData) {
-      return _i29.CustomPage<dynamic>(
+      return _i32.CustomPage<dynamic>(
           routeData: routeData,
           child: const _i22.LaundryEmployeeAllModesTab(),
-          transitionsBuilder: _i29.TransitionsBuilders.fadeIn,
+          transitionsBuilder: _i32.TransitionsBuilders.fadeIn,
           durationInMilliseconds: 250,
           opaque: true,
           barrierDismissible: false);
     },
     EmployeeRepairEventsRoute.name: (routeData) {
-      return _i29.CustomPage<dynamic>(
+      return _i32.CustomPage<dynamic>(
           routeData: routeData,
           child: const _i23.LaundryEmployeeRepairEventsTab(),
-          transitionsBuilder: _i29.TransitionsBuilders.fadeIn,
+          transitionsBuilder: _i32.TransitionsBuilders.fadeIn,
           durationInMilliseconds: 250,
           opaque: true,
           barrierDismissible: false);
     },
     EmployeeStatisticRoute.name: (routeData) {
-      return _i29.CustomPage<dynamic>(
+      return _i32.CustomPage<dynamic>(
           routeData: routeData,
           child: const _i24.LaundryEmployeeStatisticTab(),
-          transitionsBuilder: _i29.TransitionsBuilders.fadeIn,
+          transitionsBuilder: _i32.TransitionsBuilders.fadeIn,
           durationInMilliseconds: 250,
           opaque: true,
           barrierDismissible: false);
     },
     EmployeeSettingsRoute.name: (routeData) {
-      return _i29.CustomPage<dynamic>(
+      return _i32.CustomPage<dynamic>(
           routeData: routeData,
           child: const _i28.EmployeeSettingsTab(),
-          transitionsBuilder: _i29.TransitionsBuilders.fadeIn,
+          transitionsBuilder: _i32.TransitionsBuilders.fadeIn,
+          durationInMilliseconds: 250,
+          opaque: true,
+          barrierDismissible: false);
+    },
+    RepairProductsRoute.name: (routeData) {
+      return _i32.CustomPage<dynamic>(
+          routeData: routeData,
+          child: const _i29.RepairProductsTab(),
+          transitionsBuilder: _i32.TransitionsBuilders.fadeIn,
+          durationInMilliseconds: 250,
+          opaque: true,
+          barrierDismissible: false);
+    },
+    RepairEventsRoute.name: (routeData) {
+      return _i32.CustomPage<dynamic>(
+          routeData: routeData,
+          child: const _i30.RepairEventsTab(),
+          transitionsBuilder: _i32.TransitionsBuilders.fadeIn,
+          durationInMilliseconds: 250,
+          opaque: true,
+          barrierDismissible: false);
+    },
+    RepairCompanySettingsRoute.name: (routeData) {
+      return _i32.CustomPage<dynamic>(
+          routeData: routeData,
+          child: const _i31.RepairCompanySettingsTab(),
+          transitionsBuilder: _i32.TransitionsBuilders.fadeIn,
           durationInMilliseconds: 250,
           opaque: true,
           barrierDismissible: false);
@@ -378,120 +407,134 @@ class AppAutoRouter extends _i29.RootStackRouter {
   };
 
   @override
-  List<_i29.RouteConfig> get routes => [
-        _i29.RouteConfig('/#redirect',
+  List<_i32.RouteConfig> get routes => [
+        _i32.RouteConfig('/#redirect',
             path: '/', redirectTo: '/init', fullMatch: true),
-        _i29.RouteConfig(SplashRoute.name, path: '/init'),
-        _i29.RouteConfig(LoginRoute.name, path: '/auth/login'),
-        _i29.RouteConfig(RestorePasswordRoute.name, path: '/auth/restore'),
-        _i29.RouteConfig(AdminRoute.name, path: '/admin/', children: [
-          _i29.RouteConfig('#redirect',
+        _i32.RouteConfig(SplashRoute.name, path: '/init'),
+        _i32.RouteConfig(LoginRoute.name, path: '/auth/login'),
+        _i32.RouteConfig(RestorePasswordRoute.name, path: '/auth/restore'),
+        _i32.RouteConfig(AdminRoute.name, path: '/admin/', children: [
+          _i32.RouteConfig('#redirect',
               path: '',
               parent: AdminRoute.name,
               redirectTo: 'laundries/',
               fullMatch: true),
-          _i29.RouteConfig(AdminLaundriesRoute.name,
+          _i32.RouteConfig(AdminLaundriesRoute.name,
               path: 'laundries/', parent: AdminRoute.name),
-          _i29.RouteConfig(AdminBackupsRoute.name,
+          _i32.RouteConfig(AdminBackupsRoute.name,
               path: 'backups/', parent: AdminRoute.name),
-          _i29.RouteConfig(AdminClientsRoute.name,
+          _i32.RouteConfig(AdminClientsRoute.name,
               path: 'clients/', parent: AdminRoute.name),
-          _i29.RouteConfig(AdminStatisticRoute.name,
+          _i32.RouteConfig(AdminStatisticRoute.name,
               path: 'statistic/', parent: AdminRoute.name),
-          _i29.RouteConfig(AdminSettingsRoute.name,
+          _i32.RouteConfig(AdminSettingsRoute.name,
               path: 'settings/', parent: AdminRoute.name),
-          _i29.RouteConfig(AdminRepairCompaniesRoute.name,
+          _i32.RouteConfig(AdminRepairCompaniesRoute.name,
               path: 'repairCompanies/', parent: AdminRoute.name)
         ]),
-        _i29.RouteConfig(AdminLaundryRoute.name,
+        _i32.RouteConfig(AdminLaundryRoute.name,
             path: '/admin/laundries/:laundryId/',
             children: [
-              _i29.RouteConfig('#redirect',
+              _i32.RouteConfig('#redirect',
                   path: '',
                   parent: AdminLaundryRoute.name,
                   redirectTo: 'washMachines/',
                   fullMatch: true),
-              _i29.RouteConfig(AdminWashMachinesRoute.name,
+              _i32.RouteConfig(AdminWashMachinesRoute.name,
                   path: 'washMachines/', parent: AdminLaundryRoute.name),
-              _i29.RouteConfig(AdminEmployeesRoute.name,
+              _i32.RouteConfig(AdminEmployeesRoute.name,
                   path: 'employees/', parent: AdminLaundryRoute.name)
             ]),
-        _i29.RouteConfig(LaundryRoute.name, path: '/laundry/', children: [
-          _i29.RouteConfig('#redirect',
+        _i32.RouteConfig(LaundryRoute.name, path: '/laundry/', children: [
+          _i32.RouteConfig('#redirect',
               path: '',
               parent: LaundryRoute.name,
               redirectTo: 'washingMachines/',
               fullMatch: true),
-          _i29.RouteConfig(LaundryWashMachinesRoute.name,
+          _i32.RouteConfig(LaundryWashMachinesRoute.name,
               path: 'washingMachines/', parent: LaundryRoute.name),
-          _i29.RouteConfig(LaundryEmployeesRoute.name,
+          _i32.RouteConfig(LaundryEmployeesRoute.name,
               path: 'employees/', parent: LaundryRoute.name),
-          _i29.RouteConfig(LaundryEventsRoute.name,
+          _i32.RouteConfig(LaundryEventsRoute.name,
               path: 'events/', parent: LaundryRoute.name),
-          _i29.RouteConfig(LaundryAllModesRoute.name,
+          _i32.RouteConfig(LaundryAllModesRoute.name,
               path: 'allModes/',
               parent: LaundryRoute.name,
               children: [
-                _i29.RouteConfig('#redirect',
+                _i32.RouteConfig('#redirect',
                     path: '',
                     parent: LaundryAllModesRoute.name,
                     redirectTo: 'modes/',
                     fullMatch: true),
-                _i29.RouteConfig(ModesRoute.name,
+                _i32.RouteConfig(ModesRoute.name,
                     path: 'modes/', parent: LaundryAllModesRoute.name),
-                _i29.RouteConfig(AdditionalModesRoute.name,
+                _i32.RouteConfig(AdditionalModesRoute.name,
                     path: 'additionalModes/', parent: LaundryAllModesRoute.name)
               ]),
-          _i29.RouteConfig(LaundryRepairEventsRoute.name,
+          _i32.RouteConfig(LaundryRepairEventsRoute.name,
               path: 'repairEvents/', parent: LaundryRoute.name),
-          _i29.RouteConfig(LaundryStatisticRoute.name,
+          _i32.RouteConfig(LaundryStatisticRoute.name,
               path: 'statistic/', parent: LaundryRoute.name),
-          _i29.RouteConfig(LaundrySettingsRoute.name,
+          _i32.RouteConfig(LaundrySettingsRoute.name,
               path: 'settings/', parent: LaundryRoute.name)
         ]),
-        _i29.RouteConfig(EmployeeRoute.name, path: '/employee/', children: [
-          _i29.RouteConfig('#redirect',
+        _i32.RouteConfig(EmployeeRoute.name, path: '/employee/', children: [
+          _i32.RouteConfig('#redirect',
               path: '',
               parent: EmployeeRoute.name,
               redirectTo: 'washingMachines/',
               fullMatch: true),
-          _i29.RouteConfig(EmployeeWashMachinesRoute.name,
+          _i32.RouteConfig(EmployeeWashMachinesRoute.name,
               path: 'washingMachines/', parent: EmployeeRoute.name),
-          _i29.RouteConfig(EmployeeEventsRoute.name,
+          _i32.RouteConfig(EmployeeEventsRoute.name,
               path: 'events/', parent: EmployeeRoute.name),
-          _i29.RouteConfig(EmployeeAllModesRoute.name,
+          _i32.RouteConfig(EmployeeAllModesRoute.name,
               path: 'allModes/',
               parent: EmployeeRoute.name,
               children: [
-                _i29.RouteConfig('#redirect',
+                _i32.RouteConfig('#redirect',
                     path: '',
                     parent: EmployeeAllModesRoute.name,
                     redirectTo: 'modes/',
                     fullMatch: true),
-                _i29.RouteConfig(ModesRoute.name,
+                _i32.RouteConfig(ModesRoute.name,
                     path: 'modes/', parent: EmployeeAllModesRoute.name),
-                _i29.RouteConfig(AdditionalModesRoute.name,
+                _i32.RouteConfig(AdditionalModesRoute.name,
                     path: 'additionalModes/',
                     parent: EmployeeAllModesRoute.name)
               ]),
-          _i29.RouteConfig(EmployeeRepairEventsRoute.name,
+          _i32.RouteConfig(EmployeeRepairEventsRoute.name,
               path: 'repairEvents/', parent: EmployeeRoute.name),
-          _i29.RouteConfig(EmployeeStatisticRoute.name,
+          _i32.RouteConfig(EmployeeStatisticRoute.name,
               path: 'statistic/', parent: EmployeeRoute.name),
-          _i29.RouteConfig(EmployeeSettingsRoute.name,
+          _i32.RouteConfig(EmployeeSettingsRoute.name,
               path: 'settings/', parent: EmployeeRoute.name)
         ]),
-        _i29.RouteConfig(LaundryEmployeeRepairProductsRoute.name,
+        _i32.RouteConfig(LaundryEmployeeRepairProductsRoute.name,
             path: '/chooseRepairProducts/'),
-        _i29.RouteConfig(ChooseWashMachinesRoute.name,
+        _i32.RouteConfig(ChooseWashMachinesRoute.name,
             path: '/chooseWashMachines/'),
-        _i29.RouteConfig(RepairCompanyMainRoute.name, path: '/repairCompany/')
+        _i32.RouteConfig(RepairCompanyRoute.name,
+            path: '/repairCompany/',
+            children: [
+              _i32.RouteConfig('#redirect',
+                  path: '',
+                  parent: RepairCompanyRoute.name,
+                  redirectTo: 'products/',
+                  fullMatch: true),
+              _i32.RouteConfig(RepairProductsRoute.name,
+                  path: 'products/', parent: RepairCompanyRoute.name),
+              _i32.RouteConfig(RepairEventsRoute.name,
+                  path: 'events/', parent: RepairCompanyRoute.name),
+              _i32.RouteConfig(RepairCompanySettingsRoute.name,
+                  path: 'settings/', parent: RepairCompanyRoute.name)
+            ])
       ];
 }
 
 /// generated route for
 /// [_i1.SplashPage]
-class SplashRoute extends _i29.PageRouteInfo<void> {
+class SplashRoute extends _i32.PageRouteInfo<void> {
   const SplashRoute() : super(SplashRoute.name, path: '/init');
 
   static const String name = 'SplashRoute';
@@ -499,7 +542,7 @@ class SplashRoute extends _i29.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i2.LoginPage]
-class LoginRoute extends _i29.PageRouteInfo<void> {
+class LoginRoute extends _i32.PageRouteInfo<void> {
   const LoginRoute() : super(LoginRoute.name, path: '/auth/login');
 
   static const String name = 'LoginRoute';
@@ -507,7 +550,7 @@ class LoginRoute extends _i29.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i3.RestorePasswordPage]
-class RestorePasswordRoute extends _i29.PageRouteInfo<void> {
+class RestorePasswordRoute extends _i32.PageRouteInfo<void> {
   const RestorePasswordRoute()
       : super(RestorePasswordRoute.name, path: '/auth/restore');
 
@@ -516,8 +559,8 @@ class RestorePasswordRoute extends _i29.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i4.AdminPage]
-class AdminRoute extends _i29.PageRouteInfo<void> {
-  const AdminRoute({List<_i29.PageRouteInfo>? children})
+class AdminRoute extends _i32.PageRouteInfo<void> {
+  const AdminRoute({List<_i32.PageRouteInfo>? children})
       : super(AdminRoute.name, path: '/admin/', initialChildren: children);
 
   static const String name = 'AdminRoute';
@@ -525,11 +568,11 @@ class AdminRoute extends _i29.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i5.AdminLaundryPage]
-class AdminLaundryRoute extends _i29.PageRouteInfo<AdminLaundryRouteArgs> {
+class AdminLaundryRoute extends _i32.PageRouteInfo<AdminLaundryRouteArgs> {
   AdminLaundryRoute(
-      {_i30.Key? key,
+      {_i33.Key? key,
       required String laundryId,
-      List<_i29.PageRouteInfo>? children})
+      List<_i32.PageRouteInfo>? children})
       : super(AdminLaundryRoute.name,
             path: '/admin/laundries/:laundryId/',
             args: AdminLaundryRouteArgs(key: key, laundryId: laundryId),
@@ -542,7 +585,7 @@ class AdminLaundryRoute extends _i29.PageRouteInfo<AdminLaundryRouteArgs> {
 class AdminLaundryRouteArgs {
   const AdminLaundryRouteArgs({this.key, required this.laundryId});
 
-  final _i30.Key? key;
+  final _i33.Key? key;
 
   final String laundryId;
 
@@ -554,8 +597,8 @@ class AdminLaundryRouteArgs {
 
 /// generated route for
 /// [_i6.LaundryPage]
-class LaundryRoute extends _i29.PageRouteInfo<void> {
-  const LaundryRoute({List<_i29.PageRouteInfo>? children})
+class LaundryRoute extends _i32.PageRouteInfo<void> {
+  const LaundryRoute({List<_i32.PageRouteInfo>? children})
       : super(LaundryRoute.name, path: '/laundry/', initialChildren: children);
 
   static const String name = 'LaundryRoute';
@@ -563,8 +606,8 @@ class LaundryRoute extends _i29.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i7.EmployeePage]
-class EmployeeRoute extends _i29.PageRouteInfo<void> {
-  const EmployeeRoute({List<_i29.PageRouteInfo>? children})
+class EmployeeRoute extends _i32.PageRouteInfo<void> {
+  const EmployeeRoute({List<_i32.PageRouteInfo>? children})
       : super(EmployeeRoute.name,
             path: '/employee/', initialChildren: children);
 
@@ -574,9 +617,9 @@ class EmployeeRoute extends _i29.PageRouteInfo<void> {
 /// generated route for
 /// [_i8.LaundryEmployeeRepairProductsPage]
 class LaundryEmployeeRepairProductsRoute
-    extends _i29.PageRouteInfo<LaundryEmployeeRepairProductsRouteArgs> {
+    extends _i32.PageRouteInfo<LaundryEmployeeRepairProductsRouteArgs> {
   LaundryEmployeeRepairProductsRoute(
-      {_i30.Key? key, required void Function(_i31.RepairProduct) onChosen})
+      {_i33.Key? key, required void Function(_i34.RepairProduct) onChosen})
       : super(LaundryEmployeeRepairProductsRoute.name,
             path: '/chooseRepairProducts/',
             args: LaundryEmployeeRepairProductsRouteArgs(
@@ -589,9 +632,9 @@ class LaundryEmployeeRepairProductsRouteArgs {
   const LaundryEmployeeRepairProductsRouteArgs(
       {this.key, required this.onChosen});
 
-  final _i30.Key? key;
+  final _i33.Key? key;
 
-  final void Function(_i31.RepairProduct) onChosen;
+  final void Function(_i34.RepairProduct) onChosen;
 
   @override
   String toString() {
@@ -602,9 +645,9 @@ class LaundryEmployeeRepairProductsRouteArgs {
 /// generated route for
 /// [_i9.ChooseWashMachinesPage]
 class ChooseWashMachinesRoute
-    extends _i29.PageRouteInfo<ChooseWashMachinesRouteArgs> {
+    extends _i32.PageRouteInfo<ChooseWashMachinesRouteArgs> {
   ChooseWashMachinesRoute(
-      {_i30.Key? key, required void Function(_i32.WashMachine) onChosen})
+      {_i33.Key? key, required void Function(_i35.WashMachine) onChosen})
       : super(ChooseWashMachinesRoute.name,
             path: '/chooseWashMachines/',
             args: ChooseWashMachinesRouteArgs(key: key, onChosen: onChosen));
@@ -615,9 +658,9 @@ class ChooseWashMachinesRoute
 class ChooseWashMachinesRouteArgs {
   const ChooseWashMachinesRouteArgs({this.key, required this.onChosen});
 
-  final _i30.Key? key;
+  final _i33.Key? key;
 
-  final void Function(_i32.WashMachine) onChosen;
+  final void Function(_i35.WashMachine) onChosen;
 
   @override
   String toString() {
@@ -626,17 +669,18 @@ class ChooseWashMachinesRouteArgs {
 }
 
 /// generated route for
-/// [_i10.RepairCompanyMainPage]
-class RepairCompanyMainRoute extends _i29.PageRouteInfo<void> {
-  const RepairCompanyMainRoute()
-      : super(RepairCompanyMainRoute.name, path: '/repairCompany/');
+/// [_i10.RepairCompanyPage]
+class RepairCompanyRoute extends _i32.PageRouteInfo<void> {
+  const RepairCompanyRoute({List<_i32.PageRouteInfo>? children})
+      : super(RepairCompanyRoute.name,
+            path: '/repairCompany/', initialChildren: children);
 
-  static const String name = 'RepairCompanyMainRoute';
+  static const String name = 'RepairCompanyRoute';
 }
 
 /// generated route for
 /// [_i11.AdminLaundriesTab]
-class AdminLaundriesRoute extends _i29.PageRouteInfo<void> {
+class AdminLaundriesRoute extends _i32.PageRouteInfo<void> {
   const AdminLaundriesRoute()
       : super(AdminLaundriesRoute.name, path: 'laundries/');
 
@@ -645,7 +689,7 @@ class AdminLaundriesRoute extends _i29.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i12.AdminBackupsTab]
-class AdminBackupsRoute extends _i29.PageRouteInfo<void> {
+class AdminBackupsRoute extends _i32.PageRouteInfo<void> {
   const AdminBackupsRoute() : super(AdminBackupsRoute.name, path: 'backups/');
 
   static const String name = 'AdminBackupsRoute';
@@ -653,7 +697,7 @@ class AdminBackupsRoute extends _i29.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i13.AdminClientsTab]
-class AdminClientsRoute extends _i29.PageRouteInfo<void> {
+class AdminClientsRoute extends _i32.PageRouteInfo<void> {
   const AdminClientsRoute() : super(AdminClientsRoute.name, path: 'clients/');
 
   static const String name = 'AdminClientsRoute';
@@ -661,7 +705,7 @@ class AdminClientsRoute extends _i29.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i14.AdminStatisticTab]
-class AdminStatisticRoute extends _i29.PageRouteInfo<void> {
+class AdminStatisticRoute extends _i32.PageRouteInfo<void> {
   const AdminStatisticRoute()
       : super(AdminStatisticRoute.name, path: 'statistic/');
 
@@ -670,7 +714,7 @@ class AdminStatisticRoute extends _i29.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i15.AdminSettingsTab]
-class AdminSettingsRoute extends _i29.PageRouteInfo<void> {
+class AdminSettingsRoute extends _i32.PageRouteInfo<void> {
   const AdminSettingsRoute()
       : super(AdminSettingsRoute.name, path: 'settings/');
 
@@ -679,7 +723,7 @@ class AdminSettingsRoute extends _i29.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i16.AdminRepairCompaniesTab]
-class AdminRepairCompaniesRoute extends _i29.PageRouteInfo<void> {
+class AdminRepairCompaniesRoute extends _i32.PageRouteInfo<void> {
   const AdminRepairCompaniesRoute()
       : super(AdminRepairCompaniesRoute.name, path: 'repairCompanies/');
 
@@ -688,7 +732,7 @@ class AdminRepairCompaniesRoute extends _i29.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i17.AdminWashMachinesTab]
-class AdminWashMachinesRoute extends _i29.PageRouteInfo<void> {
+class AdminWashMachinesRoute extends _i32.PageRouteInfo<void> {
   const AdminWashMachinesRoute()
       : super(AdminWashMachinesRoute.name, path: 'washMachines/');
 
@@ -697,7 +741,7 @@ class AdminWashMachinesRoute extends _i29.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i18.AdminEmployeesTab]
-class AdminEmployeesRoute extends _i29.PageRouteInfo<void> {
+class AdminEmployeesRoute extends _i32.PageRouteInfo<void> {
   const AdminEmployeesRoute()
       : super(AdminEmployeesRoute.name, path: 'employees/');
 
@@ -706,7 +750,7 @@ class AdminEmployeesRoute extends _i29.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i19.LaundryEmployeeWashMachinesTab]
-class LaundryWashMachinesRoute extends _i29.PageRouteInfo<void> {
+class LaundryWashMachinesRoute extends _i32.PageRouteInfo<void> {
   const LaundryWashMachinesRoute()
       : super(LaundryWashMachinesRoute.name, path: 'washingMachines/');
 
@@ -715,7 +759,7 @@ class LaundryWashMachinesRoute extends _i29.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i20.LaundryEmployeesTab]
-class LaundryEmployeesRoute extends _i29.PageRouteInfo<void> {
+class LaundryEmployeesRoute extends _i32.PageRouteInfo<void> {
   const LaundryEmployeesRoute()
       : super(LaundryEmployeesRoute.name, path: 'employees/');
 
@@ -724,7 +768,7 @@ class LaundryEmployeesRoute extends _i29.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i21.LaundryEmployeeEventsTab]
-class LaundryEventsRoute extends _i29.PageRouteInfo<void> {
+class LaundryEventsRoute extends _i32.PageRouteInfo<void> {
   const LaundryEventsRoute() : super(LaundryEventsRoute.name, path: 'events/');
 
   static const String name = 'LaundryEventsRoute';
@@ -732,8 +776,8 @@ class LaundryEventsRoute extends _i29.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i22.LaundryEmployeeAllModesTab]
-class LaundryAllModesRoute extends _i29.PageRouteInfo<void> {
-  const LaundryAllModesRoute({List<_i29.PageRouteInfo>? children})
+class LaundryAllModesRoute extends _i32.PageRouteInfo<void> {
+  const LaundryAllModesRoute({List<_i32.PageRouteInfo>? children})
       : super(LaundryAllModesRoute.name,
             path: 'allModes/', initialChildren: children);
 
@@ -742,7 +786,7 @@ class LaundryAllModesRoute extends _i29.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i23.LaundryEmployeeRepairEventsTab]
-class LaundryRepairEventsRoute extends _i29.PageRouteInfo<void> {
+class LaundryRepairEventsRoute extends _i32.PageRouteInfo<void> {
   const LaundryRepairEventsRoute()
       : super(LaundryRepairEventsRoute.name, path: 'repairEvents/');
 
@@ -751,7 +795,7 @@ class LaundryRepairEventsRoute extends _i29.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i24.LaundryEmployeeStatisticTab]
-class LaundryStatisticRoute extends _i29.PageRouteInfo<void> {
+class LaundryStatisticRoute extends _i32.PageRouteInfo<void> {
   const LaundryStatisticRoute()
       : super(LaundryStatisticRoute.name, path: 'statistic/');
 
@@ -760,7 +804,7 @@ class LaundryStatisticRoute extends _i29.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i25.LaundrySettingsTab]
-class LaundrySettingsRoute extends _i29.PageRouteInfo<void> {
+class LaundrySettingsRoute extends _i32.PageRouteInfo<void> {
   const LaundrySettingsRoute()
       : super(LaundrySettingsRoute.name, path: 'settings/');
 
@@ -769,7 +813,7 @@ class LaundrySettingsRoute extends _i29.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i26.ModesTab]
-class ModesRoute extends _i29.PageRouteInfo<void> {
+class ModesRoute extends _i32.PageRouteInfo<void> {
   const ModesRoute() : super(ModesRoute.name, path: 'modes/');
 
   static const String name = 'ModesRoute';
@@ -777,7 +821,7 @@ class ModesRoute extends _i29.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i27.AdditionalModesTab]
-class AdditionalModesRoute extends _i29.PageRouteInfo<void> {
+class AdditionalModesRoute extends _i32.PageRouteInfo<void> {
   const AdditionalModesRoute()
       : super(AdditionalModesRoute.name, path: 'additionalModes/');
 
@@ -786,7 +830,7 @@ class AdditionalModesRoute extends _i29.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i19.LaundryEmployeeWashMachinesTab]
-class EmployeeWashMachinesRoute extends _i29.PageRouteInfo<void> {
+class EmployeeWashMachinesRoute extends _i32.PageRouteInfo<void> {
   const EmployeeWashMachinesRoute()
       : super(EmployeeWashMachinesRoute.name, path: 'washingMachines/');
 
@@ -795,7 +839,7 @@ class EmployeeWashMachinesRoute extends _i29.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i21.LaundryEmployeeEventsTab]
-class EmployeeEventsRoute extends _i29.PageRouteInfo<void> {
+class EmployeeEventsRoute extends _i32.PageRouteInfo<void> {
   const EmployeeEventsRoute()
       : super(EmployeeEventsRoute.name, path: 'events/');
 
@@ -804,8 +848,8 @@ class EmployeeEventsRoute extends _i29.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i22.LaundryEmployeeAllModesTab]
-class EmployeeAllModesRoute extends _i29.PageRouteInfo<void> {
-  const EmployeeAllModesRoute({List<_i29.PageRouteInfo>? children})
+class EmployeeAllModesRoute extends _i32.PageRouteInfo<void> {
+  const EmployeeAllModesRoute({List<_i32.PageRouteInfo>? children})
       : super(EmployeeAllModesRoute.name,
             path: 'allModes/', initialChildren: children);
 
@@ -814,7 +858,7 @@ class EmployeeAllModesRoute extends _i29.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i23.LaundryEmployeeRepairEventsTab]
-class EmployeeRepairEventsRoute extends _i29.PageRouteInfo<void> {
+class EmployeeRepairEventsRoute extends _i32.PageRouteInfo<void> {
   const EmployeeRepairEventsRoute()
       : super(EmployeeRepairEventsRoute.name, path: 'repairEvents/');
 
@@ -823,7 +867,7 @@ class EmployeeRepairEventsRoute extends _i29.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i24.LaundryEmployeeStatisticTab]
-class EmployeeStatisticRoute extends _i29.PageRouteInfo<void> {
+class EmployeeStatisticRoute extends _i32.PageRouteInfo<void> {
   const EmployeeStatisticRoute()
       : super(EmployeeStatisticRoute.name, path: 'statistic/');
 
@@ -832,9 +876,35 @@ class EmployeeStatisticRoute extends _i29.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i28.EmployeeSettingsTab]
-class EmployeeSettingsRoute extends _i29.PageRouteInfo<void> {
+class EmployeeSettingsRoute extends _i32.PageRouteInfo<void> {
   const EmployeeSettingsRoute()
       : super(EmployeeSettingsRoute.name, path: 'settings/');
 
   static const String name = 'EmployeeSettingsRoute';
+}
+
+/// generated route for
+/// [_i29.RepairProductsTab]
+class RepairProductsRoute extends _i32.PageRouteInfo<void> {
+  const RepairProductsRoute()
+      : super(RepairProductsRoute.name, path: 'products/');
+
+  static const String name = 'RepairProductsRoute';
+}
+
+/// generated route for
+/// [_i30.RepairEventsTab]
+class RepairEventsRoute extends _i32.PageRouteInfo<void> {
+  const RepairEventsRoute() : super(RepairEventsRoute.name, path: 'events/');
+
+  static const String name = 'RepairEventsRoute';
+}
+
+/// generated route for
+/// [_i31.RepairCompanySettingsTab]
+class RepairCompanySettingsRoute extends _i32.PageRouteInfo<void> {
+  const RepairCompanySettingsRoute()
+      : super(RepairCompanySettingsRoute.name, path: 'settings/');
+
+  static const String name = 'RepairCompanySettingsRoute';
 }

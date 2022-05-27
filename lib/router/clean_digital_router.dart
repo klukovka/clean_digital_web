@@ -23,7 +23,7 @@ class CleanDigitalRouter extends BaseRouter {
   }
 
   Future<void> replaceRepairCompanyMainPage() async {
-    await pushAndClearStack(const RepairCompanyMainRoute());
+    await pushAndClearStack(const RepairCompanyRoute());
   }
 
   Future<void> replaceEmployeeMainPage() async {
@@ -61,6 +61,4 @@ class CleanDigitalRouter extends BaseRouter {
       onChosen: onChosen,
     ));
   }
-
-  showCreateRepairEventPage(Future<void> Function(CreateRepairEventRequest request) createRepairEvent) {}
 }
