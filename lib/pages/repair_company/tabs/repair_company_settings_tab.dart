@@ -7,6 +7,7 @@ import '../../../bloc/app_control/app_control_cubit.dart';
 import '../../../bloc/repair_company/repair_company_settings_tab/repair_company_settings_tab_cubit.dart';
 import '../../../di/injection_container.dart';
 import '../../../l10n/clean_digital_localizations.dart';
+import '../../../router/clean_digital_router.dart';
 import '../../../utils/clean_digital_dialogs.dart';
 import '../../../utils/clean_digital_toasts.dart';
 import '../../../utils/extensions/locale_ext.dart';
@@ -34,9 +35,31 @@ class RepairCompanySettingsTab extends StatefulWidget
   }
 }
 
-class _RepairCompanySettingsTabState extends State<RepairCompanySettingsTab> {
+class _RepairCompanySettingsTabState extends State<RepairCompanySettingsTab>
+    with AutoRouteAware {
+  AutoRouteObserver? _observer;
   AppControlCubit get appControlCubit => context.read();
   RepairCompanySettingsTabCubit get cubit => context.read();
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    _observer = router.getObserver<AutoRouteObserver>(context);
+    if (_observer != null) {
+      _observer?.subscribe(this, context.routeData);
+    }
+  }
+
+  @override
+  void dispose() {
+    _observer?.unsubscribe(this);
+    super.dispose();
+  }
+
+  @override
+  void didChangeTabRoute(TabPageRoute tabPageRoute) {
+    cubit.init();
+  }
 
   final _fbKey = GlobalKey<FormBuilderState>();
 

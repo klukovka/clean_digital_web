@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../bloc/repair_company/repair_events_tab/repair_events_tab_cubit.dart';
 import '../../../di/injection_container.dart';
 import '../../../l10n/clean_digital_localizations.dart';
+import '../../../router/clean_digital_router.dart';
 import '../../../utils/clean_digital_toasts.dart';
 import '../../../views/entity_tiles/repair_event_tile.dart';
 import '../../../views/error_view.dart';
@@ -26,8 +27,29 @@ class RepairEventsTab extends StatefulWidget with AutoRouteWrapper {
   }
 }
 
-class _RepairEventsTabState extends State<RepairEventsTab> {
+class _RepairEventsTabState extends State<RepairEventsTab> with AutoRouteAware {
+  AutoRouteObserver? _observer;
   RepairEventsTabCubit get cubit => context.read();
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    _observer = router.getObserver<AutoRouteObserver>(context);
+    if (_observer != null) {
+      _observer?.subscribe(this, context.routeData);
+    }
+  }
+
+  @override
+  void dispose() {
+    _observer?.unsubscribe(this);
+    super.dispose();
+  }
+
+  @override
+  void didChangeTabRoute(TabPageRoute tabPageRoute) {
+    cubit.getRepairEvents();
+  }
 
   void _onStateChanged(
     BuildContext context,
@@ -74,11 +96,13 @@ class _RepairEventsTabState extends State<RepairEventsTab> {
             itemBuilder: (_, index) {
               return RepairEventTile(
                 repairEvent: state.repairEvents[index],
-                onMorePressed: () {
-                  cubit.doneRepairEvent(
-                    state.repairEvents[index].repairEventId,
-                  );
-                },
+                onMorePressed: state.repairEvents[index].done
+                    ? () {
+                        cubit.doneRepairEvent(
+                          state.repairEvents[index].repairEventId,
+                        );
+                      }
+                    : null,
               );
             },
             separatorBuilder: (_, __) => const Divider(),
