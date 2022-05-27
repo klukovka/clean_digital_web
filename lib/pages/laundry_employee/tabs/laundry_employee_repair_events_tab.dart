@@ -73,10 +73,9 @@ class _LaundryEmployeeRepairEventsTabState
         TitleWithButton(
           title: '${CleanDigitalLocalizations.of(context).totalAmount}: '
               '${state.totalElements}',
-          onPressed: () async {
-            await CleanDigitalDialogs.of(context)
+          onPressed: () {
+            CleanDigitalDialogs.of(context)
                 .showCreateRepairEventPage(cubit.createRepairEvent);
-            cubit.getRepairEvents();
           },
         ),
         const SizedBox(height: 16),
