@@ -1,10 +1,12 @@
 import 'package:injectable/injectable.dart';
 
 import '../api/clean_digital_api_client.dart';
+import '../api/models/create_update_requests/create_repair_event.dart';
 import '../api/models/create_update_requests/create_update_repair_company.dart';
 import '../models/pagination/repair_companies_pagination.dart';
 import '../models/pagination/repair_events_pagination.dart';
 import '../models/pagination/repair_products_pagination.dart';
+import '../models/repair_event.dart';
 import '../models/repair_product.dart';
 import 'base_service.dart';
 
@@ -39,9 +41,9 @@ class RepairCompaniesService extends BaseService {
     });
   }
 
-  Future<RepairEventsPagination> getLaundryRepairEvents() async {
+  Future<List<RepairEvent>> getLaundryRepairEvents() async {
     return await makeErrorHandledCall(() async {
-      return await _apiClient.getLaundryRepairEvents();
+      return (await _apiClient.getLaundryRepairEvents()).repairEvents;
     });
   }
 
@@ -51,6 +53,20 @@ class RepairCompaniesService extends BaseService {
   }) async {
     return await makeErrorHandledCall(() async {
       return await _apiClient.getAllProducts(page, size);
+    });
+  }
+
+  Future<void> createRepairEvent(
+    CreateRepairEventRequest request,
+  ) async {
+    await makeErrorHandledCall(() async {
+      await _apiClient.createRepairEvent(request);
+    });
+  }
+
+  Future<void> doneEvent(String repairEventI) async {
+    await makeErrorHandledCall(() async {
+      await _apiClient.doneEvent(repairEventI);
     });
   }
 }

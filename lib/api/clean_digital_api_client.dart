@@ -28,6 +28,7 @@ import 'models/auth/login_request.dart';
 import 'models/auth/restore_password_request.dart';
 import 'models/auth/update_password_request.dart';
 import 'models/backup.dart';
+import 'models/create_update_requests/create_repair_event.dart';
 import 'models/create_update_requests/create_update_employee.dart';
 import 'models/create_update_requests/create_update_laundry.dart';
 import 'models/create_update_requests/create_update_mode.dart';
@@ -213,6 +214,16 @@ abstract class CleanDigitalApiClient {
 
   @GET('/repairCompany/laundry-own-repair-events')
   Future<RepairEventsPagination> getLaundryRepairEvents();
+
+  @POST('/repairCompany/create-repair-event')
+  Future<void> createRepairEvent(
+    @Body() CreateRepairEventRequest request,
+  );
+
+  @PUT('/repairCompany/done-repair-event/{repairEventId}')
+  Future<void> doneEvent(
+    @Path('repairEventId') String repairEventI,
+  );
 
   ///
   /// Events
