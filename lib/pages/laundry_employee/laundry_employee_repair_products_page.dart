@@ -7,6 +7,7 @@ import '../../bloc/laundry_employee/laundry_employee_repair_products_page/laundr
 import '../../di/injection_container.dart';
 import '../../l10n/clean_digital_localizations.dart';
 import '../../models/repair_product.dart';
+import '../../router/clean_digital_router.dart';
 import '../../utils/pagination/pagination_utils.dart';
 import '../../views/clean_digital_paged_grid_view.dart';
 import '../../views/entity_tiles/repair_product_tile.dart';
@@ -103,7 +104,10 @@ class _LaundryEmployeeRepairProductsPageState
           return RepairProductTile(
             repairProduct: repairProduct,
             moreText: CleanDigitalLocalizations.of(context).choose,
-            onMorePressed: () => widget.onChosen(repairProduct),
+            onMorePressed: () {
+              widget.onChosen(repairProduct);
+              router.pop();
+            },
           );
         },
         builder: (pagedView, controller) {

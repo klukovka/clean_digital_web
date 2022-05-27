@@ -24,6 +24,7 @@ class RepairProductTile extends StatelessWidget {
     return EntityContainerTile(
       onDeletePressed: onDeletePressed,
       onMorePressed: onMorePressed,
+      moreText: moreText,
       child: _buildInfo(context),
     );
   }

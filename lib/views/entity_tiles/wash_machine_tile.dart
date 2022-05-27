@@ -9,6 +9,7 @@ import 'entity_label.dart';
 class WashMachineTile extends StatelessWidget {
   final WashMachine washMachine;
   final bool isEdit;
+  final String? moreText;
   final VoidCallback? onDeletePressed;
   final VoidCallback? onMorePressed;
 
@@ -18,6 +19,7 @@ class WashMachineTile extends StatelessWidget {
     this.isEdit = false,
     this.onDeletePressed,
     this.onMorePressed,
+    this.moreText,
   }) : super(key: key);
 
   @override
@@ -25,6 +27,7 @@ class WashMachineTile extends StatelessWidget {
     return EntityContainerTile(
       imageAsset: AppImageAssets.washMachineImage,
       isEdit: isEdit,
+      moreText: moreText,
       dialogTitle:
           CleanDigitalLocalizations.of(context).doYouWantToDeleteWashMachine,
       onDeletePressed: onDeletePressed,

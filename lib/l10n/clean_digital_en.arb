@@ -140,5 +140,9 @@
     "done": "Done",
     "date": "Date",
     "washMachineId": "Washing machine Id",
-    "repairProductId": "Repair product Id"
+    "repairProductId": "Repair product Id",
+    "youDontSelectWashMachine": "You don't select washing machine",
+    "youDontSelectRepairProduct": "You don't select repair product",
+    "select": "Select",
+    "createRepairEvent": "Create repair event"
 }

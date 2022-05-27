@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
+import '../api/models/create_update_requests/create_repair_event.dart';
 import '../api/models/create_update_requests/create_update_employee.dart';
 import '../api/models/create_update_requests/create_update_laundry.dart';
 import '../api/models/create_update_requests/create_update_mode.dart';
@@ -15,6 +16,7 @@ import '../models/wash_machine.dart';
 import '../views/dialogs/base_dialog.dart';
 import '../views/dialogs/confirm_dialog.dart';
 import '../views/dialogs/create_mode_dialog.dart';
+import '../views/dialogs/create_repair_event_dialog.dart';
 import '../views/dialogs/create_update_employee_dialog.dart';
 import '../views/dialogs/create_update_laundry_dialog.dart';
 import '../views/dialogs/create_update_repair_company_dialog.dart';
@@ -185,6 +187,16 @@ class CleanDigitalDialogs {
         ),
       ),
       title: CleanDigitalLocalizations.of(context).updateAdditionalMode,
+    );
+  }
+
+  Future<void> showCreateRepairEventPage(
+    ValueSetter<CreateRepairEventRequest> onSave,
+  ) async {
+    await _showBlurDialog(
+      height: 50.h,
+      body: CreateRepairEventDialog(onSave: onSave),
+      title: CleanDigitalLocalizations.of(context).createRepairEvent,
     );
   }
 

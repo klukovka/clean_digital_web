@@ -142,5 +142,9 @@
   "done": "Готово",
   "date": "Дата",
   "washMachineId": "Id пральної машини",
-  "repairProductId": "Id типу ремонту"
+  "repairProductId": "Id типу ремонту",
+  "youDontSelectWashMachine": "Ви не обрали пральну машину",
+  "youDontSelectRepairProduct": "Ви не обрали тип ремонту",
+  "select": "Обрати",
+  "createRepairEvent": "Віддати на ремонт"
 }

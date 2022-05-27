@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../bloc/laundry_employee/tabs/laundry_employee_repair_events_tab/laundry_employee_repair_events_tab_cubit.dart';
 import '../../../di/injection_container.dart';
 import '../../../l10n/clean_digital_localizations.dart';
+import '../../../utils/clean_digital_dialogs.dart';
 import '../../../utils/clean_digital_toasts.dart';
 import '../../../views/entity_tiles/repair_event_tile.dart';
 import '../../../views/error_view.dart';
@@ -72,11 +73,11 @@ class _LaundryEmployeeRepairEventsTabState
         TitleWithButton(
           title: '${CleanDigitalLocalizations.of(context).totalAmount}: '
               '${state.totalElements}',
-          // onPressed: () =>
-          //     CleanDigitalDialogs.of(context).showRegisterModeDialog(
-          //   cubit.createAdditionalMode,
-          //   true,
-          // ),
+          onPressed: () async {
+            await CleanDigitalDialogs.of(context)
+                .showCreateRepairEventPage(cubit.createRepairEvent);
+            cubit.getRepairEvents();
+          },
         ),
         const SizedBox(height: 16),
         Expanded(

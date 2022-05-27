@@ -1,6 +1,10 @@
+import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
 
+import '../api/models/create_update_requests/create_repair_event.dart';
 import '../di/injection_container.dart';
+import '../models/repair_product.dart';
+import '../models/wash_machine.dart';
 import 'app_auto_router.gr.dart';
 import 'base_router.dart';
 
@@ -41,4 +45,22 @@ class CleanDigitalRouter extends BaseRouter {
   Future<void> pushAdminLaundryPage(String laundryId) async {
     await push(AdminLaundryRoute(laundryId: laundryId));
   }
+
+  Future<void> pushSelectProductPage(
+    ValueSetter<RepairProduct> onChosen,
+  ) async {
+    await push(LaundryEmployeeRepairProductsRoute(
+      onChosen: onChosen,
+    ));
+  }
+
+  Future<void> pushSelectWashMachinePage(
+    ValueSetter<WashMachine> onChosen,
+  ) async {
+    await push(ChooseWashMachinesRoute(
+      onChosen: onChosen,
+    ));
+  }
+
+  showCreateRepairEventPage(Future<void> Function(CreateRepairEventRequest request) createRepairEvent) {}
 }

@@ -951,6 +951,30 @@ abstract class CleanDigitalLocalizations {
   /// In uk, this message translates to:
   /// **'Id типу ремонту'**
   String get repairProductId;
+
+  /// No description provided for @youDontSelectWashMachine.
+  ///
+  /// In uk, this message translates to:
+  /// **'Ви не обрали пральну машину'**
+  String get youDontSelectWashMachine;
+
+  /// No description provided for @youDontSelectRepairProduct.
+  ///
+  /// In uk, this message translates to:
+  /// **'Ви не обрали тип ремонту'**
+  String get youDontSelectRepairProduct;
+
+  /// No description provided for @select.
+  ///
+  /// In uk, this message translates to:
+  /// **'Обрати'**
+  String get select;
+
+  /// No description provided for @createRepairEvent.
+  ///
+  /// In uk, this message translates to:
+  /// **'Віддати на ремонт'**
+  String get createRepairEvent;
 }
 
 class _CleanDigitalLocalizationsDelegate extends LocalizationsDelegate<CleanDigitalLocalizations> {

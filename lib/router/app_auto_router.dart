@@ -12,7 +12,10 @@ import '../pages/administrator/tabs/admin_settings_tab/admin_settings_tab.dart';
 import '../pages/administrator/tabs/admin_statistic_tab/admin_statistic_tab.dart';
 import '../pages/auth/login_page.dart';
 import '../pages/auth/restore_password_page.dart';
+import '../pages/laundry_employee/choose_wash_machines_page.dart';
+import '../views/dialogs/create_repair_event_dialog.dart';
 import '../pages/laundry_employee/employee_page.dart';
+import '../pages/laundry_employee/laundry_employee_repair_products_page.dart';
 import '../pages/laundry_employee/laundry_page.dart';
 import '../pages/laundry_employee/tabs/employee_settings_tab.dart';
 import '../pages/laundry_employee/tabs/laundry_employee_events_tab.dart';
@@ -259,6 +262,20 @@ const _fadeIn = TransitionsBuilders.fadeIn;
           durationInMilliseconds: _durationInMilliseconds,
         ),
       ],
+    ),
+    CustomRoute(
+      page: LaundryEmployeeRepairProductsPage,
+      path: '/chooseRepairProducts/',
+      transitionsBuilder: _fadeIn,
+      fullscreenDialog: true,
+      durationInMilliseconds: _durationInMilliseconds,
+    ),
+    CustomRoute(
+      page: ChooseWashMachinesPage,
+      path: '/chooseWashMachines/',
+      transitionsBuilder: _fadeIn,
+      fullscreenDialog: true,
+      durationInMilliseconds: _durationInMilliseconds,
     ),
     CustomRoute(
       page: RepairCompanyMainPage,
