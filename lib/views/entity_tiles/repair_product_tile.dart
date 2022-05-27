@@ -8,6 +8,7 @@ import 'entity_label.dart';
 class RepairProductTile extends StatelessWidget {
   final RepairProduct repairProduct;
   final VoidCallback? onDeletePressed;
+  final String? moreText;
   final VoidCallback? onMorePressed;
 
   const RepairProductTile({
@@ -15,6 +16,7 @@ class RepairProductTile extends StatelessWidget {
     required this.repairProduct,
     this.onDeletePressed,
     this.onMorePressed,
+    this.moreText,
   }) : super(key: key);
 
   @override

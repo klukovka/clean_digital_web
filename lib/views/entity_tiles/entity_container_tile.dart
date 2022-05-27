@@ -9,6 +9,7 @@ class EntityContainerTile extends StatelessWidget {
   final Widget child;
   final String dialogTitle;
   final bool isEdit;
+  final String? moreText;
   final Widget? titleChild;
   final String? imageAsset;
   final VoidCallback? onDeletePressed;
@@ -25,6 +26,7 @@ class EntityContainerTile extends StatelessWidget {
     this.color,
     this.imageAsset,
     this.titleChild,
+    this.moreText,
   }) : super(key: key);
 
   @override
@@ -66,7 +68,7 @@ class EntityContainerTile extends StatelessWidget {
             child: PrimaryButton(
               title: isEdit
                   ? CleanDigitalLocalizations.of(context).edit
-                  : CleanDigitalLocalizations.of(context).more,
+                  : moreText ?? CleanDigitalLocalizations.of(context).more,
               onPressed: onMorePressed,
             ),
           ),
