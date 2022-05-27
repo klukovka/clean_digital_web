@@ -426,6 +426,37 @@ class _CleanDigitalApiClient implements CleanDigitalApiClient {
   }
 
   @override
+  Future<RepairCompany> getRepairCompanyInfo() async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<RepairCompany>(
+            Options(method: 'GET', headers: _headers, extra: _extra)
+                .compose(_dio.options, '/repairCompany/personal-info',
+                    queryParameters: queryParameters, data: _data)
+                .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = RepairCompany.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<void> updateRepairCompany(request) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(request.toJson());
+    await _dio.fetch<void>(_setStreamType<void>(
+        Options(method: 'PUT', headers: _headers, extra: _extra)
+            .compose(_dio.options, '/repairCompany/edit',
+                queryParameters: queryParameters, data: _data)
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    return null;
+  }
+
+  @override
   Future<RepairProductsPagination> getCompanyProducts(repairCompanyId) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
@@ -456,6 +487,68 @@ class _CleanDigitalApiClient implements CleanDigitalApiClient {
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = RepairProductsPagination.fromJson(_result.data!);
     return value;
+  }
+
+  @override
+  Future<RepairProductsPagination> getCompanyOwnProducts() async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<RepairProductsPagination>(
+            Options(method: 'GET', headers: _headers, extra: _extra)
+                .compose(_dio.options, '/repairCompany/own-products',
+                    queryParameters: queryParameters, data: _data)
+                .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = RepairProductsPagination.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<void> createRepairProduct(request) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(request.toJson());
+    await _dio.fetch<void>(_setStreamType<void>(
+        Options(method: 'POST', headers: _headers, extra: _extra)
+            .compose(_dio.options, '/repairCompany/create-repair-product',
+                queryParameters: queryParameters, data: _data)
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    return null;
+  }
+
+  @override
+  Future<void> updateRepairProduct(repairProductId, request) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(request.toJson());
+    await _dio.fetch<void>(_setStreamType<void>(Options(
+            method: 'PUT', headers: _headers, extra: _extra)
+        .compose(
+            _dio.options, '/repairCompany/edit-repair-product/$repairProductId',
+            queryParameters: queryParameters, data: _data)
+        .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    return null;
+  }
+
+  @override
+  Future<void> deleteRepairProduct(repairProductId) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    await _dio.fetch<void>(_setStreamType<void>(
+        Options(method: 'DELETE', headers: _headers, extra: _extra)
+            .compose(_dio.options,
+                '/repairCompany/delete-repair-product/$repairProductId',
+                queryParameters: queryParameters, data: _data)
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    return null;
   }
 
   @override

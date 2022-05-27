@@ -18,6 +18,7 @@ import '../models/pagination/repair_pagination.dart';
 import '../models/pagination/repair_products_pagination.dart';
 import '../models/pagination/time_and_usage_pagination.dart';
 import '../models/pagination/wash_machines_pagination.dart';
+import '../models/repair_company.dart';
 import '../models/statistic/payment_statistic_laundry.dart';
 import '../models/statistic/rating_statistic_laundry.dart';
 import '../models/statistic/repair_statistic_laundry.dart';
@@ -33,6 +34,7 @@ import 'models/create_update_requests/create_update_employee.dart';
 import 'models/create_update_requests/create_update_laundry.dart';
 import 'models/create_update_requests/create_update_mode.dart';
 import 'models/create_update_requests/create_update_repair_company.dart';
+import 'models/create_update_requests/create_update_repair_product.dart';
 import 'models/create_update_requests/create_update_wash_machine.dart';
 
 part 'clean_digital_api_client.g.dart';
@@ -193,6 +195,14 @@ abstract class CleanDigitalApiClient {
     @Query('size') int size,
   );
 
+  @GET('/repairCompany/personal-info')
+  Future<RepairCompany> getRepairCompanyInfo();
+
+  @PUT('/repairCompany/edit')
+  Future<void> updateRepairCompany(
+    @Body() CreateUpdateRepairCompanyRequest request,
+  );
+
   ///
   /// Repair Products
   ///
@@ -206,6 +216,25 @@ abstract class CleanDigitalApiClient {
   Future<RepairProductsPagination> getAllProducts(
     @Query('page') int page,
     @Query('size') int size,
+  );
+
+  @GET('/repairCompany/own-products')
+  Future<RepairProductsPagination> getCompanyOwnProducts();
+
+  @POST('/repairCompany/create-repair-product')
+  Future<void> createRepairProduct(
+    @Body() CreateUpdateRepairProductRequest request,
+  );
+
+  @PUT('/repairCompany/edit-repair-product/{repairProductId}')
+  Future<void> updateRepairProduct(
+    @Path('repairProductId') String repairProductId,
+    @Body() CreateUpdateRepairProductRequest request,
+  );
+
+  @DELETE('/repairCompany/delete-repair-product/{repairProductId}')
+  Future<void> deleteRepairProduct(
+    @Path('repairProductId') String repairProductId,
   );
 
   ///
