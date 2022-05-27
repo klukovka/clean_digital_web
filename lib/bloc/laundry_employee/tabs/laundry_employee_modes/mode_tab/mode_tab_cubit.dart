@@ -24,10 +24,6 @@ class ModesTabCubit extends BaseCubit<ModesTabState> {
     ));
   }
 
-  void reset() {
-    emit(const ModesTabState());
-  }
-
   Future<void> getModes() async {
     emit(state.copyWith(status: ModesTabStatus.loading));
     await makeErrorHandledCall(() async {
@@ -49,7 +45,7 @@ class ModesTabCubit extends BaseCubit<ModesTabState> {
     await makeErrorHandledCall(() async {
       await _laundriesService.createMode(request);
     });
-    reset();
+    getModes();
   }
 
   Future<void> updateMode(
@@ -65,7 +61,7 @@ class ModesTabCubit extends BaseCubit<ModesTabState> {
         request,
       );
     });
-    reset();
+    getModes();
   }
 
   Future<void> deleteMode(String modeId) async {
@@ -75,6 +71,6 @@ class ModesTabCubit extends BaseCubit<ModesTabState> {
     await makeErrorHandledCall(() async {
       await _laundriesService.deleteMode(modeId);
     });
-    reset();
+    getModes();
   }
 }

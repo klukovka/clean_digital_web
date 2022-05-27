@@ -7,6 +7,7 @@ import 'entity_label.dart';
 
 class RepairProductTile extends StatelessWidget {
   final RepairProduct repairProduct;
+  final bool isEdit;
   final VoidCallback? onDeletePressed;
   final String? moreText;
   final VoidCallback? onMorePressed;
@@ -14,6 +15,7 @@ class RepairProductTile extends StatelessWidget {
   const RepairProductTile({
     Key? key,
     required this.repairProduct,
+    this.isEdit = false,
     this.onDeletePressed,
     this.onMorePressed,
     this.moreText,
@@ -23,6 +25,7 @@ class RepairProductTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return EntityContainerTile(
       onDeletePressed: onDeletePressed,
+      isEdit: isEdit,
       onMorePressed: onMorePressed,
       moreText: moreText,
       child: _buildInfo(context),
