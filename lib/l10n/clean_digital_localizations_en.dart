@@ -411,4 +411,16 @@ class CleanDigitalLocalizationsEn extends CleanDigitalLocalizations {
 
   @override
   String get events => 'Events';
+
+  @override
+  String get allRepairProducts => 'All repair producs';
+
+  @override
+  String get chooseOne => 'Choose one';
+
+  @override
+  String get allWashingMachines => 'All washing machines';
+
+  @override
+  String get choose => 'Choose';
 }

@@ -132,5 +132,9 @@
     "timeEnd": "Time end",
     "paidStatus": "Paid status",
     "taken": "Taken",
-    "events": "Events"
+    "events": "Events",
+    "allRepairProducts": "All repair producs",
+    "chooseOne": "Choose one",
+    "allWashingMachines":  "All washing machines",
+    "choose": "Choose"
 }

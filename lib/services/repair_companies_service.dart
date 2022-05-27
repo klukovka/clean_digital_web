@@ -4,6 +4,7 @@ import '../api/clean_digital_api_client.dart';
 import '../api/models/create_update_requests/create_update_repair_company.dart';
 import '../models/pagination/repair_companies_pagination.dart';
 import '../models/pagination/repair_events_pagination.dart';
+import '../models/pagination/repair_products_pagination.dart';
 import '../models/repair_product.dart';
 import 'base_service.dart';
 
@@ -41,6 +42,15 @@ class RepairCompaniesService extends BaseService {
   Future<RepairEventsPagination> getLaundryRepairEvents() async {
     return await makeErrorHandledCall(() async {
       return await _apiClient.getLaundryRepairEvents();
+    });
+  }
+
+  Future<RepairProductsPagination> getAllProducts({
+    int page = 0,
+    int size = 10,
+  }) async {
+    return await makeErrorHandledCall(() async {
+      return await _apiClient.getAllProducts(page, size);
     });
   }
 }

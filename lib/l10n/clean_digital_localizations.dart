@@ -903,6 +903,30 @@ abstract class CleanDigitalLocalizations {
   /// In uk, this message translates to:
   /// **'Процеси'**
   String get events;
+
+  /// No description provided for @allRepairProducts.
+  ///
+  /// In uk, this message translates to:
+  /// **'Усі типи ремонту'**
+  String get allRepairProducts;
+
+  /// No description provided for @chooseOne.
+  ///
+  /// In uk, this message translates to:
+  /// **'Оберіть один варіант'**
+  String get chooseOne;
+
+  /// No description provided for @allWashingMachines.
+  ///
+  /// In uk, this message translates to:
+  /// **'Усі пральні машини'**
+  String get allWashingMachines;
+
+  /// No description provided for @choose.
+  ///
+  /// In uk, this message translates to:
+  /// **'Обрати'**
+  String get choose;
 }
 
 class _CleanDigitalLocalizationsDelegate extends LocalizationsDelegate<CleanDigitalLocalizations> {

@@ -201,6 +201,12 @@ abstract class CleanDigitalApiClient {
     @Path('repairCompanyId') String repairCompanyId,
   );
 
+  @GET('/repairCompany/all-products')
+  Future<RepairProductsPagination> getAllProducts(
+    @Query('page') int page,
+    @Query('size') int size,
+  );
+
   ///
   /// Repair Events
   ///

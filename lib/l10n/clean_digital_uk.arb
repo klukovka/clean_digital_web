@@ -134,5 +134,9 @@
   "timeEnd": "Час кінця",
   "paidStatus": "Чи сплачено",
   "taken": "Чи забрано",
-  "events": "Процеси"
+  "events": "Процеси",
+  "allRepairProducts": "Усі типи ремонту",
+  "chooseOne": "Оберіть один варіант",
+  "allWashingMachines":  "Усі пральні машини",
+  "choose": "Обрати"
 }

@@ -411,4 +411,16 @@ class CleanDigitalLocalizationsUk extends CleanDigitalLocalizations {
 
   @override
   String get events => 'Процеси';
+
+  @override
+  String get allRepairProducts => 'Усі типи ремонту';
+
+  @override
+  String get chooseOne => 'Оберіть один варіант';
+
+  @override
+  String get allWashingMachines => 'Усі пральні машини';
+
+  @override
+  String get choose => 'Обрати';
 }
