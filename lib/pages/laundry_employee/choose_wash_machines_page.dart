@@ -8,6 +8,7 @@ import '../../di/injection_container.dart';
 import '../../l10n/clean_digital_localizations.dart';
 import '../../models/wash_machine.dart';
 import '../../router/clean_digital_router.dart';
+import '../../utils/clean_digital_toasts.dart';
 import '../../utils/pagination/pagination_utils.dart';
 import '../../views/clean_digital_paged_grid_view.dart';
 import '../../views/entity_tiles/wash_machine_tile.dart';
@@ -90,7 +91,9 @@ class _ChooseWashMachinesPageState extends State<ChooseWashMachinesPage>
         break;
       case ChooseWashMachinesPageStatus.error:
         controller.error = state.errorMessage;
-
+        CleanDigitalToasts.of(context).showError(
+          message: state.errorMessage,
+        );
         break;
       case ChooseWashMachinesPageStatus.loading:
         controller.error = null;

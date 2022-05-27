@@ -7,6 +7,7 @@ import '../../../bloc/laundry_employee/tabs/laundry_employee_events_tab/laundry_
 import '../../../di/injection_container.dart';
 import '../../../l10n/clean_digital_localizations.dart';
 import '../../../models/event.dart';
+import '../../../utils/clean_digital_toasts.dart';
 import '../../../utils/pagination/pagination_utils.dart';
 import '../../../views/clean_digital_paged_grid_view.dart';
 import '../../../views/entity_tiles/event_tile.dart';
@@ -61,7 +62,9 @@ class _LaundryEmployeeEventsTabState extends State<LaundryEmployeeEventsTab> {
         break;
       case LaundryEmployeeEventsTabStatus.error:
         controller.error = state.errorMessage;
-
+        CleanDigitalToasts.of(context).showError(
+          message: state.errorMessage,
+        );
         break;
       case LaundryEmployeeEventsTabStatus.loading:
         controller.error = null;

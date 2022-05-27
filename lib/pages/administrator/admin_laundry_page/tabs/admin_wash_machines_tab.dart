@@ -7,6 +7,7 @@ import '../../../../bloc/administrator/admin_laundry_page/tabs/admin_wash_machin
 import '../../../../di/injection_container.dart';
 import '../../../../l10n/clean_digital_localizations.dart';
 import '../../../../models/wash_machine.dart';
+import '../../../../utils/clean_digital_toasts.dart';
 import '../../../../utils/pagination/pagination_utils.dart';
 import '../../../../views/clean_digital_paged_grid_view.dart';
 import '../../../../views/entity_tiles/wash_machine_tile.dart';
@@ -61,7 +62,9 @@ class _AdminWashMachinesTabState extends State<AdminWashMachinesTab> {
         break;
       case AdminWashMachinesTabStatus.error:
         controller.error = state.errorMessage;
-
+        CleanDigitalToasts.of(context).showError(
+          message: state.errorMessage,
+        );
         break;
       case AdminWashMachinesTabStatus.loading:
         controller.error = null;

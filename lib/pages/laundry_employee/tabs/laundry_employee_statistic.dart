@@ -13,6 +13,7 @@ import '../../../models/statistic/all_laundry_statistic.dart';
 import '../../../models/statistic/payment.dart';
 import '../../../models/statistic/repair.dart';
 import '../../../models/statistic/time_and_usage.dart';
+import '../../../utils/clean_digital_toasts.dart';
 import '../../../views/entity_tiles/laundry_tile.dart';
 import '../../../views/error_view.dart';
 import '../../../views/loading_indicator.dart';
@@ -41,7 +42,13 @@ class _LaundryEmployeeStatisticTabState
   void _onStateChanged(
     BuildContext context,
     LaundryEmployeeStatisticTabState state,
-  ) {}
+  ) {
+    if (state.status == LaundryEmployeeStatisticTabStatus.error) {
+      CleanDigitalToasts.of(context).showError(
+        message: state.errorMessage,
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {

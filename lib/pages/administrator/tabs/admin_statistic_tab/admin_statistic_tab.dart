@@ -9,6 +9,7 @@ import '../../../../di/injection_container.dart';
 import '../../../../l10n/clean_digital_localizations.dart';
 import '../../../../models/statistic/all_laundry_statistic.dart';
 import '../../../../router/clean_digital_router.dart';
+import '../../../../utils/clean_digital_toasts.dart';
 import '../../../../utils/pagination/pagination_utils.dart';
 import '../../../../views/clean_digital_paged_grid_view.dart';
 import 'view/statistic_tile.dart';
@@ -83,7 +84,9 @@ class _AdminStatisticTabState extends State<AdminStatisticTab>
         break;
       case AdminStatisticTabStatus.error:
         controller.error = state.errorMessage;
-
+        CleanDigitalToasts.of(context).showError(
+          message: state.errorMessage,
+        );
         break;
       case AdminStatisticTabStatus.loading:
         controller.error = null;

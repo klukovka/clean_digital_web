@@ -11,6 +11,7 @@ import '../../../../l10n/clean_digital_localizations.dart';
 import '../../../../models/repair_company.dart';
 import '../../../../router/clean_digital_router.dart';
 import '../../../../utils/clean_digital_dialogs.dart';
+import '../../../../utils/clean_digital_toasts.dart';
 import '../../../../utils/pagination/pagination_utils.dart';
 import '../../../../views/clean_digital_paged_grid_view.dart';
 import '../../../../views/entity_tiles/repair_company_tile.dart';
@@ -90,7 +91,9 @@ class _AdminRepairCompaniesTabState extends State<AdminRepairCompaniesTab>
         break;
       case AdminRepairCompaniesTabStatus.error:
         controller.error = state.errorMessage;
-
+        CleanDigitalToasts.of(context).showError(
+          message: state.errorMessage,
+        );
         break;
       case AdminRepairCompaniesTabStatus.loading:
         controller.error = null;

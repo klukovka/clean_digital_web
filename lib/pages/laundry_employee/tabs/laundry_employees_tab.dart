@@ -8,6 +8,7 @@ import '../../../di/injection_container.dart';
 import '../../../l10n/clean_digital_localizations.dart';
 import '../../../models/employee.dart';
 import '../../../utils/clean_digital_dialogs.dart';
+import '../../../utils/clean_digital_toasts.dart';
 import '../../../utils/pagination/pagination_utils.dart';
 import '../../../views/clean_digital_paged_grid_view.dart';
 import '../../../views/entity_tiles/employee_tile.dart';
@@ -59,7 +60,9 @@ class _LaundryEmployeesTabState extends State<LaundryEmployeesTab> {
         break;
       case LaundryEmployeesTabStatus.error:
         controller.error = state.errorMessage;
-
+        CleanDigitalToasts.of(context).showError(
+          message: state.errorMessage,
+        );
         break;
       case LaundryEmployeesTabStatus.loading:
         controller.error = null;

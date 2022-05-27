@@ -9,6 +9,7 @@ import '../../../../l10n/clean_digital_localizations.dart';
 import '../../../../models/laundry.dart';
 import '../../../../router/clean_digital_router.dart';
 import '../../../../utils/clean_digital_dialogs.dart';
+import '../../../../utils/clean_digital_toasts.dart';
 import '../../../../utils/pagination/pagination_utils.dart';
 import '../../../../views/clean_digital_paged_grid_view.dart';
 import '../../../../views/entity_tiles/laundry_tile.dart';
@@ -83,7 +84,9 @@ class _AdminLaundriesTabState extends State<AdminLaundriesTab>
         break;
       case AdminLaundriesTabStatus.error:
         controller.error = state.errorMessage;
-
+        CleanDigitalToasts.of(context).showError(
+          message: state.errorMessage,
+        );
         break;
       case AdminLaundriesTabStatus.loading:
         controller.error = null;

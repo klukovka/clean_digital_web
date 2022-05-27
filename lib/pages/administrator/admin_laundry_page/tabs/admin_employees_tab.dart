@@ -7,6 +7,7 @@ import '../../../../bloc/administrator/admin_laundry_page/tabs/admin_employees_t
 import '../../../../di/injection_container.dart';
 import '../../../../l10n/clean_digital_localizations.dart';
 import '../../../../models/employee.dart';
+import '../../../../utils/clean_digital_toasts.dart';
 import '../../../../utils/pagination/pagination_utils.dart';
 import '../../../../views/clean_digital_paged_grid_view.dart';
 import '../../../../views/entity_tiles/employee_tile.dart';
@@ -59,6 +60,9 @@ class _AdminEmployeesTabState extends State<AdminEmployeesTab> {
         break;
       case AdminEmployeesTabStatus.error:
         controller.error = state.errorMessage;
+        CleanDigitalToasts.of(context).showError(
+          message: state.errorMessage,
+        );
 
         break;
       case AdminEmployeesTabStatus.loading:
