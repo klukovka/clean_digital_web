@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
 
-import '../api/models/create_update_requests/create_repair_event.dart';
 import '../di/injection_container.dart';
 import '../models/repair_product.dart';
 import '../models/wash_machine.dart';

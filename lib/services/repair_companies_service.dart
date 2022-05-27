@@ -5,7 +5,6 @@ import '../api/models/create_update_requests/create_repair_event.dart';
 import '../api/models/create_update_requests/create_update_repair_company.dart';
 import '../api/models/create_update_requests/create_update_repair_product.dart';
 import '../models/pagination/repair_companies_pagination.dart';
-import '../models/pagination/repair_events_pagination.dart';
 import '../models/pagination/repair_products_pagination.dart';
 import '../models/repair_company.dart';
 import '../models/repair_event.dart';

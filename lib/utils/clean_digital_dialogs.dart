@@ -14,7 +14,6 @@ import '../models/employee.dart';
 import '../models/laundry.dart';
 import '../models/mode.dart';
 import '../models/repair_company.dart';
-import '../models/repair_event.dart';
 import '../models/repair_product.dart';
 import '../models/wash_machine.dart';
 import '../views/dialogs/base_dialog.dart';
