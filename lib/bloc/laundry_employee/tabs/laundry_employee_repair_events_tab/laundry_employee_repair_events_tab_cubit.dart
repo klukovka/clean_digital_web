@@ -54,5 +54,6 @@ class LaundryEmployeeRepairEventsTabCubit
       await _repairCompaniesService.createRepairEvent(request);
     });
     reset();
+    await getRepairEvents();
   }
 }
