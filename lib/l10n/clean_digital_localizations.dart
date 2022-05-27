@@ -975,6 +975,18 @@ abstract class CleanDigitalLocalizations {
   /// In uk, this message translates to:
   /// **'Віддати на ремонт'**
   String get createRepairEvent;
+
+  /// No description provided for @editRepairCompany.
+  ///
+  /// In uk, this message translates to:
+  /// **'Редагувати ремонтну компанію'**
+  String get editRepairCompany;
+
+  /// No description provided for @aboutRepairCompany.
+  ///
+  /// In uk, this message translates to:
+  /// **'Про ремонтну компанію'**
+  String get aboutRepairCompany;
 }
 
 class _CleanDigitalLocalizationsDelegate extends LocalizationsDelegate<CleanDigitalLocalizations> {

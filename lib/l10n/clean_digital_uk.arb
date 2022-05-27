@@ -146,5 +146,7 @@
   "youDontSelectWashMachine": "Ви не обрали пральну машину",
   "youDontSelectRepairProduct": "Ви не обрали тип ремонту",
   "select": "Обрати",
-  "createRepairEvent": "Віддати на ремонт"
+  "createRepairEvent": "Віддати на ремонт",
+  "editRepairCompany": "Редагувати ремонтну компанію",
+  "aboutRepairCompany": "Про ремонтну компанію"
 }

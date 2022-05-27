@@ -27,7 +27,7 @@ import '../pages/laundry_employee/tabs/laundry_employee_statistic.dart';
 import '../pages/laundry_employee/tabs/laundry_employee_wash_machines_tab.dart';
 import '../pages/laundry_employee/tabs/laundry_employees_tab.dart';
 import '../pages/laundry_employee/tabs/laundry_settings_tab.dart';
-import '../pages/repair_company/tabs/repair_company_settings.dart';
+import '../pages/repair_company/tabs/repair_company_settings_tab.dart';
 import '../pages/repair_company/tabs/repair_events_tab.dart';
 import '../pages/repair_company/tabs/repair_products_tab.dart';
 import '../pages/splash_page/splash_page.dart';

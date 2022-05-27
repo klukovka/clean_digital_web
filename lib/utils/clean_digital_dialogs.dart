@@ -12,6 +12,7 @@ import '../models/additional_mode.dart';
 import '../models/employee.dart';
 import '../models/laundry.dart';
 import '../models/mode.dart';
+import '../models/repair_company.dart';
 import '../models/wash_machine.dart';
 import '../views/dialogs/base_dialog.dart';
 import '../views/dialogs/confirm_dialog.dart';
@@ -221,6 +222,20 @@ class CleanDigitalDialogs {
       height: 60.h,
       body: CreateUpdateRepairCompanyDialog(onSave: onSave),
       title: CleanDigitalLocalizations.of(context).registerRepairCompany,
+    );
+  }
+
+  void showEditRepairCompanyDialog(
+    RepairCompany repairCompany,
+    ValueSetter<CreateUpdateRepairCompanyRequest> onSave,
+  ) {
+    _showBlurDialog(
+      height: 60.h,
+      body: CreateUpdateRepairCompanyDialog(
+        onSave: onSave,
+        repairCompany: repairCompany,
+      ),
+      title: CleanDigitalLocalizations.of(context).editRepairCompany,
     );
   }
 }

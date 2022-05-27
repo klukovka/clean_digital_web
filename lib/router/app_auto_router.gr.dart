@@ -58,7 +58,7 @@ import '../pages/laundry_employee/tabs/laundry_employee_wash_machines_tab.dart'
 import '../pages/laundry_employee/tabs/laundry_employees_tab.dart' as _i20;
 import '../pages/laundry_employee/tabs/laundry_settings_tab.dart' as _i25;
 import '../pages/repair_company/repair_company_page.dart' as _i10;
-import '../pages/repair_company/tabs/repair_company_settings.dart' as _i31;
+import '../pages/repair_company/tabs/repair_company_settings_tab.dart' as _i31;
 import '../pages/repair_company/tabs/repair_events_tab.dart' as _i30;
 import '../pages/repair_company/tabs/repair_products_tab.dart' as _i29;
 import '../pages/splash_page/splash_page.dart' as _i1;
