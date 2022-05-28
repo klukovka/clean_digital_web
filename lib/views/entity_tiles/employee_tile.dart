@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../bloc/app_control/app_control_cubit.dart';
 import '../../l10n/clean_digital_localizations.dart';
 import '../../models/employee.dart';
 import '../../resources/app_image_assets.dart';
+import '../../utils/extensions/date_time_ext.dart';
 import 'entity_container_tile.dart';
 import 'entity_label.dart';
 
@@ -41,7 +44,9 @@ class EmployeeTile extends StatelessWidget {
         EntityLabel(title: localization.email, value: employee.user.email),
         EntityLabel(
           title: localization.birthday,
-          value: '${employee.birthday}',
+          value: employee.birthday.format(
+            context.read<AppControlCubit>().state.locale,
+          ),
         ),
       ],
     );

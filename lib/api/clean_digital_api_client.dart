@@ -111,7 +111,7 @@ abstract class CleanDigitalApiClient {
     @Query('size') int size,
   );
 
-  @GET('/laundry/{laundryId}')
+  @GET('/laundry/by-id/{laundryId}')
   Future<Laundry> getLaundryById(
     @Path() String laundryId,
   );

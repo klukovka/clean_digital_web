@@ -14,6 +14,7 @@ import '../../../../views/buttons/primary_button.dart';
 import '../../../../views/loading_indicator.dart';
 import '../../../../views/title_with_button.dart';
 import '../../../bloc/laundry_employee/tabs/employee_settings_tab/employee_settings_tab_cubit.dart';
+import '../../../utils/extensions/date_time_ext.dart';
 
 enum _EmployeeSettingsTabField { language, theme }
 
@@ -137,7 +138,9 @@ class _EmployeeSettingsTabState extends State<EmployeeSettingsTab> {
         const SizedBox(height: 16),
         _buildLabel(
           CleanDigitalLocalizations.of(context).birthday,
-          state.employee.birthday.toString(),
+          state.employee.birthday.format(
+            context.read<AppControlCubit>().state.locale,
+          ),
         ),
         const SizedBox(height: 16),
         _buildLabel(

@@ -37,39 +37,21 @@ abstract class BaseService {
     DioError exception,
     CleanDigitalLocalizations localizations,
   ) async {
-    try {
-      await InternetAddress.lookup('example.com');
-    } on SocketException {
-      return ApplicationException(localizations.noInternetConnection);
-    }
-
     final unknownApiException = ApiException(
       message: localizations.serverErrorMessage,
     );
-
-    return unknownApiException;
-
-//TODO: Use it after fix on server
-    // try {
-    //   var response = exception.response?.data;
-
-    //   if (response == null) {
-    //     return unknownApiException;
-    //   }
-
-    //   if (response is String) {
-    //     response = json.decode(response);
-    //   }
-
-    //   final apiError = ApiError.fromJson(response);
-
-    //   return ApiException(
-    //     statusCode: apiError.status,
-    //     message: apiError.message,
-    //     detail: apiError.detail,
-    //   );
-    // } catch (_) {
-    //   return unknownApiException;
-    // }
+    try {
+      var response = exception.response?.data;
+      if (response == null) {
+        return unknownApiException;
+      }
+      final apiError = ApiException(
+        message: response?['message'],
+        statusCode: response?['statusCode'],
+      );
+      return apiError;
+    } catch (_) {
+      return unknownApiException;
+    }
   }
 }

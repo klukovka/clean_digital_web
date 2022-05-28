@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../bloc/app_control/app_control_cubit.dart';
 import '../../l10n/clean_digital_localizations.dart';
 import '../../models/event.dart';
 import '../../resources/app_image_assets.dart';
+import '../../utils/extensions/date_time_ext.dart';
 import 'entity_container_tile.dart';
 import 'entity_label.dart';
 
@@ -34,8 +37,16 @@ class EventTile extends StatelessWidget {
         EntityLabel(
             title: localization.additionalMode,
             value: event.additionalMode?.name),
-        EntityLabel(title: localization.timeBegin, value: event.timeBegin),
-        EntityLabel(title: localization.timeEnd, value: event.timeEnd),
+        EntityLabel(
+            title: localization.timeBegin,
+            value: event.timeBegin?.formatTime(
+              context.read<AppControlCubit>().state.locale,
+            )),
+        EntityLabel(
+            title: localization.timeEnd,
+            value: event.timeEnd?.formatTime(
+              context.read<AppControlCubit>().state.locale,
+            )),
         EntityLabel(title: localization.paidStatus, value: event.paidStatus),
         EntityLabel(title: localization.paidBonuses, value: event.paidBonuses),
         EntityLabel(title: localization.paidMoney, value: event.paidMoney),

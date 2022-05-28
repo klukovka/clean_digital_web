@@ -205,7 +205,7 @@ class _CleanDigitalApiClient implements CleanDigitalApiClient {
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<Laundry>(
             Options(method: 'GET', headers: _headers, extra: _extra)
-                .compose(_dio.options, '/laundry/$laundryId',
+                .compose(_dio.options, '/laundry/by-id/$laundryId',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = Laundry.fromJson(_result.data!);
