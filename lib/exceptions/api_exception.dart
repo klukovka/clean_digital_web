@@ -33,7 +33,6 @@ class ApiException implements BaseException {
   String toJson() => json.encode(toMap());
 
   factory ApiException.fromJson(String source) {
-    print(json.decode(source));
     return ApiException.fromMap(json.decode(source));
   }
 }

@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import '../l10n/clean_digital_localizations.dart';
 import 'preferences_service.dart';
 import 'package:dio/dio.dart';
